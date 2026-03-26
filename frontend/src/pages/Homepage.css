@@ -1,0 +1,549 @@
+.homepage {
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+.siteHeader {
+  padding: 22px 0 14px;
+  position: sticky;
+  top: 0;
+  background: color-mix(in oklab, var(--bg), transparent 10%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.languageSwitch {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.languageSwitch button {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-h);
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.languageSwitch button.active {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 35%);
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navList a {
+  text-decoration: none;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 20%);
+}
+
+.navList a.active {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 45%);
+  border-color: color-mix(in oklab, var(--border), var(--accent) 30%);
+}
+
+.navHomeWrap {
+  position: relative;
+}
+
+.navHomeTrigger {
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 20%);
+}
+
+.navHomeTrigger.is-route-active {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 45%);
+  border-color: color-mix(in oklab, var(--border), var(--accent) 30%);
+}
+
+.navDropdownMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  min-width: 11.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  z-index: 30;
+  text-align: center;
+}
+
+.navDropdownMenu li {
+  margin: 0;
+  padding: 0;
+}
+
+.navDropdownLink {
+  display: block;
+  text-decoration: none;
+  color: var(--text-h);
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+.navDropdownLink:hover {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 18%);
+}
+
+.navDropdownLink.active {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 45%);
+  border-color: color-mix(in oklab, var(--border), var(--accent) 30%);
+}
+
+.boardMemberGrid {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 22px 16px;
+  justify-items: center;
+}
+
+.boardMemberCard {
+  width: 100%;
+  max-width: 168px;
+  text-align: center;
+}
+
+.boardMemberAvatarWrap {
+  width: 112px;
+  aspect-ratio: 1;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 16%);
+}
+
+.boardMemberPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.boardMemberAvatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--text-h);
+  background: color-mix(in oklab, var(--accent-bg), var(--border) 45%);
+}
+
+.boardMemberName {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-h);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.siteMain {
+  padding-top: 26px;
+}
+
+.section {
+  margin: 28px 0;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+}
+
+.section p {
+  text-align: left;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.homeHeroBox {
+  margin: 0 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 8%);
+  overflow: hidden;
+}
+
+.homeHeroTrack {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--bg), black 8%);
+}
+
+.homeHeroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  will-change: transform;
+}
+
+.homeHeroImageCurrent {
+  transform: translateX(0);
+}
+
+.homeHeroImageCurrent.is-animating {
+  transform: translateX(0);
+  animation: hero-enter-from-right 500ms ease;
+}
+
+.homeHeroImagePrev {
+  transform: translateX(0);
+}
+
+.homeHeroImagePrev.is-animating {
+  animation: hero-exit-to-left 500ms ease forwards;
+}
+
+@keyframes hero-enter-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-exit-to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.muted {
+  color: var(--text);
+}
+
+.heatmapPlaceholder {
+  border: 1px dashed var(--border);
+  padding: 18px 12px;
+  text-align: center;
+  margin-top: 14px;
+  border-radius: 10px;
+}
+
+.raceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 0;
+  font-size: 15px;
+}
+
+.raceTable th,
+.raceTable td {
+  border: 1px solid var(--border);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.raceTable th {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 20%);
+  font-weight: 600;
+}
+
+.raceTable a {
+  color: var(--text-h);
+  text-decoration: underline;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-h);
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+
+.linkButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.errorText {
+  color: #b42318;
+  margin: 0 0 10px;
+}
+
+.slideshowRow td {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 12%);
+  padding: 12px 14px;
+}
+
+.slideshowBox {
+  margin-top: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--border), transparent 30%);
+  text-align: center;
+}
+
+.slideshowImage {
+  max-width: 100%;
+  max-height: 460px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.slideshowControls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.slideshowControls button {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.faqDetails {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 10%);
+}
+
+.faqDetails summary {
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+}
+
+.faqDetails p {
+  margin-top: 10px;
+}
+
+.sponsor {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+.sponsorImage {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 12px;
+}
+
+.siteFooter {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 22px 0;
+}
+
+.mapWrapper {
+  margin-top: 14px;
+  height: 560px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  /* Let Leaflet pan the map so tall popups stay visible; hidden would clip popups at edges. */
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+.mapWrapper .leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mapWrapper .cityPopupImage {
+  max-height: 360px;
+}
+
+.cityFlagIcon {
+  background: transparent;
+  border: none;
+}
+
+.cityFlagIcon span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Leaflet popup is always light; page may be dark — avoid light-on-light text. */
+.leaflet-popup.chiVisitPopup .leaflet-popup-content-wrapper,
+.leaflet-popup.chiVisitPopup .leaflet-popup-tip {
+  background: #fff;
+  color: #111827;
+  box-shadow: var(--shadow);
+}
+
+.leaflet-popup.chiVisitPopup .leaflet-popup-content {
+  margin: 14px 18px;
+  color: #111827;
+}
+
+.leaflet-popup.chiVisitPopup a {
+  color: #4f46e5;
+}
+
+.cityPopup {
+  text-align: left;
+  color: #111827;
+}
+
+.cityPopup h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cityPhotoFigure {
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.cityPhotoFrame {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--bg), black 12%);
+}
+
+.cityPopupImage {
+  width: 100%;
+  max-width: none;
+  max-height: 440px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.cityPhotoOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 14px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 55%, transparent);
+  color: #f9fafb;
+  text-align: left;
+  pointer-events: none;
+}
+
+.cityPhotoOverlayName {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.cityPhotoOverlayMeta {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.popupControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.popupControls button {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .languageSwitch {
+    position: static;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .mapWrapper {
+    height: 420px;
+  }
+
+  .mapWrapper .cityPopupImage {
+    max-width: 100%;
+    max-height: 280px;
+  }
+}
+

@@ -1,0 +1,30 @@
+[
+  {
+    "city": "Paris",
+    "country": "France",
+    "date": "2025-03-01",
+    "type": "race",
+    "filename": "paris-1.jpg"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "date": "2025-03-02",
+    "type": "travel",
+    "filename": "paris-2.jpg"
+  }, 
+  {
+    "city": "Beijing",
+    "country": "China",
+    "date": "2025-03-03",
+    "type": "travel",
+    "filename": "beijing-1.jpg"
+  },
+  {
+    "city": "Beijing",
+    "country": "China",
+    "date": "2025-03-04",
+    "type": "travel",
+    "filename": "beijing-2.jpg"
+  }
+]
