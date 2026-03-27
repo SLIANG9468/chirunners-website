@@ -66,11 +66,14 @@ export const CONTENT = {
     brand: 'CHI Running Club/芝加哥驰跑团',
     nav: {
       home: 'Home',
+      about: 'About',
       history: 'History',
       boardMembers: 'Board Members',
       races: 'Local Race Info',
       marathon: 'Chicago Marathon FAQ',
       checkins: 'Chi Has Been Here',
+      menu: 'Menu',
+      menuClose: 'Close menu',
     },
     aboutParagraphs: [
       'The CHI Running Club is a non-profit organization formed by Chinese American running enthusiasts in the greater Chicago area. We are dedicated to promoting a healthy lifestyle and fostering a sense of community through running.',
@@ -184,11 +187,14 @@ export const CONTENT = {
     brand: 'CHI Running Club/芝加哥驰跑团',
     nav: {
       home: '首页',
+      about: '关于我们',
       history: '历史',
-      boardMembers: '理事会',
+      boardMembers: '董事会',
       races: '比赛信息',
       marathon: '芝马FAQ',
       checkins: '全球打卡',
+      menu: '菜单',
+      menuClose: '关闭菜单',
     },
     aboutParagraphs: [
       '驰跑团（CHI Running Club/ChiRunners）是由大芝加哥地区的华人跑步爱好者组成的非盈利组织。我们致力于通过跑步促进健康的生活方式，培养社区意识。',
@@ -284,7 +290,7 @@ export const CONTENT = {
       '参与人数增长后，社团在全年陆续加入了更多社交与志愿活动。会员们在本地赛事中担任志愿者，分享外出参赛的行前经验，并在约定跑之外建立了更长久的友谊。社群逐渐成为新来芝加哥的朋友、以及希望找到训练伙伴的本地居民的可依靠之处。与此同时，协调路线、沟通与俱乐部事务的志愿者也在自然轮换中接力。这种协作方式至今仍是策划活动与欢迎新面孔的核心。',
       '展望未来，社团将继续重视健康、包容，以及在大芝加哥地区稳定、可预期的群跑体验。我们希望路线与节奏对初学者友好，同时也支持有经验的跑者追求个人目标。我们也期待与秉持相似理念的本地活动与机构加强合作。欢迎会员提出改进建议、发起聚会、并共同让社群保持活力。始于二零一四年的故事仍在续写——一英里一英里、一次志愿服务接一次、一场场跑友间的交流串联起我们的共同记忆。',
     ],
-    boardMembersTitle: '理事会成员',
+    boardMembersTitle: '董事会成员',
     boardMemberNames: {
       kenny: '风城网事Kenny',
       mark: 'Mark Jiang',

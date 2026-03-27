@@ -8,19 +8,19 @@
     "runnerName": "邱星"
   },
   {
-    "city": "Beijing",
-    "country": "China",
-    "date": "2025-03-03",
+    "city": "Chamonix",
+    "country": "France",
+    "date": "",
     "type": "travel",
-    "filename": "beijing-1.jpg",
-    "runnerName": "Sherri"
+    "filename": "Chamonix_France_Danrey.jpg",
+    "runnerName": "Danrey"
   },
   {
-    "city": "Beijing",
-    "country": "China",
-    "date": "2025-03-04",
+    "city": "Kathmandu",
+    "country": "Nepal",
+    "date": "",
     "type": "travel",
-    "filename": "beijing-2.jpg",
-    "runnerName": "Sherri"
+    "filename": "Kathmandu_Nepal_Danrey.JPG",
+    "runnerName": "Danrey"
   }
 ]

@@ -1,22 +1,16 @@
 [
   {
-    "id": "beijing-china",
-    "city": "Beijing",
-    "country": "China",
-    "lat": 39.905714,
-    "lng": 116.391297,
+    "id": "chamonix-france",
+    "city": "Chamonix",
+    "country": "France",
+    "lat": 45.92307,
+    "lng": 6.869984,
     "visits": [
       {
-        "date": "2025-03-03",
+        "date": "",
         "type": "travel",
-        "filename": "beijing-1.jpg",
-        "runnerName": "Sherri"
-      },
-      {
-        "date": "2025-03-04",
-        "type": "travel",
-        "filename": "beijing-2.jpg",
-        "runnerName": "Sherri"
+        "filename": "Chamonix_France_Danrey.jpg",
+        "runnerName": "Danrey"
       }
     ]
   },
@@ -32,6 +26,21 @@
         "type": "race",
         "filename": "paris-1.jpg",
         "runnerName": "邱星"
+      }
+    ]
+  },
+  {
+    "id": "kathmandu-nepal",
+    "city": "Kathmandu",
+    "country": "Nepal",
+    "lat": 27.714186,
+    "lng": 85.31094,
+    "visits": [
+      {
+        "date": "",
+        "type": "travel",
+        "filename": "Kathmandu_Nepal_Danrey.JPG",
+        "runnerName": "Danrey"
       }
     ]
   }

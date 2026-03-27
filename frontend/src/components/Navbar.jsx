@@ -1,80 +1,127 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 export default function Navbar({ copy, language, setLanguage }) {
   const location = useLocation()
-  const [homeMenuOpen, setHomeMenuOpen] = useState(false)
+  const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
-  const homeSectionActive =
+  useEffect(() => {
+    setMobileNavOpen(false)
+    setAboutMenuOpen(false)
+  }, [location.pathname])
+
+  const aboutSectionActive =
     location.pathname === '/history' || location.pathname === '/board-members'
+
+  const menuAriaLabel = mobileNavOpen ? copy.nav.menuClose : copy.nav.menu
+
+  const closeMobileNav = () => setMobileNavOpen(false)
 
   return (
     <header className="siteHeader">
-      <NavLink to="/" className="brand">
-        {copy.brand}
-      </NavLink>
-      <div className="languageSwitch" aria-label="Language switch">
-        <button
-          type="button"
-          className={language === 'en' ? 'active' : ''}
-          onClick={() => setLanguage('en')}
-        >
-          EN
-        </button>
-        <span>|</span>
-        <button
-          type="button"
-          className={language === 'zh' ? 'active' : ''}
-          onClick={() => setLanguage('zh')}
-        >
-          中文
-        </button>
-      </div>
-      <nav aria-label="Primary">
-        <ul className="navList">
-          <li className="navHomeWrap">
+      <div className="siteHeaderTopBar">
+        <NavLink to="/" className="brand">
+          {copy.brand}
+        </NavLink>
+        <div className="siteHeaderActions">
+          <div className="languageSwitch" aria-label="Language switch">
             <button
               type="button"
-              className={`navHomeTrigger${homeSectionActive ? ' is-route-active' : ''}`}
-              aria-expanded={homeMenuOpen}
-              aria-haspopup="menu"
-              onClick={() => setHomeMenuOpen((open) => !open)}
+              className={language === 'en' ? 'active' : ''}
+              onClick={() => setLanguage('en')}
             >
-              {copy.nav.home}
+              EN
             </button>
-            {homeMenuOpen ? (
-              <ul className="navDropdownMenu" role="menu">
-                <li role="none">
+            <span>|</span>
+            <button
+              type="button"
+              className={language === 'zh' ? 'active' : ''}
+              onClick={() => setLanguage('zh')}
+            >
+              中文
+            </button>
+          </div>
+          <button
+            type="button"
+            className={`navMenuToggle${mobileNavOpen ? ' is-open' : ''}`}
+            aria-expanded={mobileNavOpen}
+            aria-controls="primary-navigation"
+            aria-label={menuAriaLabel}
+            onClick={() => setMobileNavOpen((v) => !v)}
+          >
+            <span className="navMenuIcon" aria-hidden="true">
+              <span className="navMenuIconBar" />
+              <span className="navMenuIconBar" />
+              <span className="navMenuIconBar" />
+            </span>
+          </button>
+        </div>
+      </div>
+      <nav
+        id="primary-navigation"
+        className={`primaryNavPanel${mobileNavOpen ? ' is-open' : ''}`}
+        aria-label="Primary"
+      >
+        <ul className="navList">
+          <li>
+            <NavLink to="/" end onClick={closeMobileNav}>
+              {copy.nav.home}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/local-race-info" onClick={closeMobileNav}>
+              {copy.nav.races}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/chicago-marathon-faq" onClick={closeMobileNav}>
+              {copy.nav.marathon}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/chi-has-been-here" onClick={closeMobileNav}>
+              {copy.nav.checkins}
+            </NavLink>
+          </li>
+          <li className="navAboutWrap">
+            <button
+              type="button"
+              className={`navAboutTrigger${aboutSectionActive ? ' is-route-active' : ''}`}
+              aria-expanded={aboutMenuOpen}
+              aria-haspopup="true"
+              onClick={() => setAboutMenuOpen((open) => !open)}
+            >
+              {copy.nav.about}
+            </button>
+            {aboutMenuOpen ? (
+              <ul className="navDropdownMenu" role="list">
+                <li>
                   <NavLink
                     to="/history"
                     className="navDropdownLink"
-                    role="menuitem"
-                    onClick={() => setHomeMenuOpen(false)}
+                    onClick={() => {
+                      setAboutMenuOpen(false)
+                      closeMobileNav()
+                    }}
                   >
                     {copy.nav.history}
                   </NavLink>
                 </li>
-                <li role="none">
+                <li>
                   <NavLink
                     to="/board-members"
                     className="navDropdownLink"
-                    role="menuitem"
-                    onClick={() => setHomeMenuOpen(false)}
+                    onClick={() => {
+                      setAboutMenuOpen(false)
+                      closeMobileNav()
+                    }}
                   >
                     {copy.nav.boardMembers}
                   </NavLink>
                 </li>
               </ul>
             ) : null}
-          </li>
-          <li>
-            <NavLink to="/local-race-info">{copy.nav.races}</NavLink>
-          </li>
-          <li>
-            <NavLink to="/chicago-marathon-faq">{copy.nav.marathon}</NavLink>
-          </li>
-          <li>
-            <NavLink to="/chi-has-been-here">{copy.nav.checkins}</NavLink>
           </li>
         </ul>
       </nav>
