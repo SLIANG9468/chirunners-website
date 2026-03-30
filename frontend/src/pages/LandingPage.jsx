@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { absMediaUrl, apiUrl } from '../apiBase'
 
 export default function LandingPage({ copy }) {
   const [homeHeroPhotos, setHomeHeroPhotos] = useState([])
@@ -10,15 +11,13 @@ export default function LandingPage({ copy }) {
   useEffect(() => {
     async function loadHomeHeroPhotos() {
       try {
-        const response = await fetch('http://localhost:5001/api/home-hero/photos')
+        const response = await fetch(apiUrl('/api/home-hero/photos'))
         if (!response.ok) {
           setHomeHeroError(copy.homeHeroErrorLoad)
           return
         }
         const data = await response.json()
-        const loadedPhotos = (data.photos || []).map((url) =>
-          url.startsWith('http') ? url : `http://localhost:5001${url}`,
-        )
+        const loadedPhotos = (data.photos || []).map((url) => absMediaUrl(url))
         setHomeHeroPhotos(loadedPhotos)
         setHomeHeroPhotoIdx(0)
       } catch {

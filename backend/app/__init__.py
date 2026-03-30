@@ -34,8 +34,13 @@ def create_app() -> Flask:
     )
     app.config["MAPBOX_ACCESS_TOKEN"] = os.getenv("MAPBOX_ACCESS_TOKEN", "")
 
-    # Allow requests from the local React dev server during development.
-    CORS(app)
+    # Local dev: allow all. Production: set CORS_ORIGINS to your frontend URL(s), comma-separated.
+    cors_origins = os.getenv("CORS_ORIGINS", "").strip()
+    if cors_origins:
+        origins = [o.strip() for o in cors_origins.split(",") if o.strip()]
+        CORS(app, origins=origins if origins else "*")
+    else:
+        CORS(app)
 
     # Routes
     from .routes.index import index_bp

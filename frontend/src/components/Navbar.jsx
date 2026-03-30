@@ -1,15 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 
 export default function Navbar({ copy, language, setLanguage }) {
   const location = useLocation()
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false)
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
-
-  useEffect(() => {
-    setMobileNavOpen(false)
-    setAboutMenuOpen(false)
-  }, [location.pathname])
 
   const aboutSectionActive =
     location.pathname === '/history' || location.pathname === '/board-members'

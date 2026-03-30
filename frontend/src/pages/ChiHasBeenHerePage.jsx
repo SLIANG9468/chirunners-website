@@ -1,6 +1,7 @@
 import L, { divIcon } from 'leaflet'
 import { useEffect, useMemo, useState } from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { absMediaUrl, apiUrl } from '../apiBase'
 
 const redFlagIcon = divIcon({
   className: 'cityFlagIcon',
@@ -38,7 +39,7 @@ function CityPopup({ location, copy, language }) {
     async function loadPhotos() {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/chi-has-been-here/locations/${location.id}/photos`,
+          apiUrl(`/api/chi-has-been-here/locations/${location.id}/photos`),
         )
         if (!response.ok) {
           if (isMounted) {
@@ -51,7 +52,7 @@ function CityPopup({ location, copy, language }) {
         const data = await response.json()
         const loadedPhotos = (data.photos || []).map((item) => ({
           ...item,
-          url: item.url.startsWith('http') ? item.url : `http://localhost:5001${item.url}`,
+          url: absMediaUrl(item.url),
         }))
         if (isMounted) {
           setPhotos(loadedPhotos)
@@ -140,7 +141,7 @@ export default function ChiHasBeenHerePage({ copy, language }) {
   useEffect(() => {
     async function loadLocations() {
       try {
-        const response = await fetch('http://localhost:5001/api/chi-has-been-here/locations')
+        const response = await fetch(apiUrl('/api/chi-has-been-here/locations'))
         if (!response.ok) {
           setError(copy.checkinsMapError)
           setIsLoading(false)

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { absMediaUrl, apiUrl } from '../apiBase'
 import { RACE_ROWS } from '../content/siteContent'
 
 export default function LocalRaceInfoPage({ copy }) {
@@ -29,7 +30,7 @@ export default function LocalRaceInfoPage({ copy }) {
 
     const syncTimer = window.setInterval(async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/all-community-events/photos')
+        const response = await fetch(apiUrl('/api/all-community-events/photos'))
         if (!response.ok) {
           return
         }
@@ -39,9 +40,7 @@ export default function LocalRaceInfoPage({ copy }) {
           return
         }
 
-        const syncedPhotos = (data.photos || []).map((url) =>
-          url.startsWith('http') ? url : `http://localhost:5001${url}`,
-        )
+        const syncedPhotos = (data.photos || []).map((url) => absMediaUrl(url))
         setPhotos(syncedPhotos)
         setCurrentPhotoIdx(0)
         setPhotoVersion(data.version)
@@ -58,16 +57,14 @@ export default function LocalRaceInfoPage({ copy }) {
     setSlideshowError('')
 
     try {
-      const response = await fetch('http://localhost:5001/api/all-community-events/photos')
+      const response = await fetch(apiUrl('/api/all-community-events/photos'))
       if (!response.ok) {
         setSlideshowError(copy.slideshow.failedLoad(response.status))
         return
       }
 
       const data = await response.json()
-      const loadedPhotos = (data.photos || []).map((url) =>
-        url.startsWith('http') ? url : `http://localhost:5001${url}`,
-      )
+      const loadedPhotos = (data.photos || []).map((url) => absMediaUrl(url))
 
       if (loadedPhotos.length === 0) {
         setSlideshowError(copy.slideshow.noPhotos)
@@ -99,7 +96,7 @@ export default function LocalRaceInfoPage({ copy }) {
     setSlideshowError('')
 
     try {
-      const response = await fetch('http://localhost:5001/api/all-community-events/refresh', {
+      const response = await fetch(apiUrl('/api/all-community-events/refresh'), {
         method: 'POST',
       })
       if (!response.ok) {
@@ -108,9 +105,7 @@ export default function LocalRaceInfoPage({ copy }) {
       }
 
       const data = await response.json()
-      const refreshedPhotos = (data.photos || []).map((url) =>
-        url.startsWith('http') ? url : `http://localhost:5001${url}`,
-      )
+      const refreshedPhotos = (data.photos || []).map((url) => absMediaUrl(url))
       setPhotos(refreshedPhotos)
       setCurrentPhotoIdx(0)
       setPhotoVersion(data.version || 0)

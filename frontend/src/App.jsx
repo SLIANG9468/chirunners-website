@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import { CONTENT, LANGUAGE_STORAGE_KEY, resolveInitialLanguage } from './content/siteContent'
 import './pages/Homepage.css'
@@ -11,6 +11,7 @@ import HistoryPage from './pages/HistoryPage'
 import BoardMembersPage from './pages/BoardMembersPage'
 
 export default function App() {
+  const location = useLocation()
   const [language, setLanguage] = useState(resolveInitialLanguage)
   const copy = useMemo(() => CONTENT[language], [language])
 
@@ -20,7 +21,7 @@ export default function App() {
 
   return (
     <div className="homepage">
-      <Navbar copy={copy} language={language} setLanguage={setLanguage} />
+      <Navbar key={location.pathname} copy={copy} language={language} setLanguage={setLanguage} />
       <Routes>
         <Route path="/" element={<LandingPage copy={copy} />} />
         <Route path="/history" element={<HistoryPage copy={copy} />} />
