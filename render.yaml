@@ -1,4 +1,5 @@
 # Render Blueprint: New → Blueprint → connect repo (see https://render.com/docs/blueprint-spec)
+# Plans are selected in the Render UI when applying the Blueprint (omit `plan` here).
 #
 # Optional: set backend CORS_ORIGINS to your static site URL for stricter CORS.
 
@@ -8,7 +9,6 @@ services:
   - type: web
     name: chirunners-api
     runtime: python
-    plan: free
     region: oregon
     rootDir: backend
     buildCommand: pip install -r requirements.txt
@@ -25,7 +25,6 @@ services:
   - type: web
     name: chirunners-web
     runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
