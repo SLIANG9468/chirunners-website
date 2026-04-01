@@ -197,6 +197,18 @@ export default function ChiHasBeenHerePage({ copy, language }) {
             </MapContainer>
           </div>
         ) : null}
+        <div className="checkinsIntro" lang={language === 'zh' ? 'zh-CN' : 'en'}>
+          {copy.checkinsIntroLines.map((line, idx) => (
+            <p
+              key={idx}
+              className={
+                idx === copy.checkinsIntroLines.length - 1 ? 'checkinsIntroTagline' : undefined
+              }
+            >
+              {line}
+            </p>
+          ))}
+        </div>
       </section>
     </main>
   )

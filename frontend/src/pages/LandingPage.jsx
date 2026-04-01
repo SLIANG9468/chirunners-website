@@ -50,7 +50,7 @@ export default function LandingPage({ copy }) {
   }, [isHomeHeroAnimating])
 
   return (
-    <main id="top" className="siteMain">
+    <main id="top" className="siteMain siteMain--landing">
       <section id="about" className="section">
         {homeHeroError ? <p className="errorText">{homeHeroError}</p> : null}
         {homeHeroPhotos.length > 0 ? (
@@ -78,30 +78,6 @@ export default function LandingPage({ copy }) {
         {copy.aboutParagraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p>
-          {copy.stravaLabel}{' '}
-          <a href="https://www.strava.com/clubs/chirunners" target="_blank" rel="noreferrer">
-            https://www.strava.com/clubs/chirunners
-          </a>
-        </p>
-      </section>
-
-      <section className="section">
-        <h2>{copy.routesTitle}</h2>
-        <p>{copy.routesParagraph}</p>
-        <p className="heatmapPlaceholder">{copy.heatmapPlaceholder}</p>
-        <p>{copy.volunteerParagraph}</p>
-      </section>
-
-      <section className="section sponsor">
-        <h2>{copy.sponsorTitle}</h2>
-        <p>{copy.sponsorText}</p>
-        <img
-          src="https://chirunners.wordpress.com/wp-content/uploads/2022/01/roadrunnersports.png"
-          alt="Road Runner Sports discount"
-          className="sponsorImage"
-        />
-        <p className="muted">{copy.sponsorSubtext}</p>
       </section>
     </main>
   )

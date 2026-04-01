@@ -48,6 +48,35 @@ export const RACE_ROWS = [
   },
 ]
 
+/** Local volunteer opportunities — official site + optional volunteerUrl override */
+export const VOLUNTEER_RACE_ROWS = [
+  {
+    date: '2026-06-27',
+    location: 'Hoffman Estates',
+    race: 'Stars and Stripes Half Marathon',
+    website: 'https://runsignup.com/Race/IL/HoffmanEstates/StarsandStripesHalfMarathon5K',
+  },
+  {
+    date: '2026-10-03',
+    location: 'Long Grove',
+    race: 'Prairie State Half Marathon & 10K Run/Walk',
+    website: 'https://www.prairiestatehalfmarathon.com/',
+  },
+  {
+    date: '2026-10-17',
+    location: 'Chicago',
+    race:
+      'Chicago Fall Classic Run FEST: Half Marathon & 10K and the Hot Cider Hustle 5K',
+    website: 'https://www.chicagofallclassic.com/',
+  },
+  {
+    date: '2026-11-28',
+    location: 'Schaumburg',
+    race: 'Schaumburg Turkey Trot',
+    website: 'https://www.schaumburgturkeytrot.com/',
+  },
+]
+
 /** Display order for board members page (photos are placeholders until you add `photoUrl`). */
 export const BOARD_MEMBERS = [
   { key: 'kenny', photoUrl: null },
@@ -66,21 +95,21 @@ export const CONTENT = {
     brand: 'CHI Running Club/芝加哥驰跑团',
     nav: {
       home: 'Home',
+      join: 'JOIN',
+      joinUrl: 'https://runsignup.com/MemberOrg/chirunners',
       about: 'About',
       history: 'History',
       boardMembers: 'Board Members',
       races: 'Local Race Info',
       marathon: 'Chicago Marathon FAQ',
       checkins: 'Chi Has Been Here',
+      raceVolunteer: 'Race Volunteer Info',
       menu: 'Menu',
       menuClose: 'Close menu',
     },
     aboutParagraphs: [
-      'The CHI Running Club is a non-profit organization formed by Chinese American running enthusiasts in the greater Chicago area. We are dedicated to promoting a healthy lifestyle and fostering a sense of community through running.',
-      'Each week, we organize group runs in various locations throughout Chicago and its suburbs, catering to runners of all levels. In addition to weekly runs, we also host special events and social gatherings throughout the year.',
-      'Contact us: info@chirunners.org',
+      'The CHI Running Club (commonly known as "ChiRunners") is a 501(c)(3) nonprofit organization formed by Chinese American running enthusiasts in the greater Chicago area. As a member of the Road Runners Club of America (RRCA), we are committed to promoting a healthy lifestyle and building a supportive running community.',
     ],
-    stravaLabel: 'Please visit our Strava club page:',
     routesTitle: "CHI Running Club's Regular Routes",
     routesParagraph:
       'Our regular routes cover a wide range of scenic paths throughout Chicago and its suburbs, catering to runners of all levels.',
@@ -89,6 +118,17 @@ export const CONTENT = {
       'Our running friends are passionate about volunteering at local races and actively supporting the running community.',
     racesTitle: 'Local Race Info',
     racesSubtitle: 'Local Race Info in Chicago Area',
+    volunteerRacesTitle: 'Race Volunteer Info',
+    volunteerRacesSubtitle: 'Chicago-area races — official sites and volunteer sign-up where available.',
+    volunteerTable: {
+      date: 'Date',
+      location: 'Location',
+      race: 'Race name',
+      website: 'Official website',
+      officialSite: 'Official site',
+      volunteerColumn: 'Volunteer',
+      volunteerButton: 'Volunteer',
+    },
     table: {
       location: 'Location',
       race: 'Race Name',
@@ -146,9 +186,6 @@ export const CONTENT = {
         body: 'For photos, check official event photography providers and community photo spots.',
       },
     ],
-    sponsorTitle: 'Road Runner Sports',
-    sponsorText: 'Road Runner Sports local stores offer discounts to all our members.',
-    sponsorSubtext: 'Please visit stores for more info.',
     footer: (year) => `© ${year} CHI Running Club`,
     homeHeroErrorLoad: 'Failed to load homepage slideshow photos.',
     homeHeroErrorConnect: 'Could not connect to backend for homepage slideshow.',
@@ -164,11 +201,49 @@ export const CONTENT = {
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,
     checkinsPhotoNoRunner: '—',
     checkinsPhotoMetaSep: ' · ',
+    checkinsIntroLines: [
+      'Our “Chi Has Been Here Map” is live! Wherever your feet take you next:',
+      '🏅 Racing on major event courses',
+      '🌅 Fresh morning runs that wake up the city',
+      '🧳 Travel runs across the map',
+      '⛰️ Trail runs in the hills',
+      'Whenever you reach a finish line or pass a city landmark:',
+      '📍 Pull out our Chi Runners mini flag!',
+      '📸 Take a special check-in photo!',
+      'Share the photo in our WeChat group (芝加哥驰跑团ChiRunners) with:',
+      '🗺️ Location: country + city',
+      '👟 Type: race name, fun run, or other running activity',
+      '📅 Date: when you checked in',
+      "Let's set a goal: by next New Year's Eve countdown, see how many corners of the world our little flags can reach! 🗺️",
+      '🔥 Run everywhere, Chi everywhere!',
+    ],
     historyTitle: 'History',
-    historyParagraphs: [
-      'The CHI Running Club traces its roots to informal gatherings that began around 2014, when a small group of runners started meeting regularly in the Chicago area. Early meetups focused on consistency, safety, and making space for every pace on city streets and suburban trails. Word spread gradually as friends invited friends to weekend long runs and weeknight loop workouts. Those first seasons laid the groundwork for clearer weekly routes and simple organizing routines that members could rely on. Today we still honor that original idea: show up, support each other, and keep moving forward together.',
-      'As participation grew, the club began hosting a wider mix of social events alongside training runs throughout the year. Members volunteered at local races, shared travel tips for destination events, and built friendships that extended beyond scheduled workouts. The community became a steady place for newcomers arriving in Chicago and for longtime residents looking for training partners. Along the way, leadership rotated naturally as volunteers stepped up to coordinate routes, communications, and club initiatives. Those collaborative habits remain central to how we plan activities and welcome new faces.',
-      'Looking ahead, the club continues to prioritize health, inclusion, and reliable group-run experiences across the greater Chicago region. We aim to keep routes approachable for beginners while still supporting experienced runners chasing personal goals. We also seek to strengthen partnerships with local events and organizations that share our values. Members are encouraged to suggest improvements, host meetups, and help keep the community vibrant. The story that began in 2014 is still being written—one mile, one volunteer shift, and one friendly conversation at a time.',
+    historyMilestones: [
+      {
+        heading: '2013 · Starting point 🌅',
+        body:
+          'In Buffalo Grove, Li Shaorun sent an email calling together Huang Haiyan, Lu Lin, Shen Xiang, Tao Ping, and Michael for the first New Year’s Day run. Li Lei joined soon after, downloaded Strava, started the WeChat group, sketched training plans, and helped draft the club’s statement.',
+      },
+      {
+        heading: '2015 · Toward the race course 🏅',
+        body:
+          'We volunteered at the Chicago Marathon for the first time—and the club stepped onto a bigger stage.',
+      },
+      {
+        heading: '2016 · Photo crew 📸',
+        body:
+          'The Zhima (“sesame”) photography team formed to capture every struggle and smile through the lens.',
+      },
+      {
+        heading: '2022 · Nonprofit registration 🏛️',
+        body:
+          'Led by captain Bai Xuefeng, the club formally registered as a nonprofit (501(c)(3)) and entered a more structured chapter of growth.',
+      },
+      {
+        heading: '2024 · Welcoming Chinese runners worldwide 🌍',
+        body:
+          'The club began hosting large gatherings; each time more than 200 running groups took part, cheering one another on.',
+      },
     ],
     boardMembersTitle: 'Board Members',
     boardMemberNames: {
@@ -187,12 +262,15 @@ export const CONTENT = {
     brand: 'CHI Running Club/芝加哥驰跑团',
     nav: {
       home: '首页',
+      join: '加入',
+      joinUrl: 'https://runsignup.com/MemberOrg/chirunners',
       about: '关于我们',
       history: '历史',
       boardMembers: '董事会',
       races: '比赛信息',
       marathon: '芝马FAQ',
       checkins: '全球打卡',
+      raceVolunteer: '比赛义工信息',
       menu: '菜单',
       menuClose: '关闭菜单',
     },
@@ -201,7 +279,6 @@ export const CONTENT = {
       '我们每周都会在芝加哥及其周边的多个地点组织群跑活动，欢迎各级别的跑者参与。除了每周群跑，我们还会在全年举办特别活动和社交聚会。',
       '联系我们：info@chirunners.org',
     ],
-    stravaLabel: '欢迎访问我们的 Strava 俱乐部页面：',
     routesTitle: '驰跑团常规路线',
     routesParagraph:
       '驰跑团常规路线覆盖芝加哥及周边多个风景路线，适合不同水平跑者参与。',
@@ -209,6 +286,17 @@ export const CONTENT = {
     volunteerParagraph: '我们的跑友积极参与本地赛事志愿服务，持续支持跑步社区发展。',
     racesTitle: '比赛信息',
     racesSubtitle: '芝加哥地区及周边赛事信息',
+    volunteerRacesTitle: '比赛义工信息',
+    volunteerRacesSubtitle: '芝加哥及周边赛事义工信息（官网与义工报名入口）。',
+    volunteerTable: {
+      date: '日期',
+      location: '地点',
+      race: '赛事名称',
+      website: '官网链接',
+      officialSite: '官网',
+      volunteerColumn: '义工',
+      volunteerButton: '义工',
+    },
     table: {
       location: '地点',
       race: '比赛',
@@ -266,9 +354,6 @@ export const CONTENT = {
         body: '如需照片，可关注官方摄影合作方及社区摄影点信息。',
       },
     ],
-    sponsorTitle: 'Road Runner Sports',
-    sponsorText: 'Road Runner Sports 本地门店为会员提供折扣。',
-    sponsorSubtext: '更多信息请咨询门店。',
     footer: (year) => `© ${year} CHI Running Club`,
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',
@@ -284,11 +369,47 @@ export const CONTENT = {
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,
     checkinsPhotoNoRunner: '—',
     checkinsPhotoMetaSep: ' · ',
+    checkinsIntroLines: [
+      '驰跑团“全球打卡地图”正式上线啦！无论你的脚步迈向何方：',
+      '🏅 挑战各大赛事的激情赛道',
+      '🌅 唤醒城市的清爽晨跑',
+      '🧳 丈量世界的旅行跑',
+      '⛰️ 探索山野的 Trail Run',
+      '只要你抵达 比赛终点，或路过 城市地标（Landmark）：',
+      '📍 掏出咱们驰跑团的小旗子！',
+      '📸 拍下一张专属打卡照！',
+      '请把照片“砸”到群里（芝加哥驰跑团ChiRunners），',
+      '🗺️ 坐标： 国家名 + 城市名',
+      '👟 类型： 比赛名称、欢乐跑，或其他跑步活动',
+      '📅 日期： 打卡时间',
+      '让我们一起定个小目标：等到明年春晚倒计时，看看咱们驰跑团的小旗子，能不能插遍全世界的每一个角落！🗺️',
+      '🔥 跑到哪儿，驰到哪儿！',
+    ],
     historyTitle: '历史沿革',
-    historyParagraphs: [
-      '驰跑团的发展历程可追溯至约二零一四年前后，当时一小群跑友开始在芝加哥地区固定聚跑。早期的活动强调安全、规律与配速包容，让大家在城市道路与郊区步道上都能安心训练。随着口碑慢慢传开，朋友们互相介绍，周末长距离与工作日环路约跑逐渐成形。那些最初的季节为后续更清晰的常规路线与简单可行的组织方式打下了基础。今天我们依然秉持当时的初心：准时出现、相互支持、一起向前。',
-      '参与人数增长后，社团在全年陆续加入了更多社交与志愿活动。会员们在本地赛事中担任志愿者，分享外出参赛的行前经验，并在约定跑之外建立了更长久的友谊。社群逐渐成为新来芝加哥的朋友、以及希望找到训练伙伴的本地居民的可依靠之处。与此同时，协调路线、沟通与俱乐部事务的志愿者也在自然轮换中接力。这种协作方式至今仍是策划活动与欢迎新面孔的核心。',
-      '展望未来，社团将继续重视健康、包容，以及在大芝加哥地区稳定、可预期的群跑体验。我们希望路线与节奏对初学者友好，同时也支持有经验的跑者追求个人目标。我们也期待与秉持相似理念的本地活动与机构加强合作。欢迎会员提出改进建议、发起聚会、并共同让社群保持活力。始于二零一四年的故事仍在续写——一英里一英里、一次志愿服务接一次、一场场跑友间的交流串联起我们的共同记忆。',
+    historyMilestones: [
+      {
+        heading: '2013 · 起点 🌅',
+        body:
+          '在芝加哥牛村（Buffalo Grove），因为李绍润发出 E-mail 召集，黄海燕、卢琳、沈翔、陶平、Michael 开启了第一次元旦首跑。李磊随后加入，下载 Strava，组建微信群，制定训练计划，撰写宣言。',
+      },
+      {
+        heading: '2015 · 迈向赛道 🏅',
+        body: '首次参与 Chicago Marathon 义工服务，驰跑团开始走向更大的舞台。',
+      },
+      {
+        heading: '2016 · 摄影队 📸',
+        body: '芝麻摄影队成立，用镜头记录每一次奋斗与欢笑。',
+      },
+      {
+        heading: '2022 · 非营利注册 🏛️',
+        body:
+          '驰跑团正式在队长白雪峰的带领下，注册为非营利组织（501(c)(3)），进入规范发展阶段。',
+      },
+      {
+        heading: '2024 · 接待全球华人 🌍',
+        body:
+          '驰跑团开始举办加碳会，每一次超过200跑团参加，大家相互鼓劲加油。',
+      },
     ],
     boardMembersTitle: '董事会成员',
     boardMemberNames: {

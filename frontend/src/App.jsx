@@ -5,6 +5,7 @@ import { CONTENT, LANGUAGE_STORAGE_KEY, resolveInitialLanguage } from './content
 import './pages/Homepage.css'
 import LandingPage from './pages/LandingPage'
 import LocalRaceInfoPage from './pages/LocalRaceInfoPage'
+import VolunteerRaceInfoPage from './pages/VolunteerRaceInfoPage'
 import MarathonFaqPage from './pages/MarathonFaqPage'
 import ChiHasBeenHerePage from './pages/ChiHasBeenHerePage'
 import HistoryPage from './pages/HistoryPage'
@@ -27,6 +28,10 @@ export default function App() {
         <Route path="/history" element={<HistoryPage copy={copy} />} />
         <Route path="/board-members" element={<BoardMembersPage copy={copy} />} />
         <Route path="/local-race-info" element={<LocalRaceInfoPage copy={copy} />} />
+        <Route
+          path="/race-volunteer-info"
+          element={<VolunteerRaceInfoPage copy={copy} language={language} />}
+        />
         <Route path="/chicago-marathon-faq" element={<MarathonFaqPage copy={copy} />} />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="*" element={<Navigate to="/" replace />} />

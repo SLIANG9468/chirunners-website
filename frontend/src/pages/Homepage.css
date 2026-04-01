@@ -146,6 +146,55 @@
   border-color: color-mix(in oklab, var(--border), var(--accent) 30%);
 }
 
+.navAboutJoinWrap {
+  position: relative;
+}
+
+.navAboutJoinRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.navAboutJoinRow .navAboutWrap {
+  position: relative;
+}
+
+.navList a.navJoinButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fafafa;
+  border: 1px solid var(--accent-border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  white-space: nowrap;
+  transition: filter 0.15s ease;
+}
+
+.navList a.navJoinButton:hover {
+  filter: brightness(1.06);
+}
+
+.navList a.navJoinButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .navList a.navJoinButton {
+    color: #f5f3ff;
+  }
+}
+
 .navAboutWrap {
   position: relative;
 }
@@ -218,6 +267,27 @@
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+  }
+
+  .navAboutJoinRow {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .navAboutJoinRow .navAboutWrap {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .navAboutJoinRow .navJoinButton,
+  .navAboutJoinRow a.navJoinButton {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 100%;
+    align-self: stretch;
   }
 
   .navAboutWrap .navDropdownMenu {
@@ -329,6 +399,15 @@
   padding-top: 26px;
 }
 
+/* Home: short page — avoid large empty band above the footer divider */
+main.siteMain--landing > section.section {
+  margin-bottom: 8px;
+}
+
+main.siteMain--landing + .siteFooter {
+  margin-top: 16px;
+}
+
 .section {
   margin: 28px 0;
 }
@@ -367,7 +446,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border-radius: 8px;
   will-change: transform;
@@ -484,6 +563,23 @@
   opacity: 0.7;
 }
 
+a.raceVolunteerButton {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 28%);
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+a.raceVolunteerButton:hover {
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 42%);
+}
+
 .errorText {
   color: #b42318;
   margin: 0 0 10px;
@@ -548,24 +644,49 @@
   margin-top: 10px;
 }
 
-.sponsor {
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
-}
-
-.sponsorImage {
-  max-width: 520px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 18px auto 0;
-  border-radius: 12px;
-}
-
 .siteFooter {
   border-top: 1px solid var(--border);
   margin-top: 40px;
   padding: 22px 0;
+}
+
+.checkinsIntro {
+  text-align: left;
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg), var(--accent-bg) 12%);
+  line-height: 1.75;
+}
+
+.checkinsIntro p {
+  text-align: left;
+  margin: 0 0 0.5rem;
+  color: var(--text-h);
+  font-size: 16px;
+}
+
+.checkinsIntro p:last-child {
+  margin-bottom: 0;
+}
+
+.checkinsIntro p.checkinsIntroTagline {
+  font-weight: 700;
+}
+
+@media (min-width: 769px) {
+  .checkinsIntro {
+    max-width: 44rem;
+    padding: 1.15rem 1.35rem;
+    margin-top: 1.75rem;
+  }
+
+  .checkinsIntro p {
+    font-size: 17px;
+    line-height: 1.78;
+  }
 }
 
 .mapWrapper {

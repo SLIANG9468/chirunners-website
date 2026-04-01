@@ -70,6 +70,11 @@ export default function Navbar({ copy, language, setLanguage }) {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/race-volunteer-info" onClick={closeMobileNav}>
+              {copy.nav.raceVolunteer}
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/chicago-marathon-faq" onClick={closeMobileNav}>
               {copy.nav.marathon}
             </NavLink>
@@ -79,44 +84,57 @@ export default function Navbar({ copy, language, setLanguage }) {
               {copy.nav.checkins}
             </NavLink>
           </li>
-          <li className="navAboutWrap">
-            <button
-              type="button"
-              className={`navAboutTrigger${aboutSectionActive ? ' is-route-active' : ''}`}
-              aria-expanded={aboutMenuOpen}
-              aria-haspopup="true"
-              onClick={() => setAboutMenuOpen((open) => !open)}
-            >
-              {copy.nav.about}
-            </button>
-            {aboutMenuOpen ? (
-              <ul className="navDropdownMenu" role="list">
-                <li>
-                  <NavLink
-                    to="/history"
-                    className="navDropdownLink"
-                    onClick={() => {
-                      setAboutMenuOpen(false)
-                      closeMobileNav()
-                    }}
-                  >
-                    {copy.nav.history}
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/board-members"
-                    className="navDropdownLink"
-                    onClick={() => {
-                      setAboutMenuOpen(false)
-                      closeMobileNav()
-                    }}
-                  >
-                    {copy.nav.boardMembers}
-                  </NavLink>
-                </li>
-              </ul>
-            ) : null}
+          <li className="navAboutJoinWrap">
+            <div className="navAboutJoinRow">
+              <div className="navAboutWrap">
+                <button
+                  type="button"
+                  className={`navAboutTrigger${aboutSectionActive ? ' is-route-active' : ''}`}
+                  aria-expanded={aboutMenuOpen}
+                  aria-haspopup="true"
+                  onClick={() => setAboutMenuOpen((open) => !open)}
+                >
+                  {copy.nav.about}
+                </button>
+                {aboutMenuOpen ? (
+                  <ul className="navDropdownMenu" role="list">
+                    <li>
+                      <NavLink
+                        to="/history"
+                        className="navDropdownLink"
+                        onClick={() => {
+                          setAboutMenuOpen(false)
+                          closeMobileNav()
+                        }}
+                      >
+                        {copy.nav.history}
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        to="/board-members"
+                        className="navDropdownLink"
+                        onClick={() => {
+                          setAboutMenuOpen(false)
+                          closeMobileNav()
+                        }}
+                      >
+                        {copy.nav.boardMembers}
+                      </NavLink>
+                    </li>
+                  </ul>
+                ) : null}
+              </div>
+              <a
+                className="navJoinButton"
+                href={copy.nav.joinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobileNav}
+              >
+                {copy.nav.join}
+              </a>
+            </div>
           </li>
         </ul>
       </nav>
