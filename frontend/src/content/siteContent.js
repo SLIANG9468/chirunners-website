@@ -51,29 +51,53 @@ export const RACE_ROWS = [
 /** Local volunteer opportunities — official site + optional volunteerUrl override */
 export const VOLUNTEER_RACE_ROWS = [
   {
+    date: '2026-04-04',
+    location: 'Chicago',
+    race: 'Chi Town Half Marathon',
+    website: 'https://allcommunityevents.com/chitownhalfmarathon10k',
+  },
+  {
+    date: '2026-05-03',
+    location: 'Elk Grove Village',
+    race: 'Chicagoland Spring Marathon & Half Marathon',
+    website: 'https://allcommunityevents.com/chicagolandspringmarathon',
+  },
+  {
+    date: '2026-05-31',
+    location: 'Highland Park',
+    race: 'North Shore Classic',
+    website: 'https://northshoreclassic.com/',
+  },
+  {
+    date: '2026-06-07',
+    location: 'Chicago',
+    race: 'Chicago 13.1',
+    website: 'https://www.chicago13point1.com/',
+  },
+  {
     date: '2026-06-27',
     location: 'Hoffman Estates',
-    race: 'Stars and Stripes Half Marathon',
-    website: 'https://runsignup.com/Race/IL/HoffmanEstates/StarsandStripesHalfMarathon5K',
+    race: 'Stars and Stripes Half Marathon, 10K & 5K',
+    website: 'https://allcommunityevents.com/starsandstripesrun',
   },
   {
     date: '2026-10-03',
     location: 'Long Grove',
     race: 'Prairie State Half Marathon & 10K Run/Walk',
-    website: 'https://www.prairiestatehalfmarathon.com/',
+    website: 'https://allcommunityevents.com/prairiestatehalfmarathon',
   },
   {
     date: '2026-10-17',
     location: 'Chicago',
     race:
       'Chicago Fall Classic Run FEST: Half Marathon & 10K and the Hot Cider Hustle 5K',
-    website: 'https://www.chicagofallclassic.com/',
+    website: 'https://allcommunityevents.com/chicagofallclassic',
   },
   {
     date: '2026-11-28',
     location: 'Schaumburg',
-    race: 'Schaumburg Turkey Trot',
-    website: 'https://www.schaumburgturkeytrot.com/',
+    race: 'Schaumburg Turkey Trot Half Marathon / 5K',
+    website: 'https://allcommunityevents.com/schaumburgturkeytrot',
   },
 ]
 
