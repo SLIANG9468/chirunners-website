@@ -22,5 +22,14 @@
     "type": "travel",
     "filename": "Kathmandu_Nepal_Danrey.JPG",
     "runnerName": "Danrey"
+  },
+  {
+    "city": "Puerto Maldonado",
+    "country": "Peru",
+    "date": "2026-04-01",
+    "type": "travel",
+    "filename": "Peru_章运.jpg",
+    "runnerName": "章运",
+    "placeNote": "Amazon Rainforest"
   }
 ]

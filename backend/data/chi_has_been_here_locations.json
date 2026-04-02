@@ -43,5 +43,21 @@
         "runnerName": "Danrey"
       }
     ]
+  },
+  {
+    "id": "puerto-maldonado-peru",
+    "city": "Puerto Maldonado",
+    "country": "Peru",
+    "lat": -12.593592,
+    "lng": -69.178024,
+    "visits": [
+      {
+        "date": "2026-04-01",
+        "type": "travel",
+        "filename": "Peru_章运.jpg",
+        "runnerName": "章运",
+        "placeNote": "Amazon Rainforest"
+      }
+    ]
   }
 ]

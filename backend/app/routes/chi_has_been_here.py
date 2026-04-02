@@ -87,15 +87,17 @@ def _normalize_source_to_locations(source_rows: list[dict]) -> list[dict]:
             }
 
         runner_name = row.get("runnerName", "")
+        visit = {
+            "date": row.get("date", ""),
+            "type": row.get("type", ""),
+            "filename": row.get("filename", ""),
+            "runnerName": runner_name,
+        }
+        place_note = row.get("placeNote", "")
+        if isinstance(place_note, str) and place_note.strip():
+            visit["placeNote"] = place_note.strip()
 
-        by_location[location_id]["visits"].append(
-            {
-                "date": row.get("date", ""),
-                "type": row.get("type", ""),
-                "filename": row.get("filename", ""),
-                "runnerName": runner_name,
-            }
-        )
+        by_location[location_id]["visits"].append(visit)
 
     return sorted(by_location.values(), key=lambda x: (x["country"], x["city"]))
 
@@ -157,16 +159,18 @@ def location_photos(location_id: str):
         filename = visit.get("filename", "")
         if not filename:
             continue
-        photos.append(
-            {
-                "date": visit.get("date", ""),
-                "type": visit.get("type", ""),
-                "filename": filename,
-                # Return only one name field to the frontend.
-                "runnerName": visit.get("runnerName", ""),
-                "url": f"/media/chi-has-been-here/{location_id}/{filename}",
-            }
-        )
+        photo = {
+            "date": visit.get("date", ""),
+            "type": visit.get("type", ""),
+            "filename": filename,
+            # Return only one name field to the frontend.
+            "runnerName": visit.get("runnerName", ""),
+            "url": f"/media/chi-has-been-here/{location_id}/{filename}",
+        }
+        pn = visit.get("placeNote", "")
+        if isinstance(pn, str) and pn.strip():
+            photo["placeNote"] = pn.strip()
+        photos.append(photo)
 
     return jsonify(
         {

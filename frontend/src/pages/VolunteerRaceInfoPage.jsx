@@ -9,14 +9,6 @@ function formatRaceDate(isoDate, locale) {
   }
 }
 
-function volunteerLinkFromWebsite(website, volunteerUrl) {
-  if (volunteerUrl) return volunteerUrl
-  if (website.includes('runsignup.com/Race/')) {
-    return website.replace('runsignup.com/Race/', 'runsignup.com/RaceVolunteer/')
-  }
-  return website
-}
-
 export default function VolunteerRaceInfoPage({ copy, language }) {
   const locale = language === 'zh' ? 'zh-CN' : 'en-US'
 
@@ -26,7 +18,7 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
         <h2>{copy.volunteerRacesTitle}</h2>
         <p className="muted">{copy.volunteerRacesSubtitle}</p>
 
-        <table className="raceTable">
+        <table className="raceTable raceTable--volunteer">
           <thead>
             <tr>
               <th>{copy.volunteerTable.date}</th>
@@ -48,14 +40,9 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
                   </a>
                 </td>
                 <td>
-                  <a
-                    className="raceVolunteerButton"
-                    href={volunteerLinkFromWebsite(row.website, row.volunteerUrl)}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {copy.volunteerTable.volunteerButton}
-                  </a>
+                  {row.volunteerCellLabel !== undefined
+                    ? row.volunteerCellLabel
+                    : copy.volunteerTable.volunteerCellLabel}
                 </td>
               </tr>
             ))}

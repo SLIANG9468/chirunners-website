@@ -87,6 +87,7 @@ function CityPopup({ location, copy, language }) {
   const runnerName = currentPhoto ? String(currentPhoto.runnerName || '').trim() : ''
   const visitDate = currentPhoto ? formatVisitDate(currentPhoto.date, language) : ''
   const visitType = currentPhoto ? String(currentPhoto.type || '').trim() : ''
+  const placeNote = currentPhoto ? String(currentPhoto.placeNote || '').trim() : ''
 
   const imageAlt = currentPhoto
     ? [location.city, runnerName, visitDate].filter(Boolean).join(' — ')
@@ -105,9 +106,9 @@ function CityPopup({ location, copy, language }) {
             <img src={currentPhoto.url} alt={imageAlt} className="cityPopupImage" />
             <div className="cityPhotoOverlay" aria-hidden="true">
               <div className="cityPhotoOverlayName">{runnerName || copy.checkinsPhotoNoRunner}</div>
-              {visitDate || visitType ? (
+              {visitDate || visitType || placeNote ? (
                 <div className="cityPhotoOverlayMeta">
-                  {[visitDate, visitType].filter(Boolean).join(copy.checkinsPhotoMetaSep)}
+                  {[visitDate, visitType, placeNote].filter(Boolean).join(copy.checkinsPhotoMetaSep)}
                 </div>
               ) : null}
             </div>

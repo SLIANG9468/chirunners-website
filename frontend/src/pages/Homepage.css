@@ -547,6 +547,13 @@ main.siteMain--landing + .siteFooter {
   text-decoration: underline;
 }
 
+.raceTable--volunteer th:nth-child(4),
+.raceTable--volunteer th:nth-child(5),
+.raceTable--volunteer td:nth-child(4),
+.raceTable--volunteer td:nth-child(5) {
+  text-align: center;
+}
+
 .linkButton {
   background: none;
   border: none;

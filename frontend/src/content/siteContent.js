@@ -48,8 +48,15 @@ export const RACE_ROWS = [
   },
 ]
 
-/** Local volunteer opportunities — official site + optional volunteerUrl override */
+/** Local races shown on the race volunteer info table */
 export const VOLUNTEER_RACE_ROWS = [
+  {
+    date: '2026-03-22',
+    location: 'Chicago',
+    race: 'Shamrock Shuffle',
+    website: 'https://www.shamrockshuffle.com/register/8krun/',
+    volunteerCellLabel: '',
+  },
   {
     date: '2026-04-04',
     location: 'Chicago',
@@ -57,10 +64,24 @@ export const VOLUNTEER_RACE_ROWS = [
     website: 'https://allcommunityevents.com/chitownhalfmarathon10k',
   },
   {
+    date: '2026-04-19',
+    location: 'Naperville',
+    race: "Naperville Women's Half Marathon & 5K",
+    website: 'https://napervillewomenshalf.events/',
+    volunteerCellLabel: '',
+  },
+  {
     date: '2026-05-03',
     location: 'Elk Grove Village',
     race: 'Chicagoland Spring Marathon & Half Marathon',
     website: 'https://allcommunityevents.com/chicagolandspringmarathon',
+  },
+  {
+    date: '2026-05-17',
+    location: 'Chicago',
+    race: 'LIFETIME Chicago Spring Half Marathon + 5K',
+    website: 'https://www.chicagospringhalf.com/',
+    volunteerCellLabel: '',
   },
   {
     date: '2026-05-31',
@@ -79,6 +100,13 @@ export const VOLUNTEER_RACE_ROWS = [
     location: 'Hoffman Estates',
     race: 'Stars and Stripes Half Marathon, 10K & 5K',
     website: 'https://allcommunityevents.com/starsandstripesrun',
+  },
+  {
+    date: '2026-10-03',
+    location: 'Long Grove',
+    race: "Long Grove's Run Fest Oktober Fest 5K",
+    website: 'https://allcommunityevents.com/oktoberfest5k',
+    volunteerCellLabel: '',
   },
   {
     date: '2026-10-03',
@@ -127,7 +155,7 @@ export const CONTENT = {
       races: 'Local Race Info',
       marathon: 'Chicago Marathon FAQ',
       checkins: 'Chi Has Been Here',
-      raceVolunteer: 'Race Volunteer Info',
+      raceVolunteer: 'Race & Volunteer',
       menu: 'Menu',
       menuClose: 'Close menu',
     },
@@ -151,7 +179,7 @@ export const CONTENT = {
       website: 'Official website',
       officialSite: 'Official site',
       volunteerColumn: 'Volunteer',
-      volunteerButton: 'Volunteer',
+      volunteerCellLabel: 'GO',
     },
     table: {
       location: 'Location',
@@ -294,7 +322,7 @@ export const CONTENT = {
       races: '比赛信息',
       marathon: '芝马FAQ',
       checkins: '全球打卡',
-      raceVolunteer: '比赛义工信息',
+      raceVolunteer: '比赛 & 义工',
       menu: '菜单',
       menuClose: '关闭菜单',
     },
@@ -318,8 +346,8 @@ export const CONTENT = {
       race: '赛事名称',
       website: '官网链接',
       officialSite: '官网',
-      volunteerColumn: '义工',
-      volunteerButton: '义工',
+      volunteerColumn: '义工招募',
+      volunteerCellLabel: '义工',
     },
     table: {
       location: '地点',
