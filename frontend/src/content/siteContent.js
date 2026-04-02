@@ -1,6 +1,9 @@
 export const LANGUAGE_STORAGE_KEY = 'preferredLanguage'
 
-/** Local races shown on the race volunteer info table */
+/**
+ * Local races shown on the race volunteer info table.
+ * Optional `raceZh`: Chinese label for the race name column when UI language is 中文.
+ */
 export const VOLUNTEER_RACE_ROWS = [
   {
     date: '2026-03-22',
@@ -68,6 +71,32 @@ export const VOLUNTEER_RACE_ROWS = [
     website: 'https://allcommunityevents.com/prairiestatehalfmarathon',
   },
   {
+    date: '2026-10-08',
+    location: 'Chicago',
+    race: 'Chicago Marathon Expo Day 1',
+  },
+  {
+    date: '2026-10-09',
+    location: 'Chicago',
+    race: 'Chicago Marathon Expo Day 2',
+  },
+  {
+    date: '2026-10-09',
+    location: 'Rosemont',
+    race: 'Chicago Marathon Carb-Loading Dinner',
+    raceZh: '芝加哥马拉松加碳会',
+  },
+  {
+    date: '2026-10-10',
+    location: 'Chicago',
+    race: 'Chicago Marathon Expo Day 3',
+  },
+  {
+    date: '2026-10-11',
+    location: 'Chicago',
+    race: 'Chicago Marathon',
+  },
+  {
     date: '2026-10-17',
     location: 'Chicago',
     race:
@@ -120,8 +149,9 @@ export const CONTENT = {
     heatmapPlaceholder: 'Heatmap (placeholder)',
     volunteerParagraph:
       'Our running friends are passionate about volunteering at local races and actively supporting the running community.',
-    volunteerRacesTitle: 'Race Volunteer Info',
-    volunteerRacesSubtitle: 'Chicago-area races — official sites and volunteer sign-up where available.',
+    volunteerRacesTitle: 'Race & Volunteer Info',
+    volunteerRacesSubtitle:
+      'The table below lists local races. For selected events, the CHI Running Club will organize volunteer opportunities to support the race community. Click the links in the table to view photos.',
     volunteerTable: {
       date: 'Date',
       location: 'Location',
@@ -279,8 +309,9 @@ export const CONTENT = {
       '驰跑团常规路线覆盖芝加哥及周边多个风景路线，适合不同水平跑者参与。',
     heatmapPlaceholder: '热力图（占位）',
     volunteerParagraph: '我们的跑友积极参与本地赛事志愿服务，持续支持跑步社区发展。',
-    volunteerRacesTitle: '比赛义工信息',
-    volunteerRacesSubtitle: '芝加哥及周边赛事义工信息（官网与义工报名入口）。',
+    volunteerRacesTitle: '比赛 & 义工信息',
+    volunteerRacesSubtitle:
+      '下表列出了本地赛事，驰跑团也将在部分赛事中组织义工参与，支持跑步社区。点击表格中的链接可查看活动照片。',
     volunteerTable: {
       date: '日期',
       location: '地点',
@@ -395,7 +426,7 @@ export const CONTENT = {
       {
         heading: '2024 · 接待全球华人 🌍',
         body:
-          '驰跑团开始举办加碳会，每一次超过200跑团参加，大家相互鼓劲加油。',
+          '驰跑团开始举办加碳会，每一次超过200跑友参加，大家相互鼓劲加油。',
       },
     ],
     boardMembersTitle: '董事会成员',

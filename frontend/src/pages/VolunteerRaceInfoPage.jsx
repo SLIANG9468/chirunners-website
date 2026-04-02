@@ -5,7 +5,13 @@ import { VOLUNTEER_RACE_ROWS } from '../content/siteContent'
 function formatRaceDate(isoDate, locale) {
   try {
     const d = new Date(`${isoDate}T12:00:00`)
-    return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' })
+    const datePart = d.toLocaleDateString(locale, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    })
+    const weekdayPart = d.toLocaleDateString(locale, { weekday: 'short' })
+    return `${datePart} ${weekdayPart}`
   } catch {
     return isoDate
   }
@@ -13,6 +19,11 @@ function formatRaceDate(isoDate, locale) {
 
 function volunteerRowKey(row) {
   return `${row.date}-${row.race}`
+}
+
+/** Optional `raceZh` on a row overrides `race` when language is Chinese. */
+function volunteerRaceDisplayName(row, language) {
+  return language === 'zh' && row.raceZh ? row.raceZh : row.race
 }
 
 export default function VolunteerRaceInfoPage({ copy, language }) {
@@ -90,7 +101,7 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
 
     setIsLoadingPhotos(true)
     setSlideshowError('')
-    setActive({ rowKey, albumId, raceLabel: row.race })
+    setActive({ rowKey, albumId, raceLabel: volunteerRaceDisplayName(row, language) })
     setPhotos([])
     setCurrentPhotoIdx(0)
     setPhotoVersion(0)
@@ -201,20 +212,24 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
                           className="linkButton"
                           onClick={() => openRaceAlbumSlideshow(row)}
                           disabled={isLoadingPhotos && active?.rowKey === rk}
-                          aria-label={copy.volunteerTable.racePhotoSlideshowAria(row.race)}
+                          aria-label={copy.volunteerTable.racePhotoSlideshowAria(
+                            volunteerRaceDisplayName(row, language),
+                          )}
                         >
                           {isLoadingPhotos && active?.rowKey === rk
                             ? copy.volunteerTable.albumPhotosLoading
-                            : row.race}
+                            : volunteerRaceDisplayName(row, language)}
                         </button>
                       ) : (
-                        row.race
+                        volunteerRaceDisplayName(row, language)
                       )}
                     </td>
                     <td>
-                      <a href={row.website} target="_blank" rel="noreferrer">
-                        {copy.volunteerTable.officialSite}
-                      </a>
+                      {row.website ? (
+                        <a href={row.website} target="_blank" rel="noreferrer">
+                          {copy.volunteerTable.officialSite}
+                        </a>
+                      ) : null}
                     </td>
                     <td>
                       {row.volunteerCellLabel !== undefined
