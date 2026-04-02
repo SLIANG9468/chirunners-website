@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import { CONTENT, LANGUAGE_STORAGE_KEY, resolveInitialLanguage } from './content/siteContent'
 import './pages/Homepage.css'
 import LandingPage from './pages/LandingPage'
-import LocalRaceInfoPage from './pages/LocalRaceInfoPage'
 import VolunteerRaceInfoPage from './pages/VolunteerRaceInfoPage'
 import MarathonFaqPage from './pages/MarathonFaqPage'
 import ChiHasBeenHerePage from './pages/ChiHasBeenHerePage'
@@ -27,7 +26,7 @@ export default function App() {
         <Route path="/" element={<LandingPage copy={copy} />} />
         <Route path="/history" element={<HistoryPage copy={copy} />} />
         <Route path="/board-members" element={<BoardMembersPage copy={copy} />} />
-        <Route path="/local-race-info" element={<LocalRaceInfoPage copy={copy} />} />
+        <Route path="/local-race-info" element={<Navigate to="/race-volunteer-info" replace />} />
         <Route
           path="/race-volunteer-info"
           element={<VolunteerRaceInfoPage copy={copy} language={language} />}

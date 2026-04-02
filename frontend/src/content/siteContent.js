@@ -1,53 +1,5 @@
 export const LANGUAGE_STORAGE_KEY = 'preferredLanguage'
 
-export const RACE_ROWS = [
-  {
-    location: 'All Community Events',
-    race: 'Half Marathon',
-    website: 'http://allcommunityevents.com/',
-  },
-  {
-    location: 'Chicago, IL',
-    race: 'LifeTime Chicago Half Marathon',
-    website: 'http://www.chicagohalfmarathon.com/',
-  },
-  {
-    location: 'Chicago, IL',
-    race: 'Chicago 13.1',
-    website: 'https://www.chicago13point1.com/',
-  },
-  {
-    location: 'Chicago, IL',
-    race: 'Chicago Marathon',
-    website: 'http://www.chicagomarathon.com',
-  },
-  {
-    location: 'Fox Valley, IL',
-    race: 'Fox Valley Marathon/Half Marathon',
-    website: 'http://www.fv26.com/register',
-  },
-  {
-    location: 'Geneva, IL',
-    race: 'Last Chance BQ2 Marathon',
-    website: 'http://www.bq2races.com/',
-  },
-  {
-    location: 'Lake Zurich, IL',
-    race: 'Alpine Races',
-    website: 'https://www.alpinerunners.com/alpineraces',
-  },
-  {
-    location: 'Indianapolis, IN',
-    race: 'Indianapolis Monumental Marathon',
-    website: 'http://www.monumentalmarathon.com/',
-  },
-  {
-    location: 'Naperville, IL',
-    race: 'Healthy Driven Naperville Half Marathon',
-    website: 'http://runnaperville.com/',
-  },
-]
-
 /** Local races shown on the race volunteer info table */
 export const VOLUNTEER_RACE_ROWS = [
   {
@@ -56,6 +8,7 @@ export const VOLUNTEER_RACE_ROWS = [
     race: 'Shamrock Shuffle',
     website: 'https://www.shamrockshuffle.com/register/8krun/',
     volunteerCellLabel: '',
+    photoAlbumId: 'shamrock-shuffle-2026',
   },
   {
     date: '2026-04-04',
@@ -152,7 +105,6 @@ export const CONTENT = {
       about: 'About',
       history: 'History',
       boardMembers: 'Board Members',
-      races: 'Local Race Info',
       marathon: 'Chicago Marathon FAQ',
       checkins: 'Chi Has Been Here',
       raceVolunteer: 'Race & Volunteer',
@@ -168,8 +120,6 @@ export const CONTENT = {
     heatmapPlaceholder: 'Heatmap (placeholder)',
     volunteerParagraph:
       'Our running friends are passionate about volunteering at local races and actively supporting the running community.',
-    racesTitle: 'Local Race Info',
-    racesSubtitle: 'Local Race Info in Chicago Area',
     volunteerRacesTitle: 'Race Volunteer Info',
     volunteerRacesSubtitle: 'Chicago-area races — official sites and volunteer sign-up where available.',
     volunteerTable: {
@@ -180,14 +130,8 @@ export const CONTENT = {
       officialSite: 'Official site',
       volunteerColumn: 'Volunteer',
       volunteerCellLabel: 'GO',
-    },
-    table: {
-      location: 'Location',
-      race: 'Race Name',
-      website: 'Official Website',
-      officialSite: 'Official Site',
-      allCommunityEventsButton: 'All Community Events',
-      allCommunityEventsLoading: 'Loading photos...',
+      racePhotoSlideshowAria: (raceName) => `Open photo slideshow for ${raceName}`,
+      albumPhotosLoading: 'Loading photos...',
     },
     slideshow: {
       noPhotos: 'No photos found in backend photo folder yet.',
@@ -319,7 +263,6 @@ export const CONTENT = {
       about: '关于我们',
       history: '历史',
       boardMembers: '董事会',
-      races: '比赛信息',
       marathon: '芝马FAQ',
       checkins: '全球打卡',
       raceVolunteer: '比赛 & 义工',
@@ -336,8 +279,6 @@ export const CONTENT = {
       '驰跑团常规路线覆盖芝加哥及周边多个风景路线，适合不同水平跑者参与。',
     heatmapPlaceholder: '热力图（占位）',
     volunteerParagraph: '我们的跑友积极参与本地赛事志愿服务，持续支持跑步社区发展。',
-    racesTitle: '比赛信息',
-    racesSubtitle: '芝加哥地区及周边赛事信息',
     volunteerRacesTitle: '比赛义工信息',
     volunteerRacesSubtitle: '芝加哥及周边赛事义工信息（官网与义工报名入口）。',
     volunteerTable: {
@@ -348,14 +289,8 @@ export const CONTENT = {
       officialSite: '官网',
       volunteerColumn: '义工招募',
       volunteerCellLabel: '义工',
-    },
-    table: {
-      location: '地点',
-      race: '比赛',
-      website: '官网链接',
-      officialSite: '官网',
-      allCommunityEventsButton: 'All Community Events',
-      allCommunityEventsLoading: '正在加载照片...',
+      racePhotoSlideshowAria: (raceName) => `打开「${raceName}」照片幻灯片`,
+      albumPhotosLoading: '正在加载照片...',
     },
     slideshow: {
       noPhotos: '后台照片文件夹中暂未找到图片。',

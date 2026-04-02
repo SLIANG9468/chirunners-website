@@ -162,6 +162,7 @@
   position: relative;
 }
 
+/* Brand red; separate from site purple accent (--accent). */
 .navList a.navJoinButton {
   display: inline-flex;
   align-items: center;
@@ -171,11 +172,11 @@
   font: inherit;
   font-weight: 600;
   cursor: pointer;
-  color: #fafafa;
-  border: 1px solid var(--accent-border);
+  color: #fff;
+  border: 1px solid color-mix(in oklab, #e52850, black 18%);
   padding: 8px 16px;
   border-radius: 8px;
-  background: var(--accent);
+  background: #e52850;
   white-space: nowrap;
   transition: filter 0.15s ease;
 }
@@ -185,13 +186,15 @@
 }
 
 .navList a.navJoinButton:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #e52850;
   outline-offset: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
   .navList a.navJoinButton {
-    color: #f5f3ff;
+    color: #fff;
+    border-color: color-mix(in oklab, #e52850, white 12%);
+    background: #e52850;
   }
 }
 

@@ -12,14 +12,11 @@ def create_app() -> Flask:
     load_dotenv(backend_dir / ".env")
 
     app = Flask(__name__)
-    default_photo_dir = backend_dir / "photos" / "all-community-events"
     default_home_hero_photo_dir = backend_dir / "photos" / "home-hero"
     default_chi_photo_dir = backend_dir / "photos" / "chi-has-been-here"
     default_chi_source_file = backend_dir / "data" / "chi_has_been_here_source.json"
     default_chi_locations_file = backend_dir / "data" / "chi_has_been_here_locations.json"
-    app.config["ALL_COMMUNITY_EVENTS_PHOTO_DIR"] = os.getenv(
-        "ALL_COMMUNITY_EVENTS_PHOTO_DIR", str(default_photo_dir)
-    )
+    default_volunteer_race_albums_dir = backend_dir / "photos" / "volunteer-race-albums"
     app.config["HOME_HERO_PHOTO_DIR"] = os.getenv(
         "HOME_HERO_PHOTO_DIR", str(default_home_hero_photo_dir)
     )
@@ -33,6 +30,9 @@ def create_app() -> Flask:
         "CHI_HAS_BEEN_HERE_LOCATIONS_FILE", str(default_chi_locations_file)
     )
     app.config["MAPBOX_ACCESS_TOKEN"] = os.getenv("MAPBOX_ACCESS_TOKEN", "")
+    app.config["VOLUNTEER_RACE_ALBUMS_DIR"] = os.getenv(
+        "VOLUNTEER_RACE_ALBUMS_DIR", str(default_volunteer_race_albums_dir)
+    )
 
     # Local dev: allow all. Production: set CORS_ORIGINS to your frontend URL(s), comma-separated.
     cors_origins = os.getenv("CORS_ORIGINS", "").strip()
@@ -45,14 +45,14 @@ def create_app() -> Flask:
     # Routes
     from .routes.index import index_bp
     from .routes.health import health_bp
-    from .routes.all_community_events import all_community_events_bp
     from .routes.home_hero import home_hero_bp
     from .routes.chi_has_been_here import chi_has_been_here_bp
+    from .routes.volunteer_race_albums import volunteer_race_albums_bp
 
     app.register_blueprint(index_bp)
     app.register_blueprint(health_bp)
-    app.register_blueprint(all_community_events_bp)
     app.register_blueprint(home_hero_bp)
     app.register_blueprint(chi_has_been_here_bp)
+    app.register_blueprint(volunteer_race_albums_bp)
     return app
 

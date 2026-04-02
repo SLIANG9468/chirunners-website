@@ -65,11 +65,6 @@ export default function Navbar({ copy, language, setLanguage }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/local-race-info" onClick={closeMobileNav}>
-              {copy.nav.races}
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/race-volunteer-info" onClick={closeMobileNav}>
               {copy.nav.raceVolunteer}
             </NavLink>

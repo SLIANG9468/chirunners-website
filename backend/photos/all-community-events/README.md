@@ -1,12 +1,1 @@
-Drop your slideshow photos in this folder.
-
-Supported image file types:
-- .jpg
-- .jpeg
-- .png
-- .gif
-- .webp
-
-The backend will read all files in this folder and randomize slideshow order.
-No filenames are hardcoded in code.
-
+This directory is **not** used by the app anymore (the former Local Race Info / All Community Events slideshow was removed). Photos here are only kept if you want a local archive; safe to delete from the repo when you no longer need them.
