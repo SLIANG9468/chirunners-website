@@ -389,8 +389,10 @@
   background: color-mix(in oklab, var(--accent-bg), var(--border) 45%);
 }
 
-.boardMemberName {
+/* Beat `.section p { text-align: left }` so labels sit under the avatar midpoint */
+.boardMemberCard .boardMemberName {
   margin: 0;
+  width: 100%;
   font-weight: 600;
   color: var(--text-h);
   text-align: center;

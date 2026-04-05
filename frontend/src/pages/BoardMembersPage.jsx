@@ -1,4 +1,4 @@
-import { BOARD_MEMBERS } from '../content/siteContent'
+import { BOARD_MEMBERS, BOARD_MEMBER_LABELS } from '../content/siteContent'
 
 function boardMemberInitials(name) {
   const text = String(name || '').trim()
@@ -16,21 +16,33 @@ function boardMemberInitials(name) {
   return text.slice(0, 2).toUpperCase()
 }
 
-export default function BoardMembersPage({ copy }) {
+export default function BoardMembersPage({ copy, language }) {
+  const nameLang = language === 'zh' ? 'zh' : 'en'
+
   return (
     <main className="siteMain">
       <section id="board-members" className="section">
         <h2>{copy.boardMembersTitle}</h2>
         <ul className="boardMemberGrid">
           {BOARD_MEMBERS.map((row) => {
-            const name = copy.boardMemberNames[row.key]
-            const initials = boardMemberInitials(name)
+            const labels = BOARD_MEMBER_LABELS[row.key]
+            const name = labels[nameLang]
+            const initials = boardMemberInitials(labels.en)
             const photoUrl = row.photoUrl
             return (
               <li key={row.key} className="boardMemberCard">
                 <div className="boardMemberAvatarWrap">
                   {photoUrl ? (
-                    <img src={photoUrl} alt="" className="boardMemberPhoto" />
+                    <img
+                      src={photoUrl}
+                      alt={name}
+                      className="boardMemberPhoto"
+                      style={
+                        row.photoOffsetX != null
+                          ? { transform: `translateX(${row.photoOffsetX}px)` }
+                          : undefined
+                      }
+                    />
                   ) : (
                     <div className="boardMemberAvatarPlaceholder" aria-hidden="true">
                       {initials}

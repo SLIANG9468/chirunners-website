@@ -25,7 +25,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage copy={copy} />} />
         <Route path="/history" element={<HistoryPage copy={copy} />} />
-        <Route path="/board-members" element={<BoardMembersPage copy={copy} />} />
+        <Route
+          path="/board-members"
+          element={<BoardMembersPage copy={copy} language={language} />}
+        />
         <Route path="/local-race-info" element={<Navigate to="/race-volunteer-info" replace />} />
         <Route
           path="/race-volunteer-info"

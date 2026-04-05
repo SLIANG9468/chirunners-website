@@ -115,7 +115,11 @@ export const VOLUNTEER_RACE_ROWS = [
 export const BOARD_MEMBERS = [
   { key: 'kenny', photoUrl: null },
   { key: 'mark', photoUrl: null },
-  { key: 'sherri', photoUrl: null },
+  {
+    key: 'sherri',
+    photoUrl: '/photo/sherri_profile_photo.jpg',
+    photoOffsetX: -2,
+  },
   { key: 'xiaofeng', photoUrl: null },
   { key: 'yuning', photoUrl: null },
   { key: 'bibo', photoUrl: null },
@@ -123,6 +127,19 @@ export const BOARD_MEMBERS = [
   { key: 'wei', photoUrl: null },
   { key: 'danrey', photoUrl: null },
 ]
+
+/** EN/ZH display names for the board page (language toggle picks one line per card). */
+export const BOARD_MEMBER_LABELS = {
+  kenny: { en: 'Kenny Qin', zh: '风城网事' },
+  mark: { en: 'Mark Jiang', zh: '马哥' },
+  sherri: { en: 'Sherri Liang-Zhou', zh: '梁向绍' },
+  xiaofeng: { en: 'Xiaofeng Li', zh: '李晓枫' },
+  yuning: { en: 'Yuning Zu', zh: '祖玉宁' },
+  bibo: { en: 'Bibo Gao', zh: '高碧波' },
+  hanlin: { en: 'Hanlin Nie', zh: '聂汉林' },
+  wei: { en: 'Wei Chen', zh: '陈玮' },
+  danrey: { en: 'Danrey Toth', zh: '丹睿' },
+}
 
 export const CONTENT = {
   en: {
@@ -272,17 +289,6 @@ export const CONTENT = {
       },
     ],
     boardMembersTitle: 'Board Members',
-    boardMemberNames: {
-      kenny: '风城网事Kenny',
-      mark: 'Mark Jiang',
-      sherri: 'Sherri Liang-Zhou',
-      xiaofeng: '李晓枫',
-      yuning: '祖玉宁',
-      bibo: '高碧波',
-      hanlin: '聂汉林',
-      wei: '陈玮',
-      danrey: '丹睿',
-    },
   },
   zh: {
     brand: 'CHI Running Club/芝加哥驰跑团',
@@ -430,17 +436,6 @@ export const CONTENT = {
       },
     ],
     boardMembersTitle: '董事会成员',
-    boardMemberNames: {
-      kenny: '风城网事Kenny',
-      mark: 'Mark Jiang',
-      sherri: 'Sherri Liang-Zhou',
-      xiaofeng: '李晓枫',
-      yuning: '祖玉宁',
-      bibo: '高碧波',
-      hanlin: '聂汉林',
-      wei: '陈玮',
-      danrey: '丹睿',
-    },
   },
 }
 
