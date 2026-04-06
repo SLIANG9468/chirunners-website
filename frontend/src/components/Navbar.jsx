@@ -13,11 +13,25 @@ export default function Navbar({ copy, language, setLanguage }) {
 
   const closeMobileNav = () => setMobileNavOpen(false)
 
+  const brandSlashIdx = copy.brand.indexOf('/')
+  const brandPart1 = brandSlashIdx === -1 ? null : copy.brand.slice(0, brandSlashIdx).trim()
+  const brandPart2 = brandSlashIdx === -1 ? null : copy.brand.slice(brandSlashIdx + 1).trim()
+
   return (
     <header className="siteHeader">
       <div className="siteHeaderTopBar">
         <NavLink to="/" className="brand">
-          {copy.brand}
+          {brandPart1 != null && brandPart2 != null ? (
+            <span className="brand__inner">
+              <span className="brand__part1">{brandPart1}</span>
+              <span className="brand__slash" aria-hidden="true">
+                /
+              </span>
+              <span className="brand__part2">{brandPart2}</span>
+            </span>
+          ) : (
+            copy.brand
+          )}
         </NavLink>
         <div className="siteHeaderActions">
           <div className="languageSwitch" aria-label="Language switch">

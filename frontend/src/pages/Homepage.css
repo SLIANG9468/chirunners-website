@@ -43,6 +43,18 @@
   line-height: 1.25;
 }
 
+/* Header brand: one line with "/" on desktop; two lines, no slash, ≤768px */
+.brand__inner {
+  display: inline;
+  white-space: nowrap;
+}
+
+.brand__part1,
+.brand__part2,
+.brand__slash {
+  display: inline;
+}
+
 .languageSwitch {
   display: flex;
   gap: 8px;
@@ -236,6 +248,24 @@
 }
 
 @media (max-width: 768px) {
+  .brand__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+    gap: 0.15em;
+    line-height: 1.2;
+  }
+
+  .brand__slash {
+    display: none;
+  }
+
+  .brand__part1,
+  .brand__part2 {
+    display: block;
+  }
+
   .navMenuToggle {
     display: inline-flex;
   }
