@@ -129,7 +129,7 @@ export const BOARD_MEMBERS = [
     photoUrl: '/photo/Xiaofeng.png',
   },
   { key: 'yuning', photoUrl: null },
-  { key: 'bibo', photoUrl: null },
+  { key: 'bibo', photoUrl: '/photo/bibo.png' },
   { key: 'hanlin', photoUrl: null },
   { key: 'wei', photoUrl: null },
   { key: 'danrey', photoUrl: null },
@@ -245,7 +245,7 @@ export const CONTENT = {
       {
         heading: '2016 · Photo crew 📸',
         body:
-          'The Zhima (“sesame”) photography team formed to capture every struggle and smile through the lens.',
+          'The Chicago Marathon photography team formed to capture every struggle and smile through the lens.',
       },
       {
         heading: '2022 · Nonprofit registration 🏛️',
@@ -262,7 +262,7 @@ export const CONTENT = {
     marathonWelcome: {
       heroTitle: 'Welcome to the Chicago Marathon',
       heroCourse:
-        'The Chicago course is famously flat and fast, with cheering neighborhoods and a stunning finish in downtown Chicago—one of the Abbott World Marathon Majors.',
+        'The Chicago Marathon course is famously flat and fast, with cheering neighborhoods and a stunning finish in downtown Chicago—one of the Abbott World Marathon Majors.',
       heroClub:
         'CHI Running Club / 芝加哥驰跑团 welcomes you. We hope race weekend feels smooth, joyful, and full of community support.',
       guidesTitle: 'Race weekend guides',
@@ -424,7 +424,7 @@ export const CONTENT = {
       },
       {
         heading: '2016 · 摄影队 📸',
-        body: '芝麻摄影队成立，用镜头记录每一次奋斗与欢笑。',
+        body: '芝加哥马拉松摄影队成立，用镜头记录每一次奋斗与欢笑。',
       },
       {
         heading: '2022 · 非营利注册 🏛️',
@@ -441,7 +441,7 @@ export const CONTENT = {
     marathonWelcome: {
       heroTitle: '欢迎来到芝加哥马拉松',
       heroCourse:
-        '芝马赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
+        '芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
       heroClub:
         '驰跑团 (CHI Running Club) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
       guidesTitle: '赛事周末指南',
