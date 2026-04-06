@@ -121,6 +121,8 @@ export const BOARD_MEMBERS = [
   {
     key: 'sherri',
     photoUrl: '/photo/Sherri.png',
+    photoScale: 1.15,
+    photoOffsetY: 6,
   },
   {
     key: 'xiaofeng',
