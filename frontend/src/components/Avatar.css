@@ -1,0 +1,59 @@
+/**
+ * Circular avatars: object-fit: cover keeps aspect ratio (no stretching).
+ * object-position tweaks framing; optional scale &lt; 1 zooms out (padding inside the ring).
+ */
+.avatar {
+  box-sizing: border-box;
+  width: var(--avatar-size, 112px);
+  height: var(--avatar-size, 112px);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: color-mix(in oklab, var(--bg, #fff), var(--accent-bg, rgba(170, 59, 255, 0.1)) 35%);
+  border: 1px solid var(--border, #e5e4e7);
+}
+
+.avatar--embedded {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.avatar__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--avatar-object-position, center 38%);
+  transform: translate(var(--avatar-tx, 0px), var(--avatar-ty, 0px))
+    scale(var(--avatar-image-scale, 1));
+  transform-origin: center center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.avatar--interactive .avatar__img {
+  transition:
+    filter 0.22s ease,
+    transform 0.22s ease;
+}
+
+.avatar--interactive:hover .avatar__img {
+  filter: brightness(1.06);
+  transform: translate(var(--avatar-tx, 0px), var(--avatar-ty, 0px))
+    scale(calc(var(--avatar-image-scale, 1) * 1.04));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar--interactive .avatar__img {
+    transition: none;
+  }
+
+  .avatar--interactive:hover .avatar__img {
+    filter: none;
+    transform: translate(var(--avatar-tx, 0px), var(--avatar-ty, 0px))
+      scale(var(--avatar-image-scale, 1));
+  }
+}

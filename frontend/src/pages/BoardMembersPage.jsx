@@ -1,3 +1,4 @@
+import Avatar from '../components/Avatar'
 import { BOARD_MEMBERS, BOARD_MEMBER_LABELS } from '../content/siteContent'
 
 function boardMemberInitials(name) {
@@ -33,15 +34,15 @@ export default function BoardMembersPage({ copy, language }) {
               <li key={row.key} className="boardMemberCard">
                 <div className="boardMemberAvatarWrap">
                   {photoUrl ? (
-                    <img
+                    <Avatar
+                      variant="embedded"
                       src={photoUrl}
                       alt={name}
-                      className="boardMemberPhoto"
-                      style={
-                        row.photoOffsetX != null
-                          ? { transform: `translateX(${row.photoOffsetX}px)` }
-                          : undefined
-                      }
+                      interactive
+                      objectPosition={row.avatarObjectPosition}
+                      imageScale={row.photoScale}
+                      translateX={row.photoOffsetX}
+                      translateY={row.photoOffsetY}
                     />
                   ) : (
                     <div className="boardMemberAvatarPlaceholder" aria-hidden="true">

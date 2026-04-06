@@ -70,8 +70,8 @@ export default function Navbar({ copy, language, setLanguage }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/chicago-marathon-faq" onClick={closeMobileNav}>
-              {copy.nav.marathon}
+            <NavLink to="/chicago-marathon" onClick={closeMobileNav}>
+              {copy.nav.marathonWelcome}
             </NavLink>
           </li>
           <li>

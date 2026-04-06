@@ -369,13 +369,6 @@
   background: color-mix(in oklab, var(--bg), var(--accent-bg) 16%);
 }
 
-.boardMemberPhoto {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .boardMemberAvatarPlaceholder {
   width: 100%;
   height: 100%;
@@ -402,6 +395,16 @@
 
 .siteMain {
   padding-top: 26px;
+}
+
+/* Chicago Marathon welcome: tighter gap under nav (~⅓ of default 26px + section padding) */
+main.siteMain--marathonWelcome {
+  padding-top: 9px;
+}
+
+main.siteMain--marathonWelcome .marathonWelcome-heroSection {
+  margin-top: 0;
+  margin-bottom: 28px;
 }
 
 /* Home: short page — avoid large empty band above the footer divider */

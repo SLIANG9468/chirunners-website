@@ -4,6 +4,14 @@ export default {
   darkMode: 'media',
   theme: {
     extend: {
+      colors: {
+        'chi-red': {
+          DEFAULT: '#e11d48',
+          hover: '#be123c',
+          light: '#fff1f2',
+          ring: '#fda4af',
+        },
+      },
       fontFamily: {
         history: [
           'system-ui',

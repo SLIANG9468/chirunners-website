@@ -111,16 +111,21 @@ export const VOLUNTEER_RACE_ROWS = [
   },
 ]
 
-/** Display order for board members page (photos are placeholders until you add `photoUrl`). */
+/**
+ * Board members: optional crop tuning (Avatar component):
+ * `avatarObjectPosition` (e.g. 'center 35%'), `photoScale`, `photoOffsetX`, `photoOffsetY`.
+ */
 export const BOARD_MEMBERS = [
   { key: 'kenny', photoUrl: null },
   { key: 'mark', photoUrl: null },
   {
     key: 'sherri',
-    photoUrl: '/photo/sherri_profile_photo.jpg',
-    photoOffsetX: -2,
+    photoUrl: '/photo/Sherri.png',
   },
-  { key: 'xiaofeng', photoUrl: null },
+  {
+    key: 'xiaofeng',
+    photoUrl: '/photo/Xiaofeng.png',
+  },
   { key: 'yuning', photoUrl: null },
   { key: 'bibo', photoUrl: null },
   { key: 'hanlin', photoUrl: null },
@@ -151,7 +156,7 @@ export const CONTENT = {
       about: 'About',
       history: 'History',
       boardMembers: 'Board Members',
-      marathon: 'Chicago Marathon FAQ',
+      marathonWelcome: 'Chicago Marathon',
       checkins: 'Chi Has Been Here',
       raceVolunteer: 'Race & Volunteer',
       menu: 'Menu',
@@ -192,43 +197,6 @@ export const CONTENT = {
       failedLoad: (status) => `Failed to load photos (HTTP ${status})`,
       failedRefresh: (status) => `Failed to refresh shared order (HTTP ${status})`,
     },
-    marathonTitle: 'Chicago Marathon FAQ',
-    marathonSubtitle:
-      'Registration / Stay / Transportation / Weather & EAS / Expo / Race Day / Spectator Guide / Misc',
-    marathonFaq: [
-      {
-        title: 'Registration',
-        body: 'Chicago Marathon entry is not officially transferable, and race packets cannot be picked up by someone else.',
-      },
-      {
-        title: 'Stay',
-        body: 'Loop is most convenient for race start/finish; airport areas can be more budget-friendly.',
-      },
-      {
-        title: 'Transportation',
-        body: 'Use CTA/Ventra, taxi, or Uber based on your schedule and lodging location.',
-      },
-      {
-        title: 'Weather and EAS',
-        body: 'Race day weather can vary. Follow official EAS color alerts and race updates.',
-      },
-      {
-        title: 'Expo and bib pickup',
-        body: 'Expo is usually at McCormick Place. Follow official guidance for pickup and check-in.',
-      },
-      {
-        title: 'Race day',
-        body: 'Read the Participant Guide carefully and arrive early for security and bag check.',
-      },
-      {
-        title: 'Spectator guide',
-        body: 'Use official/non-official tracking and pick planned points to cheer multiple times.',
-      },
-      {
-        title: 'Misc',
-        body: 'For photos, check official event photography providers and community photo spots.',
-      },
-    ],
     footer: (year) => `© ${year} CHI Running Club`,
     homeHeroErrorLoad: 'Failed to load homepage slideshow photos.',
     homeHeroErrorConnect: 'Could not connect to backend for homepage slideshow.',
@@ -289,6 +257,75 @@ export const CONTENT = {
       },
     ],
     boardMembersTitle: 'Board Members',
+    marathonWelcome: {
+      heroTitle: 'Welcome to the Chicago Marathon',
+      heroCourse:
+        'The Chicago course is famously flat and fast, with cheering neighborhoods and a stunning finish in downtown Chicago—one of the Abbott World Marathon Majors.',
+      heroClub:
+        'CHI Running Club / 芝加哥驰跑团 welcomes you. We hope race weekend feels smooth, joyful, and full of community support.',
+      guidesTitle: 'Race weekend guides',
+      cards: {
+        carbLoading: {
+          title: 'Carb-loading dinner',
+          description:
+            'Meet other runners, share race-week energy, and enjoy a pre-marathon gathering with the club.',
+          cta: 'Open guide',
+        },
+        hotel: {
+          title: 'Hotels & lodging',
+          description:
+            'Ideas for staying near the start, the Loop, transit, and budget-friendly options.',
+          cta: 'Open guide',
+        },
+        transportation: {
+          title: 'Getting around',
+          description:
+            'CTA, Metra, ride-share, and walking tips to help you move confidently on race weekend.',
+          cta: 'Open guide',
+        },
+      },
+      closingTitle: 'Stay connected',
+      closingBody:
+        'Come run with us at a group run, say hello at an event, or cheer each other on along the course. We would love to see you in Chicago beyond race day.',
+      closingSocialIntro: 'Follow CHI Running Club on:',
+      closingSocialLinks: [
+        {
+          label: 'WeChat Official Account',
+          url: null,
+          hint: 'Search “芝加哥驰跑团 ChiRunners” in WeChat to find our official account.',
+        },
+        {
+          label: 'Xiaohongshu',
+          url: null,
+          hint: 'Open the Xiaohongshu app and search for CHI Running Club / 芝加哥驰跑团.',
+        },
+        {
+          label: 'Instagram',
+          url: null,
+          hint: 'Search for CHI Running Club / ChiRunners on Instagram, or add your profile link in siteContent (closingSocialLinks).',
+        },
+      ],
+      closingSocialFootnote:
+        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for ChiRunners / 芝加哥驰跑团. Add Instagram and Xiaohongshu URLs in siteContent when ready.',
+      backToHub: '← Back to Chicago Marathon',
+      topics: {
+        carbLoading: {
+          title: 'Carb-loading dinner',
+          body:
+            'This page is a placeholder. Add venue, timing, RSVP, and photos here. Link back to the volunteer table or your RunSignUp flow when ready.',
+        },
+        hotel: {
+          title: 'Hotels & lodging',
+          body:
+            'This page is a placeholder. Add neighborhood notes, sample hotels, and booking tips for visiting runners.',
+        },
+        transportation: {
+          title: 'Transportation',
+          body:
+            'This page is a placeholder. Add CTA/Ventra basics, airport routes, and race-morning timing tips.',
+        },
+      },
+    },
   },
   zh: {
     brand: 'CHI Running Club/芝加哥驰跑团',
@@ -299,7 +336,7 @@ export const CONTENT = {
       about: '关于我们',
       history: '历史',
       boardMembers: '董事会',
-      marathon: '芝马FAQ',
+      marathonWelcome: '芝加哥马拉松',
       checkins: '全球打卡',
       raceVolunteer: '比赛 & 义工',
       menu: '菜单',
@@ -341,43 +378,6 @@ export const CONTENT = {
       failedLoad: (status) => `加载照片失败（HTTP ${status}）`,
       failedRefresh: (status) => `刷新全局顺序失败（HTTP ${status}）`,
     },
-    marathonTitle: '芝加哥马拉松 FAQ',
-    marathonSubtitle:
-      '报名 / 住宿 / 交通 / 天气与EAS / 博览会与领物 / 比赛日 / 亲友观赛 / 杂项',
-    marathonFaq: [
-      {
-        title: '报名',
-        body: '芝马名额不能官方转让，参赛包不能代领；请以官方报名信息为准。',
-      },
-      {
-        title: '住宿',
-        body: 'Loop 区域离起终点近最方便；机场周边价格相对友好。',
-      },
-      {
-        title: '交通',
-        body: '可根据住处选择 CTA、出租车或网约车，建议提前规划路线。',
-      },
-      {
-        title: '天气和EAS',
-        body: '比赛日天气变化较大，请关注官方 EAS 颜色警报与邮件通知。',
-      },
-      {
-        title: '博览会与领物',
-        body: 'Expo 通常在 McCormick Place，请按官方要求完成领物与签到。',
-      },
-      {
-        title: '比赛日',
-        body: '请仔细阅读 Participant Guide，并预留安检、存包、如厕时间。',
-      },
-      {
-        title: '亲友观赛',
-        body: '可结合官方/非官方追踪方式，提前规划多个观赛加油点。',
-      },
-      {
-        title: '杂项',
-        body: '如需照片，可关注官方摄影合作方及社区摄影点信息。',
-      },
-    ],
     footer: (year) => `© ${year} CHI Running Club`,
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',
@@ -436,6 +436,69 @@ export const CONTENT = {
       },
     ],
     boardMembersTitle: '董事会成员',
+    marathonWelcome: {
+      heroTitle: '欢迎来到芝加哥马拉松',
+      heroCourse:
+        '芝马赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
+      heroClub:
+        '驰跑团 (CHI Running Club) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
+      guidesTitle: '赛事周末指南',
+      cards: {
+        carbLoading: {
+          title: '加碳会',
+          description: '赛前聚餐、认识跑友、感受社区氛围，为比赛日储备好心情与能量。',
+          cta: '查看详情',
+        },
+        hotel: {
+          title: '住宿',
+          description: '起点附近、Loop、交通与性价比方向的住宿思路，帮助你更快安顿下来。',
+          cta: '查看详情',
+        },
+        transportation: {
+          title: '交通出行',
+          description: 'CTA、Metra、网约车与步行等提示，让你在周末移动更安心。',
+          cta: '查看详情',
+        },
+      },
+      closingTitle: '欢迎与我们保持联系',
+      closingBody:
+        '欢迎参加群跑、在活动中打招呼，或在赛道旁互相加油。我们也期待在赛事之外与你相遇在芝加哥。',
+      closingSocialIntro: '关注驰跑团：',
+      closingSocialLinks: [
+        {
+          label: '微信公众号',
+          url: null,
+          hint: '请在微信中搜索「芝加哥驰跑团」或「ChiRunners」关注公众号。',
+        },
+        {
+          label: '小红书',
+          url: null,
+          hint: '打开小红书 App，搜索「芝加哥驰跑团」或「ChiRunners」关注。',
+        },
+        {
+          label: 'Instagram',
+          url: null,
+          hint: '在 Instagram 搜索「ChiRunners」或「芝加哥驰跑团」；有主页链接后可在 siteContent.js 的 closingSocialLinks 中填入 url。',
+        },
+      ],
+      closingSocialFootnote:
+        '提示：电脑上可将鼠标悬停在标签上查看说明；手机上请在微信、小红书 App 内搜索「芝加哥驰跑团」。有小红书或 Instagram 主页链接时，在 siteContent.js 里把对应 url 填上即可变为可点击按钮。',
+      backToHub: '← 返回芝加哥马拉松',
+      topics: {
+        carbLoading: {
+          title: '加碳会',
+          body: '此页面为占位内容，可补充时间地点、报名方式和活动照片等；也可与比赛义工表或 RunSignUp 流程互链。',
+        },
+        hotel: {
+          title: '住宿',
+          body: '此页面为占位内容，可补充区域说明、酒店参考与预订提示，方便来访跑者安排行程。',
+        },
+        transportation: {
+          title: '交通出行',
+          body: '此页面为占位内容，可补充 CTA/Ventra、机场路线与比赛日早晨的时间规划建议。',
+        },
+      },
+    },
   },
 }
 

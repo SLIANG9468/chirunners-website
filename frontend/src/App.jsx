@@ -5,10 +5,11 @@ import { CONTENT, LANGUAGE_STORAGE_KEY, resolveInitialLanguage } from './content
 import './pages/Homepage.css'
 import LandingPage from './pages/LandingPage'
 import VolunteerRaceInfoPage from './pages/VolunteerRaceInfoPage'
-import MarathonFaqPage from './pages/MarathonFaqPage'
 import ChiHasBeenHerePage from './pages/ChiHasBeenHerePage'
 import HistoryPage from './pages/HistoryPage'
 import BoardMembersPage from './pages/BoardMembersPage'
+import ChicagoMarathonWelcomePage from './pages/ChicagoMarathonWelcomePage'
+import ChicagoMarathonTopicPage from './pages/ChicagoMarathonTopicPage'
 
 export default function App() {
   const location = useLocation()
@@ -34,7 +35,23 @@ export default function App() {
           path="/race-volunteer-info"
           element={<VolunteerRaceInfoPage copy={copy} language={language} />}
         />
-        <Route path="/chicago-marathon-faq" element={<MarathonFaqPage copy={copy} />} />
+        <Route path="/chicago-marathon" element={<ChicagoMarathonWelcomePage copy={copy} />} />
+        <Route
+          path="/chicago-marathon/carb-loading-dinner"
+          element={<ChicagoMarathonTopicPage copy={copy} topicId="carbLoading" />}
+        />
+        <Route
+          path="/chicago-marathon/hotel"
+          element={<ChicagoMarathonTopicPage copy={copy} topicId="hotel" />}
+        />
+        <Route
+          path="/chicago-marathon/transportation"
+          element={<ChicagoMarathonTopicPage copy={copy} topicId="transportation" />}
+        />
+        <Route
+          path="/chicago-marathon-faq"
+          element={<Navigate to="/chicago-marathon" replace />}
+        />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
