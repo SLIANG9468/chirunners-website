@@ -128,7 +128,7 @@ export const BOARD_MEMBERS = [
     key: 'xiaofeng',
     photoUrl: '/photo/Xiaofeng.png',
   },
-  { key: 'yuning', photoUrl: null },
+  { key: 'yuning', photoUrl: '/photo/yuning.png' },
   { key: 'bibo', photoUrl: '/photo/bibo.png' },
   { key: 'hanlin', photoUrl: null },
   { key: 'wei', photoUrl: null },
