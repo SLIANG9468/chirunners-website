@@ -10,6 +10,8 @@ import HistoryPage from './pages/HistoryPage'
 import BoardMembersPage from './pages/BoardMembersPage'
 import ChicagoMarathonWelcomePage from './pages/ChicagoMarathonWelcomePage'
 import ChicagoMarathonTopicPage from './pages/ChicagoMarathonTopicPage'
+import CarbLoadingDinnerPage from './pages/CarbLoadingDinnerPage'
+import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 
 export default function App() {
   const location = useLocation()
@@ -38,12 +40,9 @@ export default function App() {
         <Route path="/chicago-marathon" element={<ChicagoMarathonWelcomePage copy={copy} />} />
         <Route
           path="/chicago-marathon/carb-loading-dinner"
-          element={<ChicagoMarathonTopicPage copy={copy} topicId="carbLoading" />}
+          element={<CarbLoadingDinnerPage copy={copy} language={language} />}
         />
-        <Route
-          path="/chicago-marathon/hotel"
-          element={<ChicagoMarathonTopicPage copy={copy} topicId="hotel" />}
-        />
+        <Route path="/chicago-marathon/hotel" element={<ChicagoMarathonHotelPage copy={copy} />} />
         <Route
           path="/chicago-marathon/transportation"
           element={<ChicagoMarathonTopicPage copy={copy} topicId="transportation" />}

@@ -9,7 +9,7 @@ export default function MarathonPreviewCard({ title, description, cta, to }) {
           <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-chi-red transition-all duration-300 group-hover:w-full" />
         </span>
       </h3>
-      <p className="mt-3 flex-1 text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <p className="mt-3 flex-1 whitespace-pre-line text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
         {description}
       </p>
       <Link

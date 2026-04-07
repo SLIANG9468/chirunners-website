@@ -130,9 +130,9 @@ export const BOARD_MEMBERS = [
   },
   { key: 'yuning', photoUrl: '/photo/yuning.png' },
   { key: 'bibo', photoUrl: '/photo/bibo.png' },
-  { key: 'hanlin', photoUrl: null },
-  { key: 'wei', photoUrl: null },
-  { key: 'danrey', photoUrl: null },
+  { key: 'hanlin', photoUrl: '/photo/hanlin.png' },
+  { key: 'wei', photoUrl: '/photo/wei.png' },
+  { key: 'danrey', photoUrl: '/photo/denrey.png' },
 ]
 
 /** EN/ZH display names for the board page (language toggle picks one line per card). */
@@ -310,6 +310,68 @@ export const CONTENT = {
       closingSocialFootnote:
         'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for ChiRunners / 芝加哥驰跑团. Add Instagram and Xiaohongshu URLs in siteContent when ready.',
       backToHub: '← Back to Chicago Marathon',
+      hotelPage: {
+        pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend from $149',
+        pageIntro: '10 min from O’Hare｜30 min race-day shuttle to the start 🚐',
+        hotelSectionTitle: '',
+        hotelName: 'Hyatt Place Chicago O’Hare Airport',
+        hotelNameZh: '',
+        hotelAddressLine1: '',
+        hotelAddressLine2: '6810 Mannheim Rd, Rosemont, IL 60018',
+        hotelRatesTitle: 'CHI Running Club group rates',
+        hotelRates: [
+          { label: 'King bed', value: '$149 / night' },
+          { label: 'Two queen beds', value: '$159 / night' },
+        ],
+        amenityBreakfast: 'Breakfast included',
+        amenityAirportShuttle: 'Complimentary airport shuttle',
+        amenityCancellation: 'Free cancellation with full refund up to 72 hours before arrival',
+        amenityRaceShuttle: 'Race-day express shuttle to the marathon start: $40',
+        ctaBook: 'Book hotel',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+      },
+      carbLoadingPage: {
+        heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
+        heroSubtitle: 'Hosted by CHI Running Club',
+        benefitsSectionTitle: 'Race Ready · Together',
+        benefits: [
+          'Connect with Chinese runners from around the world—swap stories and make new friends.',
+          'Carb-rich dishes to fuel up before race day and support your endurance.',
+          'Chicago Marathon veterans share pre-race tips so you line up with more confidence.',
+          'Celebrate together before the big day and capture memories in photos.',
+        ],
+        eventSectionTitle: 'Event details',
+        eventInfoRows: [
+          {
+            icon: 'calendar',
+            label: 'Date & time',
+            value: 'Friday, October 9, 2026 · 6:00 PM',
+          },
+          {
+            icon: 'mapPin',
+            label: 'Venue',
+            value: 'Hyatt Place Chicago O’Hare Airport',
+          },
+          {
+            icon: 'mapPin',
+            label: 'Address',
+            value: '6810 Mannheim Rd, Rosemont, IL 60018',
+          },
+          { icon: 'banknote', label: 'Dinner price', value: '$30 per person' },
+          {
+            icon: 'ticket',
+            label: 'Registration opens',
+            value: 'September 1, 2026',
+          },
+        ],
+        menuSectionTitle: 'Menu',
+        menuImageAlt: 'Carb-loading dinner menu',
+        hotelPromoMain: 'Hyatt Place O’Hare · CHI Running Club rates from $149/night',
+        hotelPromoCta: 'View hotel details & book',
+        ctaRegister: 'Register now',
+        registerUrl: null,
+        registerDisabledHint: 'Registration for the dinner opens September 1, 2026.',
+      },
       topics: {
         carbLoading: {
           title: 'Carb-loading dinner',
@@ -318,8 +380,7 @@ export const CONTENT = {
         },
         hotel: {
           title: 'Hotels & lodging',
-          body:
-            'This page is a placeholder. Add neighborhood notes, sample hotels, and booking tips for visiting runners.',
+          body: 'Group rates at Hyatt Place O’Hare: rates, perks, and booking link on the hotel page.',
         },
         transportation: {
           title: 'Transportation',
@@ -453,7 +514,7 @@ export const CONTENT = {
         },
         hotel: {
           title: '住宿',
-          description: '起点附近、Loop、交通与性价比方向的住宿思路，帮助你更快安顿下来。',
+          description: '机场附近，比赛日直通车到达芝马起点，优惠价 $149起',
           cta: '查看详情',
         },
         transportation: {
@@ -486,6 +547,68 @@ export const CONTENT = {
       closingSocialFootnote:
         '提示：电脑上可将鼠标悬停在标签上查看说明；手机上请在微信、小红书 App 内搜索「芝加哥驰跑团」。有小红书或 Instagram 主页链接时，在 siteContent.js 里把对应 url 填上即可变为可点击按钮。',
       backToHub: '← 返回芝加哥马拉松',
+      hotelPage: {
+        pageTitle: '芝马酒店超值价 $149起',
+        pageIntro: '驰跑团专属优惠｜机场10分钟｜比赛日轻松30分钟直达起点 🚐',
+        hotelSectionTitle: '芝马酒店超值价 $149起',
+        hotelName: 'Hyatt Place Chicago O’Hare Airport',
+        hotelNameZh: '机场附近',
+        hotelAddressLine1: '机场附近',
+        hotelAddressLine2: '6810 Mannheim Rd, Rosemont, IL 60018',
+        hotelRatesTitle: '驰跑团专属优惠价',
+        hotelRates: [
+          { label: 'King Bed（大床房）', value: '$149 / 晚' },
+          { label: '2 Queen Beds（双大床房）', value: '$159 / 晚' },
+        ],
+        amenityBreakfast: '含早餐',
+        amenityAirportShuttle: '机场免费班车（Shuttle）',
+        amenityCancellation: '入住前 72 小时可免费取消，全额退款',
+        amenityRaceShuttle: '比赛当天提供前往马拉松起点直通车：$40',
+        ctaBook: '预订酒店',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+      },
+      carbLoadingPage: {
+        heroTitleLines: ['芝加哥马拉松加碳会'],
+        heroSubtitle: '芝加哥驰跑团主办',
+        benefitsSectionTitle: '赛前相聚 · 能量集结',
+        benefits: [
+          '全球华人跑者相聚，交流分享，结交友谊',
+          '高碳水美食加能量，赛前补给，提升耐力',
+          '芝加哥马拉松跑友经验传授，赛前指导，增强信心',
+          '挑战前欢聚一堂，摄影留念，记录瞬间',
+        ],
+        eventSectionTitle: '活动信息',
+        eventInfoRows: [
+          {
+            icon: 'calendar',
+            label: '时间',
+            value: '2026 年 10 月 9 日（周五）晚上 6:00',
+          },
+          {
+            icon: 'mapPin',
+            label: '地点',
+            value: 'Hyatt Place Chicago O’Hare Airport（机场附近）',
+          },
+          {
+            icon: 'mapPin',
+            label: '地址',
+            value: '6810 Mannheim Rd, Rosemont, IL 60018',
+          },
+          { icon: 'banknote', label: '费用', value: '$30 / 人' },
+          {
+            icon: 'ticket',
+            label: '报名开始',
+            value: '2026 年 9 月 1 日',
+          },
+        ],
+        menuSectionTitle: '菜单',
+        menuImageAlt: '加碳会菜单',
+        hotelPromoMain: '芝马酒店超值价 $149起',
+        hotelPromoCta: '查看详情与预订',
+        ctaRegister: '立即报名（加碳会）',
+        registerUrl: null,
+        registerDisabledHint: '加碳会报名将于 2026 年 9 月 1 日开放。',
+      },
       topics: {
         carbLoading: {
           title: '加碳会',
@@ -493,7 +616,7 @@ export const CONTENT = {
         },
         hotel: {
           title: '住宿',
-          body: '此页面为占位内容，可补充区域说明、酒店参考与预订提示，方便来访跑者安排行程。',
+          body: '凯悦嘉轩（奥黑尔）驰跑团协议价、礼遇与预订请见住宿专页。',
         },
         transportation: {
           title: '交通出行',
