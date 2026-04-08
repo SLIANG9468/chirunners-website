@@ -116,18 +116,10 @@ export const VOLUNTEER_RACE_ROWS = [
  * `avatarObjectPosition` (e.g. 'center 35%'), `photoScale`, `photoOffsetX`, `photoOffsetY`.
  */
 export const BOARD_MEMBERS = [
-  { key: 'kenny', photoUrl: null },
+  { key: 'kenny', photoUrl: '/photo/kenny.png'},
   { key: 'mark', photoUrl: null },
-  {
-    key: 'sherri',
-    photoUrl: '/photo/Sherri.png',
-    photoScale: 1.15,
-    photoOffsetY: 6,
-  },
-  {
-    key: 'xiaofeng',
-    photoUrl: '/photo/Xiaofeng.png',
-  },
+  { key: 'sherri', photoUrl: '/photo/Sherri.png'},
+  { key: 'xiaofeng', photoUrl: '/photo/Xiaofeng.png'},
   { key: 'yuning', photoUrl: '/photo/yuning.png' },
   { key: 'bibo', photoUrl: '/photo/bibo.png' },
   { key: 'hanlin', photoUrl: '/photo/hanlin.png' },
@@ -139,7 +131,7 @@ export const BOARD_MEMBERS = [
 export const BOARD_MEMBER_LABELS = {
   kenny: { en: 'Kenny Qin', zh: '风城网事' },
   mark: { en: 'Mark Jiang', zh: '马哥' },
-  sherri: { en: 'Sherri Liang-Zhou', zh: '梁向绍' },
+  sherri: { en: 'Sherri Liang-Zhou', zh: 'Sherri 梁' },
   xiaofeng: { en: 'Xiaofeng Li', zh: '李晓枫' },
   yuning: { en: 'Yuning Zu', zh: '祖玉宁' },
   bibo: { en: 'Bibo Gao', zh: '高碧波' },

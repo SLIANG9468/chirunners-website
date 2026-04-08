@@ -44,7 +44,7 @@ export default function Avatar({
 
   return (
     <div className={rootClass} style={style}>
-      <img src={src} alt={alt} className="avatar__img" decoding="async" />
+      <img key={src} src={src} alt={alt} className="avatar__img" decoding="async" />
     </div>
   )
 }
