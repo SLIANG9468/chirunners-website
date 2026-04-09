@@ -131,7 +131,7 @@ export const BOARD_MEMBERS = [
 export const BOARD_MEMBER_LABELS = {
   kenny: { en: 'Kenny Qin', zh: '风城网事' },
   mark: { en: 'Mark Jiang', zh: '蒋虹亮' },
-  sherri: { en: 'Sherri Liang-Zhou', zh: 'Sherri 梁' },
+  sherri: { en: 'Sherri Liang-Zhou', zh: '梁向绍' },
   xiaofeng: { en: 'Xiaofeng Li', zh: '李晓枫' },
   yuning: { en: 'Yuning Zu', zh: '祖玉宁' },
   bibo: { en: 'Bibo Gao', zh: '高碧波' },
@@ -157,7 +157,7 @@ export const CONTENT = {
       menuClose: 'Close menu',
     },
     aboutParagraphs: [
-      'The CHI Running Club (commonly known as "ChiRunners") is a 501(c)(3) nonprofit organization formed by Chinese American running enthusiasts in the greater Chicago area. As a member of the Road Runners Club of America (RRCA), we are committed to promoting a healthy lifestyle and building a supportive running community.',
+      'CHI Running Club (ChiRunners) is a 501(c)(3) nonprofit formed by Chinese American running enthusiasts in the greater Chicago area. As a member of the Road Runners Club of America (RRCA), we promote healthy living through running and build a supportive running community.',
     ],
     routesTitle: "CHI Running Club's Regular Routes",
     routesParagraph:
@@ -398,9 +398,7 @@ export const CONTENT = {
       menuClose: '关闭菜单',
     },
     aboutParagraphs: [
-      '驰跑团（CHI Running Club/ChiRunners）是由大芝加哥地区的华人跑步爱好者组成的非盈利组织。我们致力于通过跑步促进健康的生活方式，培养社区意识。',
-      '我们每周都会在芝加哥及其周边的多个地点组织群跑活动，欢迎各级别的跑者参与。除了每周群跑，我们还会在全年举办特别活动和社交聚会。',
-      '联系我们：info@chirunners.org',
+      '驰跑团（ CHI Running Club / ChiRunners ）是由大芝加哥地区华人跑步爱好者组成的501(c)(3) 非营利组织。作为美国路跑俱乐部协会（RRCA）的成员，我们致力于通过跑步促进健康的生活方式，建立一个互相支持的跑步社区。',
     ],
     routesTitle: '驰跑团常规路线',
     routesParagraph:
