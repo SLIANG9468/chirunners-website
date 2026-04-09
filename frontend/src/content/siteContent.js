@@ -117,7 +117,7 @@ export const VOLUNTEER_RACE_ROWS = [
  */
 export const BOARD_MEMBERS = [
   { key: 'kenny', photoUrl: '/photo/kenny.png'},
-  { key: 'mark', photoUrl: null },
+  { key: 'mark', photoUrl: '/photo/mark.png' },
   { key: 'sherri', photoUrl: '/photo/Sherri.png'},
   { key: 'xiaofeng', photoUrl: '/photo/Xiaofeng.png'},
   { key: 'yuning', photoUrl: '/photo/yuning.png' },
@@ -130,7 +130,7 @@ export const BOARD_MEMBERS = [
 /** EN/ZH display names for the board page (language toggle picks one line per card). */
 export const BOARD_MEMBER_LABELS = {
   kenny: { en: 'Kenny Qin', zh: '风城网事' },
-  mark: { en: 'Mark Jiang', zh: '马哥' },
+  mark: { en: 'Mark Jiang', zh: '蒋虹亮' },
   sherri: { en: 'Sherri Liang-Zhou', zh: 'Sherri 梁' },
   xiaofeng: { en: 'Xiaofeng Li', zh: '李晓枫' },
   yuning: { en: 'Yuning Zu', zh: '祖玉宁' },
@@ -494,7 +494,7 @@ export const CONTENT = {
     marathonWelcome: {
       heroTitle: '欢迎来到芝加哥马拉松',
       heroCourse:
-        '芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
+        '市中心芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥，也是世界马拉松大满贯赛事之一。',
       heroClub:
         '驰跑团 (CHI Running Club) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
       guidesTitle: '赛事周末指南',
