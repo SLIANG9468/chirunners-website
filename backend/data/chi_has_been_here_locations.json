@@ -1,5 +1,20 @@
 [
   {
+    "id": "patagonia-chile",
+    "city": "Patagonia",
+    "country": "Chile",
+    "lat": -50.942,
+    "lng": -72.967,
+    "visits": [
+      {
+        "date": "2026-04-10",
+        "filename": "Chile_章运2.jpg",
+        "runnerName": "章运，阮白",
+        "placeNote": "智利:巴达哥尼亚的百内国家公园三塔峰前"
+      }
+    ]
+  },
+  {
     "id": "chamonix-france",
     "city": "Chamonix",
     "country": "France",
@@ -8,9 +23,9 @@
     "visits": [
       {
         "date": "",
-        "type": "travel",
         "filename": "Chamonix_France_Danrey.jpg",
-        "runnerName": "Danrey"
+        "runnerName": "丹睿（Danrey）",
+        "placeNote": "法国:UTMB"
       }
     ]
   },
@@ -23,9 +38,9 @@
     "visits": [
       {
         "date": "2026-03-01",
-        "type": "race",
         "filename": "paris-1.JPG",
-        "runnerName": "邱星"
+        "runnerName": "邱星",
+        "placeNote": "法国:巴黎半马"
       }
     ]
   },
@@ -38,9 +53,39 @@
     "visits": [
       {
         "date": "",
-        "type": "travel",
         "filename": "Kathmandu_Nepal_Danrey.JPG",
-        "runnerName": "Danrey"
+        "runnerName": "丹睿（Danrey）",
+        "placeNote": "尼泊尔境内的喜马拉雅山路上"
+      }
+    ]
+  },
+  {
+    "id": "machu-picchu-peru",
+    "city": "Machu Picchu",
+    "country": "Peru",
+    "lat": -13.1631,
+    "lng": -72.545,
+    "visits": [
+      {
+        "date": "2026-04-05",
+        "filename": "Machu Picchu_puru_yun.jpg",
+        "runnerName": "章运，阮白",
+        "placeNote": "秘鲁:马丘比丘"
+      }
+    ]
+  },
+  {
+    "id": "maras-peru",
+    "city": "Maras",
+    "country": "Peru",
+    "lat": -13.3306,
+    "lng": -72.0862,
+    "visits": [
+      {
+        "date": "2026-04-05",
+        "filename": "Maras_Salt_Ponds_yun.jpg",
+        "runnerName": "章运，阮白",
+        "placeNote": "秘鲁:圣谷盐田"
       }
     ]
   },
@@ -53,10 +98,90 @@
     "visits": [
       {
         "date": "2026-04-01",
-        "type": "travel",
         "filename": "Peru_章运.jpg",
-        "runnerName": "章运",
-        "placeNote": "Amazon Rainforest"
+        "runnerName": "章运，阮白",
+        "placeNote": "秘鲁:Amazon Rainforest"
+      }
+    ]
+  },
+  {
+    "id": "uhuru-peak-tanzania",
+    "city": "Uhuru Peak",
+    "country": "Tanzania",
+    "lat": -3.0758,
+    "lng": 37.3553,
+    "visits": [
+      {
+        "date": "",
+        "filename": "Uhuru Peak_zhang.jpg",
+        "runnerName": "张云和",
+        "placeNote": "非洲之巅，坦桑尼亚"
+      }
+    ]
+  },
+  {
+    "id": "boston-united-states",
+    "city": "Boston",
+    "country": "United States",
+    "lat": 42.3499,
+    "lng": -71.0822,
+    "visits": [
+      {
+        "date": "2026-04-20",
+        "filename": "Chi Boston.jpg",
+        "runnerName": "海听，丹睿，杜哥，聂汉林",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_Dan_Map.jpg",
+        "runnerName": "丹睿",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_Du_Map.jpg",
+        "runnerName": "杜哥",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_Gao_Map.jpg",
+        "runnerName": "高碧波",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_Nie_Map.jpg",
+        "runnerName": "聂汉林",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_You_MAP.jpg",
+        "runnerName": "海听",
+        "placeNote": "美国:波士顿马拉松"
+      },
+      {
+        "date": "2026-04-20",
+        "filename": "Boston_Li_Map.jpg",
+        "runnerName": "李绍润",
+        "placeNote": "美国:波士顿马拉松"
+      }
+    ]
+  },
+  {
+    "id": "milwaukee-united-states",
+    "city": "Milwaukee",
+    "country": "United States",
+    "lat": 43.0389,
+    "lng": -87.9065,
+    "visits": [
+      {
+        "date": "2026-04-11",
+        "filename": "Miwaukee_pacer.jpg",
+        "runnerName": "高碧波，聂汉林",
+        "placeNote": "美国:密尔沃基马拉松 兔子"
       }
     ]
   }

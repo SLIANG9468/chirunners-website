@@ -195,7 +195,7 @@ export const CONTENT = {
     homeHeroErrorLoad: 'Failed to load homepage slideshow photos.',
     homeHeroErrorConnect: 'Could not connect to backend for homepage slideshow.',
     checkinsTitle: 'Chi Has Been Here',
-    checkinsSubtitle: 'Click a red flag to view city photos.',
+    checkinsSubtitle: 'Click a red flag to view photos.',
     checkinsLoading: 'Loading map locations...',
     checkinsNoData: 'No geocoded locations yet. Run geocode refresh first.',
     checkinsMapError: 'Could not load location data from backend.',
@@ -291,16 +291,21 @@ export const CONTENT = {
         {
           label: 'Xiaohongshu',
           url: null,
-          hint: 'Open the Xiaohongshu app and search for CHI Running Club / 芝加哥驰跑团.',
+          hint: 'Open the Xiaohongshu app and search for 驰跑团.',
         },
         {
           label: 'Instagram',
-          url: null,
-          hint: 'Search for CHI Running Club / ChiRunners on Instagram, or add your profile link in siteContent (closingSocialLinks).',
+          url: 'https://www.instagram.com/chi_runners/',
+          hint: 'Search for Chi_Runners on Instagram.',
+        },
+        {
+          label: 'YouTube',
+          url: 'https://www.youtube.com/@chirunners1829',
+          hint: 'Subscribe to CHI Running Club on YouTube.',
         },
       ],
       closingSocialFootnote:
-        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for ChiRunners / 芝加哥驰跑团. Add Instagram and Xiaohongshu URLs in siteContent when ready.',
+        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for 驰跑团. YouTube and Instagram open in your browser.',
       backToHub: '← Back to Chicago Marathon',
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend from $149',
@@ -492,7 +497,7 @@ export const CONTENT = {
     marathonWelcome: {
       heroTitle: '欢迎来到芝加哥马拉松',
       heroCourse:
-        '市中心芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，终点位于芝加哥，也是世界马拉松大满贯赛事之一。',
+        '芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，始终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
       heroClub:
         '驰跑团 (CHI Running Club) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
       guidesTitle: '赛事周末指南',
@@ -530,12 +535,17 @@ export const CONTENT = {
         },
         {
           label: 'Instagram',
-          url: null,
-          hint: '在 Instagram 搜索「ChiRunners」或「芝加哥驰跑团」；有主页链接后可在 siteContent.js 的 closingSocialLinks 中填入 url。',
+          url: 'https://www.instagram.com/chi_runners/',
+          hint: '在 Instagram 也可搜索「ChiRunners」或「芝加哥驰跑团」。',
+        },
+        {
+          label: 'YouTube',
+          url: 'https://www.youtube.com/@chirunners1829',
+          hint: '在 YouTube 关注驰跑团频道。',
         },
       ],
       closingSocialFootnote:
-        '提示：电脑上可将鼠标悬停在标签上查看说明；手机上请在微信、小红书 App 内搜索「芝加哥驰跑团」。有小红书或 Instagram 主页链接时，在 siteContent.js 里把对应 url 填上即可变为可点击按钮。',
+        '提示：微信、小红书请在 App 内搜索「驰跑团」；YouTube、Instagram 在浏览器打开。',
       backToHub: '← 返回芝加哥马拉松',
       hotelPage: {
         pageTitle: '芝马酒店超值价 $149起',

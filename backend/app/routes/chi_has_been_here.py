@@ -89,7 +89,6 @@ def _normalize_source_to_locations(source_rows: list[dict]) -> list[dict]:
         runner_name = row.get("runnerName", "")
         visit = {
             "date": row.get("date", ""),
-            "type": row.get("type", ""),
             "filename": row.get("filename", ""),
             "runnerName": runner_name,
         }
@@ -161,7 +160,6 @@ def location_photos(location_id: str):
             continue
         photo = {
             "date": visit.get("date", ""),
-            "type": visit.get("type", ""),
             "filename": filename,
             # Return only one name field to the frontend.
             "runnerName": visit.get("runnerName", ""),

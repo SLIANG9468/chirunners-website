@@ -56,6 +56,7 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title={item.hint || undefined}
                     className="inline-flex rounded-full border-2 border-chi-red bg-white px-4 py-2 text-sm font-semibold text-chi-red transition-all duration-200 hover:bg-chi-red hover:text-white dark:bg-neutral-900 dark:text-chi-red-light dark:hover:bg-chi-red dark:hover:text-white"
                   >
                     {item.label}
