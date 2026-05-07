@@ -439,8 +439,8 @@ export const CONTENT = {
     footer: (year) => `© ${year} CHI Running Club`,
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',
-    checkinsTitle: '全球打卡',
-    checkinsSubtitle: '点击红色旗标查看该城市照片。',
+    checkinsTitle: '跑到哪儿，驰到哪儿',
+    checkinsSubtitle: '点击红色旗标查看打卡照片。',
     checkinsLoading: '正在加载地图点位...',
     checkinsNoData: '暂无已编码坐标数据，请先执行 geocode refresh。',
     checkinsMapError: '无法从后端加载地图数据。',
@@ -485,7 +485,7 @@ export const CONTENT = {
       {
         heading: '2022 · 非营利注册 🏛️',
         body:
-          '驰跑团正式在队长白雪峰的带领下，注册为非营利组织（501(c)(3)），进入规范发展阶段。',
+          '驰跑团在队长白雪峰的带领下，正式注册为非营利组织（501(c)(3)），进入规范发展阶段。',
       },
       {
         heading: '2024 · 接待全球华人跑者 🌍',
