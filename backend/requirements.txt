@@ -1,6 +1,8 @@
-Flask
+Flask>=3.0.0
 flask-cors
 gunicorn
 requests
 python-dotenv
-
+Flask-SQLAlchemy>=3.1.0
+Flask-Migrate>=4.0.0
+psycopg2-binary

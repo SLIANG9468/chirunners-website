@@ -10,6 +10,13 @@ const redFlagIcon = divIcon({
   iconAnchor: [12, 24],
 })
 
+function pickLocalized(enRaw, zhRaw, language) {
+  const en = typeof enRaw === 'string' ? enRaw.trim() : ''
+  const zh = typeof zhRaw === 'string' ? zhRaw.trim() : ''
+  if (language === 'zh') return zh || en
+  return en || zh
+}
+
 function formatVisitDate(raw, language) {
   if (!raw || typeof raw !== 'string') return ''
   const trimmed = raw.trim()
@@ -84,9 +91,23 @@ function CityPopup({ location, copy, language }) {
   }, [photos])
 
   const currentPhoto = photos[currentIdx]
-  const runnerName = currentPhoto ? String(currentPhoto.runnerName || '').trim() : ''
+  const runnerName =
+    currentPhoto != null
+      ? pickLocalized(
+          currentPhoto.runnerNameEn ?? currentPhoto.runnerName,
+          currentPhoto.runnerNameZh ?? currentPhoto.runnerName,
+          language,
+        )
+      : ''
   const visitDate = currentPhoto ? formatVisitDate(currentPhoto.date, language) : ''
-  const placeNote = currentPhoto ? String(currentPhoto.placeNote || '').trim() : ''
+  const placeNote =
+    currentPhoto != null
+      ? pickLocalized(
+          currentPhoto.placeNoteEn ?? currentPhoto.placeNote,
+          currentPhoto.placeNoteZh ?? currentPhoto.placeNote,
+          language,
+        )
+      : ''
 
   const imageAlt = currentPhoto
     ? [location.city, runnerName, visitDate].filter(Boolean).join(' — ')
