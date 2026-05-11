@@ -754,7 +754,9 @@ a.raceVolunteerButton:hover {
 }
 
 .mapWrapper .cityPopupImage {
-  max-height: 360px;
+  max-height: min(58vh, 520px);
+  width: 100%;
+  height: auto;
 }
 
 .cityFlagIcon {
@@ -776,8 +778,10 @@ a.raceVolunteerButton:hover {
 }
 
 .leaflet-popup.chiVisitPopup .leaflet-popup-content {
-  margin: 14px 18px;
+  margin: 10px 12px;
   color: #111827;
+  /* Leaflet caps width from Popup maxWidth; allow tall photos without extra side gutter. */
+  box-sizing: border-box;
 }
 
 .leaflet-popup.chiVisitPopup a {
@@ -804,17 +808,19 @@ a.raceVolunteerButton:hover {
 .cityPhotoFrame {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
-  background: color-mix(in oklab, var(--bg), black 12%);
+  /* Light letterboxing so unused bands are not mistaken for a broken image */
+  background: #e8eaef;
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .cityPopupImage {
   width: 100%;
   max-width: none;
-  max-height: 440px;
+  max-height: min(58vh, 520px);
   object-fit: contain;
   display: block;
   margin: 0;
@@ -870,7 +876,7 @@ a.raceVolunteerButton:hover {
 
   .mapWrapper .cityPopupImage {
     max-width: 100%;
-    max-height: 280px;
+    max-height: min(42vh, 380px);
   }
 }
 

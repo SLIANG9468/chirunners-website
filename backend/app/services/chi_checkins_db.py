@@ -1,5 +1,6 @@
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
 
@@ -9,6 +10,7 @@ from sqlalchemy.orm import Session
 
 from app.extensions import db
 from app.models import City, Visit
+from app.services.smugmug_api import resolve_smug_display_url
 
 __all__ = [
     "slugify_city_country",
@@ -21,6 +23,7 @@ __all__ = [
     "serialize_visit_photo",
     "parse_visit_date_field",
     "read_json_optional",
+    "warm_smugmug_cache_for_all_visits",
 ]
 
 
@@ -89,6 +92,17 @@ def normalize_source_rows(source_rows: list[dict]) -> list[dict]:
         place_note = row.get("placeNote", "")
         if isinstance(place_note, str) and place_note.strip():
             visit_dict["placeNote"] = place_note.strip()
+
+        for opt_key in (
+            "smugmugImageKey",
+            "runnerNameEn",
+            "runnerNameZh",
+            "placeNoteEn",
+            "placeNoteZh",
+        ):
+            v = row.get(opt_key)
+            if isinstance(v, str) and v.strip():
+                visit_dict[opt_key] = v.strip()
 
         by_location[location_id]["visits"].append(visit_dict)
 
@@ -196,6 +210,13 @@ def write_normalized_locations_to_db(normalized: list[dict]) -> None:
     db.session.commit()
 
 
+def _optional_zh(value) -> str | None:
+    if value is None:
+        return None
+    s = str(value).strip()
+    return s or None
+
+
 def locations_summary_from_db() -> tuple[list[dict], int]:
     rows = (
         db.session.query(City)
@@ -212,6 +233,8 @@ def locations_summary_from_db() -> tuple[list[dict], int]:
                 "id": city.slug,
                 "city": city.city_en,
                 "country": city.country_en,
+                "cityZh": _optional_zh(city.city_zh),
+                "countryZh": _optional_zh(city.country_zh),
                 "lat": city.lat,
                 "lng": city.lng,
                 "photoCount": n_visits,
@@ -220,7 +243,7 @@ def locations_summary_from_db() -> tuple[list[dict], int]:
     return summary, len(summary)
 
 
-def serialize_visit_photo(city_slug: str, visit: Visit) -> dict:
+def serialize_visit_photo(visit: Visit, flask_app=None) -> dict:
     zh_rn = (visit.runner_name_zh or "").strip()
     en_rn = (visit.runner_name_en or "").strip()
     zh_pn = (visit.place_note_zh or "").strip()
@@ -236,7 +259,6 @@ def serialize_visit_photo(city_slug: str, visit: Visit) -> dict:
         "placeNoteEn": en_pn if en_pn else None,
         "placeNoteZh": zh_pn if zh_pn else None,
         "runnerName": fallback_runner,
-        "url": f"/media/chi-has-been-here/{city_slug}/{visit.filename}",
     }
     if zh_pn:
         photo["placeNote"] = zh_pn
@@ -245,23 +267,93 @@ def serialize_visit_photo(city_slug: str, visit: Visit) -> dict:
 
     smug_key = visit.smugmug_image_key
     if isinstance(smug_key, str) and smug_key.strip():
-        photo["smugmugImageKey"] = smug_key.strip()
+        sk = smug_key.strip()
+        photo["smugmugImageKey"] = sk
+        if flask_app is not None:
+            resolved = resolve_smug_display_url(flask_app, sk)
+            if resolved:
+                photo["url"] = resolved
+                photo["smugmugUrlResolved"] = True
 
     return photo
 
 
-def photos_payload_for_city(location_id: str) -> dict | None:
+def _prefetch_smug_urls_for_visits(flask_app, visits: list) -> None:
+    """Warm URL cache in parallel: each key first hits SmugMug HTML once; serial was slow for many visits."""
+    seen: set[str] = set()
+    keys: list[str] = []
+    for v in visits:
+        sk = getattr(v, "smugmug_image_key", None)
+        if not isinstance(sk, str) or not sk.strip():
+            continue
+        k = sk.strip()
+        if k not in seen:
+            seen.add(k)
+            keys.append(k)
+    if not keys:
+        return
+    max_workers = min(8, len(keys))
+
+    def _one(key: str) -> None:
+        resolve_smug_display_url(flask_app, key)
+
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        pool.map(_one, keys)
+
+
+def warm_smugmug_cache_for_all_visits(flask_app) -> None:
+    """Resolve og:image for every distinct Smug key in DB (parallel); for startup background warm."""
+    visits = (
+        db.session.query(Visit)
+        .filter(Visit.smugmug_image_key.isnot(None))
+        .filter(Visit.smugmug_image_key != "")
+        .all()
+    )
+    log = getattr(flask_app, "logger", None)
+    if log:
+        seen: set[str] = set()
+        for v in visits:
+            sk = getattr(v, "smugmug_image_key", None)
+            if isinstance(sk, str) and sk.strip():
+                seen.add(sk.strip())
+        log.info(
+            "SmugMug cache warm: %s unique keys from %s visits",
+            len(seen),
+            len(visits),
+        )
+    _prefetch_smug_urls_for_visits(flask_app, visits)
+
+
+def photos_payload_for_city(location_id: str, flask_app=None) -> dict | None:
     city = db.session.query(City).filter_by(slug=location_id).one_or_none()
     if not city:
         return None
 
-    photos = [serialize_visit_photo(city.slug, v) for v in city.visits]
+    if flask_app is not None and city.visits:
+        _prefetch_smug_urls_for_visits(flask_app, city.visits)
+    photos = [serialize_visit_photo(v, flask_app) for v in city.visits]
+    nick = ""
+    if flask_app is not None:
+        nick = (flask_app.config.get("SMUGMUG_NICKNAME") or "").strip()
+    any_key = any(
+        isinstance(v.smugmug_image_key, str) and v.smugmug_image_key.strip() for v in city.visits
+    )
+    any_url = any(bool(p.get("url")) for p in photos)
+    image_url_hint = None
+    if city.visits and not any_url:
+        if not nick:
+            image_url_hint = "missing_nickname"
+        elif not any_key:
+            image_url_hint = "missing_smugmug_keys"
     return {
         "id": city.slug,
         "city": city.city_en,
         "country": city.country_en,
+        "cityZh": _optional_zh(city.city_zh),
+        "countryZh": _optional_zh(city.country_zh),
         "photos": photos,
         "count": len(photos),
+        "imageUrlHint": image_url_hint,
     }
 
 

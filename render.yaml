@@ -6,7 +6,7 @@
 # Applying this blueprint creates a Postgres instance and wires DATABASE_URL into the API.
 # If you already have a database on Render, remove the block below and set DATABASE_URL manually.
 #
-# After first API deploy with an empty Postgres, open Render Shell (rootDir backend) and run once:
+# Chi data lives in Postgres. Optional one-time bootstrap from repo JSON:
 #   flask seed-chi-from-json
 
 databases:
@@ -32,8 +32,14 @@ services:
           name: chirunners-db
           property: connectionString
       - key: PYTHON_VERSION
-        value: '3.12.6'
+        value: '3.12.8'
       - key: MAPBOX_ACCESS_TOKEN
+        sync: false
+      - key: SMUGMUG_NICKNAME
+        sync: false
+      - key: SMUGMUG_GALLERY_PATH_CHI
+        sync: false
+      - key: SMUGMUG_IMAGE_URL_CACHE_SECONDS
         sync: false
       - key: CORS_ORIGINS
         sync: false

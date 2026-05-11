@@ -1,4 +1,6 @@
+import logging
 import os
+import threading
 from pathlib import Path
 
 import click
@@ -31,7 +33,7 @@ def _register_cli_commands(flask_app: Flask) -> None:
     @flask_app.cli.command("seed-chi-from-json")
     @click.option("--force/--no-force", default=False)
     def seed_chi_from_json(force: bool) -> None:
-        """Load city + visit rows from chi_has_been_here_locations.json (see config key)."""
+        """Optional legacy bootstrap: load cities/visits from CHI_HAS_BEEN_HERE_LOCATIONS_FILE into Postgres."""
 
         from pathlib import Path
 
@@ -59,14 +61,12 @@ def _register_cli_commands(flask_app: Flask) -> None:
             f"{len(normalized)} cities, {visit_total} visits."
         )
 
-
 def create_app() -> Flask:
     backend_dir = Path(__file__).resolve().parents[1]
     load_dotenv(backend_dir / ".env")
 
     flask_app = Flask(__name__)
     default_home_hero_photo_dir = backend_dir / "photos" / "home-hero"
-    default_chi_photo_dir = backend_dir / "photos" / "chi-has-been-here"
     default_chi_source_file = backend_dir / "data" / "chi_has_been_here_source.json"
     default_chi_locations_file = backend_dir / "data" / "chi_has_been_here_locations.json"
     default_volunteer_race_albums_dir = backend_dir / "photos" / "volunteer-race-albums"
@@ -76,9 +76,7 @@ def create_app() -> Flask:
     flask_app.config["HOME_HERO_PHOTO_DIR"] = os.getenv(
         "HOME_HERO_PHOTO_DIR", str(default_home_hero_photo_dir)
     )
-    flask_app.config["CHI_HAS_BEEN_HERE_PHOTO_DIR"] = os.getenv(
-        "CHI_HAS_BEEN_HERE_PHOTO_DIR", str(default_chi_photo_dir)
-    )
+    # Legacy bootstrap / geocode+locations refresh only; live site reads cities/visits from Postgres.
     flask_app.config["CHI_HAS_BEEN_HERE_SOURCE_FILE"] = os.getenv(
         "CHI_HAS_BEEN_HERE_SOURCE_FILE", str(default_chi_source_file)
     )
@@ -86,6 +84,16 @@ def create_app() -> Flask:
         "CHI_HAS_BEEN_HERE_LOCATIONS_FILE", str(default_chi_locations_file)
     )
     flask_app.config["MAPBOX_ACCESS_TOKEN"] = os.getenv("MAPBOX_ACCESS_TOKEN", "")
+    flask_app.config["SMUGMUG_NICKNAME"] = os.getenv("SMUGMUG_NICKNAME", "").strip()
+    _smug_ttl = os.getenv("SMUGMUG_IMAGE_URL_CACHE_SECONDS", "").strip()
+    flask_app.config["SMUGMUG_IMAGE_URL_CACHE_SECONDS"] = _smug_ttl or None
+    # Optional override; default in smugmug_api is Website/ChiHasBeenHere.
+    _smug_folder = (
+        os.getenv("SMUGMUG_GALLERY_FOLDER_PATH", "").strip()
+        or os.getenv("SMUGMUG_GALLERY_PATH_CHI", "").strip()
+        or os.getenv("SMUGMUG_GALLERY_PATH", "").strip()
+    )
+    flask_app.config["SMUGMUG_GALLERY_FOLDER_PATH"] = _smug_folder
     flask_app.config["VOLUNTEER_RACE_ALBUMS_DIR"] = os.getenv(
         "VOLUNTEER_RACE_ALBUMS_DIR", str(default_volunteer_race_albums_dir)
     )
@@ -114,4 +122,15 @@ def create_app() -> Flask:
     flask_app.register_blueprint(home_hero_bp)
     flask_app.register_blueprint(chi_has_been_here_bp)
     flask_app.register_blueprint(volunteer_race_albums_bp)
+
+    def _warm_smugmug_cache_worker() -> None:
+        try:
+            with flask_app.app_context():
+                from app.services.chi_checkins_db import warm_smugmug_cache_for_all_visits
+
+                warm_smugmug_cache_for_all_visits(flask_app)
+        except Exception:
+            logging.getLogger(__name__).exception("SmugMug cache warm failed")
+
+    threading.Thread(target=_warm_smugmug_cache_worker, daemon=True).start()
     return flask_app

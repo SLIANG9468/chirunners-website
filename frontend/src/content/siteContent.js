@@ -201,6 +201,11 @@ export const CONTENT = {
     checkinsMapError: 'Could not load location data from backend.',
     checkinsPopupLoading: 'Loading photos...',
     checkinsPopupNoPhotos: 'No photos found for this city.',
+    checkinsPopupNoSmugNickname:
+      'Visits exist but SMUGMUG_NICKNAME is not set on the API (e.g. in Render environment or backend .env).',
+    checkinsPopupNoSmugKeys:
+      'Visits exist in the database but no SmugMug photo id is stored yet. Set each visit’s smugmug_image_key to the image id from SmugMug (the i-… segment in the photo URL).',
+    checkinsPopupNoImageUrl: 'Visits exist but no image URL could be built.',
     checkinsPopupPrev: 'Prev',
     checkinsPopupNext: 'Next',
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,
@@ -446,6 +451,11 @@ export const CONTENT = {
     checkinsMapError: '无法从后端加载地图数据。',
     checkinsPopupLoading: '正在加载照片...',
     checkinsPopupNoPhotos: '该城市暂无照片。',
+    checkinsPopupNoSmugNickname:
+      '有打卡记录，但 API 未配置 SMUGMUG_NICKNAME（请在 Render 环境变量或后端 .env 中设置）。',
+    checkinsPopupNoSmugKeys:
+      '数据库中有打卡记录，但尚未写入 SmugMug 图片 id。请将每条 visit 的 smugmug_image_key 设为照片链接里的 i-… 片段。',
+    checkinsPopupNoImageUrl: '有打卡记录，但无法生成图片链接。',
     checkinsPopupPrev: '上一张',
     checkinsPopupNext: '下一张',
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,

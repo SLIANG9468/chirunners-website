@@ -17,6 +17,12 @@ function pickLocalized(enRaw, zhRaw, language) {
   return en || zh
 }
 
+function locationCityCountry(location, language) {
+  const city = pickLocalized(location.city, location.cityZh, language)
+  const country = pickLocalized(location.country, location.countryZh, language)
+  return `${city}, ${country}`
+}
+
 function formatVisitDate(raw, language) {
   if (!raw || typeof raw !== 'string') return ''
   const trimmed = raw.trim()
@@ -57,11 +63,28 @@ function CityPopup({ location, copy, language }) {
         }
 
         const data = await response.json()
-        const loadedPhotos = (data.photos || []).map((item) => ({
-          ...item,
-          url: absMediaUrl(item.url),
-        }))
+        const raw = data.photos || []
+        const loadedPhotos = raw
+          .map((item) => ({
+            ...item,
+            url: absMediaUrl(item.url),
+          }))
+          .filter((item) => Boolean(item.url))
         if (isMounted) {
+          if (raw.length === 0) {
+            setError(copy.checkinsPopupNoPhotos)
+          } else if (loadedPhotos.length === 0) {
+            const hint = data.imageUrlHint
+            if (hint === 'missing_nickname') {
+              setError(copy.checkinsPopupNoSmugNickname)
+            } else if (hint === 'missing_smugmug_keys') {
+              setError(copy.checkinsPopupNoSmugKeys)
+            } else {
+              setError(copy.checkinsPopupNoImageUrl)
+            }
+          } else {
+            setError('')
+          }
           setPhotos(loadedPhotos)
           setCurrentIdx(0)
           setIsLoading(false)
@@ -78,7 +101,13 @@ function CityPopup({ location, copy, language }) {
     return () => {
       isMounted = false
     }
-  }, [copy.checkinsPopupNoPhotos, location.id])
+  }, [
+    copy.checkinsPopupNoPhotos,
+    copy.checkinsPopupNoImageUrl,
+    copy.checkinsPopupNoSmugNickname,
+    copy.checkinsPopupNoSmugKeys,
+    location.id,
+  ])
 
   useEffect(() => {
     if (photos.length <= 1) {
@@ -109,13 +138,16 @@ function CityPopup({ location, copy, language }) {
         )
       : ''
 
+  const placeLine = locationCityCountry(location, language)
   const imageAlt = currentPhoto
-    ? [location.city, runnerName, visitDate].filter(Boolean).join(' — ')
-    : location.city
+    ? [pickLocalized(location.city, location.cityZh, language), runnerName, visitDate]
+        .filter(Boolean)
+        .join(' — ')
+    : pickLocalized(location.city, location.cityZh, language)
 
   return (
     <div className="cityPopup">
-      <h3>{`${location.city}, ${location.country}`}</h3>
+      <h3>{placeLine}</h3>
 
       {isLoading ? <p>{copy.checkinsPopupLoading}</p> : null}
       {!isLoading && error ? <p>{error}</p> : null}
@@ -205,8 +237,8 @@ export default function ChiHasBeenHerePage({ copy, language }) {
                 >
                   <Popup
                     className="chiVisitPopup"
-                    minWidth={300}
-                    maxWidth={520}
+                    minWidth={320}
+                    maxWidth={720}
                     autoPan
                     autoPanPaddingTopLeft={L.point(16, 120)}
                     autoPanPaddingBottomRight={L.point(16, 88)}
