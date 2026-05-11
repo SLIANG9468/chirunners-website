@@ -11,7 +11,15 @@ function resolveApiBase() {
   return 'http://localhost:5001'
 }
 
-export const API_BASE_URL = resolveApiBase()
+const _apiBase = resolveApiBase()
+if (import.meta.env.PROD && /localhost|127\.0\.0\.1/.test(_apiBase)) {
+  // eslint-disable-next-line no-console -- intentional deploy misconfiguration hint
+  console.error(
+    '[ChiRunners] API base is localhost in a production bundle. Rebuild the static site with VITE_API_BASE_URL set to your Render API URL (e.g. https://…-api.onrender.com).',
+  )
+}
+
+export const API_BASE_URL = _apiBase
 
 export function apiUrl(path) {
   const p = path.startsWith('/') ? path : `/${path}`

@@ -197,7 +197,8 @@ export const CONTENT = {
     checkinsTitle: 'Chi Has Been Here',
     checkinsSubtitle: 'Click a red flag to view photos.',
     checkinsLoading: 'Loading map locations...',
-    checkinsNoData: 'No geocoded locations yet. Run geocode refresh first.',
+    checkinsNoData:
+      'No map pins yet: only cities with both lat and lng in the database are shown. Set city.lat and city.lng in Postgres.',
     checkinsMapError: 'Could not load location data from backend.',
     checkinsPopupLoading: 'Loading photos...',
     checkinsPopupNoPhotos: 'No photos found for this city.',
@@ -447,7 +448,8 @@ export const CONTENT = {
     checkinsTitle: '跑到哪儿，驰到哪儿',
     checkinsSubtitle: '点击红色旗标查看打卡照片。',
     checkinsLoading: '正在加载地图点位...',
-    checkinsNoData: '暂无已编码坐标数据，请先执行 geocode refresh。',
+    checkinsNoData:
+      '地图上还没有打点：只有数据库里同时填了经纬度的城市才会显示。请在 Postgres 中为 city.lat、city.lng 赋值。',
     checkinsMapError: '无法从后端加载地图数据。',
     checkinsPopupLoading: '正在加载照片...',
     checkinsPopupNoPhotos: '该城市暂无照片。',
