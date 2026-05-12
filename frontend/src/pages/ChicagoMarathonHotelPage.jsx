@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
+const runnerIconClass = 'h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400'
 
 function IconBuilding() {
   return (
@@ -33,9 +34,9 @@ function IconMapPin() {
   )
 }
 
-function IconBreakfast() {
+function IconBreakfast({ className = iconClass }) {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M4 11h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8zM4 11V9a4 4 0 014-4h1M8 5h8M9 5V3"
         stroke="currentColor"
@@ -47,9 +48,9 @@ function IconBreakfast() {
   )
 }
 
-function IconShuttle() {
+function IconShuttle({ className = iconClass }) {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M8 6h11a2 2 0 012 2v8h-2M8 18H5a2 2 0 01-2-2V8a2 2 0 012-2h1M8 6v12M18 16v2M6 16v2M8 10h4"
         stroke="currentColor"
@@ -61,9 +62,66 @@ function IconShuttle() {
   )
 }
 
-function IconUndo() {
+function IconWifi({ className = iconClass }) {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M5 12.55a11 11 0 0114.08 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconGym({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M14.5 4h2v16h-2M7.5 4h2v16h-2M5 9h14M5 15h14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconPool({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M2 12c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M2 17c2.5 0 2.5 2 5 2s2.5-2 5-2 2.5 2 5 2 2.5-2 5-2M10 8V5M14 8V5M10 5h4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconLanguage({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconUndo({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M3 7v6h6M21 17a9 9 0 00-15-6.7L3 13M21 17v-6h-6"
         stroke="currentColor"
@@ -75,9 +133,9 @@ function IconUndo() {
   )
 }
 
-function IconRun() {
+function IconRun({ className = iconClass }) {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <circle cx="14" cy="4" r="2" stroke="currentColor" strokeWidth="2" />
       <path
         d="M4 22l4-7 3-1M9 15l-2 7M14 8l-2 4h4l3 3M10 12l-4-2 2-4"
@@ -90,10 +148,68 @@ function IconRun() {
   )
 }
 
-function AmenityRow({ icon, text }) {
+function IconDining({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 10h16M8 10v9M16 10v9M4 19h16"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconSofa({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 13V11a2 2 0 012-2h12a2 2 0 012 2v2M4 13h16v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5zM9 19v2M15 19v2"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconClock({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M12 6v6l4 2"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function IconEye({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  )
+}
+
+function AmenityRow({ icon, text, iconClassName = iconClass }) {
   return (
     <li className="flex gap-3 text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
-      {createElement(icon)}
+      {createElement(icon, { className: iconClassName })}
       <span>{text}</span>
     </li>
   )
@@ -132,9 +248,6 @@ export default function ChicagoMarathonHotelPage({ copy }) {
             >
               {h.hotelName}
             </p>
-            {h.hotelNameZh ? (
-              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{h.hotelNameZh}</p>
-            ) : null}
             <div className="mt-4 flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-300">
               <IconMapPin />
               <div>
@@ -143,6 +256,43 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                   {h.hotelAddressLine2}
                 </p>
               </div>
+            </div>
+
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">
+              {h.hotelPerksTitle}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{h.hotelPerksIntro}</p>
+            <ul className="mt-4 space-y-3">
+              <AmenityRow icon={IconBreakfast} text={h.amenityBreakfast} />
+              <AmenityRow icon={IconWifi} text={h.amenityWifi} />
+              <AmenityRow icon={IconGym} text={h.amenityGym} />
+              <AmenityRow icon={IconPool} text={h.amenityPool} />
+              <AmenityRow icon={IconLanguage} text={h.amenityMandarin} />
+              <AmenityRow icon={IconShuttle} text={h.amenityAirportShuttle} />
+              <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
+            </ul>
+
+            <div className="mt-8 rounded-2xl border border-amber-300/70 bg-gradient-to-br from-amber-50/95 via-amber-50/40 to-transparent p-5 shadow-sm dark:border-amber-600/40 dark:from-amber-950/35 dark:via-amber-950/20 dark:to-transparent sm:p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-amber-800 dark:text-amber-300">
+                {h.runnerPerksTitle}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">{h.runnerPerksIntro}</p>
+              <ul className="mt-4 space-y-3">
+                <AmenityRow icon={IconBreakfast} text={h.runnerPerkBreakfastBoost} iconClassName={runnerIconClass} />
+                <AmenityRow icon={IconDining} text={h.runnerPerkDiningArea} iconClassName={runnerIconClass} />
+                <AmenityRow icon={IconSofa} text={h.runnerPerkLounge} iconClassName={runnerIconClass} />
+                <AmenityRow icon={IconRun} text={h.amenityRaceShuttle} iconClassName={runnerIconClass} />
+                <AmenityRow icon={IconClock} text={h.runnerPerkLateCheckout} iconClassName={runnerIconClass} />
+              </ul>
+              <a
+                href={h.flyerPdfHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-amber-600/50 bg-white/80 px-4 py-2.5 text-sm font-semibold text-amber-900 shadow-sm transition-colors hover:bg-amber-50 dark:border-amber-500/50 dark:bg-neutral-900/60 dark:text-amber-100 dark:hover:bg-amber-950/50 sm:w-auto"
+              >
+                <IconEye className={runnerIconClass} />
+                {h.flyerViewLabel}
+              </a>
             </div>
 
             <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">
@@ -158,13 +308,6 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                   <span className="font-semibold text-chi-red dark:text-chi-red-light">{r.value}</span>
                 </li>
               ))}
-            </ul>
-
-            <ul className="mt-8 space-y-3">
-              <AmenityRow icon={IconBreakfast} text={h.amenityBreakfast} />
-              <AmenityRow icon={IconShuttle} text={h.amenityAirportShuttle} />
-              <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
-              <AmenityRow icon={IconRun} text={h.amenityRaceShuttle} />
             </ul>
 
             <div className="mt-10">
