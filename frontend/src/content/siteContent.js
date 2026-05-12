@@ -198,7 +198,7 @@ export const CONTENT = {
     checkinsSubtitle: 'Click a red flag to view photos.',
     checkinsLoading: 'Loading map locations...',
     checkinsNoData:
-      'No map pins yet: only cities with both lat and lng in the database are shown. Set city.lat and city.lng in Postgres.',
+      'No map pins: the API returned no locations. If your database already has city.lat and city.lng, the static site may be calling the wrong backend—rebuild with VITE_API_BASE_URL set to your live API URL, and set CORS_ORIGINS on the API to this site’s origin.',
     checkinsMapError: 'Could not load location data from backend.',
     checkinsPopupLoading: 'Loading photos...',
     checkinsPopupNoPhotos: 'No photos found for this city.',
@@ -449,7 +449,7 @@ export const CONTENT = {
     checkinsSubtitle: '点击红色旗标查看打卡照片。',
     checkinsLoading: '正在加载地图点位...',
     checkinsNoData:
-      '地图上还没有打点：只有数据库里同时填了经纬度的城市才会显示。请在 Postgres 中为 city.lat、city.lng 赋值。',
+      '地图上没有打点：接口返回的地点列表为空。若数据库里 city 已有经纬度，多半是静态站构建时未带上正确的 API 地址—请用 VITE_API_BASE_URL 指向线上 API 并重新部署；同时在 API 服务上把 CORS_ORIGINS 设为当前站点来源。',
     checkinsMapError: '无法从后端加载地图数据。',
     checkinsPopupLoading: '正在加载照片...',
     checkinsPopupNoPhotos: '该城市暂无照片。',
