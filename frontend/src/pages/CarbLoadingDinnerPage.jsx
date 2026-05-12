@@ -95,7 +95,7 @@ function IconCloverBenefit() {
   )
 }
 
-/** Hotel promo card (link to /chicago-marathon/hotel). */
+/** Hotel promo card (link to /chicagomarathon/hotel). */
 function IconHotelPromo() {
   return (
     <svg

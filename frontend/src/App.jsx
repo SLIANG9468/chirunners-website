@@ -37,19 +37,27 @@ export default function App() {
           path="/race-volunteer-info"
           element={<VolunteerRaceInfoPage copy={copy} language={language} />}
         />
-        <Route path="/chicago-marathon" element={<ChicagoMarathonWelcomePage copy={copy} />} />
+        <Route path="/chicagomarathon" element={<ChicagoMarathonWelcomePage copy={copy} />} />
         <Route
-          path="/chicago-marathon/carb-loading-dinner"
+          path="/chicagomarathon/carb-loading-dinner"
           element={<CarbLoadingDinnerPage copy={copy} language={language} />}
         />
-        <Route path="/chicago-marathon/hotel" element={<ChicagoMarathonHotelPage copy={copy} />} />
+        <Route path="/chicagomarathon/hotel" element={<ChicagoMarathonHotelPage copy={copy} />} />
         <Route
-          path="/chicago-marathon/transportation"
+          path="/chicagomarathon/transportation"
           element={<ChicagoMarathonTopicPage copy={copy} topicId="transportation" />}
         />
+        <Route path="/chicago-marathon-faq" element={<Navigate to="/chicagomarathon" replace />} />
+        <Route path="/chicagomarathon-faq" element={<Navigate to="/chicagomarathon" replace />} />
+        <Route path="/chicago-marathon" element={<Navigate to="/chicagomarathon" replace />} />
         <Route
-          path="/chicago-marathon-faq"
-          element={<Navigate to="/chicago-marathon" replace />}
+          path="/chicago-marathon/carb-loading-dinner"
+          element={<Navigate to="/chicagomarathon/carb-loading-dinner" replace />}
+        />
+        <Route path="/chicago-marathon/hotel" element={<Navigate to="/chicagomarathon/hotel" replace />} />
+        <Route
+          path="/chicago-marathon/transportation"
+          element={<Navigate to="/chicagomarathon/transportation" replace />}
         />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
