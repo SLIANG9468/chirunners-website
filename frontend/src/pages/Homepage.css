@@ -871,7 +871,7 @@ a.raceVolunteerButton:hover {
 
 @media (max-width: 768px) {
   .mapWrapper {
-    height: 420px;
+    height: 470px;
   }
 
   .mapWrapper .cityPopupImage {
