@@ -1,1 +1,0 @@
-This folder is **not used by the web app**. Chi Has Been Here serves image URLs from SmugMug only (`visits.smugmug_image_key` + `SMUGMUG_NICKNAME` in the API). You may keep files here for archival or manual use.
