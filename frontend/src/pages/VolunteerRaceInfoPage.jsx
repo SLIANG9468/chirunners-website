@@ -79,9 +79,12 @@ function RaceAlbumSlideshow({
   )
 }
 
-const mobileFieldClass =
-  'text-xs font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light'
-const mobileDdClass = 'mt-1 text-sm leading-relaxed text-neutral-800 dark:text-neutral-200'
+/** Mobile card: label + value share text-sm; label bold, value regular (same type scale). */
+const mobileLabelClass =
+  'shrink-0 text-sm font-bold text-neutral-900 dark:text-neutral-100'
+const mobileValueClass =
+  'min-w-0 flex-1 text-sm font-normal leading-relaxed text-neutral-800 dark:text-neutral-200'
+const mobileRowClass = 'flex flex-wrap items-baseline gap-x-2 gap-y-1'
 const mobileCardClass =
   'rounded-xl border border-neutral-200/80 bg-white/70 p-4 shadow-sm dark:border-neutral-600/60 dark:bg-neutral-900/45 sm:p-5'
 
@@ -255,9 +258,7 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
     const displayName = volunteerRaceDisplayName(row, language)
     if (!hasAlbum) {
       return mobile ? (
-        <p className="text-base font-semibold leading-snug text-neutral-900 dark:text-neutral-100">
-          {displayName}
-        </p>
+        <span className={mobileValueClass}>{displayName}</span>
       ) : (
         displayName
       )
@@ -266,7 +267,7 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
       return (
         <button
           type="button"
-          className="min-h-[44px] w-full rounded-lg px-1 py-2 text-left text-base font-semibold text-chi-red underline decoration-chi-red/50 underline-offset-4 hover:text-chi-red-hover disabled:opacity-60 dark:text-chi-red-light"
+          className="max-w-full min-h-[44px] rounded-lg px-1 py-1 text-left text-sm font-bold text-chi-red underline decoration-chi-red/50 underline-offset-2 hover:text-chi-red-hover disabled:opacity-60 dark:text-chi-red-light"
           onClick={() => openRaceAlbumSlideshow(row)}
           disabled={isLoadingPhotos && active?.rowKey === rk}
           aria-label={copy.volunteerTable.racePhotoSlideshowAria(displayName)}
@@ -316,46 +317,49 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
                     className={mobileCardClass}
                     aria-label={`${volunteerRaceDisplayName(row, language)}, ${formatRaceDate(row.date, locale)}`}
                   >
-                    <div className="space-y-4">
-                      <div>
-                        <p className={mobileFieldClass}>{copy.volunteerTable.date}</p>
-                        <p className={`${mobileDdClass} font-medium`}>
-                          {formatRaceDate(row.date, locale)}
-                        </p>
+                    <div className="space-y-3">
+                      <div className={`${mobileRowClass} items-baseline`}>
+                        <span className={mobileLabelClass}>{copy.volunteerTable.date}</span>
+                        <span className={mobileValueClass}>{formatRaceDate(row.date, locale)}</span>
                       </div>
-                      <div>
-                        <p className={mobileFieldClass}>{copy.volunteerTable.location}</p>
-                        <p className={mobileDdClass}>{row.location}</p>
+                      <div className={mobileRowClass}>
+                        <span className={mobileLabelClass}>{copy.volunteerTable.location}</span>
+                        <span className={mobileValueClass}>{row.location}</span>
                       </div>
-                      <div>
-                        <p className={mobileFieldClass}>{copy.volunteerTable.race}</p>
-                        <div className={mobileDdClass}>{renderRaceNameCell(row, rk, hasAlbum, { mobile: true })}</div>
-                      </div>
-                      <div>
-                        <p className={mobileFieldClass}>{copy.volunteerTable.website}</p>
-                        <div className="mt-1">
-                          {row.website ? (
-                            <a
-                              href={row.website}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-xl border border-chi-red/40 bg-white px-4 py-2.5 text-center text-sm font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red/5 dark:border-chi-red/50 dark:bg-neutral-900 dark:hover:bg-chi-red/10"
-                            >
-                              {copy.volunteerTable.officialSite}
-                            </a>
-                          ) : (
-                            <span className="text-sm text-neutral-500 dark:text-neutral-500">—</span>
-                          )}
+                      <div className={`${mobileRowClass} items-center`}>
+                        <span className={mobileLabelClass}>{copy.volunteerTable.race}</span>
+                        <div className="min-w-0 flex-1">
+                          {renderRaceNameCell(row, rk, hasAlbum, { mobile: true })}
                         </div>
                       </div>
-                      <div>
-                        <p className={mobileFieldClass}>{copy.volunteerTable.volunteerColumn}</p>
-                        <div
-                          className="mt-1 flex min-h-[44px] items-center rounded-lg bg-chi-red/10 px-3 py-2.5 text-center text-sm font-semibold text-chi-red dark:bg-chi-red/15 dark:text-chi-red-light"
-                          role="status"
+                      <div className={`${mobileRowClass} items-center`}>
+                        <span className={mobileLabelClass}>{copy.volunteerTable.website}</span>
+                        {row.website ? (
+                          <a
+                            href={row.website}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`${mobileValueClass} min-h-[44px] shrink-0 text-chi-red underline decoration-chi-red/70 underline-offset-2 hover:text-chi-red-hover dark:text-chi-red-light`}
+                          >
+                            {language === 'zh'
+                              ? copy.volunteerTable.website
+                              : copy.volunteerTable.officialSite}
+                          </a>
+                        ) : (
+                          <span className="text-sm text-neutral-500 dark:text-neutral-500">—</span>
+                        )}
+                      </div>
+                      <div className={`${mobileRowClass} items-center`}>
+                        <span className={mobileLabelClass}>{copy.volunteerTable.volunteerColumn}</span>
+                        <span
+                          className="inline-flex items-center gap-1.5 text-sm font-normal text-chi-red dark:text-chi-red-light"
+                          title={volunteerText}
                         >
-                          {volunteerText}
-                        </div>
+                          <span aria-hidden="true" className="select-none">
+                            ✓
+                          </span>
+                          {language === 'zh' ? <span>义工</span> : <span>{volunteerText}</span>}
+                        </span>
                       </div>
                     </div>
                   </article>
