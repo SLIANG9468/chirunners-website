@@ -670,6 +670,14 @@ a.raceVolunteerButton:hover {
   cursor: pointer;
 }
 
+/* Race & Volunteer page: touch-friendly slideshow controls below lg (cards layout) */
+@media (max-width: 1023px) {
+  .volunteerSlideshowControls button {
+    min-height: 44px;
+    padding: 10px 14px;
+  }
+}
+
 .faqDetails {
   margin-top: 14px;
   padding: 10px 12px;

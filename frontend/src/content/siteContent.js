@@ -295,9 +295,9 @@ export const CONTENT = {
           hint: 'Search “芝加哥驰跑团 ChiRunners” in WeChat to find our official account.',
         },
         {
-          label: 'Xiaohongshu',
+          label: 'RedNote',
           url: null,
-          hint: 'Open the Xiaohongshu app and search for 驰跑团.',
+          hint: 'Open the RedNote app and search for 驰跑团.',
         },
         {
           label: 'Instagram',
