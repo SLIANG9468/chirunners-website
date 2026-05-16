@@ -352,13 +352,10 @@ export default function VolunteerRaceInfoPage({ copy, language }) {
                       <div className={`${mobileRowClass} items-center`}>
                         <span className={mobileLabelClass}>{copy.volunteerTable.volunteerColumn}</span>
                         <span
-                          className="inline-flex items-center gap-1.5 text-sm font-normal text-chi-red dark:text-chi-red-light"
+                          className="text-sm font-normal text-chi-red dark:text-chi-red-light"
                           title={volunteerText}
                         >
-                          <span aria-hidden="true" className="select-none">
-                            ✓
-                          </span>
-                          {language === 'zh' ? <span>义工</span> : <span>{volunteerText}</span>}
+                          {volunteerText}
                         </span>
                       </div>
                     </div>
