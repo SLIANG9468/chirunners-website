@@ -4,5 +4,4 @@ gunicorn
 requests
 python-dotenv
 Flask-SQLAlchemy>=3.1.0
-Flask-Migrate>=4.0.0
 psycopg2-binary

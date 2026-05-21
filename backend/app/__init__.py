@@ -9,7 +9,7 @@ from flask import Flask
 from flask_cors import CORS
 from sqlalchemy import delete as sql_delete
 
-from app.extensions import db, migrate
+from app.extensions import db
 
 
 def _database_uri(backend_dir: Path) -> str:
@@ -99,7 +99,6 @@ def create_app() -> Flask:
     )
 
     db.init_app(flask_app)
-    migrate.init_app(flask_app, db)
     import app.models  # noqa: F401  # pylint: disable=unused-import — register tables
 
     _register_cli_commands(flask_app)
