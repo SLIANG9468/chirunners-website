@@ -5,9 +5,9 @@ from app.extensions import db
 
 class City(db.Model):
     __tablename__ = "city"
+    __table_args__ = (UniqueConstraint("city_en", "country_en", name="uq_city_en_country_en"),)
 
     id = db.Column(db.Integer, primary_key=True)
-    slug = db.Column(db.String(128), unique=True, nullable=False, index=True)
     city_en = db.Column(db.String(256), nullable=False)
     country_en = db.Column(db.String(256), nullable=False)
     city_zh = db.Column(db.String(256))

@@ -109,13 +109,30 @@ def normalize_source_rows(source_rows: list[dict]) -> list[dict]:
     return sorted(by_location.values(), key=lambda x: (x["country"], x["city"]))
 
 
+def _city_lookup_key(city_en: str, country_en: str) -> tuple[str, str]:
+    return (str(city_en).strip().lower(), str(country_en).strip().lower())
+
+
+def _find_city_by_location_dict(loc: dict) -> City | None:
+    city_en = str(loc.get("city", "")).strip()
+    country_en = str(loc.get("country", "")).strip()
+    if not city_en or not country_en:
+        return None
+    return (
+        db.session.query(City)
+        .filter_by(city_en=city_en, country_en=country_en)
+        .one_or_none()
+    )
+
+
 def merge_normalized_with_db_coordinates(normalized: list[dict], session: Session) -> tuple[list[dict], dict]:
     cities = session.query(City).all()
-    prev_by_slug = {c.slug: c for c in cities}
+    prev_by_key = {_city_lookup_key(c.city_en, c.country_en): c for c in cities}
     reused = 0
     need_geocode: list[str] = []
     for loc in normalized:
-        prev = prev_by_slug.get(loc["id"])
+        key = _city_lookup_key(loc.get("city", ""), loc.get("country", ""))
+        prev = prev_by_key.get(key)
         if prev and prev.lat is not None and prev.lng is not None:
             loc["lat"] = float(prev.lat)
             loc["lng"] = float(prev.lng)
@@ -174,13 +191,11 @@ def _visit_visit_dict_to_model(city_pk: int, visit_dict: dict) -> Visit:
 
 def write_normalized_locations_to_db(normalized: list[dict]) -> None:
     for loc in normalized:
-        slug = loc["id"]
-        city_row = db.session.query(City).filter_by(slug=slug).one_or_none()
+        city_row = _find_city_by_location_dict(loc)
         visits_data = loc.get("visits") or []
 
         if city_row is None:
             city_row = City(
-                slug=slug,
                 city_en=str(loc.get("city", "")).strip(),
                 country_en=str(loc.get("country", "")).strip(),
                 city_zh=loc.get("cityZh"),
@@ -230,7 +245,7 @@ def locations_summary_from_db() -> tuple[list[dict], int]:
         n_visits = len(city.visits)
         summary.append(
             {
-                "id": city.slug,
+                "id": city.id,
                 "city": city.city_en,
                 "country": city.country_en,
                 "cityZh": _optional_zh(city.city_zh),
@@ -324,8 +339,19 @@ def warm_smugmug_cache_for_all_visits(flask_app) -> None:
     _prefetch_smug_urls_for_visits(flask_app, visits)
 
 
-def photos_payload_for_city(location_id: str, flask_app=None) -> dict | None:
-    city = db.session.query(City).filter_by(slug=location_id).one_or_none()
+def _parse_city_pk(location_id) -> int | None:
+    try:
+        pk = int(location_id)
+    except (TypeError, ValueError):
+        return None
+    return pk if pk > 0 else None
+
+
+def photos_payload_for_city(location_id, flask_app=None) -> dict | None:
+    city_pk = _parse_city_pk(location_id)
+    if city_pk is None:
+        return None
+    city = db.session.get(City, city_pk)
     if not city:
         return None
 
@@ -346,7 +372,7 @@ def photos_payload_for_city(location_id: str, flask_app=None) -> dict | None:
         elif not any_key:
             image_url_hint = "missing_smugmug_keys"
     return {
-        "id": city.slug,
+        "id": city.id,
         "city": city.city_en,
         "country": city.country_en,
         "cityZh": _optional_zh(city.city_zh),

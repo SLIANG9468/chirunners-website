@@ -19,9 +19,9 @@ def list_locations():
 
 
 @chi_has_been_here_bp.route(
-    "/api/chi-has-been-here/locations/<location_id>/photos", methods=["GET"]
+    "/api/chi-has-been-here/locations/<int:location_id>/photos", methods=["GET"]
 )
-def location_photos(location_id: str):
+def location_photos(location_id: int):
     payload = chk.photos_payload_for_city(location_id, current_app)
     if not payload:
         abort(404)
