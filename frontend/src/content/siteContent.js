@@ -643,7 +643,7 @@ export const CONTENT = {
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',
     checkinsTitle: '全球打卡',
-    checkinsSubtitle: '点击红色旗标查看打卡照片；驰 标为大本营（芝加哥）。',
+    checkinsSubtitle: '点击红色旗标查看打卡照片；芝加哥是驰跑团大本营。',
     checkinsClubBaseTitle: '驰跑团大本营',
     checkinsClubBaseBody: '大芝加哥地区 — 驰跑团的家。',
     checkinsLoading: '正在加载地图点位...',

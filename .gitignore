@@ -1,6 +1,7 @@
 .DS_Store
 
 # Backend
+backend/local/
 backend/.env
 backend/venv/
 backend/.venv/
