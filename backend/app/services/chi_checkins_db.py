@@ -357,7 +357,15 @@ def photos_payload_for_city(location_id, flask_app=None) -> dict | None:
 
     if flask_app is not None and city.visits:
         _prefetch_smug_urls_for_visits(flask_app, city.visits)
-    photos = [serialize_visit_photo(v, flask_app) for v in city.visits]
+    visits_sorted = sorted(
+        city.visits,
+        key=lambda v: (
+            v.visit_date is None,
+            v.visit_date.isoformat() if v.visit_date else "",
+            v.id,
+        ),
+    )
+    photos = [serialize_visit_photo(v, flask_app) for v in visits_sorted]
     nick = ""
     if flask_app is not None:
         nick = (flask_app.config.get("SMUGMUG_NICKNAME") or "").strip()

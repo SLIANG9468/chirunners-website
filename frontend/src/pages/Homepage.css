@@ -777,6 +777,86 @@ a.raceVolunteerButton:hover {
   line-height: 1;
 }
 
+.clubBaseIcon {
+  background: transparent;
+  border: none;
+}
+
+/* Mini 驰 flag (favicon art) on a pole — matches club hand flags on the homepage hero. */
+.chiRealFlag {
+  position: relative;
+  width: 26px;
+  height: 30px;
+}
+
+.chiRealFlag__pole {
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  z-index: 1;
+  width: 2.5px;
+  height: 26px;
+  border-radius: 1px 1px 2px 2px;
+  background: linear-gradient(
+    90deg,
+    #78716c 0%,
+    #a8a29e 22%,
+    #57534e 50%,
+    #a8a29e 78%,
+    #78716c 100%
+  );
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.chiRealFlag__pole::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 5px;
+  height: 2px;
+  margin-left: -2.5px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.28) 0%, transparent 72%);
+}
+
+.chiRealFlag__fabric {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  transform-origin: 0 85%;
+  transform: perspective(24px) rotateY(-14deg) rotateZ(4deg);
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.chiRealFlag__fabric img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 1px;
+}
+
+.chiRealFlag__wave {
+  position: absolute;
+  inset: 0;
+  border-radius: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 58%,
+    rgba(0, 0, 0, 0.1) 72%,
+    transparent 82%
+  );
+  clip-path: polygon(8% 0, 100% 4%, 100% 96%, 8% 100%, 0 50%);
+}
+
 /* Leaflet popup is always light; page may be dark — avoid light-on-light text. */
 .leaflet-popup.chiVisitPopup .leaflet-popup-content-wrapper,
 .leaflet-popup.chiVisitPopup .leaflet-popup-tip {
@@ -806,6 +886,13 @@ a.raceVolunteerButton:hover {
   font-size: 16px;
   font-weight: 600;
   color: #111827;
+}
+
+.cityPopupHomeLead {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #4b5563;
 }
 
 .cityPhotoFigure {
