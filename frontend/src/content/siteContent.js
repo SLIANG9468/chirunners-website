@@ -192,6 +192,40 @@ export const CONTENT = {
       failedRefresh: (status) => `Failed to refresh shared order (HTTP ${status})`,
     },
     footer: (year) => `© ${year} CHI Running Club`,
+    footerPhotoCreditLine1:
+      'With deep thanks to Chi Running Club members and friends for capturing and sharing these wonderful moments.',
+    footerPhotoCreditLine2:
+      'Some photos on this website are provided by Kenny Qin, Yun Oldshue, Yansong, and others.',
+    stayConnected: {
+      title: 'Stay connected',
+      body:
+        'Come run with us at a group run, say hello at an event, or cheer each other on along the course. We would love to see you in Chicago beyond race day.',
+      socialIntro: 'Follow CHI Running Club on:',
+      socialLinks: [
+        {
+          label: 'WeChat Official Account',
+          url: null,
+          hint: 'Search “芝加哥驰跑团 ChiRunners” in WeChat to find our official account.',
+        },
+        {
+          label: 'RedNote',
+          url: null,
+          hint: 'Open the RedNote app and search for 驰跑团.',
+        },
+        {
+          label: 'Instagram',
+          url: 'https://www.instagram.com/chi_runners/',
+          hint: 'Search for Chi_Runners on Instagram.',
+        },
+        {
+          label: 'YouTube',
+          url: 'https://www.youtube.com/@chirunners1829',
+          hint: 'Subscribe to CHI Running Club on YouTube.',
+        },
+      ],
+      socialFootnote:
+        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for 驰跑团. YouTube and Instagram open in your browser.',
+    },
     homeHeroErrorLoad: 'Failed to load homepage slideshow photos.',
     homeHeroErrorConnect: 'Could not connect to backend for homepage slideshow.',
     checkinsTitle: 'CHI Has Been Here',
@@ -282,34 +316,6 @@ export const CONTENT = {
           cta: 'Open guide',
         },
       },
-      closingTitle: 'Stay connected',
-      closingBody:
-        'Come run with us at a group run, say hello at an event, or cheer each other on along the course. We would love to see you in Chicago beyond race day.',
-      closingSocialIntro: 'Follow CHI Running Club on:',
-      closingSocialLinks: [
-        {
-          label: 'WeChat Official Account',
-          url: null,
-          hint: 'Search “芝加哥驰跑团 ChiRunners” in WeChat to find our official account.',
-        },
-        {
-          label: 'RedNote',
-          url: null,
-          hint: 'Open the RedNote app and search for 驰跑团.',
-        },
-        {
-          label: 'Instagram',
-          url: 'https://www.instagram.com/chi_runners/',
-          hint: 'Search for Chi_Runners on Instagram.',
-        },
-        {
-          label: 'YouTube',
-          url: 'https://www.youtube.com/@chirunners1829',
-          hint: 'Subscribe to CHI Running Club on YouTube.',
-        },
-      ],
-      closingSocialFootnote:
-        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for 驰跑团. YouTube and Instagram open in your browser.',
       backToHub: '← Back to Chicago Marathon',
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $149',
@@ -640,6 +646,36 @@ export const CONTENT = {
       failedRefresh: (status) => `刷新全局顺序失败（HTTP ${status}）`,
     },
     footer: (year) => `© ${year} CHI Running Club`,
+    footerPhotoCreditLine1: '特别感谢驰跑团成员及朋友记录和分享美好瞬间。',
+    footerPhotoCreditLine2: '网站部分照片有风城网事，章运，燕松等提供。',
+    stayConnected: {
+      title: '欢迎与我们保持联系',
+      body: '欢迎参加群跑、在活动中打招呼，或在赛道旁互相加油。我们也期待在赛事之外与你相遇在芝加哥。',
+      socialIntro: '关注驰跑团：',
+      socialLinks: [
+        {
+          label: '微信公众号',
+          url: null,
+          hint: '请在微信中搜索「芝加哥驰跑团」或「ChiRunners」关注公众号。',
+        },
+        {
+          label: '小红书',
+          url: null,
+          hint: '打开小红书 App，搜索「芝加哥驰跑团」或「ChiRunners」关注。',
+        },
+        {
+          label: 'Instagram',
+          url: 'https://www.instagram.com/chi_runners/',
+          hint: '在 Instagram 也可搜索「ChiRunners」或「芝加哥驰跑团」。',
+        },
+        {
+          label: 'YouTube',
+          url: 'https://www.youtube.com/@chirunners1829',
+          hint: '在 YouTube 关注驰跑团频道。',
+        },
+      ],
+      socialFootnote: '提示：微信、小红书请在 App 内搜索「驰跑团」；YouTube、Instagram 在浏览器打开。',
+    },
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',
     checkinsTitle: '全球打卡',
@@ -726,34 +762,6 @@ export const CONTENT = {
           cta: '查看指南',
         },
       },
-      closingTitle: '欢迎与我们保持联系',
-      closingBody:
-        '欢迎参加群跑、在活动中打招呼，或在赛道旁互相加油。我们也期待在赛事之外与你相遇在芝加哥。',
-      closingSocialIntro: '关注驰跑团：',
-      closingSocialLinks: [
-        {
-          label: '微信公众号',
-          url: null,
-          hint: '请在微信中搜索「芝加哥驰跑团」或「ChiRunners」关注公众号。',
-        },
-        {
-          label: '小红书',
-          url: null,
-          hint: '打开小红书 App，搜索「芝加哥驰跑团」或「ChiRunners」关注。',
-        },
-        {
-          label: 'Instagram',
-          url: 'https://www.instagram.com/chi_runners/',
-          hint: '在 Instagram 也可搜索「ChiRunners」或「芝加哥驰跑团」。',
-        },
-        {
-          label: 'YouTube',
-          url: 'https://www.youtube.com/@chirunners1829',
-          hint: '在 YouTube 关注驰跑团频道。',
-        },
-      ],
-      closingSocialFootnote:
-        '提示：微信、小红书请在 App 内搜索「驰跑团」；YouTube、Instagram 在浏览器打开。',
       backToHub: '← 返回芝加哥马拉松',
       hotelPage: {
         pageTitle: '芝马酒店超值价 $149',

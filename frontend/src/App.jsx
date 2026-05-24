@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import SiteFooter from './components/SiteFooter'
 import { CONTENT, LANGUAGE_STORAGE_KEY, resolveInitialLanguage } from './content/siteContent'
 import './pages/Homepage.css'
 import LandingPage from './pages/LandingPage'
@@ -62,9 +63,7 @@ export default function App() {
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <footer className="siteFooter">
-        <p className="muted">{copy.footer(new Date().getFullYear())}</p>
-      </footer>
+      <SiteFooter copy={copy} />
     </div>
   )
 }
