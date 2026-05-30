@@ -4,11 +4,18 @@ export default function SiteFooter({ copy }) {
 
   return (
     <footer className="siteFooter">
-      <section className="siteFooterStayConnected" aria-labelledby="site-footer-stay-connected">
-        <h2 id="site-footer-stay-connected" className="siteFooterStayConnectedTitle">
-          {sc.title}
-        </h2>
-        <p className="siteFooterStayConnectedBody">{sc.body}</p>
+      <section
+        className="siteFooterStayConnected"
+        {...(sc.title
+          ? { 'aria-labelledby': 'site-footer-stay-connected' }
+          : { 'aria-label': sc.socialIntro })}
+      >
+        {sc.title ? (
+          <h2 id="site-footer-stay-connected" className="siteFooterStayConnectedTitle">
+            {sc.title}
+          </h2>
+        ) : null}
+        {sc.body ? <p className="siteFooterStayConnectedBody">{sc.body}</p> : null}
         <p className="siteFooterStayConnectedIntro">{sc.socialIntro}</p>
         <ul className="siteFooterStayConnectedLinks">
           {sc.socialLinks.map((item) => (

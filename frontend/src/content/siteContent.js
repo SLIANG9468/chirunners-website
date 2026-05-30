@@ -197,9 +197,6 @@ export const CONTENT = {
     footerPhotoCreditLine2:
       'Some photos on this website are provided by Kenny Qin, Yun Oldshue, Yansong, and others.',
     stayConnected: {
-      title: 'Stay connected',
-      body:
-        'Come run with us at a group run, say hello at an event, or cheer each other on along the course. We would love to see you in Chicago beyond race day.',
       socialIntro: 'Follow CHI Running Club on:',
       socialLinks: [
         {
@@ -223,8 +220,6 @@ export const CONTENT = {
           hint: 'Subscribe to CHI Running Club on YouTube.',
         },
       ],
-      socialFootnote:
-        'Tip: hover a label for details. On mobile, open WeChat or Xiaohongshu and search for 驰跑团. YouTube and Instagram open in your browser.',
     },
     homeHeroErrorLoad: 'Failed to load homepage slideshow photos.',
     homeHeroErrorConnect: 'Could not connect to backend for homepage slideshow.',
@@ -649,8 +644,6 @@ export const CONTENT = {
     footerPhotoCreditLine1: '特别感谢驰跑团成员及朋友记录和分享美好瞬间。',
     footerPhotoCreditLine2: '网站部分照片有风城网事，章运，燕松等提供。',
     stayConnected: {
-      title: '欢迎与我们保持联系',
-      body: '欢迎参加群跑、在活动中打招呼，或在赛道旁互相加油。我们也期待在赛事之外与你相遇在芝加哥。',
       socialIntro: '关注驰跑团：',
       socialLinks: [
         {
@@ -674,7 +667,6 @@ export const CONTENT = {
           hint: '在 YouTube 关注驰跑团频道。',
         },
       ],
-      socialFootnote: '提示：微信、小红书请在 App 内搜索「驰跑团」；YouTube、Instagram 在浏览器打开。',
     },
     homeHeroErrorLoad: '加载首页轮播图失败。',
     homeHeroErrorConnect: '无法连接后端首页轮播接口。',

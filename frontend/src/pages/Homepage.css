@@ -699,9 +699,11 @@ a.raceVolunteerButton:hover {
 
 /* Match content width to .homeHeroBox (full main column inside .homepage padding). */
 .siteFooter {
-  --footer-fg: #e5e5e5;
-  --footer-fg-muted: #a3a3a3;
-  --footer-fg-dim: #737373;
+  --footer-bg: #f9f8f6;
+  --footer-fg: var(--text-h);
+  --footer-fg-muted: var(--text);
+  --footer-fg-dim: #78716c;
+  --footer-brand: #e52850;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -711,6 +713,13 @@ a.raceVolunteerButton:hover {
   color: var(--footer-fg);
   border: none;
   text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .siteFooter {
+    --footer-bg: color-mix(in oklab, var(--bg), white 5%);
+    --footer-fg-dim: #9ca3af;
+  }
 }
 
 .siteFooter .muted {
@@ -725,15 +734,15 @@ a.raceVolunteerButton:hover {
   padding: 1.5rem 1.25rem;
   text-align: left;
   border-radius: 12px;
-  border: 1px solid #262626;
-  background: #000;
+  border: 1px solid var(--border);
+  background: var(--footer-bg);
 }
 
 .siteFooterStayConnectedTitle {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 600;
-  color: #fafafa;
+  color: var(--footer-fg);
   line-height: 1.3;
 }
 
@@ -748,7 +757,11 @@ a.raceVolunteerButton:hover {
   margin: 1.25rem 0 0;
   font-size: 14px;
   font-weight: 600;
-  color: #fafafa;
+  color: var(--footer-fg);
+}
+
+.siteFooterStayConnectedIntro:first-child {
+  margin-top: 0;
 }
 
 .siteFooterStayConnectedLinks {
@@ -764,9 +777,9 @@ a.raceVolunteerButton:hover {
   display: inline-flex;
   padding: 0.45rem 1rem;
   border-radius: 999px;
-  border: 2px solid #e11d48;
-  background: #0a0a0a;
-  color: #fda4af;
+  border: 1.5px solid var(--footer-brand);
+  background: transparent;
+  color: var(--footer-brand);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -777,16 +790,16 @@ a.raceVolunteerButton:hover {
 }
 
 .siteFooterSocialLink:hover {
-  background: #e11d48;
-  border-color: #e11d48;
+  background: var(--footer-brand);
+  border-color: var(--footer-brand);
   color: #fff;
 }
 
 .siteFooterSocialLink--static {
   cursor: default;
-  border-color: color-mix(in oklab, #e11d48, transparent 45%);
-  background: #171717;
-  color: #fda4af;
+  border-color: color-mix(in oklab, var(--footer-brand), var(--border) 55%);
+  background: transparent;
+  color: var(--footer-fg-muted);
 }
 
 .siteFooterStayConnectedFootnote {
@@ -799,7 +812,7 @@ a.raceVolunteerButton:hover {
 .siteFooterCredits {
   margin: 1.25rem 0 0;
   padding-top: 1.25rem;
-  border-top: 1px solid color-mix(in oklab, #e11d48, transparent 55%);
+  border-top: 1px solid var(--border);
   line-height: 1.65;
 }
 
