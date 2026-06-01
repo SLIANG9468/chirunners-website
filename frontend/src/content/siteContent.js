@@ -756,7 +756,7 @@ export const CONTENT = {
       },
       backToHub: '← 返回芝加哥马拉松',
       hotelPage: {
-        pageTitle: '芝马酒店超值价 $149',
+        pageTitle: '芝马酒店超值价 $149(官网$199,  团购直降 $50）',
         pageIntro: '驰跑团专属优惠｜机场10分钟｜比赛日轻松30分钟直达起点 🚐',
         hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $149起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
