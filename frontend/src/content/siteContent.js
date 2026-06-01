@@ -345,6 +345,10 @@ export const CONTENT = {
         flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer.pdf',
         ctaBook: 'Book hotel',
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
+        wechatGroupBody: 'Scan to join—ask anything about booking, Chicago Marathon express, and stay details.',
+        wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
+        wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-wechat-group-qr.png',
       },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
@@ -787,6 +791,10 @@ export const CONTENT = {
         flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer.pdf',
         ctaBook: '预订酒店',
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        wechatGroupTitle: '有问题？加入芝马酒店微信群',
+        wechatGroupBody: '扫码进群，订房、芝马直通车、入住细节等问题都可以在群里问。',
+        wechatGroupQrAlt: '芝马酒店微信群二维码',
+        wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-wechat-group-qr.png',
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
