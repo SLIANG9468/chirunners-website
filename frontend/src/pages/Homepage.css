@@ -437,14 +437,45 @@ main.siteMain--marathonWelcome .marathonWelcome-heroSection {
   margin-bottom: 28px;
 }
 
-/* Home: short page — avoid large empty band above the footer divider */
+/* Home: scroll hub with explore sections */
+main.siteMain--landing {
+  scroll-behavior: smooth;
+}
+
 main.siteMain--landing > section.section {
   margin-bottom: 8px;
 }
 
 main.siteMain--landing + .siteFooter {
-  margin-top: 16px;
+  margin-top: 24px;
 }
+
+.homeExploreAnchor {
+  scroll-margin-top: 5.5rem;
+}
+
+.homeExploreSection {
+  margin-top: 20px;
+  margin-bottom: 32px;
+}
+
+.homeExploreGrid {
+  display: grid;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .homeExploreGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .homeExploreSublinks {
+    grid-column: span 2;
+  }
+}
+
 
 .section {
   margin: 28px 0;
@@ -838,6 +869,30 @@ a.raceVolunteerButton:hover {
   }
 }
 
+.checkinsFaq {
+  text-align: left;
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+}
+
+.checkinsFaq h3 {
+  margin: 0 0 12px;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.checkinsFaq .faqDetails:first-of-type {
+  margin-top: 0;
+}
+
+.checkinsFaq a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .checkinsIntro {
   text-align: left;
   max-width: 40rem;
@@ -865,6 +920,11 @@ a.raceVolunteerButton:hover {
 }
 
 @media (min-width: 769px) {
+  .checkinsFaq {
+    max-width: 44rem;
+    margin-top: 1.75rem;
+  }
+
   .checkinsIntro {
     max-width: 44rem;
     padding: 1.15rem 1.35rem;

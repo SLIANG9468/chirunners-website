@@ -362,6 +362,24 @@ export default function ChiHasBeenHerePage({ copy, language }) {
             </p>
           ))}
         </div>
+        <div className="checkinsFaq" lang={language === 'zh' ? 'zh-CN' : 'en'}>
+          <h3>{copy.checkinsFaqTitle}</h3>
+          {copy.checkinsFaq.map((item) => (
+            <details key={item.q} className="faqDetails">
+              <summary>{item.q}</summary>
+              <p>
+                {item.a.split('admin@chirunners.org').map((part, idx, parts) => (
+                  <span key={idx}>
+                    {part}
+                    {idx < parts.length - 1 ? (
+                      <a href="mailto:admin@chirunners.org">admin@chirunners.org</a>
+                    ) : null}
+                  </span>
+                ))}
+              </p>
+            </details>
+          ))}
+        </div>
       </section>
     </main>
   )

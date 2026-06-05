@@ -159,6 +159,45 @@ export const CONTENT = {
     aboutParagraphs: [
       'CHI Running Club (ChiRunners) is a 501(c)(3) nonprofit formed by Chinese American running enthusiasts in the greater Chicago area. As a member of the Road Runners Club of America (RRCA), we promote healthy living through running and build a supportive running community.',
     ],
+    homeExplore: {
+      sectionTitle: 'Explore',
+      raceVolunteer: {
+        id: 'race-volunteer',
+        title: 'Race & Volunteer Info',
+        description:
+          'Our running friends are passionate about volunteering at local races and actively supporting the running community.',
+        cta: 'View races & volunteer info',
+        to: '/race-volunteer-info',
+      },
+      marathon: {
+        id: 'marathon',
+        title: 'Chicago Marathon',
+        description:
+          'CHI Running Club welcomes you to race weekend—guides for carb-loading, lodging, transportation, and more.',
+        sublinks: [
+          { label: 'Carb-loading dinner', to: '/chicagomarathon/carb-loading-dinner' },
+          { label: 'Hotels & lodging', to: '/chicagomarathon/hotel' },
+          { label: 'Transportation', to: '/chicagomarathon/transportation' },
+        ],
+      },
+      checkins: {
+        id: 'checkins',
+        title: 'CHI Has Been Here',
+        description:
+          'Click a red flag for check-in photos. The 驰 marker is our Chicago home base.',
+        cta: 'Open global check-ins map',
+        to: '/chi-has-been-here',
+      },
+      about: {
+        id: 'about',
+        title: 'About CHI Running Club',
+        description: 'Learn about our history and the volunteers who lead the club.',
+        sublinks: [
+          { label: 'History', to: '/history' },
+          { label: 'Board Members', to: '/board-members' },
+        ],
+      },
+    },
     routesTitle: "CHI Running Club's Regular Routes",
     routesParagraph:
       'Our regular routes cover a wide range of scenic paths throughout Chicago and its suburbs, catering to runners of all levels.',
@@ -243,6 +282,21 @@ export const CONTENT = {
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,
     checkinsPhotoNoRunner: '—',
     checkinsPhotoMetaSep: ' · ',
+    checkinsFaqTitle: 'Q&A',
+    checkinsFaq: [
+      {
+        q: 'Who qualifies?',
+        a: 'All CHI Running Club members.',
+      },
+      {
+        q: 'How can I get a Chi Runners mini flag?',
+        a: 'Pick one up for free from Xiaofeng Li (North / 芝北主场), Xiaomao Wu (Loop / 卢普), Danrey (Busse Woods / 巴西), or Haiting (Glenview).',
+      },
+      {
+        q: 'How do I add my photo to the map?',
+        a: 'Post your photo to the CHI Runners WeChat group (芝加哥驰跑团 ChiRunners) with your name in Chinese and English, location, check-in date, and a short caption. Or email the same details to admin@chirunners.org — we will add your flag and photo to the map.',
+      },
+    ],
     checkinsIntroLines: [
       'Our “CHI Has Been Here Map” is live! Wherever your feet take you next:',
       '🏅 Racing on major event courses',
@@ -613,6 +667,43 @@ export const CONTENT = {
     aboutParagraphs: [
       '驰跑团（ CHI Running Club / ChiRunners ）是由大芝加哥地区华人跑步爱好者组成的501(c)(3) 非营利组织。作为美国路跑俱乐部协会（RRCA）的成员，我们致力于通过跑步促进健康的生活方式，建立一个互相支持的跑步社区。',
     ],
+    homeExplore: {
+      sectionTitle: '探索',
+      raceVolunteer: {
+        id: 'race-volunteer',
+        title: '比赛 & 义工信息',
+        description: '我们的跑友积极参与本地赛事志愿服务，持续支持跑步社区发展。',
+        cta: '查看比赛与义工信息',
+        to: '/race-volunteer-info',
+      },
+      marathon: {
+        id: 'marathon',
+        title: '芝加哥马拉松',
+        description:
+          '驰跑团欢迎你来芝马周末——加碳会、住宿、交通等指南，助你从容参赛。',
+        sublinks: [
+          { label: '加碳会', to: '/chicagomarathon/carb-loading-dinner' },
+          { label: '住宿', to: '/chicagomarathon/hotel' },
+          { label: '交通', to: '/chicagomarathon/transportation' },
+        ],
+      },
+      checkins: {
+        id: 'checkins',
+        title: '全球打卡',
+        description: '点击红色旗标查看打卡照片；芝加哥是驰跑团大本营。',
+        cta: '打开全球打卡地图',
+        to: '/chi-has-been-here',
+      },
+      about: {
+        id: 'about',
+        title: '关于驰跑团',
+        description: '了解我们的历史与理事会成员。',
+        sublinks: [
+          { label: '历史', to: '/history' },
+          { label: '董事会', to: '/board-members' },
+        ],
+      },
+    },
     routesTitle: '驰跑团常规路线',
     routesParagraph:
       '驰跑团常规路线覆盖芝加哥及周边多个风景路线，适合不同水平跑者参与。',
@@ -694,6 +785,21 @@ export const CONTENT = {
     checkinsPopupCounter: (idx, total) => `${idx} / ${total}`,
     checkinsPhotoNoRunner: '—',
     checkinsPhotoMetaSep: ' · ',
+    checkinsFaqTitle: '常见问题',
+    checkinsFaq: [
+      {
+        q: '谁可以参与？',
+        a: '所有驰跑团成员。',
+      },
+      {
+        q: '怎么可以拿到驰队小旗？',
+        a: '到李晓枫（芝北主场/North）、吴小茂（卢普/Loop）、丹睿（巴西/Busse Woods）和海听（Glenview）免费领。',
+      },
+      {
+        q: '怎么把照片放在地图上？',
+        a: '可以将照片发到驰跑团微信群（群名：芝加哥驰跑团 ChiRunners）里，注明中英文名字、地点、打卡日期和你想表达的一句话。或者把以上信息发到 admin@chirunners.org，收到信息以后，我们会把小旗子和你的照片放到地图上去。',
+      },
+    ],
     checkinsIntroLines: [
       '驰跑团“全球打卡地图”正式上线啦！无论你的脚步迈向何方：',
       '🏅 挑战各大赛事的激情赛道',
