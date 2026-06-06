@@ -13,6 +13,7 @@ import ChicagoMarathonWelcomePage from './pages/ChicagoMarathonWelcomePage'
 import CarbLoadingDinnerPage from './pages/CarbLoadingDinnerPage'
 import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
+import ChiStorePage from './pages/ChiStorePage'
 
 export default function App() {
   const location = useLocation()
@@ -23,8 +24,10 @@ export default function App() {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language)
   }, [language])
 
+  const isChiStore = location.pathname === '/chi-store'
+
   return (
-    <div className="homepage">
+    <div className={`homepage${isChiStore ? ' homepage--chiStore' : ''}`}>
       <Navbar key={location.pathname} copy={copy} language={language} setLanguage={setLanguage} />
       <Routes>
         <Route path="/" element={<LandingPage copy={copy} />} />
@@ -61,9 +64,10 @@ export default function App() {
           element={<Navigate to="/chicagomarathon/transportation" replace />}
         />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
+        <Route path="/chi-store" element={<ChiStorePage copy={copy} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <SiteFooter copy={copy} />
+      {!isChiStore ? <SiteFooter copy={copy} /> : null}
     </div>
   )
 }

@@ -152,6 +152,7 @@ export const CONTENT = {
       boardMembers: 'Board Members',
       marathonWelcome: 'Chicago Marathon',
       checkins: 'CHI Has Been Here',
+      chiStore: 'CHI Store',
       raceVolunteer: 'Race & Volunteer',
       menu: 'Menu',
       menuClose: 'Close menu',
@@ -161,6 +162,22 @@ export const CONTENT = {
     ],
     homeExplore: {
       sectionTitle: 'Explore',
+      checkins: {
+        id: 'checkins',
+        title: 'CHI Has Been Here',
+        description:
+          'Click a red flag for check-in photos. The 驰 marker is our Chicago home base.',
+        cta: 'Open global check-ins map',
+        to: '/chi-has-been-here',
+      },
+      chiStore: {
+        id: 'chi-store',
+        title: 'CHI Store',
+        description:
+          'Running tees, singlets, UV arm sleeves, hats, and more—official CHI Running Club gear.',
+        cta: 'Open CHI Store',
+        to: '/chi-store',
+      },
       raceVolunteer: {
         id: 'race-volunteer',
         title: 'Race & Volunteer Info',
@@ -180,14 +197,6 @@ export const CONTENT = {
           { label: 'Transportation', to: '/chicagomarathon/transportation' },
         ],
       },
-      checkins: {
-        id: 'checkins',
-        title: 'CHI Has Been Here',
-        description:
-          'Click a red flag for check-in photos. The 驰 marker is our Chicago home base.',
-        cta: 'Open global check-ins map',
-        to: '/chi-has-been-here',
-      },
       about: {
         id: 'about',
         title: 'About CHI Running Club',
@@ -197,6 +206,11 @@ export const CONTENT = {
           { label: 'Board Members', to: '/board-members' },
         ],
       },
+    },
+    chiStore: {
+      docTitle: 'CHI Store · ChiRunners',
+      iframeTitle: 'CHI Running Club store — secure checkout on Zeffy',
+      securePaymentNote: 'Secure checkout powered by Zeffy.',
     },
     routesTitle: "CHI Running Club's Regular Routes",
     routesParagraph:
@@ -660,6 +674,7 @@ export const CONTENT = {
       boardMembers: '董事会',
       marathonWelcome: '芝加哥马拉松',
       checkins: '全球打卡',
+      chiStore: '驰多多',
       raceVolunteer: '比赛 & 义工',
       menu: '菜单',
       menuClose: '关闭菜单',
@@ -669,6 +684,20 @@ export const CONTENT = {
     ],
     homeExplore: {
       sectionTitle: '探索',
+      checkins: {
+        id: 'checkins',
+        title: '全球打卡',
+        description: 'CHI Flag · 走遍世界的跑者打卡瞬间',
+        cta: '打开全球打卡地图',
+        to: '/chi-has-been-here',
+      },
+      chiStore: {
+        id: 'chi-store',
+        title: '驰多多',
+        description: '跑步短袖、背心、防晒袖套、帽子等驰跑团官方装备，欢迎选购。',
+        cta: '进入驰多多',
+        to: '/chi-store',
+      },
       raceVolunteer: {
         id: 'race-volunteer',
         title: '比赛 & 义工信息',
@@ -687,13 +716,6 @@ export const CONTENT = {
           { label: '交通', to: '/chicagomarathon/transportation' },
         ],
       },
-      checkins: {
-        id: 'checkins',
-        title: '全球打卡',
-        description: '点击红色旗标查看打卡照片；芝加哥是驰跑团大本营。',
-        cta: '打开全球打卡地图',
-        to: '/chi-has-been-here',
-      },
       about: {
         id: 'about',
         title: '关于驰跑团',
@@ -703,6 +725,11 @@ export const CONTENT = {
           { label: '董事会', to: '/board-members' },
         ],
       },
+    },
+    chiStore: {
+      docTitle: '驰多多 · 驰跑团',
+      iframeTitle: '驰跑团商店 — Zeffy 安全支付',
+      securePaymentNote: '支付由 Zeffy 安全处理，请放心选购。',
     },
     routesTitle: '驰跑团常规路线',
     routesParagraph:

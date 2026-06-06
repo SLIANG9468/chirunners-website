@@ -450,6 +450,48 @@ main.siteMain--landing + .siteFooter {
   margin-top: 24px;
 }
 
+/* CHI Store: full-page Zeffy embed, no footer */
+.homepage--chiStore {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+main.siteMain--chiStore {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding-top: 12px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.chiStoreSecureNote {
+  margin: 0 0 10px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--text-muted, #666);
+}
+
+.chiStoreFrame {
+  display: block;
+  width: 100%;
+  flex: 1;
+  min-height: 85dvh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+@media (min-width: 768px) {
+  .chiStoreFrame {
+    min-height: calc(100dvh - 140px);
+  }
+}
+
 .homeExploreAnchor {
   scroll-margin-top: 5.5rem;
 }

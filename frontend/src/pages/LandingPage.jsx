@@ -98,6 +98,20 @@ export default function LandingPage({ copy }) {
       <section className="section homeExploreSection" aria-label={explore.sectionTitle}>
         <div className="homeExploreGrid">
           <HomeExploreCard
+            id={explore.checkins.id}
+            title={explore.checkins.title}
+            description={explore.checkins.description}
+            cta={explore.checkins.cta}
+            to={explore.checkins.to}
+          />
+          <HomeExploreCard
+            id={explore.chiStore.id}
+            title={explore.chiStore.title}
+            description={explore.chiStore.description}
+            cta={explore.chiStore.cta}
+            to={explore.chiStore.to}
+          />
+          <HomeExploreCard
             id={explore.raceVolunteer.id}
             title={explore.raceVolunteer.title}
             description={explore.raceVolunteer.description}
@@ -109,13 +123,6 @@ export default function LandingPage({ copy }) {
             title={explore.marathon.title}
             description={explore.marathon.description}
             sublinks={explore.marathon.sublinks}
-          />
-          <HomeExploreCard
-            id={explore.checkins.id}
-            title={explore.checkins.title}
-            description={explore.checkins.description}
-            cta={explore.checkins.cta}
-            to={explore.checkins.to}
           />
           <HomeExploreSublinks
             id={explore.about.id}

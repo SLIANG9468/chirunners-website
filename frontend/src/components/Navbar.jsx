@@ -79,6 +79,16 @@ export default function Navbar({ copy, language, setLanguage }) {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/chi-has-been-here" onClick={closeMobileNav}>
+              {copy.nav.checkins}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/chi-store" onClick={closeMobileNav}>
+              {copy.nav.chiStore}
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/race-volunteer-info" onClick={closeMobileNav}>
               {copy.nav.raceVolunteer}
             </NavLink>
@@ -86,11 +96,6 @@ export default function Navbar({ copy, language, setLanguage }) {
           <li>
             <NavLink to="/chicagomarathon" onClick={closeMobileNav}>
               {copy.nav.marathonWelcome}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/chi-has-been-here" onClick={closeMobileNav}>
-              {copy.nav.checkins}
             </NavLink>
           </li>
           <li className="navAboutJoinWrap">
