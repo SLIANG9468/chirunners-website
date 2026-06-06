@@ -15,7 +15,6 @@ export default function ChiStorePage({ copy }) {
 
   return (
     <main className="siteMain siteMain--chiStore">
-      <p className="chiStoreSecureNote">{store.securePaymentNote}</p>
       <iframe
         className="chiStoreFrame"
         src={ZEFFY_SHOP_URL}

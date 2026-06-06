@@ -210,7 +210,6 @@ export const CONTENT = {
     chiStore: {
       docTitle: 'CHI Store · ChiRunners',
       iframeTitle: 'CHI Running Club store — secure checkout on Zeffy',
-      securePaymentNote: 'Secure checkout powered by Zeffy.',
     },
     routesTitle: "CHI Running Club's Regular Routes",
     routesParagraph:
@@ -729,7 +728,6 @@ export const CONTENT = {
     chiStore: {
       docTitle: '驰多多 · 驰跑团',
       iframeTitle: '驰跑团商店 — Zeffy 安全支付',
-      securePaymentNote: '支付由 Zeffy 安全处理，请放心选购。',
     },
     routesTitle: '驰跑团常规路线',
     routesParagraph:
