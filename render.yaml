@@ -3,15 +3,10 @@
 #
 # Optional: set backend CORS_ORIGINS to your static site URL for stricter CORS.
 #
-# Applying this blueprint creates a Postgres instance and wires DATABASE_URL into the API.
-# If you already have a database on Render, remove the block below and set DATABASE_URL manually.
+# Production Postgres is chirunners-website-db (set DATABASE_URL manually on chirunners-api).
+# Do not add a databases: block here — Blueprint would wire the API to the wrong instance.
 #
 # Chi check-in data lives in Postgres (city / visit tables).
-
-databases:
-  - name: chirunners-db
-    databaseName: chirunners
-    user: chirunners
 
 services:
   - type: web
@@ -30,10 +25,9 @@ services:
       # Render defaults include --preload, which is unsafe with threading locks after fork.
       - key: GUNICORN_CMD_ARGS
         value: '--access-logfile - --bind=0.0.0.0:10000'
+      # Set in Render dashboard from chirunners-website-db → Connect → Internal Database URL.
       - key: DATABASE_URL
-        fromDatabase:
-          name: chirunners-db
-          property: connectionString
+        sync: false
       - key: PYTHON_VERSION
         value: '3.12.8'
       - key: SMUGMUG_NICKNAME
