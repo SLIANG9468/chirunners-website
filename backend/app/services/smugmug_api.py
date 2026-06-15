@@ -8,8 +8,16 @@ import time
 
 import requests
 
-_cache_lock = threading.Lock()
+_cache_lock: threading.Lock | None = None
 _url_cache: dict[str, tuple[float, str | None]] = {}
+
+
+def _cache_lock_for_worker() -> threading.Lock:
+    """Create the lock in each gunicorn worker (safe if --preload is disabled)."""
+    global _cache_lock
+    if _cache_lock is None:
+        _cache_lock = threading.Lock()
+    return _cache_lock
 
 _DEFAULT_GALLERY_FOLDER = "Website/ChiHasBeenHere"
 
@@ -147,7 +155,7 @@ def resolve_smug_display_url(flask_app, image_key: str | None) -> str | None:
     )
     log_resolve = log if want_log else None
 
-    with _cache_lock:
+    with _cache_lock_for_worker():
         hit = _url_cache.get(cache_key)
         if hit is not None:
             expiry, cached = hit
@@ -156,7 +164,7 @@ def resolve_smug_display_url(flask_app, image_key: str | None) -> str | None:
 
     resolved = _resolve_to_direct_image_url(flask_app, slug, log_resolve)
 
-    with _cache_lock:
+    with _cache_lock_for_worker():
         _url_cache[cache_key] = (now + ttl, resolved)
 
     return resolved

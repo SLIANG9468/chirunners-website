@@ -20,12 +20,16 @@ services:
     region: oregon
     rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 run:app
-    # Liveness only: /api/health/db needs Postgres and can fail during cold start.
+    # Let Render's Python runtime set bind via GUNICORN_CMD_ARGS (see env below).
+    # Do not pass --bind/--workers here; duplicate flags conflict with Render defaults.
+    startCommand: gunicorn --timeout 120 run:app
     healthCheckPath: /api/health
     envVars:
       - key: FLASK_APP
         value: run:app
+      # Render defaults include --preload, which is unsafe with threading locks after fork.
+      - key: GUNICORN_CMD_ARGS
+        value: '--access-logfile - --bind=0.0.0.0:10000'
       - key: DATABASE_URL
         fromDatabase:
           name: chirunners-db

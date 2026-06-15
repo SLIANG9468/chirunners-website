@@ -1,7 +1,7 @@
-Flask>=3.0.0
+Flask>=3.0.0,<4
 flask-cors
-gunicorn
+gunicorn>=22,<26
 requests
 python-dotenv
-Flask-SQLAlchemy>=3.1.0
+Flask-SQLAlchemy>=3.1.0,<4
 psycopg2-binary
