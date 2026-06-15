@@ -73,14 +73,26 @@ def create_app() -> Flask:
     flask_app.register_blueprint(chi_has_been_here_bp)
     flask_app.register_blueprint(volunteer_race_albums_bp)
 
-    def _warm_smugmug_cache_worker() -> None:
-        try:
-            with flask_app.app_context():
-                from app.services.chi_checkins_db import warm_smugmug_cache_for_all_visits
+    # On Render, skip startup warm: two gunicorn workers would each fan out SmugMug
+    # fetches and can slow or OOM a small instance during deploy health checks.
+    # Photos still resolve on demand via photos_payload_for_city.
+    _warm_env = os.getenv("SMUGMUG_WARM_ON_STARTUP", "").strip().lower()
+    _warm_on_startup = _warm_env in ("1", "true", "yes")
+    if _warm_env in ("0", "false", "no"):
+        _warm_on_startup = False
+    elif not _warm_env:
+        _warm_on_startup = os.getenv("RENDER") != "true"
 
-                warm_smugmug_cache_for_all_visits(flask_app)
-        except Exception:
-            logging.getLogger(__name__).exception("SmugMug cache warm failed")
+    if _warm_on_startup:
 
-    threading.Thread(target=_warm_smugmug_cache_worker, daemon=True).start()
+        def _warm_smugmug_cache_worker() -> None:
+            try:
+                with flask_app.app_context():
+                    from app.services.chi_checkins_db import warm_smugmug_cache_for_all_visits
+
+                    warm_smugmug_cache_for_all_visits(flask_app)
+            except Exception:
+                logging.getLogger(__name__).exception("SmugMug cache warm failed")
+
+        threading.Thread(target=_warm_smugmug_cache_worker, daemon=True).start()
     return flask_app

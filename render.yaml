@@ -20,8 +20,9 @@ services:
     region: oregon
     rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 run:app
-    healthCheckPath: /api/health/db
+    startCommand: gunicorn --bind 0.0.0.0:$PORT --workers 2 --timeout 120 run:app
+    # Liveness only: /api/health/db needs Postgres and can fail during cold start.
+    healthCheckPath: /api/health
     envVars:
       - key: FLASK_APP
         value: run:app
