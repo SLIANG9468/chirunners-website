@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
-const ZEFFY_SHOP_URL = 'https://www.zeffy.com/en-US/ticketing/chi-running-clubs-shop'
+// Zeffy's iframe-specific embed URL (full ticketing URL disables purchases in desktop iframes).
+const ZEFFY_SHOP_URL = 'https://www.zeffy.com/en-US/embed/ticketing/chi-running-clubs-shop'
 
 export default function ChiStorePage({ copy }) {
   const store = copy.chiStore
@@ -19,8 +20,8 @@ export default function ChiStorePage({ copy }) {
         className="chiStoreFrame"
         src={ZEFFY_SHOP_URL}
         title={store.iframeTitle}
-        loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
+        allow="payment *"
       />
     </main>
   )

@@ -409,7 +409,7 @@ export const CONTENT = {
         amenityRaceShuttle: 'Race-morning express shuttle to the marathon start: $40 per person',
         runnerPerkLateCheckout: 'Post-race wind-down: late checkout until 5:00 PM for just $75 + tax',
         flyerViewLabel: 'View flyer (PDF)',
-        flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer.pdf',
+        flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer-en.pdf',
         ctaBook: 'Book hotel',
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',

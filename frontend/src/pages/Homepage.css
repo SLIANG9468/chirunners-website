@@ -474,6 +474,7 @@ main.siteMain--chiStore {
   width: 100%;
   flex: 1;
   min-height: 85dvh;
+  height: 85dvh;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--bg);
@@ -482,6 +483,7 @@ main.siteMain--chiStore {
 @media (min-width: 768px) {
   .chiStoreFrame {
     min-height: calc(100dvh - 140px);
+    height: calc(100dvh - 140px);
   }
 }
 
