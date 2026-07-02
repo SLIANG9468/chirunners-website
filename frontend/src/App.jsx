@@ -14,6 +14,7 @@ import CarbLoadingDinnerPage from './pages/CarbLoadingDinnerPage'
 import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
 import ChiStorePage from './pages/ChiStorePage'
+import Founders5KPage from './pages/Founders5KPage'
 
 export default function App() {
   const location = useLocation()
@@ -65,6 +66,8 @@ export default function App() {
         />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="/chi-store" element={<ChiStorePage copy={copy} />} />
+        <Route path="/5K" element={<Founders5KPage language={language} />} />
+        <Route path="/5k" element={<Founders5KPage language={language} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {!isChiStore ? <SiteFooter copy={copy} /> : null}
