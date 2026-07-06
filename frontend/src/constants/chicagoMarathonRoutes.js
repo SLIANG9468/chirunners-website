@@ -4,4 +4,5 @@ export const CHICAGO_MARATHON_ROUTES = {
   carbLoading: '/chicagomarathon/carb-loading-dinner',
   hotel: '/chicagomarathon/hotel',
   transportation: '/chicagomarathon/transportation',
+  tickets: '/chicagomarathon/tickets',
 }

@@ -13,6 +13,7 @@ import ChicagoMarathonWelcomePage from './pages/ChicagoMarathonWelcomePage'
 import CarbLoadingDinnerPage from './pages/CarbLoadingDinnerPage'
 import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
+import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
 import ChiStorePage from './pages/ChiStorePage'
 import Founders5KPage from './pages/Founders5KPage'
 
@@ -52,6 +53,7 @@ export default function App() {
           path="/chicagomarathon/transportation"
           element={<ChicagoMarathonTransportationPage copy={copy} />}
         />
+        <Route path="/chicagomarathon/tickets" element={<ChicagoMarathonTicketsPage copy={copy} />} />
         <Route path="/chicago-marathon-faq" element={<Navigate to="/chicagomarathon" replace />} />
         <Route path="/chicagomarathon-faq" element={<Navigate to="/chicagomarathon" replace />} />
         <Route path="/chicago-marathon" element={<Navigate to="/chicagomarathon" replace />} />
@@ -64,6 +66,7 @@ export default function App() {
           path="/chicago-marathon/transportation"
           element={<Navigate to="/chicagomarathon/transportation" replace />}
         />
+        <Route path="/chicago-marathon/tickets" element={<Navigate to="/chicagomarathon/tickets" replace />} />
         <Route path="/chi-has-been-here" element={<ChiHasBeenHerePage copy={copy} language={language} />} />
         <Route path="/chi-store" element={<ChiStorePage copy={copy} />} />
         <Route path="/5K" element={<Founders5KPage language={language} />} />

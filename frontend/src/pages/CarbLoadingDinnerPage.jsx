@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
+import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
 const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
@@ -91,26 +92,6 @@ function IconCloverBenefit() {
       <circle cx="12" cy="19.9" r="3.2" stroke="currentColor" strokeWidth="1.4" />
       <circle cx="6.2" cy="13.2" r="3.2" stroke="currentColor" strokeWidth="1.4" />
       <circle cx="12" cy="13.2" r="1.55" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  )
-}
-
-/** Hotel promo card (link to /chicagomarathon/hotel). */
-function IconHotelPromo() {
-  return (
-    <svg
-      className="h-7 w-7 shrink-0 transition-colors group-hover:text-white"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden
-    >
-      <path
-        d="M4 21V8l8-4v17M4 21h16M4 21H2M20 21h2M12 21V12m0 0h4m-4 0H8m8 0v9m0-9h4M8 12H4v9"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
     </svg>
   )
 }
@@ -257,50 +238,8 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
           </div>
         </section>
 
-        <section className="section">
-          <Link
-            to={CHICAGO_MARATHON_ROUTES.hotel}
-            className="group flex items-center gap-4 rounded-2xl border-2 border-chi-red/45 bg-gradient-to-br from-chi-red/15 via-white/40 to-chi-red/5 px-5 py-6 shadow-card outline-none transition duration-200 hover:-translate-y-0.5 hover:border-chi-red hover:from-chi-red/20 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-chi-red/60 focus-visible:ring-offset-2 dark:from-chi-red/20 dark:via-neutral-900/50 dark:to-neutral-900/30 dark:hover:border-chi-red-light sm:gap-5 sm:px-8 sm:py-7"
-          >
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-chi-red/15 text-chi-red ring-1 ring-chi-red/35 transition duration-200 group-hover:bg-chi-red group-hover:text-white group-hover:ring-chi-red dark:bg-chi-red/25 sm:h-16 sm:w-16">
-              <IconHotelPromo />
-            </div>
-            <div className="min-w-0 flex-1 text-left">
-              <p className="text-base font-semibold leading-snug text-neutral-900 dark:text-neutral-100 sm:text-lg">
-                {p.hotelPromoMain}
-              </p>
-              <p className="mt-2 text-sm font-semibold text-chi-red transition group-hover:text-chi-red-hover dark:text-chi-red-light sm:text-base">
-                {p.hotelPromoCta} →
-              </p>
-            </div>
-          </Link>
-        </section>
-
         <section className="section pb-2">
-          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            {p.registerUrl ? (
-              <a
-                href={p.registerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-chi-red px-8 py-3 text-center text-base font-semibold text-white shadow-md transition-colors hover:bg-chi-red-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chi-red-ring"
-              >
-                {p.ctaRegister}
-              </a>
-            ) : (
-              <button
-                type="button"
-                disabled
-                title={p.registerDisabledHint}
-                className="inline-flex min-h-[48px] cursor-not-allowed items-center justify-center rounded-xl border border-neutral-300 bg-neutral-200/80 px-8 py-3 text-center text-base font-semibold text-neutral-500 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-500"
-              >
-                {p.ctaRegister}
-              </button>
-            )}
-          </div>
-          {!p.registerUrl ? (
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">{p.registerDisabledHint}</p>
-          ) : null}
+          <MarathonBookingButtons ctas={copy.marathonWelcome.bookingCtas} />
         </section>
       </div>
     </main>

@@ -480,6 +480,33 @@ main.siteMain--chiStore {
   background: var(--bg);
 }
 
+.marathonTicketFrame {
+  display: block;
+  width: 100%;
+  min-height: min(720px, 75vh);
+  height: min(720px, 75vh);
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.marathonTicketFrame--busShuttle {
+  min-height: min(1120px, 92vh);
+  height: min(1120px, 92vh);
+}
+
+.marathonTickets-anchor {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  .marathonTicketFrame--busShuttle {
+    min-height: min(1200px, 94vh);
+    height: min(1200px, 94vh);
+  }
+}
+
 @media (min-width: 768px) {
   .chiStoreFrame {
     min-height: calc(100dvh - 140px);

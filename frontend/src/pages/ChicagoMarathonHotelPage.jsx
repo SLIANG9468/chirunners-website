@@ -1,6 +1,7 @@
 import { createElement } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
+import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 const runnerIconClass = 'h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400'
@@ -311,14 +312,7 @@ export default function ChicagoMarathonHotelPage({ copy }) {
             </ul>
 
             <div className="mt-10">
-              <a
-                href={h.hotelBookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-chi-red px-8 py-3 text-center text-base font-semibold text-white shadow-md transition-colors hover:bg-chi-red-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chi-red-ring sm:w-auto"
-              >
-                {h.ctaBook}
-              </a>
+              <MarathonBookingButtons ctas={mw.bookingCtas} />
             </div>
 
             <div className="mt-8 rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
