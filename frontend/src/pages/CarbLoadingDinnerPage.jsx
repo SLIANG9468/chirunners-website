@@ -155,7 +155,7 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
                 src={HERO_IMAGE_SRC}
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover"
-                style={{ objectPosition: 'center top', transform: 'translateY(-50px)' }}
+                style={{ objectPosition: 'center top' }}
               />
               <div
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15"

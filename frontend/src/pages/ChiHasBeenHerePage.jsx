@@ -40,7 +40,12 @@ function pickLocalized(enRaw, zhRaw, language) {
 function locationCityCountry(location, language) {
   const city = pickLocalized(location.city, location.cityZh, language)
   const country = pickLocalized(location.country, location.countryZh, language)
-  return `${city}, ${country}`
+  if (language === 'zh') {
+    if (country && city) return `${country}，${city}`
+    return country || city
+  }
+  if (city && country) return `${city}, ${country}`
+  return city || country
 }
 
 function formatVisitDate(raw, language) {
