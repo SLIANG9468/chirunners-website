@@ -36,6 +36,8 @@ _FETCH_UA = (
 _DEFAULT_SMUG_CACHE_TTL_S = 10 * 365 * 24 * 3600
 # Monotonic expiry far in the future: env 0 / negative / inf = cache for process lifetime.
 _INFINITE_SMUG_CACHE_TTL_S = 10**12
+# Do not pin failed resolves (e.g. temporarily unlisted gallery) for the success TTL.
+_FAILED_RESOLVE_CACHE_TTL_S = 5 * 60
 
 
 def _gallery_folder(flask_app) -> str:
@@ -163,8 +165,9 @@ def resolve_smug_display_url(flask_app, image_key: str | None) -> str | None:
                 return cached
 
     resolved = _resolve_to_direct_image_url(flask_app, slug, log_resolve)
+    store_ttl = ttl if resolved else min(ttl, _FAILED_RESOLVE_CACHE_TTL_S)
 
     with _cache_lock_for_worker():
-        _url_cache[cache_key] = (now + ttl, resolved)
+        _url_cache[cache_key] = (now + store_ttl, resolved)
 
     return resolved
