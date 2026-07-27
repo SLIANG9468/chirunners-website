@@ -60,7 +60,7 @@ export const FOUNDERS_5K_CONTENT = {
       },
       {
         title: '各水平均可参与',
-        body: '跑、走均可——驰跑团成员、家人，一起来。',
+        body: '跑、走均可——驰跑团成员、家人和朋友，一起来。',
       },
     ],
   },
