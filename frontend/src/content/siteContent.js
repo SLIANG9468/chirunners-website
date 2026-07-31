@@ -396,6 +396,7 @@ export const CONTENT = {
         hotelPerksIntro: 'Comfort and confidence for your race weekend—courtesy of the hotel:',
         runnerPerksTitle: 'Exclusive Chicago Marathon runner perks',
         runnerPerksIntro: 'We’ve added a few touches so you can line up feeling your best:',
+        runnerPerkRaceDayBreakfast: 'Race Day Breakfast: Starts at 4:40 AM',
         runnerPerkBreakfastBoost:
           'Race-weekend Chinese-style breakfast boost—high-carb favorites(race days)',
         runnerPerkDiningArea: 'Private dining area for CHI Running Club guests',
@@ -919,6 +920,7 @@ export const CONTENT = {
         hotelPerksIntro: '为您的比赛之旅提供舒适保障：',
         runnerPerksTitle: '马拉松跑者专属礼遇',
         runnerPerksIntro: '为帮助您发挥最佳状态，我们特别准备：',
+        runnerPerkRaceDayBreakfast: '比赛日早餐：上午 4:40 开始',
         runnerPerkBreakfastBoost: '中式能量早餐（比赛专供）、高碳水补给（粥、面食等）',
         runnerPerkDiningArea: '专属就餐区域',
         runnerPerkLounge: '跑者休息厅',

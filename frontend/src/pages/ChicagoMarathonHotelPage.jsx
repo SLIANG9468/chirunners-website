@@ -279,6 +279,7 @@ export default function ChicagoMarathonHotelPage({ copy }) {
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">{h.runnerPerksIntro}</p>
               <ul className="mt-4 space-y-3">
+                <AmenityRow icon={IconClock} text={h.runnerPerkRaceDayBreakfast} iconClassName={runnerIconClass} />
                 <AmenityRow icon={IconBreakfast} text={h.runnerPerkBreakfastBoost} iconClassName={runnerIconClass} />
                 <AmenityRow icon={IconDining} text={h.runnerPerkDiningArea} iconClassName={runnerIconClass} />
                 <AmenityRow icon={IconSofa} text={h.runnerPerkLounge} iconClassName={runnerIconClass} />
