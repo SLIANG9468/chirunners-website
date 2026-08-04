@@ -240,6 +240,26 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
 
         <section className="section pb-2">
           <MarathonBookingButtons ctas={copy.marathonWelcome.bookingCtas} />
+
+          <div className="mt-8 rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
+            <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+              {p.wechatGroupTitle}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+              {p.wechatGroupBody}
+            </p>
+            <div className="mt-5 flex justify-center sm:justify-start">
+              <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm dark:border-neutral-700 dark:bg-neutral-950">
+                <img
+                  src={p.wechatGroupQrSrc}
+                  alt={p.wechatGroupQrAlt}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto w-[220px] max-w-full sm:w-[240px]"
+                />
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </main>

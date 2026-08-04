@@ -462,6 +462,11 @@ export const CONTENT = {
         ctaRegister: 'Register now',
         registerUrl:
           'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-carb-loading-dinner-and-race-day-bus-transportation',
+        wechatGroupTitle: 'Questions? Join our carb-loading dinner WeChat group',
+        wechatGroupBody:
+          'Scan to join—ask anything about the dinner, registration, and event details.',
+        wechatGroupQrAlt: '2026 Chicago Marathon carb-loading dinner WeChat group QR code',
+        wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -985,6 +990,10 @@ export const CONTENT = {
         ctaRegister: '立即报名（加碳会）',
         registerUrl:
           'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-carb-loading-dinner-and-race-day-bus-transportation',
+        wechatGroupTitle: '有问题？加入2026芝加哥马拉松加碳会微信群',
+        wechatGroupBody: '扫码进群，加碳会报名、活动细节等问题都可以在群里问。',
+        wechatGroupQrAlt: '2026芝加哥马拉松加碳会微信群二维码',
+        wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',
