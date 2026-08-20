@@ -190,12 +190,9 @@ export const CONTENT = {
         id: 'marathon',
         title: 'Chicago Marathon',
         description:
-          'CHI Running Club welcomes you to race weekend—guides for carb-loading, lodging, transportation, and more.',
-        sublinks: [
-          { label: 'Carb-loading dinner', to: '/chicagomarathon/carb-loading-dinner' },
-          { label: 'Hotels & lodging', to: '/chicagomarathon/hotel' },
-          { label: 'Transportation', to: '/chicagomarathon/transportation' },
-        ],
+          'Chicago Marathon weekend—guides for carb-loading, lodging, transportation, and more to help you race with confidence.',
+        cta: 'View Chicago Marathon guide',
+        to: '/chicagomarathon',
       },
       about: {
         id: 'about',
@@ -379,6 +376,11 @@ export const CONTENT = {
         },
       },
       backToHub: '← Back to Chicago Marathon',
+      wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
+      wechatGroupBody:
+        'Scan to join—ask anything about race weekend, carb-loading, lodging, and transportation.',
+      wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
+      wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-hub-wechat-group-qr.png',
       bookingCtas: {
         carbLoading: 'Book carb-loading ticket',
         hotel: 'Book hotel',
@@ -725,13 +727,9 @@ export const CONTENT = {
       marathon: {
         id: 'marathon',
         title: '芝加哥马拉松',
-        description:
-          '驰跑团欢迎你来芝马周末——加碳会、住宿、交通等指南，助你从容参赛。',
-        sublinks: [
-          { label: '加碳会', to: '/chicagomarathon/carb-loading-dinner' },
-          { label: '住宿', to: '/chicagomarathon/hotel' },
-          { label: '交通', to: '/chicagomarathon/transportation' },
-        ],
+        description: '芝加哥马拉松周末——加碳会、住宿、交通等指南，助你从容参赛。',
+        cta: '查看芝马指南',
+        to: '/chicagomarathon',
       },
       about: {
         id: 'about',
@@ -908,6 +906,10 @@ export const CONTENT = {
         },
       },
       backToHub: '← 返回芝加哥马拉松',
+      wechatGroupTitle: '有问题？加入芝加哥马拉松微信群',
+      wechatGroupBody: '扫码进群，加碳会、住宿、交通等芝马周末问题都可以在群里问。',
+      wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
+      wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-hub-wechat-group-qr.png',
       bookingCtas: {
         carbLoading: '购买加碳会门票',
         hotel: '预订酒店',

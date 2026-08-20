@@ -14,23 +14,43 @@ export default function LandingPage({ copy }) {
   const [homeHeroError, setHomeHeroError] = useState('')
 
   useEffect(() => {
-    async function loadHomeHeroPhotos() {
+    let cancelled = false
+
+    async function loadHomeHeroPhotos(attempt = 0) {
+      const maxAttempts = 5
+      const retryDelayMs = 1000
+
       try {
         const response = await fetch(apiUrl('/api/home-hero/photos'))
         if (!response.ok) {
-          setHomeHeroError(copy.homeHeroErrorLoad)
+          if (attempt + 1 < maxAttempts) {
+            window.setTimeout(() => loadHomeHeroPhotos(attempt + 1), retryDelayMs)
+            return
+          }
+          if (!cancelled) setHomeHeroError(copy.homeHeroErrorLoad)
           return
         }
+
         const data = await response.json()
         const loadedPhotos = (data.photos || []).map((url) => absMediaUrl(url))
-        setHomeHeroPhotos(loadedPhotos)
-        setHomeHeroPhotoIdx(0)
+        if (!cancelled) {
+          setHomeHeroPhotos(loadedPhotos)
+          setHomeHeroPhotoIdx(0)
+          setHomeHeroError('')
+        }
       } catch {
-        setHomeHeroError(copy.homeHeroErrorConnect)
+        if (attempt + 1 < maxAttempts) {
+          window.setTimeout(() => loadHomeHeroPhotos(attempt + 1), retryDelayMs)
+          return
+        }
+        if (!cancelled) setHomeHeroError(copy.homeHeroErrorConnect)
       }
     }
 
     loadHomeHeroPhotos()
+    return () => {
+      cancelled = true
+    }
   }, [copy.homeHeroErrorConnect, copy.homeHeroErrorLoad])
 
   useEffect(() => {
@@ -97,11 +117,12 @@ export default function LandingPage({ copy }) {
 
       <section className="section homeExploreSection" aria-label={explore.sectionTitle}>
         <div className="homeExploreGrid">
-          <HomeExploreSublinks
+          <HomeExploreCard
             id={explore.marathon.id}
             title={explore.marathon.title}
             description={explore.marathon.description}
-            sublinks={explore.marathon.sublinks}
+            cta={explore.marathon.cta}
+            to={explore.marathon.to}
           />
           <HomeExploreCard
             id={explore.checkins.id}
