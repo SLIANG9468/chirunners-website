@@ -55,7 +55,7 @@ export const FOUNDERS_5K_CONTENT = {
       'Every participant receives a bib number.',
       'Timing is manual (hand timers)—not chip timing.',
       'Start and finish have a display screen (laptop or iPad) and video recording for results review.',
-      'The 5K is an out-and-back course with a marked U-turn. The turnaround also has a water station.',
+      'The 5K is an out-and-back course: keep to the right. At the turnaround, turn left around the U-turn marker and return along the same path to the finish. A water station is near the turnaround.',
     ],
     routeTitle: '5K route map',
     routeIntro:
@@ -121,7 +121,7 @@ export const FOUNDERS_5K_CONTENT = {
       '每位参赛者都有号码布。',
       '采用人工计时（手动计时器），非芯片计时。',
       '起点与终点设有显示屏幕（笔记本电脑或 iPad），并全程录像以便核对成绩。',
-      '5K 为往返赛道：跑至折返点后原路返回。折返点设有加水站。',
+      '5K 为往返赛道：尽量靠右侧跑。到达折返点后，左拐绕过折返点，沿原路线返回终点。折返点附近设有水站。',
     ],
     routeTitle: '5K 路线图',
     routeIntro:
