@@ -3,6 +3,8 @@ import {
   FOUNDERS_5K_HERO_DESKTOP,
   FOUNDERS_5K_HERO_MOBILE,
   FOUNDERS_5K_REGISTER_URL,
+  FOUNDERS_5K_ROUTE_FOCUS,
+  FOUNDERS_5K_ROUTE_MAP,
   getFounders5KContent,
 } from '../constants/founders5KContent'
 
@@ -31,6 +33,17 @@ function HighlightCard({ title, body }) {
     <div className="rounded-2xl border border-neutral-200/90 bg-white/70 px-5 py-5 shadow-card dark:border-neutral-600/70 dark:bg-neutral-800/60">
       <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 sm:text-lg">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">{body}</p>
+    </div>
+  )
+}
+
+function PlanBlock({ title, children }) {
+  return (
+    <div className="rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
+      <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 sm:text-lg">{title}</h3>
+      <div className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+        {children}
+      </div>
     </div>
   )
 }
@@ -108,7 +121,7 @@ export default function Founders5KPage({ language }) {
           <Founders5KHero content={c} isZh={isZh} />
         </section>
 
-        <section className="section pb-2">
+        <section className="section">
           <h2 className="text-center text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
             {c.highlightsTitle}
           </h2>
@@ -116,6 +129,89 @@ export default function Founders5KPage({ language }) {
             {c.highlights.map((item) => (
               <HighlightCard key={item.title} title={item.title} body={item.body} />
             ))}
+          </div>
+        </section>
+
+        <section className="section pb-2" aria-labelledby="founders-5k-race-day">
+          <h2
+            id="founders-5k-race-day"
+            className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl"
+          >
+            {c.raceDayTitle}
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+            {c.raceDayIntro}
+          </p>
+
+          <div className="mt-6 grid gap-4">
+            <PlanBlock title={c.scheduleTitle}>
+              <ol className="space-y-2.5">
+                {c.schedule.map((row) => (
+                  <li key={row.time} className="flex gap-3 sm:gap-4">
+                    <span className="w-[5.5rem] shrink-0 font-semibold text-chi-red dark:text-chi-red-light sm:w-24">
+                      {row.time}
+                    </span>
+                    <span>{row.detail}</span>
+                  </li>
+                ))}
+              </ol>
+            </PlanBlock>
+
+            <PlanBlock title={c.raceOrderTitle}>
+              <p>{c.raceOrderBody}</p>
+            </PlanBlock>
+
+            <PlanBlock title={c.bibTimingTitle}>
+              <ul className="list-disc space-y-2 pl-5">
+                {c.bibTimingItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </PlanBlock>
+
+            <PlanBlock title={c.routeTitle}>
+              <p>{c.routeIntro}</p>
+              <figure className="mt-4">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                  {c.routeOverviewCaption}
+                </p>
+                <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-950">
+                  <img
+                    src={FOUNDERS_5K_ROUTE_MAP}
+                    alt={c.routeOverviewAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full"
+                  />
+                </div>
+              </figure>
+              <figure className="mt-5">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                  {c.routeFocusCaption}
+                </p>
+                <div className="overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-950">
+                  <img
+                    src={FOUNDERS_5K_ROUTE_FOCUS}
+                    alt={c.routeFocusAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full"
+                  />
+                </div>
+              </figure>
+            </PlanBlock>
+
+            <PlanBlock title={c.picnicTitle}>
+              <ul className="list-disc space-y-2 pl-5">
+                {c.picnicItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </PlanBlock>
+
+            <PlanBlock title={c.facilitiesTitle}>
+              <p>{c.facilitiesBody}</p>
+            </PlanBlock>
           </div>
         </section>
       </div>
