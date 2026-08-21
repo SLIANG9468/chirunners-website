@@ -7,6 +7,14 @@ import HomeExploreSublinks from '../components/HomeExploreSublinks'
 export default function LandingPage({ copy }) {
   const location = useLocation()
   const explore = copy.homeExplore
+
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = 'CHI Running Club / 芝加哥驰跑团'
+    return () => {
+      document.title = previousTitle
+    }
+  }, [])
   const [homeHeroPhotos, setHomeHeroPhotos] = useState([])
   const [homeHeroPhotoIdx, setHomeHeroPhotoIdx] = useState(0)
   const [previousHomeHeroPhotoIdx, setPreviousHomeHeroPhotoIdx] = useState(null)
