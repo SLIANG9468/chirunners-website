@@ -39,14 +39,20 @@ export const FOUNDERS_5K_CONTENT = {
     raceDayTitle: 'Race-day plan for participants',
     raceDayIntro:
       'Please read this before race day so check-in and the schedule stay smooth for everyone.',
+    meetingTitle: 'Meeting point',
+    meetingBody:
+      'Gathering, check-in, and the group photo are at Shelter 31, not at the 5K start. Please go to Shelter 31 first; do not go directly to the start line.',
     scheduleTitle: 'Schedule',
     schedule: [
-      { time: '8:00 AM', detail: 'Group photo' },
+      { time: '7:30 AM', detail: 'Check-in opens (Shelter 31)' },
+      { time: '8:00 AM', detail: 'Group photo (Shelter 31)' },
+      { time: '8:15 AM', detail: 'Check-in closes' },
       { time: '8:30 AM', detail: '5K start' },
       { time: '9:30 AM', detail: 'Youth Mile Run' },
       { time: '10:00 AM', detail: 'Youth Half Mile Run' },
       { time: '10:30 AM', detail: 'Picnic begins (potluck)' },
     ],
+    kitNote: 'If you have a ChiRunners club kit, we recommend wearing it.',
     raceOrderTitle: 'Race order',
     raceOrderBody:
       'We run the 5K first, then the Youth Mile, then the Youth Half Mile.',
@@ -70,6 +76,7 @@ export const FOUNDERS_5K_CONTENT = {
     picnicItems: [
       'Picnic starts at 10:30 AM after the races.',
       'It is a potluck—please coordinate what you will bring in the WeChat group (sign-up thread / 接龙).',
+      'Please leave food in the car first, ideally in a cooler or insulated bag. After the run, bring it to Shelter 31.',
       'There is no BBQ grill on site. Please do not bring lamb skewers or other food that needs grilling.',
     ],
     facilitiesTitle: 'Restrooms',
@@ -106,14 +113,20 @@ export const FOUNDERS_5K_CONTENT = {
     ],
     raceDayTitle: '参赛须知 · 比赛日安排',
     raceDayIntro: '请赛前仔细阅读，避免当天现场临时说明造成不便。',
+    meetingTitle: '集合地点',
+    meetingBody:
+      '集合、签到和大合照都在 Shelter 31，不在 5K 起跑点。请先到 Shelter 31，不要直接去起点。',
     scheduleTitle: '时间安排',
     schedule: [
-      { time: '8:00', detail: '大合照' },
+      { time: '7:30', detail: '签到开始（Shelter 31）' },
+      { time: '8:00', detail: '大合照（Shelter 31）' },
+      { time: '8:15', detail: '签到截止' },
       { time: '8:30', detail: '5K 开跑' },
       { time: '9:30', detail: '青少年 1 英里跑（Youth Mile）' },
       { time: '10:00', detail: '青少年半英里跑（Youth Half Mile）' },
       { time: '10:30', detail: '野餐开始（自带菜品 Potluck）' },
     ],
+    kitNote: '如果你有驰跑团队服，建议当天穿着队服。',
     raceOrderTitle: '比赛顺序',
     raceOrderBody: '先进行 5K，再进行 1 英里，最后进行半英里。',
     bibTimingTitle: '号码布与计时',
@@ -134,6 +147,7 @@ export const FOUNDERS_5K_CONTENT = {
     picnicItems: [
       '野餐于上午 10:30 开始。',
       '自带菜品分享；请在微信群里接龙报名携带的食物。',
+      '建议先把食物放在车里，最好放在冰袋 / cooler 或类似保温包里；跑完后再把食物拿到 Shelter 31。',
       '现场没有 BBQ 炉子，请勿携带需要烧烤的食物（如羊肉串、烤肉等）。',
     ],
     facilitiesTitle: '卫生间',

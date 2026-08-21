@@ -144,6 +144,10 @@ export default function Founders5KPage({ language }) {
           </p>
 
           <div className="mt-6 grid gap-4">
+            <PlanBlock title={c.meetingTitle}>
+              <p>{c.meetingBody}</p>
+            </PlanBlock>
+
             <PlanBlock title={c.scheduleTitle}>
               <ol className="space-y-2.5">
                 {c.schedule.map((row) => (
@@ -155,6 +159,7 @@ export default function Founders5KPage({ language }) {
                   </li>
                 ))}
               </ol>
+              <p className="mt-4">{c.kitNote}</p>
             </PlanBlock>
 
             <PlanBlock title={c.raceOrderTitle}>
