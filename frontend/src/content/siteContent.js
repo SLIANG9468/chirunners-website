@@ -353,7 +353,7 @@ export const CONTENT = {
       heroCourse:
         'The Chicago Marathon course is famously flat and fast, with cheering neighborhoods and a stunning finish in downtown Chicago—one of the Abbott World Marathon Majors.',
       heroClub:
-        'CHI Running Club / 芝加哥驰跑团 welcomes you. We hope race weekend feels smooth, joyful, and full of community support.',
+        'CHI Running Club / ChiRunners / 芝加哥驰跑团 welcomes you. We hope race weekend feels smooth, joyful, and full of community support.',
       guidesTitle: 'Race weekend guides',
       cards: {
         carbLoading: {
@@ -372,6 +372,12 @@ export const CONTENT = {
           title: 'Chicago Marathon transportation',
           description:
             'Hyatt Place O’Hare, airport wayfinding, race-morning shuttle, CTA/Ventra, and Expo routes—mobile friendly.',
+          cta: 'Open guide',
+        },
+        volunteer: {
+          title: 'Volunteer',
+          description:
+            'Join our volunteer team to support Chicago Marathon runners and meet fellow club members.',
           cta: 'Open guide',
         },
       },
@@ -469,6 +475,47 @@ export const CONTENT = {
           'Scan to join—ask anything about the dinner, registration, and event details.',
         wechatGroupQrAlt: '2026 Chicago Marathon carb-loading dinner WeChat group QR code',
         wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
+      },
+      volunteerPage: {
+        heroTitleLines: ['Chicago Marathon', 'Volunteer Team'],
+        heroSubtitle: 'Hosted by CHI Running Club',
+        introSectionTitle: 'About our volunteer program',
+        introBody:
+          'Since 2015, CHI Running Club has organized volunteer service for the Chicago Marathon every year. In 2026 we’re hosting two shifts. Whether you live in Chicago or are visiting for the race or to sightsee, we’d love to have you join our volunteer team!',
+        eventSectionTitle: '2026 volunteer shifts',
+        shifts: [
+          {
+            title: 'Expo Packet Distribution',
+            rows: [
+              {
+                icon: 'calendar',
+                label: 'Date & time',
+                value: 'Saturday, October 10 · 7:15 AM – 12:00 PM',
+              },
+              { icon: 'mapPin', label: 'Location', value: 'McCormick Place Expo' },
+            ],
+          },
+          {
+            title: 'Water Station #17',
+            rows: [
+              {
+                icon: 'calendar',
+                label: 'Date & time',
+                value: 'Sunday, October 11 (race day) · 6:30 AM – 3:30 PM',
+              },
+              {
+                icon: 'mapPin',
+                label: 'Location',
+                value: 'Water Station #17 (exact course location TBD)',
+              },
+            ],
+          },
+        ],
+        wechatGroupTitle: 'Questions? Join our Chicago Marathon volunteer WeChat group',
+        wechatGroupBody:
+          'Scan to join—ask anything about signing up, shift logistics, and volunteer details.',
+        wechatGroupQrAlt: '2026 Chicago Marathon volunteer WeChat group QR code',
+        wechatGroupQrSrc: '/marathon-welcome/volunteer-wechat-group-qr.png',
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -885,7 +932,7 @@ export const CONTENT = {
       heroCourse:
         '芝加哥马拉松赛道以平坦、快速著称，沿途社区氛围热烈，始终点位于芝加哥市中心，也是世界马拉松大满贯赛事之一。',
       heroClub:
-        '驰跑团 (CHI Running Club) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
+        '驰跑团 (CHI Running Club / Chirunners) 欢迎你的到来， 我们在这里为你加油！愿你度过一个顺利、开心、充满力量的马拉松周末。',
       guidesTitle: '赛事周末指南',
       cards: {
         carbLoading: {
@@ -903,6 +950,11 @@ export const CONTENT = {
           description:
             '奥黑尔机场怎么找酒店班车与蓝线、凯悦嘉轩到起点/Expo、比赛日直通车与 CTA 入门——手机阅读友好。',
           cta: '查看指南',
+        },
+        volunteer: {
+          title: '义工',
+          description: '加入义工团队，为芝加哥马拉松跑者助力，认识更多跑友。',
+          cta: '查看详情',
         },
       },
       backToHub: '← 返回芝加哥马拉松',
@@ -996,6 +1048,38 @@ export const CONTENT = {
         wechatGroupBody: '扫码进群，加碳会报名、活动细节等问题都可以在群里问。',
         wechatGroupQrAlt: '2026芝加哥马拉松加碳会微信群二维码',
         wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
+      },
+      volunteerPage: {
+        heroTitleLines: ['芝加哥马拉松义工团队'],
+        heroSubtitle: '芝加哥驰跑团主办',
+        introSectionTitle: '关于我们的义工服务',
+        introBody:
+          '2015年起，驰跑团首次组织芝加哥马拉松义工服务，此后每一年都持续参与。2026年，我们组织两场义工活动。无论你是本地跑友，还是专程来参赛或旅行，都欢迎加入我们的义工团队！',
+        eventSectionTitle: '2026 义工场次',
+        shifts: [
+          {
+            title: 'Expo 物资发放',
+            rows: [
+              { icon: 'calendar', label: '时间', value: '10月10日（周六）上午 7:15 - 12:00' },
+              { icon: 'mapPin', label: '地点', value: 'McCormick Place Expo 展会中心' },
+            ],
+          },
+          {
+            title: '17号水站',
+            rows: [
+              {
+                icon: 'calendar',
+                label: '时间',
+                value: '10月11日（周日，比赛日）上午 6:30 - 下午 3:30',
+              },
+              { icon: 'mapPin', label: '地点', value: '17号水站（具体赛道位置待定）' },
+            ],
+          },
+        ],
+        wechatGroupTitle: '有问题？加入芝加哥马拉松义工微信群',
+        wechatGroupBody: '扫码进群，义工报名、活动安排等问题都可以在群里问。',
+        wechatGroupQrAlt: '2026芝加哥马拉松义工微信群二维码',
+        wechatGroupQrSrc: '/marathon-welcome/volunteer-wechat-group-qr.png',
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',
