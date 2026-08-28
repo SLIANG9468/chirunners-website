@@ -21,6 +21,7 @@ QR_SMUGMUG_PAGE_URLS = {
     "hotel": "https://chirunners.smugmug.com/Website/QRCode/i-7hvpRTc/A",
     "carb-loading-dinner": "https://chirunners.smugmug.com/Website/QRCode/i-4Gwztnj/A",
     "volunteer": "https://chirunners.smugmug.com/Website/QRCode/i-t59mLvq/A",
+    "photography": "https://chirunners.smugmug.com/Website/QRCode/i-HG7NSMt/A",
 }
 
 

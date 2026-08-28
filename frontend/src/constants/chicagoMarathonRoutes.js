@@ -5,5 +5,6 @@ export const CHICAGO_MARATHON_ROUTES = {
   hotel: '/chicagomarathon/hotel',
   transportation: '/chicagomarathon/transportation',
   volunteer: '/chicagomarathon/volunteer',
+  photography: '/chicagomarathon/photography',
   tickets: '/chicagomarathon/tickets',
 }

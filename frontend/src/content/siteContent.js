@@ -380,6 +380,12 @@ export const CONTENT = {
             'Join our volunteer team to support Chicago Marathon runners and meet fellow club members.',
           cta: 'Open guide',
         },
+        photography: {
+          title: 'Photography team',
+          description:
+            'Join our race-day photography team and help capture runners’ most memorable moments.',
+          cta: 'Open guide',
+        },
       },
       backToHub: '← Back to Chicago Marathon',
       wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
@@ -516,6 +522,62 @@ export const CONTENT = {
           'Scan to join—ask anything about signing up, shift logistics, and volunteer details.',
         wechatGroupQrAlt: '2026 Chicago Marathon volunteer WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/volunteer',
+      },
+      photographyPage: {
+        heroTitleLines: ['Chicago Marathon', 'Photography Team'],
+        heroSubtitle: 'Capturing runners’ once-in-a-lifetime moments, one frame at a time',
+        sections: [
+          {
+            heading: null,
+            paragraphs: [
+              'Since 2015, CHI Running Club has organized a photography team for the Chicago Marathon every year, capturing along the course the fleeting moments worth a lifetime of memories—**the iconic Chicago Theatre marquee, Chinatown’s “You are the most beautiful” cheer, the smile of running side-by-side with a friend, and every moment of grit, laughter, and connection along the route.**',
+              'Every photo captures not just a marathon, but the story runners and this city write together.',
+              'We warmly invite photographers **from Chicago and beyond** to join us. Whether you’re a local photographer, a CHI Running Club member who loves photography, or a photography enthusiast visiting Chicago for the marathon, we’d love to have you on the team.',
+            ],
+          },
+          {
+            heading: '📸 This year, we’re taking it a step further',
+            paragraphs: [
+              'Building on last year’s **facial recognition**, this year we’re adding **facial recognition + bib number recognition**, making it easier and more accurate for runners to find their own race photos.',
+              'We’ll also invite photographers experienced with the Chicago Marathon course to share tips on **where to shoot, when to shoot, and how to capture great marathon photos**.',
+              'We hope every photographer who joins the team finds their own angle and tells the story of the Chicago Marathon in their own way.',
+            ],
+          },
+          {
+            heading: '🌟 What do photographers get?',
+            paragraphs: [
+              'Photographers who join the team get a feature spot on the CHI Running Club website, including your **portfolio, personal website, and social media links**, helping more runners discover you and your work.',
+              'Your photos will also become part of CHI Running Club’s Chicago Marathon photo archive. We hope to preserve each year’s marathon memories so these moments can be found and shared again for years to come.',
+              '**Photo copyright remains with the photographer.**',
+              'You’re welcome to watermark your photos, and to use your own work in your portfolio, personal website, and social media.',
+              'CHI Running Club will have a license to use photographers’ photos for **non-commercial club activities and promotion**—for example on the club website, WeChat official account, social media, and event recaps/promotion.',
+            ],
+          },
+          {
+            heading: '❤️ Together, leaving runners with beautiful memories',
+            paragraphs: [
+              '**Runners get their photos for free, and photographers aren’t paid.**',
+              'This is a community project shared by runners, photographers, and CHI Running Club. We hope to use everyone’s love of **running, photography, and the Chicago Marathon** to leave runners with treasured race memories.',
+              'We encourage runners to show appreciation by **following photographers on social media, visiting their websites, and crediting the photographer’s name when sharing photos**.',
+              'Anyone who wants to use a photo for **commercial purposes** should contact the photographer directly. Since photo copyright belongs to the photographer, whether to license commercial use—and any related fee—is entirely the photographer’s decision.',
+            ],
+          },
+          {
+            heading: '🏃‍♀️ 📸 Become part of the story',
+            paragraphs: [
+              'Most importantly, we hope you’re joining not just a photography team, but becoming **part of the CHI Running Club community**.',
+              'Maybe you’ll capture a runner’s brightest smile on the course, or the moment two friends run side by side, or a singular image where the city of Chicago and the marathon come together.',
+              'Years from now, when runners look at these photos again, what they’ll see isn’t just a race—it’s **that year, that day, that city, and the people who ran together.**',
+              '**Grab your camera, find your spot on the course, capture the moment, and become part of this story.**',
+              '📸 **Join the CHI Running Club Chicago Marathon photography team—let’s preserve the beautiful moments on the course for the future, together.**',
+            ],
+          },
+        ],
+        wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
+        wechatGroupBody:
+          'Scan to join—ask anything about joining the team, shooting logistics, and photo delivery.',
+        wechatGroupQrAlt: '2026 Chicago Marathon photography team WeChat group QR code',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -961,6 +1023,11 @@ export const CONTENT = {
           description: '加入义工团队，为芝加哥马拉松跑者助力，认识更多跑友。',
           cta: '查看详情',
         },
+        photography: {
+          title: '摄影队',
+          description: '加入芝加哥马拉松摄影队，用镜头记录跑者一生难忘的瞬间。',
+          cta: '查看详情',
+        },
       },
       backToHub: '← 返回芝加哥马拉松',
       wechatGroupTitle: '有问题？加入芝加哥马拉松微信群',
@@ -1085,6 +1152,61 @@ export const CONTENT = {
         wechatGroupBody: '扫码进群，义工报名、活动安排等问题都可以在群里问。',
         wechatGroupQrAlt: '2026芝加哥马拉松义工微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/volunteer',
+      },
+      photographyPage: {
+        heroTitleLines: ['芝加哥马拉松摄影队'],
+        heroSubtitle: '用镜头记录那些跑者一生难忘的瞬间',
+        sections: [
+          {
+            heading: null,
+            paragraphs: [
+              '自2015年以来，芝加哥驰跑团每年都会组织芝加哥马拉松摄影队，沿着赛道为跑者捕捉那些稍纵即逝、却值得一生珍藏的瞬间——**Chicago Theatre 竖立的经典霓虹招牌、中国城那句"你最美丽"、和朋友并肩奔跑时的笑容，以及赛道上一个个坚持、欢笑、相遇的瞬间。**',
+              '一张张照片，记录的不只是一场马拉松，更是跑者与这座城市共同留下的故事。',
+              '我们诚挚邀请来自**芝加哥本地以及外地的摄影师**加入我们。无论你是本地摄影师、喜欢摄影的驰跑团成员，还是专程来到芝加哥观看和感受马拉松的摄影爱好者，我们都欢迎你成为摄影队的一员。',
+            ],
+          },
+          {
+            heading: '📸 今年，我们又向前迈了一步',
+            paragraphs: [
+              '在去年的**人脸识别**基础上，今年我们进一步加入了**人脸识别 + Bib 号码识别**，帮助跑者更加方便、准确地找到属于自己的比赛照片。',
+              '同时，我们还会邀请熟悉芝加哥马拉松、拥有丰富赛道拍摄经验的摄影师，与大家分享**在哪里拍、什么时候拍，以及如何拍出精彩的马拉松照片**。',
+              '我们希望每一位加入摄影队的摄影师，都能找到属于自己的拍摄角度，用自己的方式讲述芝加哥马拉松的故事。',
+            ],
+          },
+          {
+            heading: '🌟 摄影师可以获得什么？',
+            paragraphs: [
+              '加入驰跑团摄影队后，我们会在驰跑团官网为摄影师提供展示空间，包括你的**摄影作品、个人网站以及社交媒体链接**，帮助更多跑者认识你和你的作品。',
+              '你的照片也将成为驰跑团芝加哥马拉松摄影档案的一部分。我们希望把每一年的马拉松记忆保存下来，让这些精彩瞬间在多年以后依然可以被找回、被分享。',
+              '**照片版权归摄影师本人所有。**',
+              '你可以在照片上添加自己的水印，也可以将自己的作品用于个人摄影作品集、个人网站和社交媒体展示。',
+              '驰跑团会获得使用摄影师照片进行**非商业性跑团活动和宣传**的许可，例如用于驰跑团官网、微信公众号、社交媒体以及与赛事相关的活动回顾和宣传。',
+            ],
+          },
+          {
+            heading: '❤️ 我们一起，为跑者留下美好回忆',
+            paragraphs: [
+              '**跑者免费获得照片，摄影师也不收取费用。**',
+              '这是一个由跑者、摄影师和驰跑团共同参与的社区项目。我们希望用大家对**跑步、摄影以及芝加哥马拉松的热爱**，为跑者留下珍贵的比赛记忆。',
+              '我们也会鼓励跑者通过**关注摄影师的社交媒体、访问摄影师的网站，以及在分享照片时注明摄影师姓名**来表达感谢和支持。',
+              '如果有人希望将照片用于**商业用途**，则需要直接联系照片的摄影师。由于照片版权属于摄影师本人，是否授权商业使用以及相关费用，由摄影师自行决定。',
+            ],
+          },
+          {
+            heading: '🏃‍♀️ 📸 成为故事的一部分',
+            paragraphs: [
+              '最重要的是，我们希望你加入的不只是一个摄影团队，而是成为**驰跑团社区的一员**。',
+              '也许你会记录一个跑者在赛道上的灿烂笑容，也许会捕捉朋友并肩奔跑的那一刻，也许会拍下芝加哥城市与马拉松交织在一起的独特画面。',
+              '多年以后，当跑者再次看到这些照片，他们看到的不只是一场比赛，而是**那一年、那一天、那个城市，以及一起奔跑的人。**',
+              '**带上你的相机，找到属于你的拍摄位置，捕捉精彩瞬间，成为这个故事的一部分。**',
+              '📸 **加入驰跑团芝加哥马拉松摄影队，让我们一起把赛道上的美好瞬间，留给未来。**',
+            ],
+          },
+        ],
+        wechatGroupTitle: '有问题？加入芝加哥马拉松摄影队微信群',
+        wechatGroupBody: '扫码进群，加入摄影队、拍摄安排、照片交付等问题都可以在群里问。',
+        wechatGroupQrAlt: '2026芝加哥马拉松摄影队微信群二维码',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',
