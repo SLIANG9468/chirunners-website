@@ -62,7 +62,7 @@ export default function ChicagoMarathonTicketsPage({ copy }) {
           />
         </section>
 
-        <section id="bus-shuttle" className="section pb-2 marathonTickets-anchor">
+        <section id="bus-shuttle" className="section marathonTickets-anchor">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">
             {t.busShuttleTitle}
           </h2>
@@ -74,6 +74,27 @@ export default function ChicagoMarathonTicketsPage({ copy }) {
             allow="payment *"
           />
         </section>
+
+        {t.stripeFallbackUrl ? (
+          <section className="section pb-2">
+            <div className="rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
+              <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                {t.stripeFallbackTitle}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                {t.stripeFallbackNote}
+              </p>
+              <a
+                href={t.stripeFallbackUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex min-h-[48px] items-center justify-center rounded-xl bg-chi-red px-8 py-3 text-center text-base font-semibold text-white shadow-md transition-colors hover:bg-chi-red-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chi-red-ring"
+              >
+                {t.stripeFallbackCta}
+              </a>
+            </div>
+          </section>
+        ) : null}
       </div>
     </main>
   )

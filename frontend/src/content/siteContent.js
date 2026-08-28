@@ -391,7 +391,7 @@ export const CONTENT = {
         carbLoading: 'Book carb-loading ticket',
         hotel: 'Book hotel',
         busShuttle: 'Book bus ticket',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/35146234/G-MARA',
       },
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $149',
@@ -426,7 +426,7 @@ export const CONTENT = {
         flyerViewLabel: 'View flyer (PDF)',
         flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer-en.pdf',
         ctaBook: 'Book hotel',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www./events/en-US/group-booking/CHIZO/G-MARA',
         ctaBusTicket: 'Buy shuttle ticket',
         busTicketUrl: 'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-bus-copy',
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
@@ -525,6 +525,11 @@ export const CONTENT = {
         carbLoadingIframeTitle: 'Carb-loading dinner ticket checkout on Zeffy',
         busShuttleTitle: 'Race-morning bus shuttle',
         busShuttleIframeTitle: 'Chicago Marathon bus shuttle ticket checkout on Zeffy',
+        stripeFallbackTitle: 'Can’t access Zeffy?',
+        stripeFallbackNote:
+          'If Zeffy isn’t accessible in your region, pay via Stripe instead (includes a $1.50 processing fee):',
+        stripeFallbackCta: '👉 Pay with Stripe',
+        stripeFallbackUrl: 'https://buy.stripe.com/5kQdR82V7f0G6K2eqb9AA05',
       },
       transportationPage: {
         docTitle: 'Chicago Marathon transportation · ChiRunners',
@@ -966,7 +971,7 @@ export const CONTENT = {
         carbLoading: '购买加碳会门票',
         hotel: '预订酒店',
         busShuttle: '购买直达车票',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/35146234/G-MARA',
       },
       hotelPage: {
         pageTitle: '芝马酒店超值价 $149 (官网$199,  团购直降 $50）',
@@ -1000,7 +1005,7 @@ export const CONTENT = {
         flyerViewLabel: '查看宣传单（PDF）',
         flyerPdfHref: '/marathon-welcome/chi-runners-hyatt-flyer.pdf',
         ctaBook: '预订酒店',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/35146234/G-MARA',
         ctaBusTicket: '购买直达车票',
         busTicketUrl: 'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-bus-copy',
         wechatGroupTitle: '有问题？加入芝马酒店微信群',
@@ -1088,6 +1093,10 @@ export const CONTENT = {
         carbLoadingIframeTitle: '加碳会门票购买 — Zeffy 安全支付',
         busShuttleTitle: '比赛日直通车票',
         busShuttleIframeTitle: '芝马直通车票购买 — Zeffy 安全支付',
+        stripeFallbackTitle: '无法使用 Zeffy？',
+        stripeFallbackNote: '如果您所在地区无法使用 Zeffy，请使用 Stripe 平台付费（含 $1.5 手续费）：',
+        stripeFallbackCta: '👉 使用 Stripe 付款',
+        stripeFallbackUrl: 'https://buy.stripe.com/5kQdR82V7f0G6K2eqb9AA05',
       },
       transportationPage: {
         docTitle: '芝加哥马拉松交通 · 驰跑团',

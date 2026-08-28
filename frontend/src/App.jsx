@@ -27,6 +27,10 @@ export default function App() {
     window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language)
   }, [language])
 
+  useEffect(() => {
+    document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en'
+  }, [language])
+
   const isChiStore = location.pathname === '/chi-store'
 
   return (
