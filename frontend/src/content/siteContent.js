@@ -390,7 +390,7 @@ export const CONTENT = {
       backToHub: '← Back to Chicago Marathon',
       wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
       wechatGroupBody:
-        'Scan to join—ask anything about race weekend, carb-loading, lodging, and transportation.',
+        'Our Chicago Marathon WeChat group has passed 300 members, so it can no longer be joined directly by QR code. Please scan to join the “2026 Check-in Point for Chicago Marathon Runners” group first and submit proof of your Chicago Marathon registration. Once approved, we’ll invite you to the runners’ WeChat group.',
       wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
       wechatGroupQrSrc: '/api/marathon-welcome/qr/chicago-marathon-hub',
       bookingCtas: {
@@ -1031,7 +1031,8 @@ export const CONTENT = {
       },
       backToHub: '← 返回芝加哥马拉松',
       wechatGroupTitle: '有问题？加入芝加哥马拉松微信群',
-      wechatGroupBody: '扫码进群，加碳会、住宿、交通等芝马周末问题都可以在群里问。',
+      wechatGroupBody:
+        '芝加哥马拉松微信群已超过300人，暂时无法通过扫码直接入群。请先扫码进入「2026芝马跑友报到处」，提交您的芝加哥马拉松参赛证明。审核通过后，我们会邀请您加入芝马跑友微信群。',
       wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
       wechatGroupQrSrc: '/api/marathon-welcome/qr/chicago-marathon-hub',
       bookingCtas: {
