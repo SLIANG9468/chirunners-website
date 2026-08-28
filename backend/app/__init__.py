@@ -66,12 +66,14 @@ def create_app() -> Flask:
     from .routes.home_hero import home_hero_bp
     from .routes.chi_has_been_here import chi_has_been_here_bp
     from .routes.volunteer_race_albums import volunteer_race_albums_bp
+    from .routes.marathon_qr import marathon_qr_bp
 
     flask_app.register_blueprint(index_bp)
     flask_app.register_blueprint(health_bp)
     flask_app.register_blueprint(home_hero_bp)
     flask_app.register_blueprint(chi_has_been_here_bp)
     flask_app.register_blueprint(volunteer_race_albums_bp)
+    flask_app.register_blueprint(marathon_qr_bp)
 
     # On Render, skip startup warm: two gunicorn workers would each fan out SmugMug
     # fetches and can slow or OOM a small instance during deploy health checks.

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
+import { apiUrl } from '../apiBase'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
 const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
@@ -251,7 +252,7 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
             <div className="mt-5 flex justify-center sm:justify-start">
               <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm dark:border-neutral-700 dark:bg-neutral-950">
                 <img
-                  src={p.wechatGroupQrSrc}
+                  src={apiUrl(p.wechatGroupQrSrc)}
                   alt={p.wechatGroupQrAlt}
                   loading="lazy"
                   decoding="async"

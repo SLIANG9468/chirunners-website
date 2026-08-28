@@ -386,7 +386,7 @@ export const CONTENT = {
       wechatGroupBody:
         'Scan to join—ask anything about race weekend, carb-loading, lodging, and transportation.',
       wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
-      wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-hub-wechat-group-qr.png',
+      wechatGroupQrSrc: '/api/marathon-welcome/qr/chicago-marathon-hub',
       bookingCtas: {
         carbLoading: 'Book carb-loading ticket',
         hotel: 'Book hotel',
@@ -432,7 +432,7 @@ export const CONTENT = {
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
         wechatGroupBody: 'Scan to join—ask anything about booking, Chicago Marathon express, and stay details.',
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
-        wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/hotel',
       },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
@@ -474,7 +474,7 @@ export const CONTENT = {
         wechatGroupBody:
           'Scan to join—ask anything about the dinner, registration, and event details.',
         wechatGroupQrAlt: '2026 Chicago Marathon carb-loading dinner WeChat group QR code',
-        wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/carb-loading-dinner',
       },
       volunteerPage: {
         heroTitleLines: ['Chicago Marathon', 'Volunteer Team'],
@@ -515,7 +515,7 @@ export const CONTENT = {
         wechatGroupBody:
           'Scan to join—ask anything about signing up, shift logistics, and volunteer details.',
         wechatGroupQrAlt: '2026 Chicago Marathon volunteer WeChat group QR code',
-        wechatGroupQrSrc: '/marathon-welcome/volunteer-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/volunteer',
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -966,7 +966,7 @@ export const CONTENT = {
       wechatGroupTitle: '有问题？加入芝加哥马拉松微信群',
       wechatGroupBody: '扫码进群，加碳会、住宿、交通等芝马周末问题都可以在群里问。',
       wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
-      wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-hub-wechat-group-qr.png',
+      wechatGroupQrSrc: '/api/marathon-welcome/qr/chicago-marathon-hub',
       bookingCtas: {
         carbLoading: '购买加碳会门票',
         hotel: '预订酒店',
@@ -1011,7 +1011,7 @@ export const CONTENT = {
         wechatGroupTitle: '有问题？加入芝马酒店微信群',
         wechatGroupBody: '扫码进群，订房、芝马直通车、入住细节等问题都可以在群里问。',
         wechatGroupQrAlt: '芝马酒店微信群二维码',
-        wechatGroupQrSrc: '/marathon-welcome/chicago-marathon-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/hotel',
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
@@ -1052,7 +1052,7 @@ export const CONTENT = {
         wechatGroupTitle: '有问题？加入2026芝加哥马拉松加碳会微信群',
         wechatGroupBody: '扫码进群，加碳会报名、活动细节等问题都可以在群里问。',
         wechatGroupQrAlt: '2026芝加哥马拉松加碳会微信群二维码',
-        wechatGroupQrSrc: '/marathon-welcome/carb-loading-dinner-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/carb-loading-dinner',
       },
       volunteerPage: {
         heroTitleLines: ['芝加哥马拉松义工团队'],
@@ -1084,7 +1084,7 @@ export const CONTENT = {
         wechatGroupTitle: '有问题？加入芝加哥马拉松义工微信群',
         wechatGroupBody: '扫码进群，义工报名、活动安排等问题都可以在群里问。',
         wechatGroupQrAlt: '2026芝加哥马拉松义工微信群二维码',
-        wechatGroupQrSrc: '/marathon-welcome/volunteer-wechat-group-qr.png',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/volunteer',
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',

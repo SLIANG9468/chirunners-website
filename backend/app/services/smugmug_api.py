@@ -137,8 +137,15 @@ def _smug_resolve_cache_key(flask_app, image_slug: str) -> str:
     return f"{nick}\x1f{folder}\x1f{image_slug}"
 
 
-def resolve_smug_display_url(flask_app, image_key: str | None) -> str | None:
-    """解析 SmugMug：相册页拉取 og:image，得到真实图片 URL（供 <img> 使用）。"""
+def resolve_smug_display_url(
+    flask_app, image_key: str | None, ttl_override_seconds: int | None = None
+) -> str | None:
+    """解析 SmugMug：相册页拉取 og:image，得到真实图片 URL（供 <img> 使用）。
+
+    `ttl_override_seconds` lets a caller opt out of the (very long) default/config
+    TTL — e.g. QR codes that get replaced in place on SmugMug and should be
+    re-resolved on a short cycle rather than cached for the life of the process.
+    """
     if not image_key:
         return None
     if not isinstance(image_key, str):
@@ -147,7 +154,7 @@ def resolve_smug_display_url(flask_app, image_key: str | None) -> str | None:
     if not slug:
         return None
 
-    ttl = _cache_ttl_seconds(flask_app)
+    ttl = ttl_override_seconds if ttl_override_seconds is not None else _cache_ttl_seconds(flask_app)
     now = time.monotonic()
     cache_key = _smug_resolve_cache_key(flask_app, slug)
 
