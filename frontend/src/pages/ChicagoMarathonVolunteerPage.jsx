@@ -121,7 +121,7 @@ export default function ChicagoMarathonVolunteerPage({ copy }) {
             <h2 className="text-center text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
               {p.introSectionTitle}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+            <p className="mt-6 whitespace-pre-line text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
               {p.introBody}
             </p>
           </div>

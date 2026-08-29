@@ -575,7 +575,10 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
-        photographers: [{ name: '章运（运姐）', englishName: 'Yun Oldshue', photoKey: 'yun-oldshue' }],
+        photographers: [
+          { name: 'Yun Oldshue', photoKey: 'yun-oldshue' },
+          { name: 'Yansong Lin', photoKey: 'yansong-lin' },
+        ],
         wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
         wechatGroupBody:
           'Scan to join—ask anything about joining the team, shooting logistics, and photo delivery.',
@@ -1022,7 +1025,7 @@ export const CONTENT = {
           cta: '查看指南',
         },
         volunteer: {
-          title: '义工',
+          title: '义工团队',
           description: '加入义工团队，为芝加哥马拉松跑者助力，认识更多跑友。',
           cta: '查看详情',
         },
@@ -1033,9 +1036,9 @@ export const CONTENT = {
         },
       },
       backToHub: '← 返回芝加哥马拉松',
-      wechatGroupTitle: '有问题？加入芝加哥马拉松微信群',
+      wechatGroupTitle: '🏃‍♀️ 芝马相约，一路同行！',
       wechatGroupBody:
-        '芝加哥马拉松微信群已超过300人，暂时无法通过扫码直接入群。请先扫码进入「2026芝马跑友报到处」，提交您的芝加哥马拉松参赛证明。审核通过后，我们会邀请您加入芝马跑友微信群。',
+        '芝加哥马拉松微信群已超过300人，暂时无法直接扫码入群。请先扫码进入 「2026芝马跑友报到处」，提交您的芝加哥马拉松参赛证明。审核通过后，我们会邀请您加入2026芝加哥马拉松微信群。',
       wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
       wechatGroupQrSrc: '/api/marathon-welcome/qr/chicago-marathon-hub',
       bookingCtas: {
@@ -1120,8 +1123,8 @@ export const CONTENT = {
         ctaRegister: '立即报名（加碳会）',
         registerUrl:
           'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-carb-loading-dinner-and-race-day-bus-transportation',
-        wechatGroupTitle: '有问题？加入2026芝加哥马拉松加碳会微信群',
-        wechatGroupBody: '扫码进群，加碳会报名、活动细节等问题都可以在群里问。',
+        wechatGroupTitle: '🍝 加入加碳会，和跑友们一起吃、一起聊、一起期待芝马！',
+        wechatGroupBody: '扫码加入加碳会微信群，与跑友交流，了解活动安排及最新消息。',
         wechatGroupQrAlt: '2026芝加哥马拉松加碳会微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/carb-loading-dinner',
       },
@@ -1130,7 +1133,7 @@ export const CONTENT = {
         heroSubtitle: '芝加哥驰跑团主办',
         introSectionTitle: '关于我们的义工服务',
         introBody:
-          '2015年起，驰跑团首次组织芝加哥马拉松义工服务，此后每一年都持续参与。2026年，我们组织两场义工活动。无论你是本地跑友，还是专程来参赛或旅行，都欢迎加入我们的义工团队！',
+          '一场马拉松，不只有跑者。\n\n自2015年起，驰跑团每年都会组织志愿者参与芝加哥马拉松相关服务。从 Expo 物资发放，到比赛日的水站，我们用自己的时间和热情，为来自世界各地的跑者加油、送水、提供帮助。\n\n无论你是芝加哥本地的朋友，还是专程从外地来到芝加哥观看马拉松的朋友，我们都欢迎你加入志愿者团队。尤其对于外地来的朋友，和本地跑友一起做义工，不仅可以认识新朋友，还能从当地人的视角了解芝加哥的文化、城市故事和许多有趣的事情，体验一个不一样的芝加哥。\n\n只要年满14岁，无论你是第一次参加马拉松志愿服务，还是曾经多年服务过的老朋友，都欢迎加入我们。\n\n比赛当天，当你站在17号水站，为跑者递上一杯水、送上一声加油时，你也成为了这场马拉松的一部分。\n\n2026年，我们期待120位志愿者加入我们，用一杯水、一声加油、一份热情，为奔跑中的每一个人加油！',
         eventSectionTitle: '2026 义工场次',
         shifts: [
           {
@@ -1152,8 +1155,8 @@ export const CONTENT = {
             ],
           },
         ],
-        wechatGroupTitle: '有问题？加入芝加哥马拉松义工微信群',
-        wechatGroupBody: '扫码进群，义工报名、活动安排等问题都可以在群里问。',
+        wechatGroupTitle: '加入我们，成为志愿者团队的一员 ❤️',
+        wechatGroupBody: '扫码加入义工微信群，和大家一起交流、认识新朋友，及时了解义工安排、活动信息和最新通知。',
         wechatGroupQrAlt: '2026芝加哥马拉松义工微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/volunteer',
       },
@@ -1209,9 +1212,12 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
-        photographers: [{ name: '章运（运姐）', englishName: 'Yun Oldshue', photoKey: 'yun-oldshue' }],
-        wechatGroupTitle: '有问题？加入芝加哥马拉松摄影队微信群',
-        wechatGroupBody: '扫码进群，加入摄影队、拍摄安排、照片交付等问题都可以在群里问。',
+        photographers: [
+          { name: '章运（运姐）', photoKey: 'yun-oldshue' },
+          { name: '林燕松', photoKey: 'yansong-lin' },
+        ],
+        wechatGroupTitle: '📸 带上你的相机，加入我们！',
+        wechatGroupBody: '扫码加入摄影队微信群，和摄影师伙伴们一起交流、分享，了解拍摄安排、照片上传及相关信息。',
         wechatGroupQrAlt: '2026芝加哥马拉松摄影队微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
       },
