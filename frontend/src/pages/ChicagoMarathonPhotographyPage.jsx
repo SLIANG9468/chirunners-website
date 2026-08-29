@@ -81,6 +81,45 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
           </section>
         ))}
 
+        {p.photographers && p.photographers.length > 0 ? (
+          <section className="section">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
+                {p.photographersSectionTitle}
+              </h2>
+              <div className="mt-1 text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                {p.photographersSectionSubtitle}
+              </div>
+            </div>
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {p.photographers.map((photographer) => (
+                <div
+                  key={photographer.englishName}
+                  className="overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 text-center shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                >
+                  {photographer.photoKey ? (
+                    <img
+                      src={apiUrl(`/api/marathon-welcome/photographer-photo/${photographer.photoKey}`)}
+                      alt={photographer.englishName}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-square w-full scale-105 object-cover object-top"
+                    />
+                  ) : null}
+                  <div className="p-5">
+                    <div className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                      {photographer.name}
+                    </div>
+                    <div className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                      {photographer.englishName}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="section pb-2">
           <div className="rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
             <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
