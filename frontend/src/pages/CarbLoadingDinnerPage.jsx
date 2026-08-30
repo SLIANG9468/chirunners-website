@@ -1,11 +1,24 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
 import { apiUrl } from '../apiBase'
 
-/** Reuse marathon hero asset until a dedicated image is added. */
+/** Reuse marathon hero asset as a fallback if no hero photos are configured. */
 const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
 const MENU_IMAGE_SRC = '/photo/new_menu.png'
+const HERO_ROTATION_MS = 5000
+
+/** Cross-fades through `length` slides on a fixed interval; pauses if there's only one (or zero). */
+function useRotatingIndex(length, intervalMs) {
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    if (length <= 1) return undefined
+    const id = setInterval(() => setIndex((i) => (i + 1) % length), intervalMs)
+    return () => clearInterval(id)
+  }, [length, intervalMs])
+  return index
+}
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 
@@ -134,10 +147,11 @@ function BenefitCard({ text }) {
   )
 }
 
-export default function CarbLoadingDinnerPage({ copy, language }) {
+export default function CarbLoadingDinnerPage({ copy }) {
   const mw = copy.marathonWelcome
   const p = mw.carbLoadingPage
-  const isZh = language === 'zh'
+  const heroPhotoKeys = p.heroPhotoKeys || []
+  const heroIndex = useRotatingIndex(heroPhotoKeys.length, HERO_ROTATION_MS)
 
   return (
     <main className="siteMain siteMain--marathonWelcome">
@@ -150,51 +164,38 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
             {mw.backToHub}
           </Link>
 
-          <div className="relative mt-6 overflow-hidden rounded-2xl border border-neutral-200/80 shadow-card dark:border-neutral-700">
-            <div className="relative aspect-[5/2] min-h-[200px] w-full max-h-[min(42vh,420px)]">
-              <img
-                src={HERO_IMAGE_SRC}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover"
-                style={{ objectPosition: 'center top' }}
-              />
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15"
-                aria-hidden
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
-                {isZh ? (
-                  <div className="max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-4xl">
-                    <h1 className="m-0 max-w-3xl p-0 text-inherit font-semibold leading-tight drop-shadow-sm">
-                      {p.heroTitleLines.map((line, i) => (
-                        <span key={i} className={i === 0 ? 'block' : 'mt-1 block sm:mt-1.5'}>
-                          {line}
-                        </span>
-                      ))}
-                    </h1>
-                    <div className="mt-3 max-w-2xl pl-[calc(3em+30px)]">
-                      <p className="text-[0.667em] font-semibold leading-relaxed text-white/95 drop-shadow-sm sm:text-[0.5em]">
-                        {p.heroSubtitle}
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <h1 className="max-w-3xl font-semibold text-2xl tracking-tight text-white drop-shadow-sm sm:text-4xl">
-                      {p.heroTitleLines.map((line, i) => (
-                        <span key={i} className={i === 0 ? 'block' : 'mt-1 block sm:mt-2'}>
-                          {line}
-                        </span>
-                      ))}
-                    </h1>
-                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm sm:text-lg">
-                      {p.heroSubtitle}
-                    </p>
-                  </>
-                )}
-              </div>
+          <div className="relative mt-6 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-900 shadow-card dark:border-neutral-700">
+            <div className="relative aspect-[3/2] min-h-[200px] w-full">
+              {heroPhotoKeys.length > 0 ? (
+                heroPhotoKeys.map((key, i) => (
+                  <img
+                    key={key}
+                    src={apiUrl(`/api/marathon-welcome/carb-loading-photo/${key}`)}
+                    alt=""
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ease-in-out ${
+                      i === heroIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))
+              ) : (
+                <img
+                  src={HERO_IMAGE_SRC}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ objectPosition: 'center top' }}
+                />
+              )}
             </div>
           </div>
+
+          <h1 className="mt-6 text-center font-semibold text-2xl tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl">
+            {p.heroTitleLines.map((line, i) => (
+              <span key={i} className={i === 0 ? 'block' : 'mt-1 block sm:mt-1.5'}>
+                {line}
+              </span>
+            ))}
+          </h1>
         </section>
 
         {p.sponsors && p.sponsors.length > 0 ? (
@@ -258,12 +259,11 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
             {p.menuSectionTitle}
           </h2>
           <div className="mt-6 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-100/80 shadow-card dark:border-neutral-700 dark:bg-neutral-800/50">
-            <div className="aspect-[4/3] w-full max-h-[420px] sm:aspect-[16/10] sm:max-h-[min(50vh,480px)]">
+            <div className="aspect-[102/41] w-full">
               <img
                 src={MENU_IMAGE_SRC}
                 alt={p.menuImageAlt}
-                className="h-full w-full object-cover"
-                style={{ objectPosition: 'center 40%' }}
+                className="h-full w-full object-contain"
               />
             </div>
           </div>

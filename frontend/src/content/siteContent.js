@@ -442,7 +442,14 @@ export const CONTENT = {
       },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
-        heroSubtitle: 'Hosted by CHI Running Club',
+        heroPhotoKeys: [
+          'carb-loading-1',
+          'carb-loading-2',
+          'carb-loading-3',
+          'carb-loading-4',
+          'carb-loading-5',
+          'carb-loading-6',
+        ],
         benefitsSectionTitle: 'Race Ready · Together',
         benefits: [
           'Connect with Chinese runners from around the world—swap stories and make new friends.',
@@ -1097,7 +1104,14 @@ export const CONTENT = {
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
-        heroSubtitle: '芝加哥驰跑团主办',
+        heroPhotoKeys: [
+          'carb-loading-1',
+          'carb-loading-2',
+          'carb-loading-3',
+          'carb-loading-4',
+          'carb-loading-5',
+          'carb-loading-6',
+        ],
         benefitsSectionTitle: '赛前相聚 · 能量集结',
         benefits: [
           '全球华人跑者相聚，交流分享，结交友谊',
