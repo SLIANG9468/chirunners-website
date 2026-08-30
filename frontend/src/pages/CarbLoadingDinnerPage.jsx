@@ -197,6 +197,36 @@ export default function CarbLoadingDinnerPage({ copy, language }) {
           </div>
         </section>
 
+        {p.sponsors && p.sponsors.length > 0 ? (
+          <section className="section !mt-4">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                {p.sponsorsSectionTitle}
+              </span>
+              <div className="flex flex-wrap justify-center gap-3">
+                {p.sponsors.map((sponsor) => (
+                  <a
+                    key={sponsor.name}
+                    href={sponsor.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 rounded-xl border border-neutral-200/80 bg-white/70 px-3 py-2 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                  >
+                    <img
+                      src={sponsor.logoSrc}
+                      alt={sponsor.name}
+                      className="h-9 w-auto rounded-md sm:h-10"
+                    />
+                    <span className="text-sm font-semibold text-chi-red underline decoration-1 underline-offset-2 group-hover:text-chi-red-hover">
+                      {sponsor.name}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         <section className="section">
           <div className="rounded-2xl border border-neutral-200/80 bg-gradient-to-b from-neutral-100/95 to-neutral-50/80 px-5 py-8 shadow-card dark:border-neutral-700/80 dark:from-neutral-900/90 dark:to-neutral-950/70 sm:px-8 sm:py-10">
             <h2 className="text-center text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">

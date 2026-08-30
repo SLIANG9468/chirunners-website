@@ -476,6 +476,14 @@ export const CONTENT = {
         ctaRegister: 'Register now',
         registerUrl:
           'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-carb-loading-dinner-and-race-day-bus-transportation',
+        sponsorsSectionTitle: 'SPONSORED by',
+        sponsors: [
+          {
+            name: 'The Lerner Group',
+            url: 'https://lerner.hightoweradvisors.com/',
+            logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
+          },
+        ],
         wechatGroupTitle: 'Questions? Join our carb-loading dinner WeChat group',
         wechatGroupBody:
           'Scan to join—ask anything about the dinner, registration, and event details.',
@@ -1123,6 +1131,14 @@ export const CONTENT = {
         ctaRegister: '立即报名（加碳会）',
         registerUrl:
           'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-carb-loading-dinner-and-race-day-bus-transportation',
+        sponsorsSectionTitle: '鸣谢赞助商',
+        sponsors: [
+          {
+            name: '莱纳财富',
+            url: 'https://lerner.hightoweradvisors.com/',
+            logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
+          },
+        ],
         wechatGroupTitle: '🍝 加入加碳会，和跑友们一起吃、一起聊、一起期待芝马！',
         wechatGroupBody: '扫码加入加碳会微信群，与跑友交流，了解活动安排及最新消息。',
         wechatGroupQrAlt: '2026芝加哥马拉松加碳会微信群二维码',
