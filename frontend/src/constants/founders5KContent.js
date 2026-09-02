@@ -126,7 +126,7 @@ export const FOUNDERS_5K_CONTENT = {
       { time: '10:00', detail: '青少年半英里跑（Youth Half Mile）' },
       { time: '10:30', detail: '野餐开始（自带菜品 Potluck）' },
     ],
-    kitNote: '如果你有驰跑团队服，建议当天穿着队服。',
+    kitNote: '如果您有驰跑团队服，建议当天穿着队服。',
     raceOrderTitle: '比赛顺序',
     raceOrderBody: '先进行 5K，再进行 1 英里，最后进行半英里。',
     bibTimingTitle: '号码布与计时',
