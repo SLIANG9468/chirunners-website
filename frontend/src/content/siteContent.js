@@ -590,8 +590,13 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
+        photographerWebsiteLabel: 'Personal Website',
         photographers: [
-          { name: 'Yun Oldshue', photoKey: 'yun-oldshue' },
+          {
+            name: 'Yun Oldshue',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
           { name: 'Yansong Lin', photoKey: 'yansong-lin' },
         ],
         wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
@@ -1242,8 +1247,13 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
+        photographerWebsiteLabel: '个人网站',
         photographers: [
-          { name: '章运（运姐）', photoKey: 'yun-oldshue' },
+          {
+            name: '章运（运姐）',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
           { name: '林燕松', photoKey: 'yansong-lin' },
         ],
         wechatGroupTitle: '📸 带上您的相机，加入我们！',

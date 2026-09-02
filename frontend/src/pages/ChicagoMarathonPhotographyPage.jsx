@@ -110,6 +110,16 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
                     <div className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
                       {photographer.name}
                     </div>
+                    {photographer.websiteUrl ? (
+                      <a
+                        href={photographer.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm font-medium text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                      >
+                        {p.photographerWebsiteLabel}
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               ))}
