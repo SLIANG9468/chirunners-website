@@ -490,6 +490,7 @@ export const CONTENT = {
             url: 'https://lerner.hightoweradvisors.com/',
             logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
           },
+          { name: 'David Chen' },
         ],
         wechatGroupTitle: 'Questions? Join our carb-loading dinner WeChat group',
         wechatGroupBody:
@@ -1157,6 +1158,7 @@ export const CONTENT = {
             url: 'https://lerner.hightoweradvisors.com/',
             logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
           },
+          { name: '陈德巧' },
         ],
         wechatGroupTitle: '🍝 加入加碳会，和跑友们一起吃、一起聊、一起期待芝马！',
         wechatGroupBody: '扫码加入加碳会微信群，与跑友交流，了解活动安排及最新消息。',

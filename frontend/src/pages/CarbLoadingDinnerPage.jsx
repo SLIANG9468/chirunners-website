@@ -200,30 +200,61 @@ export default function CarbLoadingDinnerPage({ copy }) {
 
         {p.sponsors && p.sponsors.length > 0 ? (
           <section className="section !mt-4">
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-                {p.sponsorsSectionTitle}
-              </span>
-              <div className="flex flex-wrap justify-center gap-3">
-                {p.sponsors.map((sponsor) => (
-                  <a
-                    key={sponsor.name}
-                    href={sponsor.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center gap-3 rounded-xl border border-neutral-200/80 bg-white/70 px-3 py-2 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md dark:border-neutral-700/80 dark:bg-neutral-900/40"
-                  >
-                    <img
-                      src={sponsor.logoSrc}
-                      alt={sponsor.name}
-                      className="h-9 w-auto rounded-md sm:h-10"
-                    />
-                    <span className="text-sm font-semibold text-chi-red underline decoration-1 underline-offset-2 group-hover:text-chi-red-hover">
-                      {sponsor.name}
-                    </span>
-                  </a>
-                ))}
+            <div className="flex flex-col items-center justify-center gap-3">
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <span className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                  {p.sponsorsSectionTitle}
+                </span>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {p.sponsors
+                    .filter((sponsor) => sponsor.logoSrc)
+                    .map((sponsor) => (
+                      <a
+                        key={sponsor.name}
+                        href={sponsor.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 rounded-xl border border-neutral-200/80 bg-white/70 px-3 py-2 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-md dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                      >
+                        <img
+                          src={sponsor.logoSrc}
+                          alt={sponsor.name}
+                          className="h-9 w-auto rounded-md sm:h-10"
+                        />
+                        <span className="text-sm font-semibold text-chi-red underline decoration-1 underline-offset-2 group-hover:text-chi-red-hover">
+                          {sponsor.name}
+                        </span>
+                      </a>
+                    ))}
+                </div>
               </div>
+
+              {p.sponsors.some((sponsor) => !sponsor.logoSrc) ? (
+                <div className="flex flex-wrap justify-center gap-3">
+                  {p.sponsors
+                    .filter((sponsor) => !sponsor.logoSrc)
+                    .map((sponsor) =>
+                      sponsor.url ? (
+                        <a
+                          key={sponsor.name}
+                          href={sponsor.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-xl border border-neutral-200/80 bg-white/70 px-3 py-2 text-sm font-semibold text-chi-red underline decoration-1 underline-offset-2 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:text-chi-red-hover hover:shadow-md dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                        >
+                          {sponsor.name}
+                        </a>
+                      ) : (
+                        <span
+                          key={sponsor.name}
+                          className="rounded-xl border border-neutral-200/80 bg-white/70 px-3 py-2 text-sm font-semibold text-neutral-700 shadow-sm dark:border-neutral-700/80 dark:bg-neutral-900/40 dark:text-neutral-300"
+                        >
+                          {sponsor.name}
+                        </span>
+                      )
+                    )}
+                </div>
+              ) : null}
             </div>
           </section>
         ) : null}
