@@ -314,6 +314,24 @@ export default function CarbLoadingDinnerPage({ copy }) {
               />
             </div>
           </div>
+
+          {p.menuRestaurantName ? (
+            <div className="mt-3 space-y-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+              <p>
+                {p.menuCateredByLabel}{' '}
+                <a
+                  href={p.menuRestaurantUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                >
+                  {p.menuRestaurantName}
+                </a>
+                {p.menuCateredBySuffix ? ` ${p.menuCateredBySuffix}` : null}
+              </p>
+              {p.menuDiscountNote ? <p>{p.menuDiscountNote}</p> : null}
+            </div>
+          ) : null}
         </section>
 
         <section className="section pb-2">

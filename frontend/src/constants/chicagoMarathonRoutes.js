@@ -7,4 +7,6 @@ export const CHICAGO_MARATHON_ROUTES = {
   volunteer: '/chicagomarathon/volunteer',
   photography: '/chicagomarathon/photography',
   tickets: '/chicagomarathon/tickets',
+  sharingSessions: '/chicagomarathon/zoom',
+  zoomRecordings: '/chicagomarathon/zoom/recording',
 }

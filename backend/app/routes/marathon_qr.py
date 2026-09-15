@@ -45,6 +45,10 @@ CARB_LOADING_PHOTO_SMUGMUG_PAGE_URLS = {
     "carb-loading-6": "https://chirunners.smugmug.com/Website/Website-photo/i-hVfTszz/A",
 }
 
+SPEAKER_PHOTO_SMUGMUG_PAGE_URLS = {
+    "danrui": "https://chirunners.smugmug.com/Website/Website-photo/i-sPfwMbT/A",
+}
+
 
 def _resolve_and_redirect(page_url: str, ttl_override_seconds: int | None = _SHORT_CACHE_TTL_SECONDS):
     resolved = resolve_smug_display_url(
@@ -80,3 +84,11 @@ def get_carb_loading_photo(key: str):
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url, ttl_override_seconds=None)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/speaker-photo/<key>", methods=["GET"])
+def get_speaker_photo(key: str):
+    page_url = SPEAKER_PHOTO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+    return _resolve_and_redirect(page_url)

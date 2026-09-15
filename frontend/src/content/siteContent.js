@@ -386,6 +386,12 @@ export const CONTENT = {
             'Join our race-day photography team and help capture runners’ most memorable moments.',
           cta: 'Open guide',
         },
+        sharingSessions: {
+          title: 'Runner sharing sessions',
+          description:
+            'Join fellow runners from around the world on Zoom for practical tips and race experience before the marathon.',
+          cta: 'Open guide',
+        },
       },
       backToHub: '← Back to Chicago Marathon',
       wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
@@ -479,6 +485,9 @@ export const CONTENT = {
         ],
         menuSectionTitle: 'Menu',
         menuImageAlt: 'Carb-loading dinner menu',
+        menuCateredByLabel: 'Food provided by',
+        menuRestaurantName: 'Potsticker House (北国饭店)',
+        menuRestaurantUrl: 'https://edspotstickerhouse.com/',
         hotelPromoMain: 'Hyatt Place O’Hare · CHI Running Club rates from $149/night',
         hotelPromoCta: 'View hotel details & book',
         ctaRegister: 'Register now',
@@ -606,6 +615,84 @@ export const CONTENT = {
           'Scan to join—ask anything about joining the team, shooting logistics, and photo delivery.',
         wechatGroupQrAlt: '2026 Chicago Marathon photography team WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
+      },
+      sharingSessionsPage: {
+        heroTitleLines: ['2026 Chicago Marathon', 'Runner Sharing Sessions'],
+        heroSubtitle: 'Hosted by CHI Running Club',
+        introSectionTitle: 'About the Sharing Sessions',
+        introBody:
+          'Runners from all over the world are about to gather in Chicago!\n\nTo welcome runners from near and far, CHI Running Club is launching the “2026 Chicago Marathon Runner Sharing Sessions” series — join fellow runners from around the world on Zoom to share practical tips and race experience, and get ready for the Chicago Marathon together!',
+        zoomSectionTitle: '💻 Zoom Meeting',
+        zoomJoinUrl: 'https://zoom.us/j/92856318737?pwd=dNYbuJe96otsECbNkMGaCpaU0s3N1t.1',
+        zoomJoinLabel: 'Join Zoom Meeting',
+        zoomInfoRows: [
+          { icon: 'video', label: 'Meeting ID', value: '928 5631 8737' },
+          { icon: 'key', label: 'Passcode', value: 'chirunners' },
+        ],
+        scheduleSectionTitle: '⏰ Session Time',
+        scheduleRows: [
+          { icon: 'clock', label: 'US Central Time', value: 'Saturdays · 8:00 PM' },
+          { icon: 'clock', label: 'Beijing Time', value: 'Sundays · 9:00 AM' },
+          { icon: 'clock', label: 'Duration', value: '~1 hour per session' },
+        ],
+        sessionsSectionTitle: '📅 Session Schedule',
+        sessionsNote: 'All times below are US Central Time.',
+        sessions: [
+          {
+            date: 'Sat, Sep 19 · 8:00 PM',
+            title:
+              'First Time at the Chicago Marathon: A Safety & Fun Guide for Out-of-Town Runners',
+          },
+          {
+            date: 'Sat, Sep 26 · 8:00 PM',
+            title: 'Expo, Course Breakdown & Running with the Pacers',
+          },
+          {
+            date: 'Sat, Oct 3 · 8:00 PM',
+            title: 'Chicago Marathon Course Photography Guide',
+          },
+        ],
+        closingNote:
+          'No matter where you’re from — whether this is your first Chicago Marathon or you’ve run the course many times before — we’d love to have you join us!',
+        viewRecordingsLabel: 'View speaker bios, recordings & slides →',
+      },
+      zoomRecordingPage: {
+        heroTitleLines: ['2026 Chicago Marathon', 'Sharing Session Recordings'],
+        heroSubtitle: 'Hosted by CHI Running Club',
+        introSectionTitle: 'Speakers, Recordings & Slides',
+        introBody:
+          'Speaker bios, YouTube recordings, and slides for each sharing session will be added here as they become available.',
+        sessionComingSoonLabel: 'Content coming soon',
+        youtubeSectionLabel: 'Recording',
+        youtubeWatchLabel: '▶ Watch on YouTube',
+        youtubeComingSoonLabel: 'Recording coming soon',
+        slidesSectionLabel: 'Slides',
+        slidesViewLabel: '📄 View slides',
+        slidesComingSoonLabel: 'Slides coming soon',
+        sessions: [
+          {
+            date: 'Sat, Sep 19 · 8:00 PM',
+            title:
+              'First Time at the Chicago Marathon: A Safety & Fun Guide for Out-of-Town Runners',
+            comingSoon: true,
+          },
+          {
+            date: 'Sat, Sep 26 · 8:00 PM',
+            title: 'Expo, Course Breakdown & Running with the Pacers',
+            speakers: [
+              {
+                name: 'Danrey Toth',
+                photoKey: 'danrui',
+                bio: 'Danrey is a seasoned marathon runner who has completed the World Marathon Majors six-star journey. With years of racing experience, she has repeatedly served as an official pacer at the Chicago Marathon and has deep, firsthand knowledge of the course. Drawing on that experience, she’ll share practical course strategy and mental-preparation tips to help runners perform at their best on race day.',
+              },
+            ],
+          },
+          {
+            date: 'Sat, Oct 3 · 8:00 PM',
+            title: 'Chicago Marathon Course Photography Guide',
+            comingSoon: true,
+          },
+        ],
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -1056,6 +1143,11 @@ export const CONTENT = {
           description: '加入芝加哥马拉松摄影队，用镜头记录跑者一生难忘的瞬间。',
           cta: '查看详情',
         },
+        sharingSessions: {
+          title: '跑者分享会',
+          description: '通过 Zoom 与全球跑者云端相聚，分享实用信息和参赛经验，一起备战芝加哥马拉松。',
+          cta: '查看详情',
+        },
       },
       backToHub: '← 返回芝加哥马拉松',
       wechatGroupTitle: '🏃‍♀️ 芝马相约，一路同行！',
@@ -1148,6 +1240,10 @@ export const CONTENT = {
         ],
         menuSectionTitle: '菜单',
         menuImageAlt: '加碳会菜单',
+        menuCateredByLabel: '本次晚餐食物由',
+        menuRestaurantName: '北国饭店（Potsticker House）',
+        menuCateredBySuffix: '提供',
+        menuRestaurantUrl: 'https://edspotstickerhouse.com/',
         hotelPromoMain: '芝马酒店超值价 $149起',
         hotelPromoCta: '查看详情与预订',
         ctaRegister: '立即报名（加碳会）',
@@ -1264,6 +1360,81 @@ export const CONTENT = {
         wechatGroupBody: '扫码加入摄影队微信群，和摄影师伙伴们一起交流、分享，了解拍摄安排、照片上传及相关信息。',
         wechatGroupQrAlt: '2026芝加哥马拉松摄影队微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
+      },
+      sharingSessionsPage: {
+        heroTitleLines: ['2026芝马跑者分享会'],
+        heroSubtitle: '芝加哥驰跑团主办',
+        introSectionTitle: '关于分享会',
+        introBody:
+          '来自世界各地的跑者，即将相聚芝加哥！\n\n为了欢迎各地跑友，芝加哥驰跑团特别推出「2026芝马跑者分享会」系列，通过 Zoom 与全球跑者云端相聚，分享实用信息和参赛经验，一起轻松备战芝加哥马拉松！',
+        zoomSectionTitle: '💻 Zoom Meeting',
+        zoomJoinUrl: 'https://zoom.us/j/92856318737?pwd=dNYbuJe96otsECbNkMGaCpaU0s3N1t.1',
+        zoomJoinLabel: '加入 Zoom 会议',
+        zoomInfoRows: [
+          { icon: 'video', label: 'Meeting ID', value: '928 5631 8737' },
+          { icon: 'key', label: 'Passcode', value: 'chirunners' },
+        ],
+        scheduleSectionTitle: '⏰ Zoom 时间',
+        scheduleRows: [
+          { icon: 'clock', label: '美国中部时间', value: '周六晚 8:00' },
+          { icon: 'clock', label: '北京时间', value: '周日上午 9:00' },
+          { icon: 'clock', label: '每场时长', value: '约1小时' },
+        ],
+        sessionsSectionTitle: '📅 分享会日程',
+        sessionsNote: '以下时间均为美国中部时间',
+        sessions: [
+          {
+            date: '9/19（周六）晚 8:00',
+            title: '《2026芝马初体验：外地跑者安全出行与玩乐指南》',
+          },
+          {
+            date: '9/26（周六）晚 8:00',
+            title: '《Expo、赛道解析 & 跟兔子跑到目标》',
+          },
+          {
+            date: '10/3（周六）晚 8:00',
+            title: '《芝马赛道摄影指南》',
+          },
+        ],
+        closingNote:
+          '无论你来自哪里，无论这是你的第一次芝马，还是你已经多次踏上芝马赛道，都欢迎加入我们！',
+        viewRecordingsLabel: '查看主讲人介绍、回放视频与 PPT →',
+      },
+      zoomRecordingPage: {
+        heroTitleLines: ['2026芝马跑者分享会 · 回放'],
+        heroSubtitle: '芝加哥驰跑团主办',
+        introSectionTitle: '主讲人介绍、回放与 PPT',
+        introBody: '各场次分享会的主讲人介绍、YouTube 回放和 PPT，将陆续更新在这里。',
+        sessionComingSoonLabel: '内容即将发布',
+        youtubeSectionLabel: '回放视频',
+        youtubeWatchLabel: '▶ 观看回放',
+        youtubeComingSoonLabel: '视频回放即将上线',
+        slidesSectionLabel: 'PPT',
+        slidesViewLabel: '📄 查看 PPT',
+        slidesComingSoonLabel: 'PPT 即将上线',
+        sessions: [
+          {
+            date: '9/19（周六）晚 8:00',
+            title: '《2026芝马初体验：外地跑者安全出行与玩乐指南》',
+            comingSoon: true,
+          },
+          {
+            date: '9/26（周六）晚 8:00',
+            title: '《Expo、赛道解析 & 跟兔子跑到目标》',
+            speakers: [
+              {
+                name: '丹睿',
+                photoKey: 'danrui',
+                bio: '丹睿是一位资深马拉松跑者，已成功完成全球六大马拉松赛事。她拥有多年的比赛经验，多次在芝马做官兔，对芝马赛道有着深入的了解。在此次分享中，她结合自己的实战经验，为跑者带来实用的赛道攻略与心理准备技巧，帮助大家在芝马赛场上发挥出最佳状态。',
+              },
+            ],
+          },
+          {
+            date: '10/3（周六）晚 8:00',
+            title: '《芝马赛道摄影指南》',
+            comingSoon: true,
+          },
+        ],
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',

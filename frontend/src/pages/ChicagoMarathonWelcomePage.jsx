@@ -48,6 +48,12 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
               cta={mw.cards.photography.cta}
               to={CHICAGO_MARATHON_ROUTES.photography}
             />
+            <MarathonPreviewCard
+              title={mw.cards.sharingSessions.title}
+              description={mw.cards.sharingSessions.description}
+              cta={mw.cards.sharingSessions.cta}
+              to={CHICAGO_MARATHON_ROUTES.sharingSessions}
+            />
           </div>
         </section>
 
