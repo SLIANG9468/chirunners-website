@@ -21,6 +21,7 @@ import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
 import ChicagoMarathonSharingSessionsPage from './pages/ChicagoMarathonSharingSessionsPage'
 import ChicagoMarathonZoomRecordingPage from './pages/ChicagoMarathonZoomRecordingPage'
 import ChiStorePage from './pages/ChiStorePage'
+import KennyTributePage from './pages/KennyTributePage'
 import Founders5KPage from './pages/Founders5KPage'
 
 export default function App() {
@@ -106,6 +107,7 @@ export default function App() {
         <Route path="/chi-store" element={<ChiStorePage copy={copy} />} />
         <Route path="/5K" element={<Founders5KPage language={language} />} />
         <Route path="/5k" element={<Founders5KPage language={language} />} />
+        <Route path="/kenny" element={<KennyTributePage copy={copy} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {!isChiStore ? <SiteFooter copy={copy} /> : null}

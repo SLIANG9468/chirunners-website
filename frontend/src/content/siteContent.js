@@ -1094,6 +1094,54 @@ export const CONTENT = {
           'Information is for general guidance from CHI Running Club volunteers and may change. Fares, schedules, shuttle times, and road closures are controlled by CTA, the City of Chicago, the marathon, and the hotel—always confirm the latest details before you travel.',
       },
     },
+    kennyTribute: {
+      docTitle: 'For Kenny · CHI Running Club',
+      heroKicker: 'For the Runners, Through the Lens',
+      titleLines: ['You Captured Us,', 'We Remember You.'],
+      nameCredit: 'For Kenny',
+      leadBody:
+        'You are a marathoner too. But in so many races and events, you chose to pick up your camera instead — standing trackside, turning the lens toward the Chinese runners around you.',
+      heroPhotoLabel: 'Photo coming soon',
+      roleKicker: 'Not Just the Person Behind the Lens',
+      roleBody:
+        'What you’ve given CHI Running Club goes far beyond photography.\nSince the club became a nonprofit, you’ve served on the board the entire time, helping organize and drive the club forward.\nCHI Running Club has four local group runs across Chicago, and you’ve captained the Loop group for years — organizing training runs and leading us out on the road.\nSo much of what you’ve given us never showed up in a photo at all.',
+      roleLine: 'And on top of all that, you found one more way to stay with us all these years — through your camera.',
+      section1Kicker: 'You Have Always Been Beside Us',
+      section1Body:
+        'Wherever there’s a race, we often find you there. The Chicago Marathon, half marathons, 5Ks, group runs, training sessions, gatherings — so many of CHI Running Club’s biggest moments have passed through your lens.',
+      section1Line: 'You are a runner. You are also our chronicler.',
+      section2Title: 'You Run, Too',
+      section2Body:
+        'You love running, just like the rest of us. You race marathons yourself. You know the nerves at the start line, the exhaustion in the back half, and the release and joy of crossing the finish line. Maybe it’s exactly because you’re a runner yourself that you understand what those fleeting moments mean to someone mid-race. So in so many races, you chose not to just be a participant. You picked up your camera — to capture everyone else.',
+      section3Title: 'The Lens Finds Us First',
+      section3Body:
+        'On courses that bring together runners from all over the world, you always keep an eye out for the familiar faces. Chinese runners. CHI Running Club teammates. Whether it’s a race in Chicago or somewhere else entirely, you do your best to find us — so that even while we’re running, someone is there to remember the moment for us.',
+      section3GalleryLabel: 'Photos coming soon',
+      section4Title: 'Behind Every Photo, Hours We Never See',
+      section4Body:
+        'We see a photo. You see the whole process. Before the race even starts, you’re already scouting your spot. While the race is underway, you’re watching, waiting, tracking the faces you know. We flash past the lens in a second — you might stand trackside for hours. After the race, while we’re off celebrating, you’re still sorting through photo after photo. What we get is one picture. What you give is an entire race day.',
+      section5Kicker: 'Through Your Lens',
+      section5Title: 'The Roads We’ve Run',
+      categories: [
+        'Chicago Marathon',
+        'Other Marathons',
+        'Half Marathons & 5Ks',
+        'CHI Running Club Events',
+        'Training Runs',
+        'Picnics & Gatherings',
+      ],
+      years: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+      section6Kicker: 'Not Goodbye — See You in Chicago',
+      section6Body:
+        'This year, you’re leaving Chicago. We don’t know if we’ll get to see you raise your camera at a race again the way we have all these years. We don’t know which race you’ll next appear behind the lens at. But your family and friends are still here in Chicago — and so is a whole group of runners still out there running. So we hope this isn’t goodbye. Whenever you come back to Chicago, remember to bring your camera. There will be more races. We’ll still be running.',
+      closingKicker: 'A Place for You, Trackside — Always',
+      closingBody:
+        'You’ve photographed us for all these years. This time, let us remember you. Thank you for capturing CHI Running Club, capturing Chinese runners, and capturing the years we ran together. When you come back, we’ll still be here. Bring your camera. See you trackside.',
+      closingTagline: 'You captured our moments. We remember you.',
+      futureTitle: 'Have You Been Photographed by Him?',
+      futureBody:
+        'This page will grow into something we build together — a shared memory archive of CHI Running Club, our photographer, and the Chinese runners he’s captured over the years. A way to share your own photo and story is coming soon.',
+    },
   },
   zh: {
     brand: 'CHI Running Club/芝加哥驰跑团',
@@ -2013,6 +2061,47 @@ export const CONTENT = {
         disclaimer:
           '本页由芝加哥驰跑团志愿者整理，仅供出行参考。地铁票价、班次、酒店班车与赛事封路等信息可能随时调整，请以 CTA、酒店、赛事官方及市政府的最新公告为准。',
       },
+    },
+    kennyTribute: {
+      docTitle: '致谢 Kenny · 驰跑团',
+      heroKicker: 'For the Runners, Through the Lens',
+      titleLines: ['你拍下我们，', '我们记住你。'],
+      nameCredit: '写给 风城网事',
+      leadBody:
+        '你是一名马拉松跑者。\n但在很多比赛和活动中，你选择拿起相机，站在赛道旁，把镜头留给身边的华人跑者。',
+      heroPhotoLabel: '照片即将上线',
+      roleKicker: '不只是镜头后的人',
+      roleBody:
+        '你为驰跑团付出的，远不止摄影。\n自驰跑团成立非盈利组织以来，你就一直是董事会成员，参与和推动驰跑团的各项事务。\n驰跑团在芝加哥有四个本地跑步小组，你是芝加哥城中（Loop）跑区的队长，多年来组织训练、带领大家一起跑。\n很多时候，你的付出并不在镜头前，而是在这些默默投入的地方。',
+      roleLine: '而在这一切之外，你还选择用另一种方式，陪我们跑过了这么多年——用镜头。',
+      section1Kicker: '你一直在我们身边',
+      section1Body:
+        '有比赛的地方，常常能看到你的身影。\n芝加哥马拉松、半马、5K、团跑、训练、聚会……\n很多驰跑团的重要时刻，都曾经出现在你的镜头里。',
+      section1Line: '你是跑者，也是记录者。',
+      section2Title: '你也是跑者',
+      section2Body:
+        '你和我们一样，喜欢跑。你自己也跑马拉松。你知道站在起跑线上的紧张，知道跑到后半程的疲惫，也知道冲过终点时那一瞬间的释然和喜悦。也许正因为自己也是跑者，你知道那些稍纵即逝的瞬间，对一个跑者意味着什么。所以，在很多比赛里，你没有选择只做一个参赛者。你拿起相机，去记录更多的人。',
+      section3Title: '镜头首先留给华人跑者',
+      section3Body:
+        '在一个汇聚世界各地跑者的赛道上，你总会特别留意那些熟悉的面孔。中国人、华人跑者、驰跑团的队友……不管是在芝加哥的赛道，还是其他比赛和活动，你总会尽可能找到我们。让我们在奔跑的时候，也有人替我们记住这一刻。',
+      section3GalleryLabel: '照片即将上线',
+      section4Title: '一张照片背后，是很多时间',
+      section4Body:
+        '我们看到照片，你看到的是整个过程。比赛开始之前，你已经在寻找位置。比赛进行的时候，你不断等待、观察、追踪熟悉的身影。我们从镜头前一闪而过，你却可能在赛道旁站了几个小时。比赛结束后，我们去庆祝，你还要整理一张又一张照片。我们得到的是一张照片，你付出的是一个比赛日。',
+      section5Kicker: 'Through Your Lens',
+      section5Title: '那些年，我们跑过的路',
+      categories: ['芝加哥马拉松', '其他马拉松', '半马 · 5K', '驰跑团活动', '训练 · 团跑', '聚会 · 团建'],
+      years: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+      section6Kicker: '不是告别，是"芝加哥见"',
+      section6Body:
+        '今年，你要离开芝加哥。我们不知道以后还能不能像过去这些年一样，在比赛现场看到你举起相机。也不知道下一次你会在哪一场比赛，再次出现在我们的镜头后面。但芝加哥依然有你的家人、朋友，也有一群跑者在这里继续奔跑。所以，我们希望这不是告别。哪一天你回到芝加哥，记得带上你的相机。比赛还会有，我们也还会跑。',
+      closingKicker: '赛道边，永远给你留一个位置',
+      closingBody:
+        '你拍了我们这么多年，这一次，换我们来记住你。谢谢你用镜头，记录驰跑团，记录华人跑者，也记录我们一起奔跑过的岁月。你回来，我们还在。相机带上，赛道边见。',
+      closingTagline: '你拍下我们，我们记住你。',
+      futureTitle: '你有没有被他拍到过？',
+      futureBody:
+        '这个页面会慢慢成为我们共同的记忆库——驰跑团、摄影师和华人跑者一起写下的故事。上传你自己的照片和故事的功能，即将上线。',
     },
   },
 }
