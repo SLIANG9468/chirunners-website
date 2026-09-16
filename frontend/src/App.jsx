@@ -15,6 +15,7 @@ import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
 import ChicagoMarathonPhotographyPage from './pages/ChicagoMarathonPhotographyPage'
+import ChicagoMarathonTeamsPage from './pages/ChicagoMarathonTeamsPage'
 import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
 import ChicagoMarathonSharingSessionsPage from './pages/ChicagoMarathonSharingSessionsPage'
 import ChicagoMarathonZoomRecordingPage from './pages/ChicagoMarathonZoomRecordingPage'
@@ -69,6 +70,7 @@ export default function App() {
           path="/chicagomarathon/photography"
           element={<ChicagoMarathonPhotographyPage copy={copy} />}
         />
+        <Route path="/chicagomarathon/teams" element={<ChicagoMarathonTeamsPage copy={copy} />} />
         <Route path="/chicagomarathon/tickets" element={<ChicagoMarathonTicketsPage copy={copy} />} />
         <Route
           path="/chicagomarathon/zoom"
