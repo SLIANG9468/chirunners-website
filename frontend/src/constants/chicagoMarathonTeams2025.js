@@ -1,10 +1,10 @@
 /**
  * Language-neutral data (photos, videos, emails, wechat handles, external links) for teams
  * on the Chicago Marathon "Participating Running Clubs" page. Display copy (names, contact
- * person, schedules, link text) lives per-language in `marathonWelcome.teamsPage.teams` in
+ * person, schedules, link text) lives per-language in `marathonWelcome.teams2025Page.teams` in
  * `content/siteContent.js`, keyed by `key` below.
  */
-export const CHICAGO_MARATHON_TEAMS = [
+export const CHICAGO_MARATHON_TEAMS_2025 = [
   {
     key: 'chirunners',
     flag: '🇺🇸',

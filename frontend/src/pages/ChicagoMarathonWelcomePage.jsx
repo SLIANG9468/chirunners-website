@@ -58,7 +58,7 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
               title={mw.cards.teams.title}
               description={mw.cards.teams.description}
               cta={mw.cards.teams.cta}
-              to={CHICAGO_MARATHON_ROUTES.teams}
+              to={CHICAGO_MARATHON_ROUTES.teams2026}
             />
           </div>
         </section>

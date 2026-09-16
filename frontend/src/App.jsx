@@ -15,7 +15,8 @@ import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
 import ChicagoMarathonPhotographyPage from './pages/ChicagoMarathonPhotographyPage'
-import ChicagoMarathonTeamsPage from './pages/ChicagoMarathonTeamsPage'
+import ChicagoMarathonTeams2025Page from './pages/ChicagoMarathonTeams2025Page'
+import ChicagoMarathonTeams2026Page from './pages/ChicagoMarathonTeams2026Page'
 import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
 import ChicagoMarathonSharingSessionsPage from './pages/ChicagoMarathonSharingSessionsPage'
 import ChicagoMarathonZoomRecordingPage from './pages/ChicagoMarathonZoomRecordingPage'
@@ -70,7 +71,15 @@ export default function App() {
           path="/chicagomarathon/photography"
           element={<ChicagoMarathonPhotographyPage copy={copy} />}
         />
-        <Route path="/chicagomarathon/teams" element={<ChicagoMarathonTeamsPage copy={copy} />} />
+        <Route
+          path="/chicagomarathon/teams_2025"
+          element={<ChicagoMarathonTeams2025Page copy={copy} />}
+        />
+        <Route
+          path="/chicagomarathon/teams_2026"
+          element={<ChicagoMarathonTeams2026Page copy={copy} />}
+        />
+        <Route path="/chicagomarathon/teams" element={<Navigate to="/chicagomarathon/teams_2026" replace />} />
         <Route path="/chicagomarathon/tickets" element={<ChicagoMarathonTicketsPage copy={copy} />} />
         <Route
           path="/chicagomarathon/zoom"

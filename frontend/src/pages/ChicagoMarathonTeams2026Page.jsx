@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import TeamCard from '../components/chicagoMarathon/TeamCard'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
-import { CHICAGO_MARATHON_TEAMS } from '../constants/chicagoMarathonTeams'
+import { CHICAGO_MARATHON_TEAMS_2026 } from '../constants/chicagoMarathonTeams2026'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
 const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
 
-export default function ChicagoMarathonTeamsPage({ copy }) {
+export default function ChicagoMarathonTeams2026Page({ copy }) {
   const mw = copy.marathonWelcome
-  const p = mw.teamsPage
+  const p = mw.teams2026Page
 
   return (
     <main className="siteMain siteMain--marathonWelcome">
@@ -66,6 +66,7 @@ export default function ChicagoMarathonTeamsPage({ copy }) {
                 >
                   {p.updateContactEmail}
                 </a>
+                {p.updateContactWechatSuffix}
               </p>
             </div>
           </div>
@@ -73,7 +74,7 @@ export default function ChicagoMarathonTeamsPage({ copy }) {
 
         <section className="section pb-2">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {CHICAGO_MARATHON_TEAMS.map((team) => (
+            {CHICAGO_MARATHON_TEAMS_2026.map((team) => (
               <TeamCard key={team.key} team={team} labels={p.teams[team.key]} copy={p} />
             ))}
           </div>

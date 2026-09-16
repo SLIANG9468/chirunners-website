@@ -622,17 +622,106 @@ export const CONTENT = {
         wechatGroupQrAlt: '2026 Chicago Marathon photography team WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
       },
-      teamsPage: {
+      teams2025Page: {
         heroTitleLines: ['2025 Chicago Marathon', 'Participating Running Clubs'],
         heroSubtitle: 'Chinese running clubs from around the world, together at the start line',
         introParagraphs: [
           'CHI Running Club (ChiRunners) warmly welcomes Chinese running clubs and teams from around the world to join the Chicago Marathon! Running clubs play a vital role in the running community — whether you’re a beginner or a seasoned runner, a club is where you find companionship, encouragement, and growth.',
           'Through this page, we hope to connect Chinese running clubs and runners from around the world, so that wherever your travels take you, you can find a local club here, join their group runs, and experience the local culture. 🌍',
         ],
+        groupRunWelcome: 'Group runs welcome!',
+        contactLabel: 'Contact',
+        emailLabel: 'Email',
+        wechatLabel: 'WeChat',
+        contactViaLabel: 'Contact via',
+        teams: {
+          chirunners: {
+            name: 'Chicago · CHI Running Club (ChiRunners)',
+            contactName: 'Sherri Liang-Zhou',
+            locationLines: ['Lincolnshire, IL — Sat & Sun 6:45 AM', 'Busse Woods, IL — Sat & Sun 7:30 AM'],
+          },
+          ninetyOneCamp: {
+            name: 'Toronto · 91 Running Camp (91Camp)',
+            contactName: '91 Camp Admin',
+            locationLines: ['25 Lanark Rd, Markham, ON L3R 9S1 — Sun 7:00 AM'],
+          },
+          tokyoRuntime: {
+            name: 'Tokyo · Runtime & TOKYO (東跑联)',
+            contactName: 'Dongyu Wang (麦扣王)',
+            locationLines: ['Imperial Palace, Yoyogi Park, Arakawa River & more — irregular weekend group runs'],
+          },
+          mistyMountain: {
+            name: 'New York · Misty Mountain Runners (岚山)',
+            contactName: 'Longchang',
+            linkText: 'Group run schedule by chapter',
+          },
+          zephyrRun: {
+            name: 'Singapore · Zephyr Run Club (椰风)',
+            linkText: 'Zephyr Run Club website',
+          },
+          dash: {
+            name: 'Dallas · Dash',
+            contactName: 'Wendy You',
+            locationLines: [
+              'Allen, TX — Sat & Sun 7:00 AM',
+              'Plano, TX — Sat 7:00 AM',
+              'Dallas, TX — Sun 7:00 AM',
+            ],
+          },
+          joyRunners: {
+            name: 'Sydney · Joy Runners (悉尼悦跑团)',
+            contactName: 'Shiliang Zhao / Lujia Zhao',
+            locationLines: ['Newington Marketplace — Sun 6:00 AM', 'Parramatta Parkrun — Sat 7:45 AM'],
+          },
+          red: {
+            name: 'Atlanta · RED (红军)',
+          },
+          windRunner: {
+            name: 'Chicago · WindRunner (追风)',
+            linkText: 'WindRunner website',
+          },
+          mrc: {
+            name: 'Melbourne · Mad Rabbit Crew (MRC)',
+            linkText: 'MRC Strava',
+          },
+          laPower: {
+            name: 'Vancouver · LaPower (乐跑俱乐部)',
+            contactName: 'Irene',
+          },
+          loveToRun: {
+            name: 'New Jersey · Love to Run (爱跑)',
+          },
+          bergenRunners: {
+            name: 'New Jersey · Bergen Runners (百骏)',
+            contactName: 'Renny Shih / Amy Ko-Tang',
+          },
+          su: {
+            name: 'Seattle · SU (速)',
+            locationLines: ['Whole Foods Market, Redmond, WA 98052 — Sat & Sun 8:00 AM'],
+            linkText: 'Xiaohongshu: Seattle United Runners',
+          },
+          longRunningClub: {
+            name: 'Houston · Long Running Club (龙帮)',
+            locationLines: ['Katy, TX — Sat & Sun 6:00 AM', 'Sugarland, TX — Sat 8:00 AM'],
+            linkText: 'Facebook: Long Running Club',
+          },
+        },
+      },
+      // Independent from teams2025Page on purpose: the 2025 page is an archived record and
+      // should never change once published, so 2026 (and each future year) gets its own
+      // hand-written content block here instead of deriving from the prior year's.
+      teams2026Page: {
+        heroTitleLines: ['2026 Chicago Marathon', 'Participating Running Clubs'],
+        heroSubtitle: 'Chinese running clubs from around the world, together at the start line',
+        introParagraphs: [
+          'CHI Running Club (ChiRunners) warmly welcomes Chinese running clubs and teams from around the world to join the Chicago Marathon! Running clubs play a vital role in the running community — whether you’re a beginner or a seasoned runner, a club is where you find companionship, encouragement, and growth.',
+          'Through this page, we hope to connect Chinese running clubs and runners from around the world, so that wherever your travels take you, you can find a local club here, join their group runs, and experience the local culture. 🌍',
+        ],
         updateCallout:
-          '📣 This page currently showcases the clubs that ran the 2025 Chicago Marathon. We warmly invite every club and organization to update it for 2026 — especially with photos/collages of your runners at the 2026 race! 📸 Videos can carry over from 2025, and we’d also love to feature brand-new 2026 videos. 🎥',
+          '📣 This page currently showcases the clubs that ran the 2025 Chicago Marathon. We warmly invite every club and organization to update it for 2026 — especially with photos/collages of your runners at the 2026 race! 📸 As for club intro videos, feel free to keep your 2025 video, and we’d also love to feature a brand-new one.',
         updateContactLabel: 'To update your club’s info, contact:',
         updateContactEmail: 'sherri@chirunners.org',
+        updateContactWechatSuffix: ' or WeChat: Sherri (梁向绍)',
         groupRunWelcome: 'Group runs welcome!',
         contactLabel: 'Contact',
         emailLabel: 'Email',
@@ -1461,17 +1550,13 @@ export const CONTENT = {
         wechatGroupQrAlt: '2026芝加哥马拉松摄影队微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/photography',
       },
-      teamsPage: {
+      teams2025Page: {
         heroTitleLines: ['2025年芝加哥马拉松', '参赛跑团'],
         heroSubtitle: '来自世界各地的华人跑团，一起奔向起点线',
         introParagraphs: [
-          '🏃‍♂️🏃‍♀️ 驰跑团（ChiRunners）诚挚欢迎全世界的华人跑步俱乐部/跑团参加芝加哥马拉松！跑团在跑步社区中起着非常重要的作用——无论新手还是资深跑者，都能在跑团里找到陪伴、鼓励和成长。',
+          '🏃‍♂️🏃‍♀️ 驰跑团（ChiRunners ｜ CHI Running Club）诚挚欢迎全世界的华人跑团参加芝加哥马拉松！跑团在跑步社区中起着非常重要的作用——无论新手还是资深跑者，都能在跑团里找到陪伴、鼓励和成长。',
           '通过这个页面，我们希望把全世界的华人跑团/跑者联系在一起：当大家旅行的时候，可以在这里找到当地跑团，参加群跑，了解当地的风土人情🌍。',
         ],
-        updateCallout:
-          '📣 本页目前展示的是 2025年芝加哥马拉松 参赛团队。我们诚邀各跑团/组织更新为 2026年版本，特别欢迎上传参加2026年芝马的跑者合影/collage📸！Video部分可以沿用2025年的视频，也欢迎提交全新的2026年版本🎥。',
-        updateContactLabel: '👉 更新信息请联系：',
-        updateContactEmail: 'sherri@chirunners.org',
         groupRunWelcome: '欢迎参加群跑',
         contactLabel: '联系人',
         emailLabel: 'Email',
@@ -1479,7 +1564,99 @@ export const CONTENT = {
         contactViaLabel: '通过',
         teams: {
           chirunners: {
-            name: '芝加哥 驰（ChiRunners）',
+            name: '芝加哥 驰跑团（ChiRunners ｜ CHI Running Club）',
+            contactName: 'Sherri Liang-Zhou',
+            locationLines: ['Lincolnshire, IL — 每周六日 6:45AM', 'Busse woods, IL — 每周六日 7:30AM'],
+          },
+          ninetyOneCamp: {
+            name: '多伦多 91Camp（91 Running Camp）',
+            contactName: '91 Camp Admin',
+            locationLines: ['25 Lanark Rd, Markham, ON L3R 9S1 — 每周日 7am'],
+          },
+          tokyoRuntime: {
+            name: '东京 東跑联（Runtime & TOKYO）',
+            contactName: '麦扣王 (王冬宇)',
+            locationLines: ['东京皇居，代代木公园，荒川等等 — 周末不定期聚跑'],
+          },
+          mistyMountain: {
+            name: '纽约 岚山（Misty Mountain Runners）',
+            contactName: '龙昌',
+            linkText: '岚山各分部群跑信息',
+          },
+          zephyrRun: {
+            name: '新加坡 椰风（Singapore Zephyr Run）',
+            linkText: '椰风网站',
+          },
+          dash: {
+            name: '达拉斯（Dash）',
+            contactName: 'Wendy You',
+            locationLines: [
+              'Allen, TX — 每周六日 7:00AM',
+              'Plano, TX — 每周六 7:00AM',
+              'Dallas, TX — 每周日 7:00AM',
+            ],
+          },
+          joyRunners: {
+            name: '悉尼悦跑团（Joy Runners）',
+            contactName: 'Shiliang Zhao/ Lujia Zhao',
+            locationLines: ['Newington Marketplace — 周日 6:00AM', 'Parramatta Parkrun — 周六 7:45AM'],
+          },
+          red: {
+            name: '亚特兰大 红军（RED）',
+          },
+          windRunner: {
+            name: '芝加哥 追风（WindRunner）',
+            linkText: '追风网站',
+          },
+          mrc: {
+            name: '墨尔本MRC（Mad Rabbit Crew）',
+            linkText: 'MRC Strava',
+          },
+          laPower: {
+            name: '温哥华 乐跑俱乐部（LaPower）',
+            contactName: 'Irene',
+          },
+          loveToRun: {
+            name: '新泽西 爱跑(Love to Run)',
+          },
+          bergenRunners: {
+            name: '新泽西 百骏（Bergen Runners）',
+            contactName: 'Renny Shih/Amy Ko-Tang',
+          },
+          su: {
+            name: '西雅图 速（SU）',
+            locationLines: ['Whole Food Market, Redmond, WA 98052 — 每周六日 8:00AM'],
+            linkText: '小红书@Seattle United Runners',
+          },
+          longRunningClub: {
+            name: '休斯顿 龙帮（Long Running Club）',
+            locationLines: ['Katy, TX — 每周日六 6:00AM', 'Sugarland, TX — 每周六 8:00AM'],
+            linkText: 'facebook@Long Running Club',
+          },
+        },
+      },
+      // 与 teams2025Page 完全独立：2025 页面是历史存档，发布后不应再改动，因此 2026 年
+      // （以及未来每一年）都在这里单独维护自己的内容，而不是从上一年的内容派生。
+      teams2026Page: {
+        heroTitleLines: ['2026年芝加哥马拉松', '参赛跑团'],
+        heroSubtitle: '来自世界各地的华人跑团，一起奔向起点线',
+        introParagraphs: [
+          '🏃‍♂️🏃‍♀️ 驰跑团（ChiRunners ｜ CHI Running Club）诚挚欢迎全世界的华人跑团参加芝加哥马拉松！跑团在跑步社区中起着非常重要的作用——无论新手还是资深跑者，都能在跑团里找到陪伴、鼓励和成长。',
+          '通过这个页面，我们希望把全世界的华人跑团/跑者联系在一起：当大家旅行的时候，可以在这里找到当地跑团，参加群跑，了解当地的风土人情🌍。',
+        ],
+        updateCallout:
+          '📣 本页目前展示的是 2025年芝加哥马拉松 参赛团队。我们诚邀各跑团/组织更新为 2026年版本，特别欢迎上传参加2026年芝马的跑者合影/照片拼贴！关于跑团视频介绍，可沿用2025年的跑团介绍视频，也欢迎大家提交新版视频。',
+        updateContactLabel: '👉 更新信息请联系：',
+        updateContactEmail: 'sherri@chirunners.org',
+        updateContactWechatSuffix: ' or 微信Sherri(梁向绍）',
+        groupRunWelcome: '欢迎参加群跑',
+        contactLabel: '联系人',
+        emailLabel: 'Email',
+        wechatLabel: 'WeChat',
+        contactViaLabel: '通过',
+        teams: {
+          chirunners: {
+            name: '芝加哥 驰跑团（ChiRunners ｜ CHI Running Club）',
             contactName: 'Sherri Liang-Zhou',
             locationLines: ['Lincolnshire, IL — 每周六日 6:45AM', 'Busse woods, IL — 每周六日 7:30AM'],
           },

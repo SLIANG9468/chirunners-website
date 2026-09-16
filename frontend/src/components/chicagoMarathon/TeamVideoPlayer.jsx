@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 /** Plays a team's video: smugmug HLS stream, a YouTube embed, or a plain mp4 file. */
-export default function TeamVideoPlayer({ video, poster, title }) {
+export default function TeamVideoPlayer({ video, title }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -44,11 +44,11 @@ export default function TeamVideoPlayer({ video, poster, title }) {
 
   if (video.type === 'mp4') {
     return (
-      <video className="w-full rounded-xl bg-black" controls poster={poster}>
+      <video className="w-full rounded-xl bg-black" controls>
         <source src={video.src} type="video/mp4" />
       </video>
     )
   }
 
-  return <video ref={videoRef} className="w-full rounded-xl bg-black" controls poster={poster} />
+  return <video ref={videoRef} className="w-full rounded-xl bg-black" controls />
 }

@@ -14,7 +14,7 @@ export default function TeamCard({ team, labels, copy }) {
       <img src={team.photoUrl} alt={labels.name} loading="lazy" decoding="async" className="w-full" />
 
       <div className="p-4">
-        <TeamVideoPlayer video={team.video} poster={team.photoUrl} title={labels.name} />
+        <TeamVideoPlayer video={team.video} title={labels.name} />
       </div>
 
       {hasContactRow ? (
