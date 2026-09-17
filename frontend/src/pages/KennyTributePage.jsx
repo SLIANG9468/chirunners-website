@@ -74,9 +74,11 @@ export default function KennyTributePage({ copy }) {
               </span>
             ))}
           </h1>
-          <p className="mt-2 text-sm font-medium italic text-neutral-500 dark:text-neutral-400">
-            {p.nameCredit}
-          </p>
+          {p.nameCredit ? (
+            <p className="mt-2 text-sm font-medium italic text-neutral-500 dark:text-neutral-400">
+              {p.nameCredit}
+            </p>
+          ) : null}
           <p className="mx-auto mt-6 max-w-xl whitespace-pre-line text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
             {p.leadBody}
           </p>

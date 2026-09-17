@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
+import { apiUrl } from '../apiBase'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
 const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
@@ -113,13 +114,38 @@ function InfoCard({ title, titleUrl, rows, joinLabel }) {
   )
 }
 
-function SessionCard({ date, title }) {
+function SpeakerBlock({ speaker }) {
+  return (
+    <div className="mt-4 overflow-hidden">
+      {speaker.photoKey ? (
+        <img
+          src={apiUrl(`/api/marathon-welcome/speaker-photo/${speaker.photoKey}`)}
+          alt={speaker.name}
+          loading="lazy"
+          decoding="async"
+          className="float-left mr-4 mb-2 aspect-[2/3] w-20 shrink-0 rounded-xl bg-neutral-100 object-contain dark:bg-neutral-800"
+        />
+      ) : null}
+      <div className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+        {speaker.name}
+      </div>
+      <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+        {speaker.bio}
+      </p>
+    </div>
+  )
+}
+
+function SessionCard({ date, title, speakers }) {
   return (
     <div className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40 sm:p-6">
       <InfoRow icon="calendar" label="Date & time" value={date} />
       <p className="mt-4 text-sm font-semibold leading-relaxed text-neutral-900 dark:text-neutral-100 sm:text-base">
         {title}
       </p>
+      {speakers && speakers.length > 0
+        ? speakers.map((speaker) => <SpeakerBlock key={speaker.name} speaker={speaker} />)
+        : null}
     </div>
   )
 }
@@ -197,7 +223,12 @@ export default function ChicagoMarathonSharingSessionsPage({ copy }) {
           <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">{p.sessionsNote}</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {p.sessions.map((session) => (
-              <SessionCard key={session.date} date={session.date} title={session.title} />
+              <SessionCard
+                key={session.date}
+                date={session.date}
+                title={session.title}
+                speakers={session.speakers}
+              />
             ))}
           </div>
         </section>
@@ -207,14 +238,6 @@ export default function ChicagoMarathonSharingSessionsPage({ copy }) {
             <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
               {p.closingNote}
             </p>
-            {p.viewRecordingsLabel ? (
-              <Link
-                to={CHICAGO_MARATHON_ROUTES.zoomRecordings}
-                className="mt-4 inline-flex text-sm font-medium text-chi-red hover:text-chi-red-hover hover:underline"
-              >
-                {p.viewRecordingsLabel}
-              </Link>
-            ) : null}
           </div>
         </section>
       </div>

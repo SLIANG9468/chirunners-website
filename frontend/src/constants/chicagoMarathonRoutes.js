@@ -14,5 +14,4 @@ export const CHICAGO_MARATHON_ROUTES = {
   teams2026: '/chicagomarathon/teams_2026',
   tickets: '/chicagomarathon/tickets',
   sharingSessions: '/chicagomarathon/zoom',
-  zoomRecordings: '/chicagomarathon/zoom/recording',
 }
