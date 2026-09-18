@@ -29,6 +29,7 @@ QR_SMUGMUG_PAGE_URLS = {
     "carb-loading-dinner": "https://chirunners.smugmug.com/Website/QRCode/i-4Gwztnj/A",
     "volunteer": "https://chirunners.smugmug.com/Website/QRCode/i-t59mLvq/A",
     "photography": "https://chirunners.smugmug.com/Website/QRCode/i-HG7NSMt/A",
+    "bus": "https://chirunners.smugmug.com/Website/QRCode/i-NqQJDF9/A",
 }
 
 PHOTOGRAPHER_PHOTO_SMUGMUG_PAGE_URLS = {

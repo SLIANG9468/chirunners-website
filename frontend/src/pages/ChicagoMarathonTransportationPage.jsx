@@ -5,7 +5,6 @@ import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 const TRANSPORT_IMAGES = {
   airportTransit: '/marathon-transport/ord-airport-transit-sign.png',
   walkRentalToHyatt: '/marathon-transport/walk-rental-center-to-hyatt.png',
-  raceMorning: '/marathon-transport/race-morning-hyatt-to-start.png',
   ctaSign: '/marathon-transport/ord-cta-trains-sign.png',
 }
 
@@ -193,39 +192,6 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
             caption={t.images.walkRental.caption}
           />
           <BulletList items={t.sections.airportHotel.walkBullets} />
-        </section>
-
-        <section id="hotel-start" className="section scroll-mt-28">
-          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.hotelStart.title}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.hotelStart.lead}
-          </p>
-
-          <div className="mt-6 rounded-2xl border border-chi-red/25 bg-gradient-to-br from-chi-red/10 via-transparent to-chi-red/5 p-5 dark:border-chi-red/35 dark:from-chi-red/15 sm:p-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">
-              {t.sections.hotelStart.shuttleBadge}
-            </p>
-            <h3 className="mt-2 text-lg font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.hotelStart.shuttleTitle}</h3>
-            <BulletList items={t.sections.hotelStart.shuttleBullets} />
-            <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">{t.sections.hotelStart.shuttleNote}</p>
-          </div>
-
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.hotelStart.mapSectionTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.hotelStart.mapSectionBody}
-          </p>
-          <FigureImg
-            src={TRANSPORT_IMAGES.raceMorning}
-            alt={t.images.raceMorning.alt}
-            caption={t.images.raceMorning.caption}
-            priority
-            featured
-          />
-
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.hotelStart.otherModesTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.hotelStart.otherModesBody}
-          </p>
         </section>
 
         <section id="hotel-expo" className="section scroll-mt-28">

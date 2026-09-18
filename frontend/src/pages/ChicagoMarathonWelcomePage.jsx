@@ -31,6 +31,12 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
               to={CHICAGO_MARATHON_ROUTES.hotel}
             />
             <MarathonPreviewCard
+              title={mw.cards.bus.title}
+              description={mw.cards.bus.description}
+              cta={mw.cards.bus.cta}
+              to={CHICAGO_MARATHON_ROUTES.bus}
+            />
+            <MarathonPreviewCard
               title={mw.cards.transportation.title}
               description={mw.cards.transportation.description}
               cta={mw.cards.transportation.cta}

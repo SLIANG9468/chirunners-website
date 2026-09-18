@@ -12,6 +12,7 @@ import BoardMembersPage from './pages/BoardMembersPage'
 import ChicagoMarathonWelcomePage from './pages/ChicagoMarathonWelcomePage'
 import CarbLoadingDinnerPage from './pages/CarbLoadingDinnerPage'
 import ChicagoMarathonHotelPage from './pages/ChicagoMarathonHotelPage'
+import ChicagoMarathonBusPage from './pages/ChicagoMarathonBusPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
 import ChicagoMarathonPhotographyPage from './pages/ChicagoMarathonPhotographyPage'
@@ -59,6 +60,7 @@ export default function App() {
           element={<CarbLoadingDinnerPage copy={copy} language={language} />}
         />
         <Route path="/chicagomarathon/hotel" element={<ChicagoMarathonHotelPage copy={copy} />} />
+        <Route path="/chicagomarathon/bus" element={<ChicagoMarathonBusPage copy={copy} />} />
         <Route
           path="/chicagomarathon/transportation"
           element={<ChicagoMarathonTransportationPage copy={copy} />}

@@ -368,6 +368,12 @@ export const CONTENT = {
             'Ideas for staying near the start, the Loop, transit, and budget-friendly options.',
           cta: 'Open guide',
         },
+        bus: {
+          title: 'Express bus shuttle',
+          description:
+            'Round-trip express shuttle between the hotel and the marathon start & finish at Grant Park.',
+          cta: 'Open guide',
+        },
         transportation: {
           title: 'Chicago Marathon transportation',
           description:
@@ -451,6 +457,31 @@ export const CONTENT = {
         wechatGroupBody: 'Scan to join—ask anything about booking, Chicago Marathon express, and stay details.',
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/hotel',
+      },
+      busPage: {
+        docTitle: 'Express Bus Shuttle · CHI Running Club',
+        pageTitle: 'Express Bus Shuttle (Hotel ↔ Marathon Start, Round Trip)',
+        pageIntro:
+          'Race morning is easier with a plan. This paid express, arranged with Hyatt Place O’Hare, runs from the hotel to Grant Park before the race and back after—no need to navigate transit or road closures on your own.',
+        shuttleBadge: 'Race weekend',
+        shuttleTitle: 'Race-morning express (club arrangement)',
+        shuttleBullets: [
+          'Typical hotel departure about 5:30 AM, arriving Grant Park by about 6:00 AM; return pickup about 3:30 PM (adjusted for road closures).',
+          'About $40 per person—confirm details, pickup location, and booking with the hotel front desk.',
+        ],
+        timingHighlightTitle: 'Why 5:30 AM? We did the math.',
+        timingHighlightBody:
+          'Corrals close at 7:20 AM for Wave 1 (Corrals A to E) and 7:45 AM for Wave 2 (Corrals F, G, H & J), and race organizers recommend reaching security about 1.5 hours before your corral closes. Leaving the hotel at 5:30 AM gets you to Grant Park by about 6:00 AM.',
+        mapSectionTitle: 'What the drive looks like early Sunday',
+        mapSectionBody:
+          'At 5:30 AM, the expressways are usually light; the screenshot is a reference only—your arrival time will depend on closures and weather.',
+        mapImageAlt: 'Google Maps driving directions from Hyatt Place O’Hare to Chicago Marathon start around 5:30 AM',
+        mapImageCaption:
+          'Illustrative drive from the hotel to the downtown start around 5:30 AM Sunday—actual time varies with traffic and closures.',
+        wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
+        wechatGroupBody: 'Scan to join—ask anything about the express shuttle, pickup details, and booking.',
+        wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
       },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
@@ -841,7 +872,7 @@ export const CONTENT = {
               {
                 name: 'Danrey Toth',
                 photoKey: 'danrui',
-                bio: 'Danrey is a experienced marathon runner who has completed the World Marathon Majors six-star journey. With years of racing experience, she has repeatedly served as an official pacer at the Chicago Marathon and has deep, firsthand knowledge of the course. Drawing on that experience, she’ll share practical course strategy and mental-preparation tips to help runners perform at their best on race day.',
+                bio: 'Danrey is an experienced marathon runner who has completed the World Marathon Majors seven-star journey. With years of racing experience, she has repeatedly served as an official pacer at the Chicago Marathon and has deep, firsthand knowledge of the course. Drawing on that experience, she’ll share practical course strategy and mental-preparation tips to help runners perform at their best on race day.',
               },
               {
                 name: 'Tian Wang',
@@ -881,7 +912,6 @@ export const CONTENT = {
         jumpNavLabel: 'On this page',
         jumpNav: [
           { href: '#airport-hotel', label: 'Airport ↔ hotel' },
-          { href: '#hotel-start', label: 'Hotel ↔ start/finish' },
           { href: '#hotel-expo', label: 'Hotel ↔ Expo' },
           { href: '#cta-guide', label: 'Taking the CTA' },
           { href: '#race-day', label: 'Race morning tips' },
@@ -921,11 +951,6 @@ export const CONTENT = {
             caption:
               'Walking reference: about 0.7 mi (~1.1 km), mostly flat along Mannheim Rd—useful if you return a car nearby.',
           },
-          raceMorning: {
-            alt: 'Google Maps driving directions from Hyatt Place O’Hare to Chicago Marathon start around 5:30 AM',
-            caption:
-              'Illustrative drive from the hotel to the downtown start around 5:30 AM Sunday—actual time varies with traffic and closures.',
-          },
         },
         sections: {
           airportHotel: {
@@ -956,27 +981,8 @@ export const CONTENT = {
               'Great if you dropped off a rental nearby—otherwise the shuttle is usually easier with luggage.',
             ],
           },
-          hotelStart: {
-            title: '2. Hyatt Place O’Hare ↔ marathon start & finish',
-            lead:
-              'Race morning is easier with a plan. The hotel offers a paid express for runners heading to Grant Park; public transit is also reliable if you prefer the train.',
-            shuttleBadge: 'Race weekend',
-            shuttleTitle: 'Race-morning express (club arrangement)',
-            shuttleBullets: [
-              'Typical hotel departure about 5:30 AM; return pickup about 3:30 PM (adjusted for road closures).',
-              'About $40 per person—confirm details, pickup location, and booking with the hotel front desk.',
-              'Great for first-timers who want a direct ride without navigating detours sleep-deprived.',
-            ],
-            shuttleNote: 'Pickup times can shift on race day—double-check at check-in.',
-            mapSectionTitle: 'What the drive looks like early Sunday',
-            mapSectionBody:
-              'At 5:30 AM, the expressways are usually light; the screenshot is a reference only—your arrival time will depend on closures and weather.',
-            otherModesTitle: 'Ride-share or taxi',
-            otherModesBody:
-              'From O’Hare to downtown, taxis or Uber/Lyft often fall around $50 but surge pricing applies—budget 30–60 minutes depending on traffic. From the hotel to Grant Park, expect a similar ballpark on Sunday morning.',
-          },
           hotelExpo: {
-            title: '3. Hyatt Place O’Hare ↔ Expo (McCormick Place)',
+            title: '2. Hyatt Place O’Hare ↔ Expo (McCormick Place)',
             lead:
               'Packet pickup is at McCormick Place North Building. From the O’Hare area, the CTA is cost-effective; allow extra time Thursday–Saturday when the Expo is busy.',
             tipTitle: 'Tip',
@@ -991,7 +997,7 @@ export const CONTENT = {
             ctaRouteTime: 'Typical ride about 1 hour 20 minutes—add buffer for waits.',
           },
           cta: {
-            title: '4. How to ride the CTA (beginner-friendly)',
+            title: '3. How to ride the CTA (beginner-friendly)',
             lead:
               'Chicago’s trains and buses are branded CTA. Stations are well signed; on marathon weekend you will see plenty of other runners on the Blue Line early Sunday.',
             faresTitle: 'Typical fares (verify at ventra.com)',
@@ -1339,6 +1345,11 @@ export const CONTENT = {
           description: '机场附近，比赛日直通车到达芝马起点，优惠价 $149',
           cta: '查看详情',
         },
+        bus: {
+          title: '直达大巴',
+          description: '往返直通车，从机场酒店直达 Grant Park 起终点，赛后再送回酒店。',
+          cta: '查看详情',
+        },
         transportation: {
           title: '芝加哥马拉松交通',
           description:
@@ -1417,6 +1428,31 @@ export const CONTENT = {
         wechatGroupBody: '扫码进群，订房、芝马直通车、入住细节等问题都可以在群里问。',
         wechatGroupQrAlt: '芝马酒店微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/hotel',
+      },
+      busPage: {
+        docTitle: '直达大巴 · 驰跑团',
+        pageTitle: '直达大巴（机场酒店到比赛起点往返）',
+        pageIntro:
+          '比赛日清晨节奏很紧：驰跑团安排的直通车，赛前从机场Hyatt Place酒店直达 Grant Park，赛后再送回酒店，不用自己操心交通。比赛当天，驰跑团成员Sherri（梁向绍）和Helen将全程随车，协助现场协调。',
+        shuttleBadge: '比赛日',
+        shuttleTitle: '驰跑团安排的酒店直通车（$40）',
+        shuttleBullets: [
+          '发车：周日早晨约 5:30 从酒店出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
+          '费用约 $40/人。',
+        ],
+        timingHighlightTitle: '为什么是 5:30 出发？',
+        timingHighlightBody:
+          'Wave 1(Corrals A to E）起跑区 7:20 关闭，Wave 2(Corrals F, G, H & J)起跑区 7:45 关闭，建议在关闭时间前 1.5 小时到达安检口。5:30 从酒店出发，约 6:00 到 Grant Park。',
+        mapSectionTitle: '比赛日清晨：车程示意（参考）',
+        mapSectionBody:
+          '下图是清晨约 5:30 从酒店驱车前往起点附近的谷歌地图示意。',
+        mapImageAlt: '谷歌地图显示比赛日清晨从凯悦嘉轩奥黑尔驱车前往芝马起点',
+        mapImageCaption:
+          '比赛日清晨约 5:30 从酒店出发驾车的路线示意（约 19.7 mi / 约 31.7 km，路况好时约 22–30 分钟级）。截图日期仅为示例，请以比赛当日封路与实时导航为准。',
+        wechatGroupTitle: '有问题？加入大巴微信群',
+        wechatGroupBody: '扫码进群，直通车发车时间、上车点、购票等问题都可以在群里问。',
+        wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
+        wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
@@ -1795,7 +1831,7 @@ export const CONTENT = {
               {
                 name: '丹睿',
                 photoKey: 'danrui',
-                bio: '资深马拉松跑者，已成功完成全球六大马拉松赛事。她拥有多年的比赛经验，多次在芝马做官兔，对芝马赛道有着深入的了解。在此次分享中，她结合自己的实战经验，为跑者带来实用的赛道攻略与心理准备技巧，帮助大家在芝马赛场上发挥出最佳状态。',
+                bio: '资深马拉松跑者，已成功完成全球七大马拉松赛事。她拥有多年的比赛经验，多次在芝马做官兔，对芝马赛道有着深入的了解。在此次分享中，她结合自己的实战经验，为跑者带来实用的赛道攻略与心理准备技巧，帮助大家在芝马赛场上发挥出最佳状态。',
               },
               {
                 name: '王天',
@@ -1833,7 +1869,6 @@ export const CONTENT = {
         jumpNavLabel: '本页导航',
         jumpNav: [
           { href: '#airport-hotel', label: '机场 ↔ 酒店' },
-          { href: '#hotel-start', label: '酒店 ↔ 起终点' },
           { href: '#hotel-expo', label: '酒店 ↔ Expo' },
           { href: '#cta-guide', label: '如何乘坐 CTA' },
           { href: '#race-day', label: '比赛日提示' },
@@ -1873,11 +1908,6 @@ export const CONTENT = {
             caption:
               '步行参考：约 0.7 mi（约 1.1 km），沿 Mannheim Rd 以平地为主；适合还车后顺路回酒店，大件行李更建议班车。',
           },
-          raceMorning: {
-            alt: '谷歌地图显示比赛日清晨从凯悦嘉轩奥黑尔驱车前往芝马起点',
-            caption:
-              '比赛日清晨约 5:30 从酒店出发驾车的路线示意（约 19.7 mi / 约 31.7 km，路况好时约 22–30 分钟级）。截图日期仅为示例，请以比赛当日封路与实时导航为准。',
-          },
         },
         sections: {
           airportHotel: {
@@ -1907,27 +1937,8 @@ export const CONTENT = {
               '若行李多或深夜抵达，优先选酒店班车或网约车，更安全省力。',
             ],
           },
-          hotelStart: {
-            title: '2. Hyatt Place O’Hare ↔ 比赛起终点（Grant Park）',
-            lead:
-              '比赛日清晨节奏很紧：建议提前一晚确认交通方式。酒店提供付费直通车直达起点附近；若想体验本地通勤，CTA 蓝线同样可靠。',
-            shuttleBadge: '比赛日',
-            shuttleTitle: '驰跑团安排的酒店直通车（付费）',
-            shuttleBullets: [
-              '参考发车：周日早晨约 5:30 从酒店出发；赛后返程约 15:30（下午 3:30），具体将根据封路情况调整。',
-              '费用约 $40/人（与住宿专页一致），上车点与购票方式请于入住时向前台确认。',
-              '适合第一次来芝加哥、希望「少动脑、直达赛场附近」的跑友。',
-            ],
-            shuttleNote: '封路会导致绕行或上下车点微调，务必以酒店前台当日通知为准。',
-            mapSectionTitle: '比赛日清晨：车程示意（重点参考）',
-            mapSectionBody:
-              '下图是清晨约 5:30 从酒店驱车前往起点附近的谷歌地图示意。可见该时段高速通常较空，但仍可能因赛事封路而变化；图中日期仅为截图示例。',
-            otherModesTitle: '网约车 / 出租车',
-            otherModesBody:
-              '从奥黑尔区域打车进市中心，出租车或 Uber/Lyft 常见报价约 $50 左右（含浮动与加价），车程约 30 分钟–1 小时视路况而定。比赛日清晨从酒店到 Grant Park 也可参考相近量级，请提前预留时间。',
-          },
           hotelExpo: {
-            title: '3. Hyatt Place O’Hare ↔ Expo（领物）',
+            title: '2. Hyatt Place O’Hare ↔ Expo（领物）',
             lead:
               '领物在 McCormick Place 北馆。周四到周六人流大，建议预留排队与安检时间。从奥黑尔一侧出发，坐地铁通常比开车找车位更省心。',
             tipTitle: '小贴士',
@@ -1942,7 +1953,7 @@ export const CONTENT = {
             ctaRouteTime: '全程约 1 小时 20 分钟，建议多留 15–30 分钟缓冲。',
           },
           cta: {
-            title: '4. 如何乘坐 CTA（写给第一次来的朋友）',
+            title: '3. 如何乘坐 CTA（写给第一次来的朋友）',
             lead:
               '芝加哥的地铁与公交系统统称 CTA。周末赛事期间车厢里会遇到很多去跑马的人，跟着大流也不容易坐错方向。',
             faresTitle: '常见票价（请以 Ventra/CTA 官网当日信息为准）',
