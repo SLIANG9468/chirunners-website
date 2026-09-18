@@ -418,7 +418,7 @@ export const CONTENT = {
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
       },
       hotelPage: {
-        pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $149',
+        pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $159',
         pageIntro: '10 min from O’Hare｜30 min race-day shuttle to the start 🚐',
         hotelSectionTitle: '',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
@@ -435,8 +435,8 @@ export const CONTENT = {
         runnerPerkLounge: 'Runners’ lounge to relax, connect, and recharge',
         hotelRatesTitle: 'CHI Running Club group rates',
         hotelRates: [
-          { label: 'King bed', value: '$149 / night' },
-          { label: 'Two queen beds', value: '$159 / night' },
+          { label: 'King bed', value: '$159 / night' },
+          { label: 'Two queen beds', value: '$179 / night' },
         ],
         amenityBreakfast: 'Complimentary breakfast included',
         amenityAirportShuttle: 'Complimentary airport shuttle',
@@ -525,7 +525,7 @@ export const CONTENT = {
         menuCateredByLabel: 'Food provided by',
         menuRestaurantName: 'Potsticker House (北国饭店)',
         menuRestaurantUrl: 'https://edspotstickerhouse.com/',
-        hotelPromoMain: 'Hyatt Place O’Hare · CHI Running Club rates from $149/night',
+        hotelPromoMain: 'Hyatt Place O’Hare · CHI Running Club rates from $159/night',
         hotelPromoCta: 'View hotel details & book',
         ctaRegister: 'Register now',
         registerUrl:
@@ -1342,7 +1342,7 @@ export const CONTENT = {
         },
         hotel: {
           title: '住宿',
-          description: '机场附近，比赛日直通车到达芝马起点，优惠价 $149',
+          description: '机场附近，比赛日直通车到达芝马起点，优惠价 $159',
           cta: '查看详情',
         },
         bus: {
@@ -1390,9 +1390,9 @@ export const CONTENT = {
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
       },
       hotelPage: {
-        pageTitle: '芝马酒店超值价 $149 (官网$199,  团购直降 $50）',
+        pageTitle: '芝马酒店超值价 $159 (官网$199,  团购直降 $50）',
         pageIntro: '驰跑团专属优惠｜机场10分钟｜比赛日轻松30分钟直达起点 🚐',
-        hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $149起',
+        hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $159起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '机场附近',
         hotelAddressLine2: '6810 Mannheim Rd, Rosemont, IL 60018',
@@ -1406,8 +1406,8 @@ export const CONTENT = {
         runnerPerkLounge: '跑者休息厅',
         hotelRatesTitle: '驰跑团专属优惠价',
         hotelRates: [
-          { label: 'King Bed（大床房）', value: '$149 / 晚' },
-          { label: '2 Queen Beds（双大床房）', value: '$159 / 晚' },
+          { label: 'King Bed（大床房）', value: '$159 / 晚' },
+          { label: '2 Queen Beds（双大床房）', value: '$179 / 晚' },
         ],
         amenityBreakfast: '含免费早餐',
         amenityAirportShuttle: '机场免费班车（Shuttle）',
@@ -1497,7 +1497,7 @@ export const CONTENT = {
         menuRestaurantName: '北国饭店（Potsticker House）',
         menuCateredBySuffix: '提供',
         menuRestaurantUrl: 'https://edspotstickerhouse.com/',
-        hotelPromoMain: '芝马酒店超值价 $149起',
+        hotelPromoMain: '芝马酒店超值价 $159起',
         hotelPromoCta: '查看详情与预订',
         ctaRegister: '立即报名（加碳会）',
         registerUrl:
