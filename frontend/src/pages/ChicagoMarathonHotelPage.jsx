@@ -64,6 +64,21 @@ function IconShuttle({ className = iconClass }) {
   )
 }
 
+function IconParking({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M9 16V8h3.5a2.5 2.5 0 010 5H9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 function IconWifi({ className = iconClass }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -193,21 +208,6 @@ function IconClock({ className = iconClass }) {
   )
 }
 
-function IconEye({ className = iconClass }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  )
-}
-
 function AmenityRow({ icon, text, iconClassName = iconClass }) {
   return (
     <li className="flex gap-3 text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
@@ -271,6 +271,7 @@ export default function ChicagoMarathonHotelPage({ copy }) {
               <AmenityRow icon={IconPool} text={h.amenityPool} />
               <AmenityRow icon={IconLanguage} text={h.amenityMandarin} />
               <AmenityRow icon={IconShuttle} text={h.amenityAirportShuttle} />
+              <AmenityRow icon={IconParking} text={h.amenityOvernightParking} />
               <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
             </ul>
 
@@ -287,15 +288,6 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                 <AmenityRow icon={IconRun} text={h.amenityRaceShuttle} iconClassName={runnerIconClass} />
                 <AmenityRow icon={IconClock} text={h.runnerPerkLateCheckout} iconClassName={runnerIconClass} />
               </ul>
-              <a
-                href={h.flyerPdfHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-amber-600/50 bg-white/80 px-4 py-2.5 text-sm font-semibold text-amber-900 shadow-sm transition-colors hover:bg-amber-50 dark:border-amber-500/50 dark:bg-neutral-900/60 dark:text-amber-100 dark:hover:bg-amber-950/50 sm:w-auto"
-              >
-                <IconEye className={runnerIconClass} />
-                {h.flyerViewLabel}
-              </a>
             </div>
 
             <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">
@@ -312,6 +304,29 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                 </li>
               ))}
             </ul>
+            {h.bookingDeadline ? (
+              <p className="mt-3 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                {h.bookingDeadline}
+              </p>
+            ) : null}
+
+            {h.bookingExtendTitle ? (
+              <div className="mt-6 rounded-xl border border-amber-300/70 bg-gradient-to-br from-amber-50/95 via-amber-50/40 to-transparent p-5 shadow-sm dark:border-amber-600/40 dark:from-amber-950/35 dark:via-amber-950/20 dark:to-transparent sm:p-6">
+                <p className="text-sm font-semibold text-amber-900 dark:text-amber-200">
+                  {h.bookingExtendTitle}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                  {h.bookingExtendBody}{' '}
+                  <a
+                    href={`mailto:${h.bookingExtendEmail}`}
+                    className="font-semibold text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                  >
+                    {h.bookingExtendEmail}
+                  </a>
+                  . {h.bookingExtendFollowUp}
+                </p>
+              </div>
+            ) : null}
 
             <div className="mt-10">
               <MarathonBookingButtons ctas={mw.bookingCtas} />

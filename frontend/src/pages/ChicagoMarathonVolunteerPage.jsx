@@ -137,6 +137,11 @@ export default function ChicagoMarathonVolunteerPage({ copy }) {
               <ShiftCard key={shift.title} title={shift.title} rows={shift.rows} />
             ))}
           </div>
+          {p.signupDeadline ? (
+            <p className="mt-4 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+              {p.signupDeadline}
+            </p>
+          ) : null}
         </section>
 
         <section className="section pb-2">
