@@ -1437,7 +1437,7 @@ export const CONTENT = {
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$40）',
         shuttleBullets: [
-          '发车：周日早晨约 5:30 从酒店出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
+          '发车：周日早晨约 5:30 从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
           '费用约 $40/人。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
