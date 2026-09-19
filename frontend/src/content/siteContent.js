@@ -468,6 +468,7 @@ export const CONTENT = {
         shuttleBullets: [
           'Typical hotel departure about 5:30 AM, arriving Grant Park by about 6:00 AM; return pickup about 3:30 PM (adjusted for road closures).',
           'About $40 per person—confirm details, pickup location, and booking with the hotel front desk.',
+          'Ticket purchase deadline: September 26, 2026.',
         ],
         timingHighlightTitle: 'Why 5:30 AM? We did the math.',
         timingHighlightBody:
@@ -1439,6 +1440,7 @@ export const CONTENT = {
         shuttleBullets: [
           '发车：周日早晨约 5:30 从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
           '费用约 $40/人。',
+          '购票截止日期：2026年9月26日。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
         timingHighlightBody:
