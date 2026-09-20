@@ -136,7 +136,7 @@ function SpeakerBlock({ speaker }) {
   )
 }
 
-function SessionCard({ date, title, speakers }) {
+function SessionCard({ date, title, speakers, youtubeUrl, youtubeLabel, slidesUrl, slidesLabel }) {
   return (
     <div className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40 sm:p-6">
       <InfoRow icon="calendar" label="Date & time" value={date} />
@@ -146,6 +146,30 @@ function SessionCard({ date, title, speakers }) {
       {speakers && speakers.length > 0
         ? speakers.map((speaker) => <SpeakerBlock key={speaker.name} speaker={speaker} />)
         : null}
+      {youtubeUrl || slidesUrl ? (
+        <div className="mt-4 flex flex-wrap gap-3">
+          {youtubeUrl ? (
+            <a
+              href={youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-chi-red-hover"
+            >
+              ▶ {youtubeLabel}
+            </a>
+          ) : null}
+          {slidesUrl ? (
+            <a
+              href={slidesUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border-2 border-chi-red px-4 py-2 text-sm font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red-light dark:bg-neutral-900/40 dark:hover:bg-chi-red/10"
+            >
+              📄 {slidesLabel}
+            </a>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -228,6 +252,10 @@ export default function ChicagoMarathonSharingSessionsPage({ copy }) {
                 date={session.date}
                 title={session.title}
                 speakers={session.speakers}
+                youtubeUrl={session.youtubeUrl}
+                youtubeLabel={p.youtubeLabel}
+                slidesUrl={session.slidesUrl}
+                slidesLabel={p.slidesLabel}
               />
             ))}
           </div>

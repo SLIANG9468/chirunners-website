@@ -866,6 +866,8 @@ export const CONTENT = {
         ],
         sessionsSectionTitle: '📅 Session Schedule',
         sessionsNote: 'All times below are US Central Time.',
+        youtubeLabel: 'Watch Recording',
+        slidesLabel: 'View Slides',
         sessions: [
           {
             date: 'Sat, Sep 19 · 8:00 PM',
@@ -878,6 +880,8 @@ export const CONTENT = {
                 bio: 'Having lived in Chicago for 11 years, moving from south to north — from Hyde Park near the University of Chicago, to South Loop downtown, and now the northern suburbs — she has a deep familiarity with the safety and transportation situation across Chicago’s major neighborhoods. She has run the full marathon solo along Lake Michigan multiple times, knows the downtown running routes and landmarks well, and understands which areas and times of day are better suited for running alone. She also enjoys exploring the area by car in her free time. In this session, drawing on her own experience with safe travel, she’ll share practical tips for out-of-town runners — covering transportation, safety, city exploration, and food and fun — during Chicago Marathon weekend.',
               },
             ],
+            youtubeUrl: 'https://www.youtube.com/watch?v=zrTnT2Ci09o',
+            slidesUrl: '/marathon-welcome/zoom-slides/2026芝加哥马拉松_外地跑者指南.pdf',
           },
           {
             date: 'Sat, Sep 26 · 8:00 PM',
@@ -891,7 +895,7 @@ export const CONTENT = {
               {
                 name: 'Tian Wang',
                 photoKey: 'tian-wang',
-                bio: 'Tian Wang is a experienced marathon runner who has completed over 100 full marathons, including ten consecutive Boston Marathons. He has served as an official pacer in more than 20 full marathons, including the Chicago Marathon for the past two years.\nIn this session, he’ll share how to choose and follow a pacer to finish the Chicago Marathon and hit your goal time.',
+                bio: 'Tian Wang is an experienced marathon runner who has completed over 100 full marathons, including ten consecutive Boston Marathons. He has served as an official pacer in more than 20 full marathons, including the Chicago Marathon for the past two years.\nIn this session, he’ll share how to choose and follow a pacer to finish the Chicago Marathon and hit your goal time.',
               },
             ],
           },
@@ -1835,6 +1839,8 @@ export const CONTENT = {
         ],
         sessionsSectionTitle: '📅 分享会日程',
         sessionsNote: '以下时间均为美国中部时间',
+        youtubeLabel: '观看回放',
+        slidesLabel: '查看 PPT',
         sessions: [
           {
             date: '9/19（周六）晚 8:00',
@@ -1846,6 +1852,8 @@ export const CONTENT = {
                 bio: '定居芝加哥11年，跑步7年，从南到北辗转居住，先后住过芝大海德公园、市中心South Loop，再到北郊，对芝加哥主要片区的治安状况和出行方式相当熟悉；一人多次沿密歇根湖跑全马，熟悉市中心的跑步路线和沿途地标，也清楚哪些区域、哪些时段更适合独自出行；平时也喜欢开车在周边探索。本次讲座，她将从外地跑者的实际需求出发，结合自己的安全出行经验，分享芝马期间的出行、安全、城市探索以及吃喝玩乐经验。',
               },
             ],
+            youtubeUrl: 'https://www.youtube.com/watch?v=zrTnT2Ci09o',
+            slidesUrl: '/marathon-welcome/zoom-slides/2026芝加哥马拉松_外地跑者指南.pdf',
           },
           {
             date: '9/26（周六）晚 8:00',
