@@ -415,7 +415,7 @@ export const CONTENT = {
         carbLoading: 'Book carb-loading ticket',
         hotel: 'Book hotel',
         busShuttle: 'Book bus ticket',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-CHIM',
       },
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $159',
@@ -503,6 +503,7 @@ export const CONTENT = {
         benefitsSectionTitle: 'Race Ready · Together',
         benefits: [
           'Connect with Chinese runners from around the world—swap stories and make new friends.',
+          'Meet official pacers and photographers face-to-face.',
           'Carb-rich dishes to fuel up before race day and support your endurance.',
           'Chicago Marathon veterans share pre-race tips so you line up with more confidence.',
           'Celebrate together before the big day and capture memories in photos.',
@@ -527,7 +528,7 @@ export const CONTENT = {
           {
             icon: 'banknote',
             label: 'Dinner price',
-            value: '$30 per person (free for official pacers and the photography team)',
+            value: '$30 per person',
           },
           { icon: 'parking', label: 'Parking', value: 'Free parking on-site' },
           { icon: 'calendar', label: 'Registration deadline', value: 'October 3, 2026' },
@@ -623,7 +624,7 @@ export const CONTENT = {
             heading: '🌟 What do photographers get?',
             paragraphs: [
               'Photographers who join the team get a feature spot on the CHI Running Club website, including your **portfolio, personal website, and social media links**, helping more runners discover you and your work.',
-              'You’re welcome to **attend the Chicago Marathon carb-loading dinner for free**, meeting runners face-to-face beforehand so shooting on race day feels more natural.',
+              'You’re welcome to **attend the Chicago Marathon carb-loading dinner**, meeting runners face-to-face beforehand so shooting on race day feels more natural.',
               'Your photos will also become part of CHI Running Club’s Chicago Marathon photo archive. We hope to preserve each year’s marathon memories so these moments can be found and shared again for years to come.',
               '**Photo copyright remains with the photographer.**',
               'You’re welcome to watermark your photos, and to use your own work in your portfolio, personal website, and social media.',
@@ -1405,7 +1406,7 @@ export const CONTENT = {
         carbLoading: '购买加碳会门票',
         hotel: '预订酒店',
         busShuttle: '购买直达车票',
-        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-CHIM',
       },
       hotelPage: {
         pageTitle: '芝马酒店超值价 $159',
@@ -1491,6 +1492,7 @@ export const CONTENT = {
         benefitsSectionTitle: '赛前相聚 · 能量集结',
         benefits: [
           '全球华人跑者相聚，交流分享，结交友谊',
+          '和官方 Pacer、摄影师们面对面',
           '高碳水美食加能量，赛前补给，提升耐力',
           '芝加哥马拉松跑友经验传授，赛前指导，增强信心',
           '挑战前欢聚一堂，摄影留念，记录瞬间',
@@ -1512,7 +1514,7 @@ export const CONTENT = {
             label: '地址',
             value: '6810 Mannheim Rd, Rosemont, IL 60018',
           },
-          { icon: 'banknote', label: '费用', value: '$30 / 人（官方 Pacer 与摄影队成员免费）' },
+          { icon: 'banknote', label: '费用', value: '$30 / 人' },
           { icon: 'parking', label: '停车', value: '免费停车' },
           { icon: 'calendar', label: '报名截止', value: '2026 年 10 月 3 日' },
         ],
@@ -1598,7 +1600,7 @@ export const CONTENT = {
             heading: '🌟 摄影师可以获得什么？',
             paragraphs: [
               '加入驰跑团摄影队后，我们会在驰跑团官网为摄影师提供展示空间，包括您的**摄影作品、个人网站以及社交媒体链接**，帮助更多跑者认识您和您的作品。',
-              '您可以**免费参加芝加哥马拉松加碳会**，提前和跑者面对面交流、熟悉彼此，比赛日拍摄起来也更有默契。',
+              '您可以**参加芝加哥马拉松加碳会**，提前和跑者面对面交流、熟悉彼此，比赛日拍摄起来也更有默契。',
               '您的照片也将成为驰跑团芝加哥马拉松摄影档案的一部分。我们希望把每一年的马拉松记忆保存下来，让这些精彩瞬间在多年以后依然可以被找回、被分享。',
               '**照片版权归摄影师本人所有。**',
               '您可以在照片上添加自己的水印，也可以将自己的作品用于个人摄影作品集、个人网站和社交媒体展示。',
@@ -1862,7 +1864,7 @@ export const CONTENT = {
               {
                 name: '丹睿',
                 photoKey: 'danrui',
-                bio: '资深马拉松跑者，已成功完成全球七大马拉松赛事。她拥有多年的比赛经验，多次在芝马做官兔，对芝马赛道有着深入的了解。在此次分享中，她结合自己的实战经验，为跑者带来实用的赛道攻略与心理准备技巧，帮助大家在芝马赛场上发挥出最佳状态。',
+                bio: '资深马拉松跑者，已成功完成全球七大马拉松赛事，而且连续十年波士顿马拉松。她拥有多年的比赛经验，多次在芝马做官兔，对芝马赛道有着深入的了解。在此次分享中，她结合自己的实战经验，为跑者带来实用的赛道攻略与心理准备技巧，帮助大家在芝马赛场上发挥出最佳状态。',
               },
               {
                 name: '王天',
