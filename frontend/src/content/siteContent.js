@@ -492,6 +492,7 @@ export const CONTENT = {
       },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
+        heroVideoTitle: 'Carb-Loading Dinner Highlights',
         heroPhotoKeys: [
           'carb-loading-1',
           'carb-loading-2',
@@ -1480,6 +1481,7 @@ export const CONTENT = {
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
+        heroVideoTitle: '加碳会精彩回顾视频',
         heroPhotoKeys: [
           'carb-loading-1',
           'carb-loading-2',

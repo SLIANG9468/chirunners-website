@@ -13,9 +13,10 @@ arbitrary SmugMug URL from the frontend, so this can't be used to make the
 server fetch arbitrary attacker-supplied URLs (SSRF).
 """
 
-from flask import Blueprint, abort, current_app, redirect
+import requests
+from flask import Blueprint, Response, abort, current_app, redirect, request, stream_with_context
 
-from app.services.smugmug_api import resolve_smug_display_url
+from app.services.smugmug_api import resolve_smug_display_url, resolve_smug_video_url
 
 marathon_qr_bp = Blueprint("marathon_qr", __name__)
 
@@ -51,6 +52,20 @@ SPEAKER_PHOTO_SMUGMUG_PAGE_URLS = {
     "haiting": "https://chirunners.smugmug.com/Website/Website-photo/i-v79Srxp/A",
     "tian-wang": "https://chirunners.smugmug.com/Website/Website-photo/i-26P2Bwp/A",
 }
+
+HERO_VIDEO_SMUGMUG_PAGE_URLS = {
+    "carb-loading": "https://chirunners.smugmug.com/Website/Videos/2026-Video/i-VqKSJnh/A",
+}
+
+# SmugMug rejects direct video requests that don't carry its own Referer, so
+# (unlike photos) we can't just redirect the browser — we proxy the bytes
+# through this server instead, forwarding Range so seeking/scrubbing works.
+_VIDEO_FETCH_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+)
+_VIDEO_REFERER = "https://chirunners.smugmug.com/"
+_VIDEO_PASSTHROUGH_HEADERS = ("Content-Type", "Content-Length", "Content-Range", "Accept-Ranges")
 
 
 def _resolve_and_redirect(page_url: str, ttl_override_seconds: int | None = _SHORT_CACHE_TTL_SECONDS):
@@ -95,3 +110,37 @@ def get_speaker_photo(key: str):
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/hero-video/<key>", methods=["GET"])
+def get_hero_video(key: str):
+    page_url = HERO_VIDEO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+
+    video_url = resolve_smug_video_url(current_app, page_url)
+    if not video_url:
+        abort(404)
+
+    proxy_headers = {"User-Agent": _VIDEO_FETCH_UA, "Referer": _VIDEO_REFERER}
+    range_header = request.headers.get("Range")
+    if range_header:
+        proxy_headers["Range"] = range_header
+
+    try:
+        upstream = requests.get(video_url, headers=proxy_headers, stream=True, timeout=30)
+    except requests.RequestException:
+        abort(502)
+
+    response_headers = {
+        name: upstream.headers[name]
+        for name in _VIDEO_PASSTHROUGH_HEADERS
+        if name in upstream.headers
+    }
+    response_headers["Cache-Control"] = "public, max-age=86400"
+
+    return Response(
+        stream_with_context(upstream.iter_content(chunk_size=64 * 1024)),
+        status=upstream.status_code,
+        headers=response_headers,
+    )

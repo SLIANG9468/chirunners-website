@@ -1,24 +1,9 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
 import { apiUrl } from '../apiBase'
 
-/** Reuse marathon hero asset as a fallback if no hero photos are configured. */
-const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
 const MENU_IMAGE_SRC = '/photo/new_menu.png'
-const HERO_ROTATION_MS = 5000
-
-/** Cross-fades through `length` slides on a fixed interval; pauses if there's only one (or zero). */
-function useRotatingIndex(length, intervalMs) {
-  const [index, setIndex] = useState(0)
-  useEffect(() => {
-    if (length <= 1) return undefined
-    const id = setInterval(() => setIndex((i) => (i + 1) % length), intervalMs)
-    return () => clearInterval(id)
-  }, [length, intervalMs])
-  return index
-}
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 
@@ -166,8 +151,6 @@ function BenefitCard({ text }) {
 export default function CarbLoadingDinnerPage({ copy }) {
   const mw = copy.marathonWelcome
   const p = mw.carbLoadingPage
-  const heroPhotoKeys = p.heroPhotoKeys || []
-  const heroIndex = useRotatingIndex(heroPhotoKeys.length, HERO_ROTATION_MS)
 
   return (
     <main className="siteMain siteMain--marathonWelcome">
@@ -180,28 +163,17 @@ export default function CarbLoadingDinnerPage({ copy }) {
             {mw.backToHub}
           </Link>
 
-          <div className="relative mt-6 overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-900 shadow-card dark:border-neutral-700">
-            <div className="relative aspect-[3/2] min-h-[200px] w-full">
-              {heroPhotoKeys.length > 0 ? (
-                heroPhotoKeys.map((key, i) => (
-                  <img
-                    key={key}
-                    src={apiUrl(`/api/marathon-welcome/carb-loading-photo/${key}`)}
-                    alt=""
-                    loading={i === 0 ? 'eager' : 'lazy'}
-                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-1000 ease-in-out ${
-                      i === heroIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                ))
-              ) : (
-                <img
-                  src={HERO_IMAGE_SRC}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ objectPosition: 'center top' }}
-                />
-              )}
+          <div className="relative mx-auto mt-6 max-w-lg overflow-hidden rounded-2xl border border-neutral-200/80 bg-neutral-900 shadow-card dark:border-neutral-700">
+            <div className="relative aspect-square w-full">
+              <video
+                aria-label={p.heroVideoTitle}
+                src={apiUrl('/api/marathon-welcome/hero-video/carb-loading')}
+                className="absolute inset-0 h-full w-full object-contain"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
 

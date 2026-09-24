@@ -137,6 +137,89 @@ def _smug_resolve_cache_key(flask_app, image_slug: str) -> str:
     return f"{nick}\x1f{folder}\x1f{image_slug}"
 
 
+_MP4_URL_RE = re.compile(r'(https://photos\.smugmug\.com/[^\s"\'<>]+\.mp4)', re.I)
+_MP4_WIDTH_RE = re.compile(r'/(\d+)/[^/]+\.mp4$', re.I)
+
+
+def _mp4_urls_from_smug_page(page_url: str, log) -> list[str]:
+    try:
+        r = requests.get(
+            page_url,
+            headers={
+                "User-Agent": _FETCH_UA,
+                "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+            },
+            timeout=22,
+        )
+    except requests.RequestException as exc:
+        if log is not None:
+            log.warning("SmugMug 视频页面请求失败 url=%s err=%s", page_url, exc)
+        return []
+    if not r.ok:
+        if log is not None:
+            log.warning("SmugMug 视频页面 HTTP 错误 url=%s status=%s", page_url, r.status_code)
+        return []
+    return [u.replace("&amp;", "&") for u in _MP4_URL_RE.findall(r.text)]
+
+
+def _percent_encode_path(url: str) -> str:
+    """SmugMug video URLs can contain literal (non-percent-encoded) UTF-8 filename
+    segments straight out of the page HTML; encode them so `requests` sends a
+    well-formed request line."""
+    from urllib.parse import quote, urlsplit, urlunsplit
+
+    parts = urlsplit(url)
+    encoded_path = quote(parts.path, safe="/%")
+    return urlunsplit((parts.scheme, parts.netloc, encoded_path, parts.query, parts.fragment))
+
+
+def resolve_smug_video_url(
+    flask_app,
+    page_url: str | None,
+    ttl_override_seconds: int | None = None,
+    prefer_width: int = 1280,
+) -> str | None:
+    """解析 SmugMug 视频相册页，抓取可直接播放的 mp4 地址（多个分辨率版本中，挑选宽度最接近
+    `prefer_width` 的一个）。返回的 URL 仍需带 Referer 请求头访问——SmugMug 会拒绝没有其自身
+    Referer 的视频直链请求，因此这个 URL 只能由后端代理转发，不能直接重定向给浏览器。
+    """
+    if not page_url:
+        return None
+
+    ttl = ttl_override_seconds if ttl_override_seconds is not None else _cache_ttl_seconds(flask_app)
+    now = time.monotonic()
+    cache_key = f"video\x1f{page_url}"
+
+    log = getattr(flask_app, "logger", None)
+    want_log = getattr(flask_app, "debug", False) or bool(
+        flask_app.config.get("SMUGMUG_LOG_RESOLVE_FAILURES")
+    )
+    log_resolve = log if want_log else None
+
+    with _cache_lock_for_worker():
+        hit = _url_cache.get(cache_key)
+        if hit is not None:
+            expiry, cached = hit
+            if expiry > now:
+                return cached
+
+    candidates = _mp4_urls_from_smug_page(page_url, log_resolve)
+    resolved = None
+    if candidates:
+        def _width(u: str) -> int:
+            m = _MP4_WIDTH_RE.search(u)
+            return int(m.group(1)) if m else 0
+
+        candidates.sort(key=lambda u: abs(_width(u) - prefer_width))
+        resolved = _percent_encode_path(candidates[0])
+
+    store_ttl = ttl if resolved else min(ttl, _FAILED_RESOLVE_CACHE_TTL_S)
+    with _cache_lock_for_worker():
+        _url_cache[cache_key] = (now + store_ttl, resolved)
+
+    return resolved
+
+
 def resolve_smug_display_url(
     flask_app, image_key: str | None, ttl_override_seconds: int | None = None
 ) -> str | None:
