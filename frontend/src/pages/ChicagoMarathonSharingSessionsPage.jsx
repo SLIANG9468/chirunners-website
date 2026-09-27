@@ -114,7 +114,7 @@ function InfoCard({ title, titleUrl, rows, joinLabel }) {
   )
 }
 
-function SpeakerBlock({ speaker }) {
+function SpeakerBlock({ speaker, slidesLabel }) {
   return (
     <div className="mt-4 overflow-hidden">
       {speaker.photoKey ? (
@@ -132,11 +132,21 @@ function SpeakerBlock({ speaker }) {
       <p className="mt-1 whitespace-pre-line text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
         {speaker.bio}
       </p>
+      {speaker.slidesUrl ? (
+        <a
+          href={speaker.slidesUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-flex items-center gap-1.5 rounded-full border-2 border-chi-red px-3 py-1 text-xs font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red-light dark:bg-neutral-900/40 dark:hover:bg-chi-red/10"
+        >
+          📄 {slidesLabel}
+        </a>
+      ) : null}
     </div>
   )
 }
 
-function SessionCard({ date, title, speakers, youtubeUrl, youtubeLabel, slidesUrl, slidesLabel }) {
+function SessionCard({ date, title, speakers, youtubeUrl, youtubeLabel, slidesLabel }) {
   return (
     <div className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40 sm:p-6">
       <InfoRow icon="calendar" label="Date & time" value={date} />
@@ -144,30 +154,20 @@ function SessionCard({ date, title, speakers, youtubeUrl, youtubeLabel, slidesUr
         {title}
       </p>
       {speakers && speakers.length > 0
-        ? speakers.map((speaker) => <SpeakerBlock key={speaker.name} speaker={speaker} />)
+        ? speakers.map((speaker) => (
+            <SpeakerBlock key={speaker.name} speaker={speaker} slidesLabel={slidesLabel} />
+          ))
         : null}
-      {youtubeUrl || slidesUrl ? (
-        <div className="mt-4 flex flex-wrap gap-3">
-          {youtubeUrl ? (
-            <a
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-chi-red-hover"
-            >
-              ▶ {youtubeLabel}
-            </a>
-          ) : null}
-          {slidesUrl ? (
-            <a
-              href={slidesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border-2 border-chi-red px-4 py-2 text-sm font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red-light dark:bg-neutral-900/40 dark:hover:bg-chi-red/10"
-            >
-              📄 {slidesLabel}
-            </a>
-          ) : null}
+      {youtubeUrl ? (
+        <div className="mt-4">
+          <a
+            href={youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-chi-red-hover"
+          >
+            ▶ {youtubeLabel}
+          </a>
         </div>
       ) : null}
     </div>
@@ -254,7 +254,6 @@ export default function ChicagoMarathonSharingSessionsPage({ copy }) {
                 speakers={session.speakers}
                 youtubeUrl={session.youtubeUrl}
                 youtubeLabel={p.youtubeLabel}
-                slidesUrl={session.slidesUrl}
                 slidesLabel={p.slidesLabel}
               />
             ))}
