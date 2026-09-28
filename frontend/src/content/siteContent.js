@@ -661,6 +661,8 @@ export const CONTENT = {
             websiteUrl: 'https://yunoldshue-photos.pages.dev/',
           },
           { name: 'Yansong Lin', photoKey: 'yansong-lin' },
+          { name: 'Yange (言歌)', photoKey: 'yange' },
+          { name: 'Sherri (梁向绍)', photoKey: 'sherri' },
         ],
         wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
         wechatGroupBody:
@@ -1640,6 +1642,8 @@ export const CONTENT = {
             websiteUrl: 'https://yunoldshue-photos.pages.dev/',
           },
           { name: '林燕松', photoKey: 'yansong-lin' },
+          { name: '言歌', photoKey: 'yange' },
+          { name: '梁向绍（Sherri）', photoKey: 'sherri' },
         ],
         wechatGroupTitle: '📸 带上您的相机，加入我们！',
         wechatGroupBody: '扫码加入摄影队微信群，和摄影师伙伴们一起交流、分享，了解拍摄安排、照片上传及相关信息。',
