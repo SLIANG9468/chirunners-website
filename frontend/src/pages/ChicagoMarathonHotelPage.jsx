@@ -270,7 +270,15 @@ export default function ChicagoMarathonHotelPage({ copy }) {
               <AmenityRow icon={IconGym} text={h.amenityGym} />
               <AmenityRow icon={IconPool} text={h.amenityPool} />
               <AmenityRow icon={IconLanguage} text={h.amenityMandarin} />
-              <AmenityRow icon={IconShuttle} text={h.amenityAirportShuttle} />
+              <li className="flex gap-3 text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+                <IconShuttle />
+                <Link
+                  to={CHICAGO_MARATHON_ROUTES.hotelShuttle}
+                  className="text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                >
+                  {h.amenityAirportShuttle}
+                </Link>
+              </li>
               <AmenityRow icon={IconParking} text={h.amenityOvernightParking} />
               <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
             </ul>

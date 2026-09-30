@@ -59,6 +59,10 @@ HERO_VIDEO_SMUGMUG_PAGE_URLS = {
     "carb-loading": "https://chirunners.smugmug.com/Website/Videos/2026-Video/i-VqKSJnh/A",
 }
 
+HOTEL_SHUTTLE_PHOTO_SMUGMUG_PAGE_URLS = {
+    "shuttle-bus": "https://chirunners.smugmug.com/Website/Website-photo/i-ckCh8Qm/A",
+}
+
 # SmugMug rejects direct video requests that don't carry its own Referer, so
 # (unlike photos) we can't just redirect the browser — we proxy the bytes
 # through this server instead, forwarding Range so seeking/scrubbing works.
@@ -112,6 +116,14 @@ def get_speaker_photo(key: str):
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/hotel-shuttle-photo/<key>", methods=["GET"])
+def get_hotel_shuttle_photo(key: str):
+    page_url = HOTEL_SHUTTLE_PHOTO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+    return _resolve_and_redirect(page_url, ttl_override_seconds=None)
 
 
 @marathon_qr_bp.route("/api/marathon-welcome/hero-video/<key>", methods=["GET"])
