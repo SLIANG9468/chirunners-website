@@ -1595,7 +1595,7 @@ export const CONTENT = {
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$40）',
         shuttleBullets: [
-          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达比赛起点；赛后返程下午 3:30。',
+          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达比赛起点；赛后返程下午 3:30。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
           '费用约 $40/人。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
@@ -1633,7 +1633,7 @@ export const CONTENT = {
           { number: 2, label: '2.5 英里处，LaSalle St（跑者右侧）', description: '刚过2英里处，在 LaSalle St。' },
           {
             number: 3,
-            label: '12.8 英里，大桥下转弯处（跑者左侧）',
+            label: '12.8 英里，Wells Bridge 大桥下转弯处（跑者左侧）',
             description: 'LaSalle Street 发夹弯，靠近下层Wacker Dr——跑者会两次经过这里，距离很近。',
           },
           { number: 4, label: '中国城（跑者右侧）', description: '大约在21英里处，中国城牌坊附近，Wentworth Ave 沿线。' },
