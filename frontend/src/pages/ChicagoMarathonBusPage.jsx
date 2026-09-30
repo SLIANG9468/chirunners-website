@@ -95,6 +95,50 @@ export default function ChicagoMarathonBusPage({ copy }) {
               </figcaption>
             </figure>
 
+            {b.dropoffSectionTitle ? (
+              <>
+                <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                  {b.dropoffSectionTitle}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
+                  {b.dropoffSectionBody}
+                </p>
+                {b.dropoffPhotoSrc ? (
+                  <figure className="my-6 overflow-hidden rounded-2xl border-2 border-chi-red/60 bg-neutral-100 shadow-lg ring-4 ring-chi-red/10 dark:border-chi-red/50 dark:bg-neutral-900 dark:ring-chi-red/20">
+                    <img
+                      src={apiUrl(b.dropoffPhotoSrc)}
+                      alt={b.dropoffPhotoAlt}
+                      loading="lazy"
+                      decoding="async"
+                      className="mx-auto block h-auto w-full max-h-[min(70vh,560px)] object-contain object-center sm:max-h-[min(75vh,640px)]"
+                    />
+                  </figure>
+                ) : null}
+                <div className="flex flex-wrap gap-3">
+                  {b.googleMapUrl ? (
+                    <a
+                      href={b.googleMapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-chi-red-hover"
+                    >
+                      {b.googleMapLabel}
+                    </a>
+                  ) : null}
+                  {b.officialClosuresUrl ? (
+                    <a
+                      href={b.officialClosuresUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full border-2 border-chi-red px-4 py-2 text-sm font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red-light dark:hover:bg-chi-red/10"
+                    >
+                      {b.officialClosuresLabel}
+                    </a>
+                  ) : null}
+                </div>
+              </>
+            ) : null}
+
             <div className="mt-10">
               <MarathonBookingButtons ctas={mw.bookingCtas} />
             </div>

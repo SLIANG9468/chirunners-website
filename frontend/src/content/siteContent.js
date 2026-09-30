@@ -515,7 +515,6 @@ export const CONTENT = {
         shuttleBullets: [
           'Typical hotel departure about 5:30 AM, arriving Grant Park by about 6:00 AM; return pickup about 3:30 PM (adjusted for road closures).',
           'About $40 per person—confirm details, pickup location, and booking with the hotel front desk.',
-          'Ticket purchase deadline: September 26, 2026.',
         ],
         timingHighlightTitle: 'Why 5:30 AM? We did the math.',
         timingHighlightBody:
@@ -526,6 +525,15 @@ export const CONTENT = {
         mapImageAlt: 'Google Maps driving directions from Hyatt Place O’Hare to Chicago Marathon start around 5:30 AM',
         mapImageCaption:
           'Illustrative drive from the hotel to the downtown start around 5:30 AM Sunday—actual time varies with traffic and closures.',
+        dropoffSectionTitle: 'Drop-off spot & check-in gate',
+        dropoffSectionBody:
+          'The official 2026 street closures are out, so we’ve marked our drop-off spot and the runner check-in gate on the map below. Closures can still change, so please verify against the official schedule before race day.',
+        dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',
+        dropoffPhotoAlt: 'Map marking the express shuttle drop-off spot and runner check-in gate for the 2026 Chicago Marathon',
+        googleMapUrl: 'https://www.google.com/maps/d/u/0/edit?mid=1k2nQJJSKKc0J34XocRm-aCTTqNLjcdQ&usp=sharing',
+        googleMapLabel: 'Open interactive map',
+        officialClosuresUrl: 'https://www.chicagomarathon.com/event-info/participant-information/course/street-closures/',
+        officialClosuresLabel: 'Official 2026 street closures',
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
         wechatGroupBody: 'Scan to join—ask anything about the express shuttle, pickup details, and booking.',
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
@@ -1589,7 +1597,6 @@ export const CONTENT = {
         shuttleBullets: [
           '发车：周日早晨约 5:30 从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
           '费用约 $40/人。',
-          '购票截止日期：2026年9月26日。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
         timingHighlightBody:
@@ -1600,6 +1607,15 @@ export const CONTENT = {
         mapImageAlt: '谷歌地图显示比赛日清晨从凯悦嘉轩奥黑尔驱车前往芝马起点',
         mapImageCaption:
           '比赛日清晨约 5:30 从酒店出发驾车的路线示意（约 19.7 mi / 约 31.7 km，路况好时约 22–30 分钟级）。截图日期仅为示例，请以比赛当日封路与实时导航为准。',
+        dropoffSectionTitle: '下车点与签到入口',
+        dropoffSectionBody:
+          '2026年官方封路信息已公布，我们已在下图标注了下车地点和跑者签到入口。封路安排仍可能调整，请在比赛前务必核实官方最新信息。',
+        dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',
+        dropoffPhotoAlt: '2026芝加哥马拉松直通车下车点与跑者签到入口标注地图',
+        googleMapUrl: 'https://www.google.com/maps/d/u/0/edit?mid=1k2nQJJSKKc0J34XocRm-aCTTqNLjcdQ&usp=sharing',
+        googleMapLabel: '查看互动谷歌地图',
+        officialClosuresUrl: 'https://www.chicagomarathon.com/event-info/participant-information/course/street-closures/',
+        officialClosuresLabel: '官方2026封路信息',
         wechatGroupTitle: '有问题？加入大巴微信群',
         wechatGroupBody: '扫码进群，直通车发车时间、上车点、购票等问题都可以在群里问。',
         wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
