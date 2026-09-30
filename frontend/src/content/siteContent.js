@@ -1596,7 +1596,7 @@ export const CONTENT = {
         shuttleTitle: '驰跑团安排的酒店直通车（$40）',
         shuttleBullets: [
           '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达比赛起点；赛后返程下午 3:30。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
-          '费用约 $40/人。',
+          '费用：$40/人。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
         timingHighlightBody:
