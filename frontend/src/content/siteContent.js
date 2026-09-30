@@ -531,6 +531,46 @@ export const CONTENT = {
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
       },
+      photoSpotPage: {
+        docTitle: 'Photo Spot · CHI Running Club',
+        pageTitle: '📍 Where to Find Our Photographers',
+        pageIntro:
+          'Our team photographers will be posted at these spots along the course—look for them and smile as you go by! Numbered on the map below. (“Left”/“right” are from your own perspective as a runner, facing the direction you’re running—that’s also the side where the morning light will be on your face.)',
+        mapSrc: '/chicago-marathon/photography-spots-map.jpg',
+        mapAlt: 'Chicago Marathon course map with six recommended photographer spots numbered 1 through 6',
+        spots: [
+          {
+            number: 1,
+            label: 'Mile 2, Dearborn St (runner’s left)',
+            description: 'Dearborn St, near the start—runners are still fresh.',
+          },
+          {
+            number: 2,
+            label: 'Mile 2.5, LaSalle St (runner’s right)',
+            description: 'Just past mile 2, on LaSalle St.',
+          },
+          {
+            number: 3,
+            label: 'Mile 12.8, the bridge turn (runner’s left)',
+            description: 'The LaSalle Street hairpin near Lower Wacker Drive—runners pass by twice, close together.',
+          },
+          {
+            number: 4,
+            label: 'Chinatown (runner’s right)',
+            description: 'Near mile 21, right around the Chinatown gate on Wentworth Ave.',
+          },
+          {
+            number: 5,
+            label: 'Aid station 17, Mile 22.5 (35.8 km)',
+            description: 'On Michigan Ave, just south of 26th St.',
+          },
+          {
+            number: 6,
+            label: 'Mile 27, Post-Race Party / Runner Reunite',
+            description: 'Near the finish at Columbus Dr, where Yange and Sherri will also be shooting.',
+          },
+        ],
+      },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
         heroVideoTitle: 'Carb-Loading Dinner Highlights',
@@ -1564,6 +1604,34 @@ export const CONTENT = {
         wechatGroupBody: '扫码进群，直通车发车时间、上车点、购票等问题都可以在群里问。',
         wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
+      },
+      photoSpotPage: {
+        docTitle: '拍摄机位推荐 · 驰跑团',
+        pageTitle: '📍 摄影师机位分布',
+        pageIntro:
+          '我们的团队摄影师会在这些点位为大家拍照——路过时记得对镜头微笑！编号已标注在地图上。（下面的"左侧""右侧"是以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
+        mapSrc: '/chicago-marathon/photography-spots-map.jpg',
+        mapAlt: '芝加哥马拉松赛道地图，标注了1到6号推荐摄影机位',
+        spots: [
+          { number: 1, label: '2 英里处，Dearborn St（跑者左侧）', description: 'Dearborn St，靠近起点，跑者状态还很新鲜。' },
+          { number: 2, label: '2.5 英里处，LaSalle St（跑者右侧）', description: '刚过2英里处，在 LaSalle St。' },
+          {
+            number: 3,
+            label: '12.8 英里，大桥下转弯处（跑者左侧）',
+            description: 'LaSalle Street 发夹弯，靠近下层Wacker Dr——跑者会两次经过这里，距离很近。',
+          },
+          { number: 4, label: '中国城（跑者右侧）', description: '大约在21英里处，中国城牌坊附近，Wentworth Ave 沿线。' },
+          {
+            number: 5,
+            label: '17号水站，22.5英里处（35.8公里）',
+            description: '在 Michigan Ave，26th St 以南。',
+          },
+          {
+            number: 6,
+            label: '27英里处，赛后派对/跑者团聚点',
+            description: '靠近终点的 Columbus Dr，言歌和Sherri也会在这里拍摄。',
+          },
+        ],
       },
       carbLoadingPage: {
         heroTitleLines: ['芝加哥马拉松加碳会'],
