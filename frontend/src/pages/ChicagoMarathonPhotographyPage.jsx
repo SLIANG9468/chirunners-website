@@ -3,7 +3,7 @@ import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import { apiUrl } from '../apiBase'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
-const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
+const HERO_IMAGE_SRC = apiUrl('/api/marathon-welcome/hero-photo/hero-1')
 
 /** Content uses `**bold**` for emphasis; render those runs as <strong>. */
 function withBoldRuns(text) {

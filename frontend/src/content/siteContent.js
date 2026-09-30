@@ -1595,7 +1595,7 @@ export const CONTENT = {
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$40）',
         shuttleBullets: [
-          '发车：周日早晨约 5:30 从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达 Grant Park；赛后返程下午 3:30。',
+          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达比赛起点；赛后返程下午 3:30。',
           '费用约 $40/人。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
@@ -1623,7 +1623,7 @@ export const CONTENT = {
       },
       photoSpotPage: {
         docTitle: '拍摄机位推荐 · 驰跑团',
-        pageTitle: '📍 摄影师机位分布',
+        pageTitle: '📍 摄影师机位分布（初稿）',
         pageIntro:
           '我们的团队摄影师会在这些点位为大家拍照——路过时记得对镜头微笑！编号已标注在地图上。（下面的"左侧""右侧"是以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
         mapSrc: '/chicago-marathon/photography-spots-map.jpg',

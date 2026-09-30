@@ -1,5 +1,7 @@
-/** Static hero (`public/chicago-marathon/hero-1.jpg`). Skyline / spire must stay in frame on small screens. */
-const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
+import { apiUrl } from '../../apiBase'
+
+/** Hero photo, proxied from SmugMug. Skyline / spire must stay in frame on small screens. */
+const HERO_IMAGE_SRC = apiUrl('/api/marathon-welcome/hero-photo/hero-1')
 
 /** Anchor crop to top center — keeps the Sears (Willis) Tower antenna in view with `object-fit: cover`. */
 const HERO_OBJECT_POSITION = 'center top'

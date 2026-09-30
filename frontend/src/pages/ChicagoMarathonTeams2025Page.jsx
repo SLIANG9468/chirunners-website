@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom'
 import TeamCard from '../components/chicagoMarathon/TeamCard'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import { CHICAGO_MARATHON_TEAMS_2025 } from '../constants/chicagoMarathonTeams2025'
+import { apiUrl } from '../apiBase'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
-const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
+const HERO_IMAGE_SRC = apiUrl('/api/marathon-welcome/hero-photo/hero-1')
 
 export default function ChicagoMarathonTeams2025Page({ copy }) {
   const mw = copy.marathonWelcome

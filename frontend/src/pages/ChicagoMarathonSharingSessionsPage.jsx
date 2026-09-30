@@ -3,7 +3,7 @@ import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import { apiUrl } from '../apiBase'
 
 /** Reuse marathon hero asset until a dedicated image is added. */
-const HERO_IMAGE_SRC = '/chicago-marathon/hero-1.jpg'
+const HERO_IMAGE_SRC = apiUrl('/api/marathon-welcome/hero-photo/hero-1')
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 
