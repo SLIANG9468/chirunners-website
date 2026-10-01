@@ -1468,7 +1468,7 @@ export const CONTENT = {
       cards: {
         participantGuide: {
           title: '2026芝加哥马拉松参赛者指南',
-          description: '芝加哥马拉松参赛者指南(2026 Bank of America Chicago Marathon Participant Guide）——起跑区、寄存、赛道规则、比赛日流程等重要信息。建议熟读三遍。',
+          description: '2026 Bank of America Chicago Marathon Participant Guide (2026芝加哥马拉松参赛者指南）——  起跑区、寄存、赛道规则、比赛日流程等重要信息。',
           cta: '中文指南',
           url: '/documents/2026%20美国银行芝加哥马拉松参赛者指南_中文版_final.pdf',
           secondaryCta: 'English',
