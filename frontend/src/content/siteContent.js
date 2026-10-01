@@ -361,7 +361,7 @@ export const CONTENT = {
           description:
             'The official Chicago Marathon Participant Guide—corrals, gear check, course rules, and race-day logistics. We recommend reading it carefully, three times.',
           cta: 'Open guide',
-          url: 'https://1drv.ms/b/c/39d19a5575c715df/IQB5amHb_EMsRLRZfrSjfVUUAcccXyTiXcuwvFlqEzTH1Fk?e=3N8iFE',
+          url: '/documents/2026%20Bank%20of%20America%20Chicago%20Marathon%20Participant%20Guide.pdf',
         },
         carbLoading: {
           title: 'Carb-loading dinner',
@@ -1468,9 +1468,11 @@ export const CONTENT = {
       cards: {
         participantGuide: {
           title: '2026芝加哥马拉松参赛者指南',
-          description: '芝加哥马拉松参赛者指南(中文）——起跑区、寄存、赛道规则、比赛日流程等重要信息。建议熟读三遍。',
-          cta: '查看详情',
+          description: '芝加哥马拉松参赛者指南(2026 Bank of America Chicago Marathon Participant Guide）——起跑区、寄存、赛道规则、比赛日流程等重要信息。建议熟读三遍。',
+          cta: '中文指南',
           url: '/documents/2026%20美国银行芝加哥马拉松参赛者指南_中文版_final.pdf',
+          secondaryCta: 'English',
+          secondaryUrl: '/documents/2026%20Bank%20of%20America%20Chicago%20Marathon%20Participant%20Guide.pdf',
         },
         carbLoading: {
           title: '加碳会',

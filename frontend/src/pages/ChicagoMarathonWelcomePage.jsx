@@ -21,14 +21,26 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
             <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
               {mw.cards.participantGuide.description}
             </p>
-            <a
-              href={mw.cards.participantGuide.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex w-fit items-center rounded-full bg-chi-red px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-200 hover:bg-chi-red-hover hover:shadow-md active:scale-[0.98]"
-            >
-              {mw.cards.participantGuide.cta}
-            </a>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a
+                href={mw.cards.participantGuide.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center rounded-full bg-chi-red px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-200 hover:bg-chi-red-hover hover:shadow-md active:scale-[0.98]"
+              >
+                {mw.cards.participantGuide.cta}
+              </a>
+              {mw.cards.participantGuide.secondaryUrl ? (
+                <a
+                  href={mw.cards.participantGuide.secondaryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center rounded-full bg-chi-red px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-200 hover:bg-chi-red-hover hover:shadow-md active:scale-[0.98]"
+                >
+                  {mw.cards.participantGuide.secondaryCta}
+                </a>
+              ) : null}
+            </div>
           </div>
         </section>
 
