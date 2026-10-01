@@ -604,6 +604,17 @@ export const CONTENT = {
           'Carb-rich dishes to fuel up before race day and support your endurance.',
           'Celebrate together before the big day and capture memories in photos.',
         ],
+        pacersSectionTitle: 'Meet Our 2026 Official Pacers',
+        pacersIntro:
+          'Six Chicago Marathon official pacers have committed to join us at the dinner—come meet them in person before race day.',
+        pacers: [
+          { name: 'Danrey', photoKey: 'danrui' },
+          { name: 'Tian Wang', photoKey: 'tian-wang' },
+          { name: 'Hao Li', photoKey: 'li-hao' },
+          { name: 'Zhen Zhang', photoKey: 'zhang-zhen' },
+          { name: 'Eric Zhang', photoKey: 'eric-zhang' },
+          { name: 'Marc Orantes', photoKey: 'marc-orantes' },
+        ],
         eventSectionTitle: 'Event details',
         eventInfoRows: [
           {
@@ -1679,6 +1690,16 @@ export const CONTENT = {
           '和官方 Pacer、摄影师们面对面',
           '高碳水美食加能量，赛前补给，提升耐力',
           '挑战前欢聚一堂，摄影留念，记录瞬间',
+        ],
+        pacersSectionTitle: '2026官方配速员见面会',
+        pacersIntro: '已有6位芝加哥马拉松官方配速员确认出席加碳会——比赛前，和他们面对面交流吧！',
+        pacers: [
+          { name: '丹睿', photoKey: 'danrui' },
+          { name: '王天', photoKey: 'tian-wang' },
+          { name: '李浩', photoKey: 'li-hao' },
+          { name: '张震', photoKey: 'zhang-zhen' },
+          { name: 'Eric Zhang', photoKey: 'eric-zhang' },
+          { name: 'Marc Orantes', photoKey: 'marc-orantes' },
         ],
         eventSectionTitle: '活动信息',
         eventInfoRows: [

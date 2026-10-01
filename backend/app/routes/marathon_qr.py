@@ -55,6 +55,15 @@ SPEAKER_PHOTO_SMUGMUG_PAGE_URLS = {
     "tian-wang": "https://chirunners.smugmug.com/Website/Website-photo/i-26P2Bwp/A",
 }
 
+PACER_PHOTO_SMUGMUG_PAGE_URLS = {
+    "danrui": "https://chirunners.smugmug.com/Website/Website-photo/i-mtzM4wN/A",
+    "tian-wang": "https://chirunners.smugmug.com/Website/Website-photo/i-26P2Bwp/A",
+    "li-hao": "https://chirunners.smugmug.com/Website/Website-photo/i-fqL3cbS/A",
+    "zhang-zhen": "https://chirunners.smugmug.com/Website/Website-photo/i-qnm5Ppf/A",
+    "eric-zhang": "https://chirunners.smugmug.com/Website/Website-photo/i-PgCrMLz/A",
+    "marc-orantes": "https://chirunners.smugmug.com/Website/Website-photo/i-m66PZC5/A",
+}
+
 HERO_VIDEO_SMUGMUG_PAGE_URLS = {
     "carb-loading": "https://chirunners.smugmug.com/Website/Videos/2026-Video/i-VqKSJnh/A",
 }
@@ -113,6 +122,14 @@ def get_photographer_photo(key: str):
 @marathon_qr_bp.route("/api/marathon-welcome/carb-loading-photo/<key>", methods=["GET"])
 def get_carb_loading_photo(key: str):
     page_url = CARB_LOADING_PHOTO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+    return _resolve_and_redirect(page_url, ttl_override_seconds=None)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/pacer-photo/<key>", methods=["GET"])
+def get_pacer_photo(key: str):
+    page_url = PACER_PHOTO_SMUGMUG_PAGE_URLS.get(key)
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url, ttl_override_seconds=None)

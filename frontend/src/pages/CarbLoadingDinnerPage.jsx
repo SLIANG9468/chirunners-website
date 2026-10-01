@@ -260,6 +260,42 @@ export default function CarbLoadingDinnerPage({ copy }) {
           </div>
         </section>
 
+        {p.pacers && p.pacers.length > 0 ? (
+          <section className="section">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
+                {p.pacersSectionTitle}
+              </h2>
+              {p.pacersIntro ? (
+                <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
+                  {p.pacersIntro}
+                </p>
+              ) : null}
+            </div>
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+              {p.pacers.map((pacer) => (
+                <div
+                  key={pacer.photoKey}
+                  className="overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 text-center shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                >
+                  <img
+                    src={apiUrl(`/api/marathon-welcome/pacer-photo/${pacer.photoKey}`)}
+                    alt={pacer.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-square w-full scale-105 object-cover object-top"
+                  />
+                  <div className="p-3">
+                    <div className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 sm:text-base">
+                      {pacer.name}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="section">
           <h2 className="flex items-center gap-2 text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">
             <IconCalendar />
