@@ -14,6 +14,25 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
         </section>
 
         <section className="section">
+          <div className="rounded-2xl border border-chi-red/25 bg-gradient-to-br from-chi-red/10 via-transparent to-chi-red/5 p-6 shadow-card dark:border-chi-red/35 dark:from-chi-red/15 sm:p-8">
+            <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 sm:text-xl">
+              {mw.cards.participantGuide.title}
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+              {mw.cards.participantGuide.description}
+            </p>
+            <a
+              href={mw.cards.participantGuide.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex w-fit items-center rounded-full bg-chi-red px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform duration-200 hover:bg-chi-red-hover hover:shadow-md active:scale-[0.98]"
+            >
+              {mw.cards.participantGuide.cta}
+            </a>
+          </div>
+        </section>
+
+        <section className="section">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">
             {mw.guidesTitle}
           </h2>

@@ -356,6 +356,13 @@ export const CONTENT = {
         'CHI Running Club / ChiRunners / 芝加哥驰跑团 welcomes you. We hope race weekend feels smooth, joyful, and full of community support.',
       guidesTitle: 'Race weekend guides',
       cards: {
+        participantGuide: {
+          title: '2026 Participant Guide',
+          description:
+            'The official Chicago Marathon Participant Guide—corrals, gear check, course rules, and race-day logistics. We recommend reading it carefully, three times.',
+          cta: 'Open guide',
+          url: 'https://1drv.ms/b/c/39d19a5575c715df/IQB5amHb_EMsRLRZfrSjfVUUAcccXyTiXcuwvFlqEzTH1Fk?e=3N8iFE',
+        },
         carbLoading: {
           title: 'Carb-loading dinner',
           description:
@@ -1448,6 +1455,12 @@ export const CONTENT = {
         '驰跑团 (CHI Running Club / Chirunners) 欢迎您的到来， 我们在这里为您加油！愿您度过一个顺利、开心、充满力量的马拉松周末。',
       guidesTitle: '赛事周末指南',
       cards: {
+        participantGuide: {
+          title: '2026芝加哥马拉松参赛者指南',
+          description: '芝加哥马拉松参赛者指南(中文）——起跑区、寄存、赛道规则、比赛日流程等重要信息。建议熟读三遍。',
+          cta: '查看详情',
+          url: 'https://1drv.ms/b/c/39d19a5575c715df/IQBWyGEHIoOwTqawoNTfdGoXAbRuHPFh95LyQpq4ULRdD9c?e=RuSi69',
+        },
         carbLoading: {
           title: '加碳会',
           description: '赛前聚餐、认识跑友、感受社区氛围，为比赛日储备好心情与能量。',
