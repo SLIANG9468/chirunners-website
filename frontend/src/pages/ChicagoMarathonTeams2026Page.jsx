@@ -70,6 +70,14 @@ export default function ChicagoMarathonTeams2026Page({ copy }) {
                 {p.updateContactWechatSuffix}
               </p>
             </div>
+            {p.viewPreviousYearLabel ? (
+              <Link
+                to={CHICAGO_MARATHON_ROUTES.teams2025}
+                className="mt-5 inline-flex text-sm font-medium text-chi-red hover:text-chi-red-hover hover:underline"
+              >
+                {p.viewPreviousYearLabel}
+              </Link>
+            ) : null}
           </div>
         </section>
 
