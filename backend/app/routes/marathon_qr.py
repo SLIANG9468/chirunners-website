@@ -36,6 +36,7 @@ QR_SMUGMUG_PAGE_URLS = {
 PHOTOGRAPHER_PHOTO_SMUGMUG_PAGE_URLS = {
     "yun-oldshue": "https://chirunners.smugmug.com/Website/Photographer/i-xjTnrCr/A",
     "yansong-lin": "https://chirunners.smugmug.com/Website/Photographer/i-LwwD52n/A",
+    "tammy-yang": "https://chirunners.smugmug.com/Website/Photographer/i-Xf7M6Q6/A",
     "yange": "https://chirunners.smugmug.com/Website/Photographer/i-n44JWrv/A",
     "sherri": "https://chirunners.smugmug.com/Website/Photographer/i-Dtz6b6r/A",
 }
