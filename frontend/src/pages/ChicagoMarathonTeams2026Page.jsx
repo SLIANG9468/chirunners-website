@@ -84,7 +84,7 @@ export default function ChicagoMarathonTeams2026Page({ copy }) {
         <section className="section pb-2">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {CHICAGO_MARATHON_TEAMS_2026.map((team) => (
-              <TeamCard key={team.key} team={team} labels={p.teams[team.key]} copy={p} />
+              <TeamCard key={team.key} team={team} labels={p.teams[team.key]} copy={p} currentYear="2026" />
             ))}
           </div>
         </section>

@@ -1,9 +1,25 @@
 import TeamVideoPlayer from './TeamVideoPlayer'
 
-export default function TeamCard({ team, labels, copy }) {
+/** Pulls a 4-digit year out of a SmugMug asset path, e.g. `.../Teams/2025/...` → "2025". */
+function assetYearFromUrl(url) {
+  const m = typeof url === 'string' ? url.match(/\/(20\d{2})(?:-Video)?\//) : null
+  return m ? m[1] : null
+}
+
+export default function TeamCard({ team, labels, copy, currentYear }) {
   const hasContactRow = Boolean(
     labels.contactName || team.emails?.length || team.wechat || labels.locationLines?.length || team.linkUrl,
   )
+
+  const photoYear = assetYearFromUrl(team.photoUrl)
+  const videoYear = assetYearFromUrl(team.video?.src)
+  const isPhotoLegacy = Boolean(currentYear && photoYear && photoYear !== currentYear)
+  // A YouTube video id carries no year, so there's no way to auto-detect its vintage —
+  // assume not yet refreshed for `currentYear` until a club says otherwise.
+  const isVideoLegacy = Boolean(
+    currentYear && team.video && (team.video.type === 'youtube' || (videoYear && videoYear !== currentYear)),
+  )
+  const isBothLegacy = isPhotoLegacy && isVideoLegacy
 
   return (
     <article className="overflow-hidden rounded-2xl border border-neutral-200/90 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900/60">
@@ -13,7 +29,22 @@ export default function TeamCard({ team, labels, copy }) {
 
       <img src={team.photoUrl} alt={labels.name} loading="lazy" decoding="async" className="w-full" />
 
+      {isBothLegacy && copy.legacyBothNote ? (
+        <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
+          {copy.legacyBothNote}
+        </p>
+      ) : isPhotoLegacy && copy.legacyPhotoNote ? (
+        <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
+          {copy.legacyPhotoNote}
+        </p>
+      ) : null}
+
       <div className="p-4">
+        {!isBothLegacy && isVideoLegacy && copy.legacyVideoNote ? (
+          <p className="mb-2 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+            {copy.legacyVideoNote}
+          </p>
+        ) : null}
         <TeamVideoPlayer video={team.video} title={labels.name} />
       </div>
 
