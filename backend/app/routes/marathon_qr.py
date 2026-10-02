@@ -54,6 +54,7 @@ SPEAKER_PHOTO_SMUGMUG_PAGE_URLS = {
     "danrui": "https://chirunners.smugmug.com/Website/Website-photo/i-mtzM4wN/A",
     "haiting": "https://chirunners.smugmug.com/Website/Website-photo/i-v79Srxp/A",
     "tian-wang": "https://chirunners.smugmug.com/Website/Website-photo/i-26P2Bwp/A",
+    "yun-oldshue": "https://chirunners.smugmug.com/Website/Photographer/i-xjTnrCr/A",
 }
 
 PACER_PHOTO_SMUGMUG_PAGE_URLS = {
