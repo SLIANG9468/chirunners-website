@@ -77,6 +77,10 @@ BUS_DROPOFF_PHOTO_SMUGMUG_PAGE_URLS = {
     "dropoff-map": "https://chirunners.smugmug.com/Website/Website-photo/i-B8M9PXS/A",
 }
 
+PHOTO_SPOT_PHOTO_SMUGMUG_PAGE_URLS = {
+    "spot-6": "https://chirunners.smugmug.com/Website/Website-photo/i-vXL79M6/A",
+}
+
 MARATHON_HERO_PHOTO_SMUGMUG_PAGE_URLS = {
     "hero-1": "https://chirunners.smugmug.com/Website/Website-photo/i-Dfxfh2p/A",
 }
@@ -139,6 +143,14 @@ def get_pacer_photo(key: str):
 @marathon_qr_bp.route("/api/marathon-welcome/bus-dropoff-photo/<key>", methods=["GET"])
 def get_bus_dropoff_photo(key: str):
     page_url = BUS_DROPOFF_PHOTO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+    return _resolve_and_redirect(page_url, ttl_override_seconds=None)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/photo-spot-photo/<key>", methods=["GET"])
+def get_photo_spot_photo(key: str):
+    page_url = PHOTO_SPOT_PHOTO_SMUGMUG_PAGE_URLS.get(key)
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url, ttl_override_seconds=None)
