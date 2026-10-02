@@ -120,6 +120,16 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
                         {p.photographerWebsiteLabel}
                       </a>
                     ) : null}
+                    {photographer.instagramUrl ? (
+                      <a
+                        href={photographer.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 inline-block text-sm font-medium text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                      >
+                        Instagram
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               ))}
