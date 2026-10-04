@@ -1027,8 +1027,10 @@ export const CONTENT = {
                 name: 'Yun Oldshue',
                 photoKey: 'yun-oldshue',
                 bio: 'For years Yun has volunteered as a photographer at community events, including running races, triathlons, basketball games, family celebrations, gatherings with friends, and concerts. Over the past four years, as a member of Purple Photos Group, she has become a professional photographer focused on events, shooting conferences, corporate celebrations, golf outings, graduations, and professional headshots across the Chicagoland area. She has lived in Chicago for 39 years, has been running for many years, and has raced for 18 years. She has photographed the New York City Marathon once and the Chicago Marathon many times.',
+                slidesUrl: '/documents/Chicago Marathon zoom_yun.pdf',
               },
             ],
+            youtubeUrl: 'https://youtu.be/fXyl0U3d6LU',
           },
         ],
         closingNote:
@@ -2116,8 +2118,10 @@ export const CONTENT = {
                 name: '章运',
                 photoKey: 'yun-oldshue',
                 bio: '多年来一直以志愿摄影师的身份记录社区活动，包括路跑比赛、铁人三项、篮球赛、家庭庆典、朋友聚会和音乐会。近四年，她作为 Purple Photos Group 的成员成为专业摄影师，专注活动摄影，在芝加哥地区拍摄过会议、企业庆典、高尔夫活动、毕业典礼和职业形象照。定居芝加哥39年，跑步多年，跑赛18年，为纽约马（一次）和芝马（很多次）拍过照。',
+                slidesUrl: '/documents/Chicago Marathon zoom_yun.pdf',
               },
             ],
+            youtubeUrl: 'https://youtu.be/fXyl0U3d6LU',
           },
         ],
         closingNote:
