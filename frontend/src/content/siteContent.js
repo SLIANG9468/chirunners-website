@@ -548,7 +548,8 @@ export const CONTENT = {
       },
       photoSpotPage: {
         docTitle: 'Photo Spot · CHI Running Club',
-        pageTitle: '📍 Where to Find Our Photographers',
+        pageTitle: '📸 Where to Find Our Photographers | In Progress, Photographers Welcome',
+        pageTitleNote: '(Final version expected: October 10, 2026)',
         pageIntro:
           'Our team photographers will be shooting around the areas below, numbered on the map. They may move around within each area, so the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt (or picked one up at the carb-loading dinner), race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” are from your own perspective as a runner, facing the direction you’re running—that’s also the side where the morning light will be on your face.)',
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
@@ -760,6 +761,7 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
+        photoSpotLinkLabel: '📍 Where to find our photographers on race day →',
         photographerWebsiteLabel: 'Personal Website',
         photographers: [
           {
@@ -1661,7 +1663,8 @@ export const CONTENT = {
       },
       photoSpotPage: {
         docTitle: '拍摄机位推荐 · 驰跑团',
-        pageTitle: '📍 摄影师机位分布（初稿）',
+        pageTitle: '📸 摄影师机位分布｜筹备中，欢迎摄影师加入',
+        pageTitleNote: '（最终版预计：2026年10月10日）',
         pageIntro:
           '我们的团队摄影师会在以下区域为大家拍照，编号已标注在地图上。摄影师会在附近走动，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服（或在加碳会上买的驰跑团队服），比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
@@ -1850,6 +1853,7 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
+        photoSpotLinkLabel: '📍 比赛日摄影师在哪里？查看拍摄点 →',
         photographerWebsiteLabel: '个人网站',
         photographers: [
           {

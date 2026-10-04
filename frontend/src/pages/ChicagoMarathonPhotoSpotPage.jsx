@@ -19,6 +19,9 @@ export default function ChicagoMarathonPhotoSpotPage({ copy }) {
           <h1 className="mt-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-3xl">
             {p.pageTitle}
           </h1>
+          {p.pageTitleNote ? (
+            <p className="mt-2 text-xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-2xl">{p.pageTitleNote}</p>
+          ) : null}
           {p.pageIntro ? (
             <p className="mt-4 max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">{p.pageIntro}</p>
           ) : null}        </section>

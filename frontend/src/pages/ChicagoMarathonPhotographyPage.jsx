@@ -90,6 +90,14 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
               <div className="mt-1 text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
                 {p.photographersSectionSubtitle}
               </div>
+              {p.photoSpotLinkLabel ? (
+                <Link
+                  to={CHICAGO_MARATHON_ROUTES.photoSpot}
+                  className="mt-4 inline-flex text-2xl font-bold text-chi-red hover:text-chi-red-hover hover:underline"
+                >
+                  {p.photoSpotLinkLabel}
+                </Link>
+              ) : null}
             </div>
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {p.photographers.map((photographer) => (
