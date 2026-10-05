@@ -424,9 +424,11 @@ export const CONTENT = {
         hotel: 'Book hotel',
         busShuttle: 'Book bus ticket',
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-CHIM',
+        hotelClosed: true,
       },
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $159',
+        closedNotice: 'Group booking has closed — the discounted rate is no longer available.',
         pageIntro: '10 min from O’Hare｜30 min race-day shuttle to the start 🚐',
         hotelSectionTitle: '',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
@@ -1546,9 +1548,11 @@ export const CONTENT = {
         hotel: '预订酒店',
         busShuttle: '购买直达车票',
         hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-CHIM',
+        hotelClosed: true,
       },
       hotelPage: {
         pageTitle: '芝马酒店超值价 $159',
+        closedNotice: '团购截止，优惠结束',
         pageIntro: '驰跑团专属优惠｜机场10分钟｜比赛日轻松30分钟直达起点 🚐',
         hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $159起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',

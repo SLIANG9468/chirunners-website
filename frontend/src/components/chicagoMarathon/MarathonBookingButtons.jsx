@@ -7,6 +7,9 @@ const primaryClassName =
 const secondaryClassName =
   'inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border-2 border-chi-red bg-white px-8 py-3 text-center text-base font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-chi-red-ring dark:border-chi-red dark:bg-neutral-900/40 dark:text-chi-red-light dark:hover:bg-chi-red/10 sm:w-auto'
 
+const disabledClassName =
+  'inline-flex min-h-[48px] w-full cursor-not-allowed items-center justify-center rounded-xl bg-neutral-200 px-8 py-3 text-center text-base font-semibold text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500 sm:w-auto'
+
 export default function MarathonBookingButtons({ ctas }) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -16,14 +19,20 @@ export default function MarathonBookingButtons({ ctas }) {
       >
         {ctas.carbLoading}
       </Link>
-      <a
-        href={ctas.hotelBookUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={primaryClassName}
-      >
-        {ctas.hotel}
-      </a>
+      {ctas.hotelClosed ? (
+        <span aria-disabled="true" className={disabledClassName}>
+          {ctas.hotel}
+        </span>
+      ) : (
+        <a
+          href={ctas.hotelBookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={primaryClassName}
+        >
+          {ctas.hotel}
+        </a>
+      )}
       <Link
         to={`${CHICAGO_MARATHON_ROUTES.tickets}#bus-shuttle`}
         className={secondaryClassName}

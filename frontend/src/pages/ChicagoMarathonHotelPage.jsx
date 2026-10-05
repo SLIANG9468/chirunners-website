@@ -234,6 +234,11 @@ export default function ChicagoMarathonHotelPage({ copy }) {
           <h1 className="mt-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-3xl">
             {h.pageTitle}
           </h1>
+          {h.closedNotice ? (
+            <p className="mt-4 inline-block rounded-xl border-2 border-chi-red bg-chi-red/10 px-4 py-2 text-lg font-bold text-chi-red dark:bg-chi-red/20 dark:text-chi-red-light sm:text-xl">
+              {h.closedNotice}
+            </p>
+          ) : null}
           <p className="mt-4 max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">{h.pageIntro}</p>
         </section>
 
