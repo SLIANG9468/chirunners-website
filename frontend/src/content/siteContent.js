@@ -589,6 +589,86 @@ export const CONTENT = {
           },
         ],
       },
+      photoSpotTempPage: {
+        docTitle: 'Photo Spot · CHI Running Club',
+        pageTitle: '📸 Where to Find Our Photographers | In Progress, Photographers Welcome',
+        pageTitleNote: '(Final version expected: October 10, 2026)',
+        pageIntro:
+          'Our team photographers will be shooting around the areas below, numbered on the map. They may move around within each area, so the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt (or picked one up at the carb-loading dinner), race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” are from your own perspective as a runner, facing the direction you’re running—that’s also the side where the morning light will be on your face.)',
+        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
+        zoomMapAlt: 'Close-up map of downtown Chicago and the South Side showing photographer spots 1 through 6 along the marathon course',
+        zoomMapCaption: 'Photographer spots, zoomed in (tap to enlarge)',
+        mapSrc: '/chicago-marathon/photography-spots-map-temp.jpg',
+        mapAlt: 'Chicago Marathon course map with six recommended photographer spots numbered 1 through 6',
+        mapCaption: 'Full course map (tap to enlarge)',
+        rosterLayout: true,
+        spotsSectionTitle: 'Spots & Photographers',
+        mapsSectionTitle: 'Maps',
+        assistantLabel: 'Assistant: ',
+        assistantTbd: 'TBD',
+        spots: [
+          {
+            number: 1,
+            location: 'Mile 2, Dearborn St (runner’s left)',
+            team: [
+              { name: 'Linda & Bob', assistant: '' },
+            ],
+          },
+          {
+            number: 2,
+            location: 'LaSalle Bridge (runner’s left)',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 3,
+            location: 'Lincoln Park Conservatory entrance (runner’s right)',
+            team: [
+              { name: 'Yun & Bai Ruan', assistant: '' },
+            ],
+          },
+          {
+            number: 4,
+            location: 'Wells Bridge (runner’s left)',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 5,
+            location: 'Chinatown (Wentworth Ave) (runner’s right)',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+              { name: 'Tammy', assistant: '' },
+              { name: '风城网事' },
+            ],
+          },
+          {
+            number: 6,
+            location: 'Aid station 17',
+            note: 'Mainly photographing volunteers',
+            team: [
+              { name: '沈中' },
+            ],
+          },
+          {
+            number: 7,
+            location: 'Finish Line',
+            note: 'In the VIP grandstand',
+          },
+          {
+            number: 8,
+            location: 'Mile 27, Post-Race Party / Runner Reunite',
+            team: [
+              { name: 'Sherri' },
+              { name: 'Yange' },
+            ],
+            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
+            photoAlt: 'Photographer spot in Butler Field, near the post-race party',
+          },
+        ],
+      },
       carbLoadingPage: {
         heroTitleLines: ['2026 Chicago Marathon', 'Carb-Loading Dinner'],
         heroVideoTitle: 'Carb-Loading Dinner Highlights',
@@ -1698,6 +1778,86 @@ export const CONTENT = {
             label: '27英里处，赛后派对/跑者团聚点',
             photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
             photoAlt: '6号机位实景：Butler Field，赛后派对附近',
+          },
+        ],
+      },
+      photoSpotTempPage: {
+        docTitle: '拍摄机位推荐 · 驰跑团',
+        pageTitle: '📸 摄影师机位分布｜筹备中，欢迎摄影师加入',
+        pageTitleNote: '（最终版预计：2026年10月10日）',
+        pageIntro:
+          '我们的团队摄影师会在以下区域为大家拍照，编号已标注在地图上。摄影师会在附近走动，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服（或在加碳会上买的驰跑团队服），比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
+        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
+        zoomMapAlt: '芝加哥市中心及南区局部放大地图，标注了赛道上1到6号摄影机位',
+        zoomMapCaption: '机位局部放大图（点击查看大图）',
+        mapSrc: '/chicago-marathon/photography-spots-map-temp.jpg',
+        mapAlt: '芝加哥马拉松赛道地图，标注了1到6号推荐摄影机位',
+        mapCaption: '全程赛道图（点击查看大图）',
+        rosterLayout: true,
+        spotsSectionTitle: '拍摄点与摄影师',
+        mapsSectionTitle: '地图',
+        assistantLabel: '助手：',
+        assistantTbd: '待定',
+        spots: [
+          {
+            number: 1,
+            location: '2 英里处，Dearborn St（跑者左侧）',
+            team: [
+              { name: 'Linda & Bob', assistant: '' },
+            ],
+          },
+          {
+            number: 2,
+            location: 'LaSalle Bridge（跑者左侧）',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 3,
+            location: 'Lincoln Park Conservatory 门口（跑者右侧）',
+            team: [
+              { name: '章运、阮白', assistant: '' },
+            ],
+          },
+          {
+            number: 4,
+            location: 'Wells Bridge（跑者左侧）',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 5,
+            location: '中国城（Wentworth Ave）（跑者右侧）',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+              { name: '芝城帽姐', assistant: '' },
+              { name: '风城网事' },
+            ],
+          },
+          {
+            number: 6,
+            location: '17号水站',
+            note: '为义工照相为主',
+            team: [
+              { name: '沈中' },
+            ],
+          },
+          {
+            number: 7,
+            location: 'Finish Line',
+            note: '在VIP的看台上',
+          },
+          {
+            number: 8,
+            location: '27英里处，赛后派对/跑者团聚点',
+            team: [
+              { name: 'Sherri' },
+              { name: '言歌' },
+            ],
+            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
+            photoAlt: 'Butler Field 机位实景，赛后派对附近',
           },
         ],
       },

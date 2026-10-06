@@ -83,6 +83,11 @@ export default function App() {
           path="/chicagomarathon/photo-spot"
           element={<ChicagoMarathonPhotoSpotPage copy={copy} />}
         />
+        {/* Unlinked draft for photographer coordination; copy into photoSpotPage once final. */}
+        <Route
+          path="/chicagomarathon/photo_spot_temp"
+          element={<ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photoSpotTempPage" noIndex />}
+        />
         <Route
           path="/chicagomarathon/teams_2025"
           element={<ChicagoMarathonTeams2025Page copy={copy} />}
