@@ -35,6 +35,7 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-dsBwWx3/0/Mj24SPR8cgvL2SZphhjRKZbHP446RpZJqmqR2S84K/SMIL/dsBwWx3.smil/master.m3u8',
     },
+    emails: ['Ben.boston2015@gmail.com'],
   },
   {
     // SU — pinned third by request (after Boston BEN), not alphabetical
