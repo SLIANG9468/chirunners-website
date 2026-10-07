@@ -591,10 +591,9 @@ export const CONTENT = {
       },
       photoSpotTempPage: {
         docTitle: 'Photo Spot · CHI Running Club',
-        pageTitle: '📸 Where to Find Our Photographers | In Progress, Photographers Welcome',
-        pageTitleNote: '(Final version expected: October 10, 2026)',
+        pageTitle: '📸 Where to Find Our Photographers | Review Version for Photographers & Assistants',
         pageIntro:
-          'Our team photographers will be shooting around the areas below, numbered on the map. They may move around within each area, so the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt (or picked one up at the carb-loading dinner), race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” are from your own perspective as a runner, facing the direction you’re running—that’s also the side where the morning light will be on your face.)',
+          'Our team photographers will be shooting around the areas below, numbered on the map. They may move around within each area, so the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt (or picked one up at the carb-loading dinner), race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” means the runner’s left or right.)',
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
         zoomMapAlt: 'Close-up map of the course from Lincoln Park to the South Side showing photographer spots 1 through 10 along the marathon course',
         zoomMapCaption: 'Photographer spots, zoomed in (tap to enlarge)',
@@ -609,50 +608,56 @@ export const CONTENT = {
         spots: [
           {
             number: 1,
-            location: 'Mile 0.5 (0.8 km), Columbus Bridge (William P. Fahey Bridge) (runner’s left)',
-            note: 'Wave 1 A-E 7:30; Wave 2 F-H 8:00',
+            location: 'Mile 0.5 (0.8 km), left',
+            note: 'Columbus Bridge (William P. Fahey Bridge)\nWave 1 A-E 7:30; Wave 2 F-H 8:00',
             team: [
               { name: '风城网事', assistant: '郭萍' },
             ],
           },
           {
             number: 2,
-            location: 'Mile 1.4 (2.3 km), Dearborn Bridge (runner’s right)',
+            location: 'Mile 1.4 (2.3 km), right',
+            note: 'Dearborn Bridge',
             team: [
               { name: 'Linda', assistant: 'Sharon' },
             ],
           },
           {
             number: 3,
-            location: 'Mile 1.6 (2.6 km), Dearborn & Couch (runner’s left)',
+            location: 'Mile 1.6 (2.6 km), left',
+            note: 'Dearborn & Couch',
             team: [
               { name: 'Bob', assistant: '新哲' },
             ],
           },
           {
             number: 4,
-            location: 'Mile 2.9 (4.7 km), LaSalle Bridge (runner’s right)',
+            location: 'Mile 2.9 (4.7 km), right',
+            note: 'LaSalle Bridge',
             team: [
               { name: 'Yansong', assistant: 'Helen' },
             ],
           },
           {
             number: 5,
-            location: 'Mile 5.5 (8.9 km), Lincoln Park Conservatory entrance (runner’s right)',
+            location: 'Mile 5.5 (8.9 km), right',
+            note: 'Lincoln Park Conservatory entrance',
             team: [
               { name: 'Yun & Bai Ruan', assistant: 'Cade' },
             ],
           },
           {
             number: 6,
-            location: 'Mile 12.8 (20.6 km), Wells Bridge (direct facing the runners)',
+            location: 'Mile 12.8 (20.6 km), direct facing the runners',
+            note: 'Wells Bridge',
             team: [
               { name: 'Yansong', assistant: 'Helen' },
             ],
           },
           {
             number: 7,
-            location: 'Mile 21.5 (34.6 km), Chinatown (Wentworth Ave) (runner’s right)',
+            location: 'Mile 21.5 (34.6 km)',
+            note: 'Chinatown (Wentworth Ave)',
             team: [
               { name: '风城网事', assistant: '郭萍' },
               { name: 'Yansong', assistant: 'Helen' },
@@ -661,23 +666,23 @@ export const CONTENT = {
           },
           {
             number: 8,
-            location: 'Mile 22.3 (35.8 km), Aid station 17 (Michigan Ave & 26th St) (both sides)',
-            note: 'Mainly photographing volunteers',
+            location: 'Mile 22.3 (35.8 km), both sides',
+            note: 'Aid station 17 (Michigan Ave & 26th St)\nMainly photographing volunteers',
             team: [
               { name: '沈中' },
             ],
           },
           {
             number: 9,
-            location: 'Mile 26.1 (42.0 km), Finish Line (runner’s right)',
-            note: 'In the VIP grandstand',
+            location: 'Mile 26.1 (42.0 km), right',
+            note: 'Finish Line, in the VIP grandstand',
             team: [
               { name: 'Yansong', assistant: 'Helen' },
             ],
           },
           {
             number: 10,
-            location: 'Mile 27 (43.5 km), Post-Race Party / Runner Reunite',
+            location: 'Mile 27 (43.5 km)',
             team: [
               { name: 'Sherri' },
               { name: 'Yange' },
@@ -1805,10 +1810,9 @@ export const CONTENT = {
       },
       photoSpotTempPage: {
         docTitle: '拍摄机位推荐 · 驰跑团',
-        pageTitle: '📸 摄影师机位分布｜筹备中，欢迎摄影师加入',
-        pageTitleNote: '（最终版预计：2026年10月10日）',
+        pageTitle: '📸 摄影师机位分布｜摄影师及助手 review 版',
         pageIntro:
-          '我们的团队摄影师会在以下区域为大家拍照，编号已标注在地图上。摄影师会在附近走动，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服（或在加碳会上买的驰跑团队服），比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
+          '我们的团队摄影师会在以下区域为大家拍照，编号已标注在地图上。摄影师会在附近移动，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服（或在加碳会上买的驰跑团队服），比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"是指跑者的左侧或右侧。）',
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
         zoomMapAlt: '林肯公园至南区赛道局部放大地图，标注了1到10号摄影机位',
         zoomMapCaption: '机位局部放大图（点击查看大图）',
@@ -1823,75 +1827,81 @@ export const CONTENT = {
         spots: [
           {
             number: 1,
-            location: '0.5 迈，0.8 公里，Columbus Bridge（William P. Fahey Bridge）（跑者左侧）',
-            note: 'Wave 1 A-E 7:30；Wave 2 F-H 8:00',
+            location: '0.5 迈，0.8 公里，左侧',
+            note: 'Columbus Bridge（William P. Fahey Bridge）\nWave 1 A-E 7:30；Wave 2 F-H 8:00',
             team: [
               { name: '风城网事', assistant: '郭萍' },
             ],
           },
           {
             number: 2,
-            location: '1.4 迈，2.3 公里，Dearborn Bridge（跑者右侧）',
+            location: '1.4 迈，2.3 公里，右侧',
+            note: 'Dearborn Bridge',
             team: [
               { name: 'Linda', assistant: 'Sharon' },
             ],
           },
           {
             number: 3,
-            location: '1.6 迈，2.6 公里，Dearborn & Couch（跑者左侧）',
+            location: '1.6 迈，2.6 公里，左侧',
+            note: 'Dearborn & Couch',
             team: [
               { name: 'Bob', assistant: '新哲' },
             ],
           },
           {
             number: 4,
-            location: '2.9 迈，4.7 公里，LaSalle Bridge（跑者右侧）',
+            location: '2.9 迈，4.7 公里，右侧',
+            note: 'LaSalle Bridge',
             team: [
               { name: '燕松', assistant: 'Helen' },
             ],
           },
           {
             number: 5,
-            location: '5.5 迈，8.9 公里，Lincoln Park Conservatory 门口（跑者右侧）',
+            location: '5.5 迈，8.9 公里，右侧',
+            note: 'Lincoln Park Conservatory 门口',
             team: [
               { name: '章运、阮白', assistant: 'Cade' },
             ],
           },
           {
             number: 6,
-            location: '12.8 迈，20.6 公里，Wells Bridge（Direct Facing 面对跑者）',
+            location: '12.8 迈，20.6 公里，Direct Facing 面对跑者',
+            note: 'Wells Bridge',
             team: [
               { name: '燕松', assistant: 'Helen' },
             ],
           },
           {
             number: 7,
-            location: '21.5 迈，34.6 公里，中国城（Wentworth Ave）（跑者右侧）',
+            location: '21.5 迈，34.6 公里',
+            note: '中国城（Wentworth Ave）',
             team: [
-              { name: '风城网事 - 你很美丽 - 跑者右侧', assistant: '郭萍' },
-              { name: '燕松 跑者左侧', assistant: 'Helen' },
+              { name: '风城网事 - 你很美丽 - 右侧', assistant: '郭萍' },
+              { name: '燕松 左侧', assistant: 'Helen' },
               { name: '芝城帽姐', assistant: 'Jandy' },
             ],
           },
           {
             number: 8,
-            location: '22.3 迈，35.8 公里，17 水站（Michigan Ave & 26th St）（跑者两侧）',
-            note: '为义工照相为主',
+            location: '22.3 迈，35.8 公里，两侧',
+            note: '17 水站（Michigan Ave & 26th St）\n为义工照相为主',
             team: [
               { name: '沈中' },
             ],
           },
           {
             number: 9,
-            location: '26.1 迈，42.0 公里，Finish Line（跑者右侧）',
-            note: '在VIP的看台上',
+            location: '26.1 迈，42.0 公里，右侧',
+            note: 'Finish Line，在VIP的看台上',
             team: [
               { name: '燕松', assistant: 'Helen' },
             ],
           },
           {
             number: 10,
-            location: '27 迈，43.5 公里，赛后派对/跑者团聚点',
+            location: '27 迈，赛后派对/跑者团聚点',
             team: [
               { name: 'Sherri' },
               { name: '言歌' },

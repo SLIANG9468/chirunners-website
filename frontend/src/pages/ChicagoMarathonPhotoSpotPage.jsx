@@ -62,7 +62,7 @@ function RosterLayout({ p }) {
                 <div className="min-w-0 pt-0.5">
                   <p className="text-base font-semibold text-neutral-900 dark:text-neutral-100">{spot.location}</p>
                   {spot.note ? (
-                    <p className="mt-0.5 text-sm text-neutral-600 dark:text-neutral-400">{spot.note}</p>
+                    <p className="mt-0.5 whitespace-pre-line text-sm text-neutral-600 dark:text-neutral-400">{spot.note}</p>
                   ) : null}
                 </div>
               </div>
