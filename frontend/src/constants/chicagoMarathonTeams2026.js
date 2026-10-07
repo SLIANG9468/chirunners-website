@@ -26,7 +26,18 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     wechat: 'sherriliangzhou',
   },
   {
-    // SU — pinned second by request, not alphabetical
+    // Boston BEN — pinned second by request, not alphabetical
+    key: 'bostonBen',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-VMD8m3v/0/NcTbTmf9zhBbqnxdmmHmF3SMZdnRHBr6Ct4drZDc2/XL/ben_photo_2026-XL.jpg',
+    video: {
+      type: 'hls',
+      src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-dsBwWx3/0/Mj24SPR8cgvL2SZphhjRKZbHP446RpZJqmqR2S84K/SMIL/dsBwWx3.smil/master.m3u8',
+    },
+  },
+  {
+    // SU — pinned third by request (after Boston BEN), not alphabetical
     key: 'su',
     flag: '🇺🇸',
     photoUrl:

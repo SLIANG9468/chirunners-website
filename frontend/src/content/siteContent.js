@@ -611,7 +611,8 @@ export const CONTENT = {
             number: 1,
             location: 'Mile 2, Dearborn St (runner’s left)',
             team: [
-              { name: 'Linda & Bob', assistant: '' },
+              { name: 'Linda', assistant: 'Sharon' },
+              { name: 'Bob', assistant: '新哲' },
             ],
           },
           {
@@ -625,7 +626,7 @@ export const CONTENT = {
             number: 3,
             location: 'Lincoln Park Conservatory entrance (runner’s right)',
             team: [
-              { name: 'Yun & Bai Ruan', assistant: '' },
+              { name: 'Yun & Bai Ruan', assistant: 'Cade' },
             ],
           },
           {
@@ -640,8 +641,8 @@ export const CONTENT = {
             location: 'Chinatown (Wentworth Ave) (runner’s right)',
             team: [
               { name: 'Yansong', assistant: 'Helen' },
-              { name: 'Tammy', assistant: '' },
-              { name: '风城网事' },
+              { name: 'Tammy', assistant: 'Jandy' },
+              { name: '风城网事', assistant: '郭萍' },
             ],
           },
           {
@@ -968,6 +969,7 @@ export const CONTENT = {
         legacyPhotoNote: '📸 This club hasn’t updated their photo for 2026 yet — shown above is their 2025 photo.',
         legacyVideoNote: '🎬 This club’s photo is the 2026 version; their video is the 2025 version.',
         legacyBothNote: '🎬 This club’s photo and video are the 2025 version.',
+        currentBothNote: '🎬 This club’s photo and video are the 2026 version.',
         groupRunWelcome: 'Group runs welcome!',
         contactLabel: 'Contact',
         emailLabel: 'Email',
@@ -978,6 +980,9 @@ export const CONTENT = {
             name: 'Chicago · CHI Running Club (ChiRunners)',
             contactName: 'Sherri Liang-Zhou',
             locationLines: ['Lincolnshire, IL — Sat & Sun 6:45 AM', 'Busse Woods, IL — Sat & Sun 7:30 AM'],
+          },
+          bostonBen: {
+            name: 'Boston · BEN (犇)',
           },
           ninetyOneCamp: {
             name: 'Toronto · 91 Running Camp (91Camp)',
@@ -1803,7 +1808,8 @@ export const CONTENT = {
             number: 1,
             location: '2 英里处，Dearborn St（跑者左侧）',
             team: [
-              { name: 'Linda & Bob', assistant: '' },
+              { name: 'Linda', assistant: 'Sharon' },
+              { name: 'Bob', assistant: '新哲' },
             ],
           },
           {
@@ -1817,7 +1823,7 @@ export const CONTENT = {
             number: 3,
             location: 'Lincoln Park Conservatory 门口（跑者右侧）',
             team: [
-              { name: '章运、阮白', assistant: '' },
+              { name: '章运、阮白', assistant: 'Cade' },
             ],
           },
           {
@@ -1832,8 +1838,8 @@ export const CONTENT = {
             location: '中国城（Wentworth Ave）（跑者右侧）',
             team: [
               { name: '燕松', assistant: 'Helen' },
-              { name: '芝城帽姐', assistant: '' },
-              { name: '风城网事' },
+              { name: '芝城帽姐', assistant: 'Jandy' },
+              { name: '风城网事', assistant: '郭萍' },
             ],
           },
           {
@@ -2144,6 +2150,7 @@ export const CONTENT = {
         legacyPhotoNote: '📸 该跑团尚未更新2026年的照片——以上展示的是2025年的照片。',
         legacyVideoNote: '🎬 该跑团照片为2026版本，视频为2025年版本。',
         legacyBothNote: '🎬 该跑团照片和视频为2025年版本。',
+        currentBothNote: '🎬 该跑团照片和视频为2026年版本。',
         groupRunWelcome: '欢迎参加群跑',
         contactLabel: '联系人',
         emailLabel: 'Email',
@@ -2154,6 +2161,9 @@ export const CONTENT = {
             name: '芝加哥 驰跑团（ChiRunners ｜ CHI Running Club）',
             contactName: 'Sherri Liang-Zhou',
             locationLines: ['Lincolnshire, IL — 每周六日 6:45AM', 'Busse woods, IL — 每周六日 7:30AM'],
+          },
+          bostonBen: {
+            name: '波士顿 犇（BEN）',
           },
           ninetyOneCamp: {
             name: '多伦多 91Camp（91 Running Camp）',

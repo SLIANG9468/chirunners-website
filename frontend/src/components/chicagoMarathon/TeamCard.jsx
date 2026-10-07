@@ -20,6 +20,9 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
     currentYear && team.video && (team.video.type === 'youtube' || (videoYear && videoYear !== currentYear)),
   )
   const isBothLegacy = isPhotoLegacy && isVideoLegacy
+  const isBothCurrent = Boolean(
+    currentYear && photoYear === currentYear && team.video?.type !== 'youtube' && videoYear === currentYear,
+  )
 
   return (
     <article className="overflow-hidden rounded-2xl border border-neutral-200/90 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900/60">
@@ -36,6 +39,10 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
       ) : isPhotoLegacy && copy.legacyPhotoNote ? (
         <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
           {copy.legacyPhotoNote}
+        </p>
+      ) : isBothCurrent && copy.currentBothNote ? (
+        <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
+          {copy.currentBothNote}
         </p>
       ) : null}
 
