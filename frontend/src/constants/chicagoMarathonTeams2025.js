@@ -72,7 +72,7 @@ export const CHICAGO_MARATHON_TEAMS_2025 = [
       'https://photos.smugmug.com/Website/Teams/2025/i-PDmCdkD/0/Kt6bxD8FPL88qx5CcZ9QzD6b3RJV6n9bPcnZghdX7/XL/team10dash-XL.jpg',
     video: {
       type: 'hls',
-      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8HJqLxd/0/Mvktt9CtbJVxFC7zgsxqbKtTbGJWffcjVZSm4MFLP/SMIL/8HJqLxd.smil/master.m3u8',
+      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8pGkZgd/0/L4KnKHRGJtXRsrtxKCbhjRRrz54FZQHgtPsqv9JHJ/SMIL/8pGkZgd.smil/master.m3u8',
     },
     emails: ['dashrungroup@gmail.com'],
     wechat: 'lvyangcungu',

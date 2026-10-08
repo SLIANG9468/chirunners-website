@@ -50,6 +50,18 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     linkUrl: 'https://www.xiaohongshu.com/user/profile/6560020d000000000802f058',
   },
   {
+    // WindRunner — pinned fourth by request (after SU), not alphabetical
+    key: 'windRunner',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-GHGPgHF/0/KbnfBqZC56HQZ3GsHPnNtDzQVXLZW2pnNwRcrLWL3/XL/%E8%BF%BD%E9%A3%8E-XL.png',
+    video: {
+      type: 'hls',
+      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8HJqLxd/0/Mvktt9CtbJVxFC7zgsxqbKtTbGJWffcjVZSm4MFLP/SMIL/8HJqLxd.smil/master.m3u8',
+    },
+    linkUrl: 'https://www.windrunnergroup.org/',
+  },
+  {
     // 91 Running Camp
     key: 'ninetyOneCamp',
     flag: '🇨🇦',
@@ -82,7 +94,7 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       'https://photos.smugmug.com/Website/Teams/2025/i-PDmCdkD/0/Kt6bxD8FPL88qx5CcZ9QzD6b3RJV6n9bPcnZghdX7/XL/team10dash-XL.jpg',
     video: {
       type: 'hls',
-      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8HJqLxd/0/Mvktt9CtbJVxFC7zgsxqbKtTbGJWffcjVZSm4MFLP/SMIL/8HJqLxd.smil/master.m3u8',
+      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8pGkZgd/0/L4KnKHRGJtXRsrtxKCbhjRRrz54FZQHgtPsqv9JHJ/SMIL/8pGkZgd.smil/master.m3u8',
     },
     emails: ['dashrungroup@gmail.com'],
     wechat: 'lvyangcungu',
@@ -179,18 +191,6 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     },
     emails: ['outouu@gmail.com'],
     wechat: 'outouu',
-  },
-  {
-    // WindRunner
-    key: 'windRunner',
-    flag: '🇺🇸',
-    photoUrl:
-      'https://photos.smugmug.com/Website/Teams/2026/i-GHGPgHF/0/KbnfBqZC56HQZ3GsHPnNtDzQVXLZW2pnNwRcrLWL3/XL/%E8%BF%BD%E9%A3%8E-XL.png',
-    video: {
-      type: 'hls',
-      src: 'https://videos.smugmug.com/Website/Videos/2025/i-8HJqLxd/0/Mvktt9CtbJVxFC7zgsxqbKtTbGJWffcjVZSm4MFLP/SMIL/8HJqLxd.smil/master.m3u8',
-    },
-    linkUrl: 'https://www.windrunnergroup.org/',
   },
   {
     // Zephyr Run Club
