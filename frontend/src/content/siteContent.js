@@ -620,6 +620,7 @@ export const CONTENT = {
             note: 'Dearborn Bridge',
             team: [
               { name: 'Linda', assistant: 'Sharon' },
+              { name: 'Tao' },
             ],
           },
           {
@@ -652,6 +653,7 @@ export const CONTENT = {
             note: 'Wells Bridge',
             team: [
               { name: 'Yansong', assistant: 'Helen' },
+              { name: 'Tao' },
             ],
           },
           {
@@ -1841,6 +1843,7 @@ export const CONTENT = {
             note: 'Dearborn Bridge',
             team: [
               { name: 'Linda', assistant: 'Sharon' },
+              { name: '涛' },
             ],
           },
           {
@@ -1873,6 +1876,7 @@ export const CONTENT = {
             note: 'Wells Bridge',
             team: [
               { name: '燕松', assistant: 'Helen' },
+              { name: '涛' },
             ],
           },
           {
