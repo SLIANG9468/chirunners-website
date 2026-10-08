@@ -548,47 +548,6 @@ export const CONTENT = {
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
       },
-      photoSpotPage: {
-        docTitle: 'Photo Spot · CHI Running Club',
-        pageTitle: '📸 Where to Find Our Photographers | In Progress, Photographers Welcome',
-        pageTitleNote: '(Final version expected: October 10, 2026)',
-        pageIntro:
-          'Our team photographers will be shooting around the areas below, numbered on the map. They may move around within each area, so the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt (or picked one up at the carb-loading dinner), race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” are from your own perspective as a runner, facing the direction you’re running—that’s also the side where the morning light will be on your face.)',
-        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
-        zoomMapAlt: 'Close-up map of downtown Chicago and the South Side showing photographer spots 1 through 6 along the marathon course',
-        zoomMapCaption: 'Photographer spots, zoomed in (tap to enlarge)',
-        mapSrc: '/chicago-marathon/photography-spots-map.jpg',
-        mapAlt: 'Chicago Marathon course map with six recommended photographer spots numbered 1 through 6',
-        mapCaption: 'Full course map (tap to enlarge)',
-        spots: [
-          {
-            number: 1,
-            label: 'Mile 2, Dearborn St (runner’s left)',
-          },
-          {
-            number: 2,
-            label: 'Mile 2.5, LaSalle St (runner’s right)',
-          },
-          {
-            number: 3,
-            label: 'Mile 12.8, the bridge turn (runner’s left)',
-          },
-          {
-            number: 4,
-            label: 'Mile 21.5, Chinatown (runner’s right)',
-          },
-          {
-            number: 5,
-            label: 'Mile 22.5 (35.8 km), Aid station 17',
-          },
-          {
-            number: 6,
-            label: 'Mile 27, Post-Race Party / Runner Reunite',
-            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
-            photoAlt: 'Photographer spot 6 in Butler Field, near the post-race party',
-          },
-        ],
-      },
       photoSpotTempPage: {
         docTitle: 'Photo Spot · CHI Running Club',
         pageTitle: '📸 Where to Find Our Photographers | Review Version for Photographers & Assistants',
@@ -658,7 +617,6 @@ export const CONTENT = {
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
         zoomMapAlt: 'Close-up map of the course from Lincoln Park to the South Side showing photographer spots 1 through 11 along the marathon course',
         zoomMapCaption: 'Photographer spots, zoomed in (tap to enlarge)',
-        rosterLayout: true,
         spotsSectionTitle: 'Spots & Photographers',
         mapsSectionTitle: 'Maps',
         assistantLabel: 'Assistant: ',
@@ -945,7 +903,6 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
-        photoSpotLinkLabel: '📍 Where to find our photographers on race day →',
         photographerWebsiteLabel: 'Personal Website',
         photographers: [
           { name: 'Kenny Qin', photoKey: 'kenny-qin' },
@@ -1858,38 +1815,6 @@ export const CONTENT = {
         wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
         wechatGroupQrSrc: '/api/marathon-welcome/qr/bus',
       },
-      photoSpotPage: {
-        docTitle: '拍摄机位推荐 · 驰跑团',
-        pageTitle: '📸 摄影师机位分布｜筹备中，欢迎摄影师加入',
-        pageTitleNote: '（最终版预计：2026年10月10日）',
-        pageIntro:
-          '我们的团队摄影师会在以下区域为大家拍照，编号已标注在地图上。摄影师会在附近走动，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服（或在加碳会上买的驰跑团队服），比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"以您（跑者）面朝的前进方向为准——这也是清晨阳光照在您脸上的一侧。）',
-        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
-        zoomMapAlt: '芝加哥市中心及南区局部放大地图，标注了赛道上1到6号摄影机位',
-        zoomMapCaption: '机位局部放大图（点击查看大图）',
-        mapSrc: '/chicago-marathon/photography-spots-map.jpg',
-        mapAlt: '芝加哥马拉松赛道地图，标注了1到6号推荐摄影机位',
-        mapCaption: '全程赛道图（点击查看大图）',
-        spots: [
-          { number: 1, label: '2 英里处，Dearborn St（跑者左侧）' },
-          { number: 2, label: '2.5 英里处，LaSalle St（跑者右侧）' },
-          {
-            number: 3,
-            label: '12.8 英里，Wells Bridge 大桥下转弯处（跑者左侧）',
-          },
-          { number: 4, label: '21.5 英里处，中国城（跑者右侧）' },
-          {
-            number: 5,
-            label: '22.5英里处（35.8公里），17号水站',
-          },
-          {
-            number: 6,
-            label: '27英里处，赛后派对/跑者团聚点',
-            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
-            photoAlt: '6号机位实景：Butler Field，赛后派对附近',
-          },
-        ],
-      },
       photoSpotTempPage: {
         docTitle: '拍摄机位推荐 · 驰跑团',
         pageTitle: '📸 摄影师机位分布｜摄影师及助手 review 版',
@@ -1959,7 +1884,6 @@ export const CONTENT = {
         zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom-temp.jpg',
         zoomMapAlt: '林肯公园至南区赛道局部放大地图，标注了1到11号摄影机位',
         zoomMapCaption: '机位局部放大图（点击查看大图）',
-        rosterLayout: true,
         spotsSectionTitle: '拍摄点与摄影师',
         mapsSectionTitle: '地图',
         assistantLabel: '助手：',
@@ -2232,7 +2156,6 @@ export const CONTENT = {
         ],
         photographersSectionTitle: '2026 芝加哥马拉松 · 镜头下的故事',
         photographersSectionSubtitle: 'Stories Through Our Lens',
-        photoSpotLinkLabel: '📍 比赛日摄影师在哪里？查看拍摄点 →',
         photographerWebsiteLabel: '个人网站',
         photographers: [
           { name: '风城网事', photoKey: 'kenny-qin' },

@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { apiUrl } from '../apiBase'
 import PhotographerGrid from '../components/chicagoMarathon/PhotographerGrid'
@@ -102,77 +101,25 @@ function RosterLayout({ p }) {
         <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
           {p.mapsSectionTitle}
         </h2>
-        {p.mapSrc ? (
-          <div className="mt-5 grid gap-6 sm:grid-cols-2 sm:items-start">
-            <MapFigure src={p.zoomMapSrc} alt={p.zoomMapAlt} caption={p.zoomMapCaption} />
-            <MapFigure src={p.mapSrc} alt={p.mapAlt} caption={p.mapCaption} />
-          </div>
-        ) : (
-          <MapFigure
-            src={p.zoomMapSrc}
-            alt={p.zoomMapAlt}
-            caption={p.zoomMapCaption}
-            className="mx-auto mt-5 w-full max-w-md"
-          />
-        )}
-      </section>
-    </>
-  )
-}
-
-function MapAndListLayout({ p }) {
-  return (
-    <>
-      <section className="section !pt-0">
-        <div className="rounded-2xl border border-chi-red/25 bg-gradient-to-br from-chi-red/10 via-transparent to-chi-red/5 p-6 shadow-card dark:border-chi-red/35 dark:from-chi-red/15 sm:p-8">
-          <div className="grid gap-6 sm:grid-cols-[minmax(0,300px)_1fr] sm:items-start">
-            <MapFigure
-              src={p.zoomMapSrc}
-              alt={p.zoomMapAlt}
-              caption={p.zoomMapCaption}
-              className="mx-auto w-full max-w-[320px] sm:mx-0"
-            />
-            <ol className="space-y-4">
-              {p.spots.map((spot) => (
-                <li key={spot.number} className="flex gap-3">
-                  <NumberBadge number={spot.number} />
-                  <div className="min-w-0 pt-0.5">
-                    <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 sm:text-base">
-                      {spot.label}
-                    </p>
-                    <SpotPhoto spot={spot} />
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section className="section !pt-0">
-        <MapFigure src={p.mapSrc} alt={p.mapAlt} caption={p.mapCaption} className="mx-auto w-full max-w-md" />
+        <MapFigure
+          src={p.zoomMapSrc}
+          alt={p.zoomMapAlt}
+          caption={p.zoomMapCaption}
+          className="mx-auto mt-5 w-full max-w-md"
+        />
       </section>
     </>
   )
 }
 
 /**
- * `contentKey` lets the unlinked draft page (photoSpotTempPage) reuse this page;
- * `noIndex` keeps that draft out of search engines. Content with `rosterLayout`
- * lists spots (with photographer assignments) before the maps.
+ * Chicago Marathon photography page (/chicagomarathon/photography): story, photo spots
+ * with photographer assignments, maps, photographers, and photo availability.
+ * Content lives in `marathonWelcome.photoSpotTempPage` (the name is left over from the review draft).
  */
-export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photoSpotPage', noIndex = false }) {
+export default function ChicagoMarathonPhotoSpotPage({ copy }) {
   const mw = copy.marathonWelcome
-  const p = mw[contentKey]
-
-  useEffect(() => {
-    if (!noIndex) return undefined
-    const meta = document.createElement('meta')
-    meta.name = 'robots'
-    meta.content = 'noindex, nofollow'
-    document.head.appendChild(meta)
-    return () => meta.remove()
-  }, [noIndex])
+  const p = mw.photoSpotTempPage
 
   return (
     <main className="siteMain siteMain--marathonWelcome">
@@ -252,7 +199,7 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
           ) : null}
         </section>
 
-        {p.rosterLayout ? <RosterLayout p={p} /> : <MapAndListLayout p={p} />}
+        <RosterLayout p={p} />
 
         {p.downloads ? (
           <section className="section !pt-0">

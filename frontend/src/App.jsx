@@ -16,7 +16,6 @@ import ChicagoMarathonHotelShuttlePage from './pages/ChicagoMarathonHotelShuttle
 import ChicagoMarathonBusPage from './pages/ChicagoMarathonBusPage'
 import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransportationPage'
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
-import ChicagoMarathonPhotographyPage from './pages/ChicagoMarathonPhotographyPage'
 import ChicagoMarathonPhotoSpotPage from './pages/ChicagoMarathonPhotoSpotPage'
 import ChicagoMarathonPhotosPage from './pages/ChicagoMarathonPhotosPage'
 import ChicagoMarathonTeams2025Page from './pages/ChicagoMarathonTeams2025Page'
@@ -76,19 +75,14 @@ export default function App() {
           path="/chicagomarathon/volunteer"
           element={<ChicagoMarathonVolunteerPage copy={copy} />}
         />
+        {/* Combined photography page (story, spots, photographers, photo availability); content lives in photoSpotTempPage. */}
         <Route
           path="/chicagomarathon/photography"
-          element={<ChicagoMarathonPhotographyPage copy={copy} />}
-        />
-        <Route
-          path="/chicagomarathon/photo-spot"
           element={<ChicagoMarathonPhotoSpotPage copy={copy} />}
         />
-        {/* Unlinked draft of the combined photography page (story, spots, photographers, photo availability). */}
-        <Route
-          path="/chicagomarathon/photo_spot_temp"
-          element={<ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photoSpotTempPage" noIndex />}
-        />
+        {/* Old photo-spot and draft URLs, kept so links already shared still land on the photography page. */}
+        <Route path="/chicagomarathon/photo-spot" element={<Navigate to="/chicagomarathon/photography" replace />} />
+        <Route path="/chicagomarathon/photo_spot_temp" element={<Navigate to="/chicagomarathon/photography" replace />} />
         <Route path="/chicagomarathon/photos" element={<ChicagoMarathonPhotosPage copy={copy} />} />
         <Route
           path="/chicagomarathon/teams_2025"
