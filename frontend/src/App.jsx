@@ -18,6 +18,7 @@ import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransporta
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
 import ChicagoMarathonPhotographyPage from './pages/ChicagoMarathonPhotographyPage'
 import ChicagoMarathonPhotoSpotPage from './pages/ChicagoMarathonPhotoSpotPage'
+import ChicagoMarathonPhotosPage from './pages/ChicagoMarathonPhotosPage'
 import ChicagoMarathonTeams2025Page from './pages/ChicagoMarathonTeams2025Page'
 import ChicagoMarathonTeams2026Page from './pages/ChicagoMarathonTeams2026Page'
 import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
@@ -83,11 +84,12 @@ export default function App() {
           path="/chicagomarathon/photo-spot"
           element={<ChicagoMarathonPhotoSpotPage copy={copy} />}
         />
-        {/* Unlinked draft for photographer coordination; copy into photoSpotPage once final. */}
+        {/* Unlinked draft of the combined photography page (story, spots, photographers, photo availability). */}
         <Route
           path="/chicagomarathon/photo_spot_temp"
           element={<ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photoSpotTempPage" noIndex />}
         />
+        <Route path="/chicagomarathon/photos" element={<ChicagoMarathonPhotosPage copy={copy} />} />
         <Route
           path="/chicagomarathon/teams_2025"
           element={<ChicagoMarathonTeams2025Page copy={copy} />}

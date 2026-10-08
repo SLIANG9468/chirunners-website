@@ -13,6 +13,7 @@ export const CHICAGO_MARATHON_ROUTES = {
   volunteer: '/chicagomarathon/volunteer',
   photography: '/chicagomarathon/photography',
   photoSpot: '/chicagomarathon/photo-spot',
+  photos: '/chicagomarathon/photos',
   teams2025: '/chicagomarathon/teams_2025',
   teams2026: '/chicagomarathon/teams_2026',
   tickets: '/chicagomarathon/tickets',

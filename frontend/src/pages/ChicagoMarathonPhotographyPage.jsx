@@ -1,20 +1,9 @@
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import { apiUrl } from '../apiBase'
-
-/** Reuse marathon hero asset until a dedicated image is added. */
-const HERO_IMAGE_SRC = apiUrl('/api/marathon-welcome/hero-photo/hero-1')
-
-/** Content uses `**bold**` for emphasis; render those runs as <strong>. */
-function withBoldRuns(text) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g)
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>
-    }
-    return <span key={i}>{part}</span>
-  })
-}
+import PhotographerGrid from '../components/chicagoMarathon/PhotographerGrid'
+import PhotographyHero from '../components/chicagoMarathon/PhotographyHero'
+import withBoldRuns from '../components/chicagoMarathon/withBoldRuns'
 
 export default function ChicagoMarathonPhotographyPage({ copy }) {
   const mw = copy.marathonWelcome
@@ -31,32 +20,7 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
             {mw.backToHub}
           </Link>
 
-          <div className="relative mt-6 overflow-hidden rounded-2xl border border-neutral-200/80 shadow-card dark:border-neutral-700">
-            <div className="relative aspect-[5/2] min-h-[200px] w-full max-h-[min(42vh,420px)]">
-              <img
-                src={HERO_IMAGE_SRC}
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover"
-                style={{ objectPosition: 'center top' }}
-              />
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/15"
-                aria-hidden
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10">
-                <h1 className="max-w-3xl font-semibold text-2xl tracking-tight text-white drop-shadow-sm sm:text-4xl">
-                  {p.heroTitleLines.map((line, i) => (
-                    <span key={i} className={i === 0 ? 'block' : 'mt-1 block sm:mt-2'}>
-                      {line}
-                    </span>
-                  ))}
-                </h1>
-                <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/95 drop-shadow-sm sm:text-lg">
-                  {p.heroSubtitle}
-                </p>
-              </div>
-            </div>
-          </div>
+          <PhotographyHero titleLines={p.heroTitleLines} subtitle={p.heroSubtitle} />
         </section>
 
         {p.sections.map((section, i) => (
@@ -99,49 +63,7 @@ export default function ChicagoMarathonPhotographyPage({ copy }) {
                 </Link>
               ) : null}
             </div>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {p.photographers.map((photographer) => (
-                <div
-                  key={photographer.photoKey || photographer.name}
-                  className="overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 text-center shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40"
-                >
-                  {photographer.photoKey ? (
-                    <img
-                      src={apiUrl(`/api/marathon-welcome/photographer-photo/${photographer.photoKey}`)}
-                      alt={photographer.name}
-                      loading="lazy"
-                      decoding="async"
-                      className="aspect-square w-full scale-105 object-cover object-top"
-                    />
-                  ) : null}
-                  <div className="p-5">
-                    <div className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-                      {photographer.name}
-                    </div>
-                    {photographer.websiteUrl ? (
-                      <a
-                        href={photographer.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 inline-block text-sm font-medium text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
-                      >
-                        {p.photographerWebsiteLabel}
-                      </a>
-                    ) : null}
-                    {photographer.instagramUrl ? (
-                      <a
-                        href={photographer.instagramUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-1 inline-block text-sm font-medium text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
-                      >
-                        Instagram
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <PhotographerGrid photographers={p.photographers} websiteLabel={p.photographerWebsiteLabel} />
           </section>
         ) : null}
 

@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { apiUrl } from '../apiBase'
+import PhotographerGrid from '../components/chicagoMarathon/PhotographerGrid'
+import PhotographyHero from '../components/chicagoMarathon/PhotographyHero'
+import withBoldRuns from '../components/chicagoMarathon/withBoldRuns'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 
 function NumberBadge({ number }) {
@@ -99,10 +102,19 @@ function RosterLayout({ p }) {
         <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
           {p.mapsSectionTitle}
         </h2>
-        <div className="mt-5 grid gap-6 sm:grid-cols-2 sm:items-start">
-          <MapFigure src={p.zoomMapSrc} alt={p.zoomMapAlt} caption={p.zoomMapCaption} />
-          <MapFigure src={p.mapSrc} alt={p.mapAlt} caption={p.mapCaption} />
-        </div>
+        {p.mapSrc ? (
+          <div className="mt-5 grid gap-6 sm:grid-cols-2 sm:items-start">
+            <MapFigure src={p.zoomMapSrc} alt={p.zoomMapAlt} caption={p.zoomMapCaption} />
+            <MapFigure src={p.mapSrc} alt={p.mapAlt} caption={p.mapCaption} />
+          </div>
+        ) : (
+          <MapFigure
+            src={p.zoomMapSrc}
+            alt={p.zoomMapAlt}
+            caption={p.zoomMapCaption}
+            className="mx-auto mt-5 w-full max-w-md"
+          />
+        )}
       </section>
     </>
   )
@@ -172,18 +184,111 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
           >
             {mw.backToHub}
           </Link>
-          <h1 className="mt-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-3xl">
-            {p.pageTitle}
-          </h1>
+          {p.showPhotographyHero ? (
+            <PhotographyHero titleLines={mw.photographyPage.heroTitleLines} subtitle={mw.photographyPage.heroSubtitle} />
+          ) : (
+            <h1 className="mt-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-3xl">
+              {p.pageTitle}
+            </h1>
+          )}
           {p.pageTitleNote ? (
             <p className="mt-2 text-xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-2xl">{p.pageTitleNote}</p>
+          ) : null}
+          {p.storySections?.map((section, i) => (
+            <div key={section.heading || `story-${i}`} className="mt-6 max-w-2xl">
+              {section.heading ? (
+                <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
+                  {section.heading}
+                </h2>
+              ) : null}
+              <div className={section.heading ? 'mt-2 space-y-3' : 'space-y-3'}>
+                {section.paragraphs.map((paragraph, j) => (
+                  <p key={j} className="leading-relaxed text-neutral-700 dark:text-neutral-300">
+                    {withBoldRuns(paragraph)}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+          {p.photoSpotHeading ? (
+            <h2 className="mt-8 text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
+              {p.photoSpotHeading}
+            </h2>
           ) : null}
           {p.pageIntro ? (
             <p className="mt-4 max-w-2xl leading-relaxed text-neutral-600 dark:text-neutral-400">{p.pageIntro}</p>
           ) : null}
+          {p.carbLoadingCallout ? (
+            <div className="mt-4 max-w-2xl font-bold leading-relaxed text-chi-red">
+              <p>{p.carbLoadingCallout}</p>
+              <Link to={CHICAGO_MARATHON_ROUTES.carbLoading} className="mt-1 inline-block underline underline-offset-2 hover:text-chi-red-hover">
+                {p.carbLoadingLinkLabel}
+              </Link>
+            </div>
+          ) : null}
+          {p.flagGuide ? (
+            <div className="mt-8">
+              <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
+                {p.flagGuide.heading}
+              </h2>
+              <p className="mt-2 max-w-2xl leading-relaxed text-neutral-700 dark:text-neutral-300">{p.flagGuide.intro}</p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {p.flagGuide.items.map((item) => (
+                  <figure
+                    key={item.src}
+                    className="overflow-hidden rounded-2xl border border-neutral-200/80 bg-white/70 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40"
+                  >
+                    <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="aspect-square w-full object-cover" />
+                    <figcaption className="p-4">
+                      <p className="font-semibold text-chi-red">{item.title}</p>
+                      {item.caption ? (
+                        <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">{item.caption}</p>
+                      ) : null}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </section>
 
         {p.rosterLayout ? <RosterLayout p={p} /> : <MapAndListLayout p={p} />}
+
+        {p.showPhotographers ? (
+          <section className="section">
+            <div className="text-center">
+              <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
+                {mw.photographyPage.photographersSectionTitle}
+              </h2>
+              <div className="mt-1 text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                {mw.photographyPage.photographersSectionSubtitle}
+              </div>
+            </div>
+            <PhotographerGrid
+              photographers={mw.photographyPage.photographers}
+              websiteLabel={mw.photographyPage.photographerWebsiteLabel}
+            />
+          </section>
+        ) : null}
+
+        {p.photosAvailability ? (
+          <section className="section pb-2">
+            <div className="rounded-2xl border border-chi-red/25 bg-gradient-to-br from-chi-red/10 via-transparent to-chi-red/5 p-6 text-center shadow-card dark:border-chi-red/35 dark:from-chi-red/15 sm:p-8">
+              <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
+                {p.photosAvailability.heading}
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl leading-relaxed text-neutral-700 dark:text-neutral-300">
+                {withBoldRuns(p.photosAvailability.body)}
+              </p>
+              <Link
+                to={CHICAGO_MARATHON_ROUTES.photos}
+                className="mt-5 inline-flex rounded-full bg-chi-red px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover"
+              >
+                {p.photosAvailability.linkLabel}
+              </Link>
+            </div>
+          </section>
+        ) : null}
       </div>
     </main>
   )
