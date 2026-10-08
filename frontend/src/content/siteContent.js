@@ -608,7 +608,7 @@ export const CONTENT = {
         spots: [
           {
             number: 1,
-            location: 'Mile 0.5 (0.8 km), left',
+            location: 'Mile 0.5 (0.8 km), left lane, left side',
             note: 'Columbus Bridge (William P. Fahey Bridge)\nWave 1 A-E 7:30; Wave 2 F-H 8:00',
             team: [
               { name: '风城网事', assistant: '郭萍' },
@@ -869,6 +869,7 @@ export const CONTENT = {
         photoSpotLinkLabel: '📍 Where to find our photographers on race day →',
         photographerWebsiteLabel: 'Personal Website',
         photographers: [
+          { name: 'Kenny Qin', photoKey: 'kenny-qin' },
           {
             name: 'Yun Oldshue',
             photoKey: 'yun-oldshue',
@@ -879,6 +880,7 @@ export const CONTENT = {
           { name: 'Linda and Bob', photoKey: 'linda-bob' },
           { name: 'Bai Ruan (阮白)', photoKey: 'bai-ruan' },
           { name: 'Yange (言歌)', photoKey: 'yange' },
+          { name: 'Tao (涛)', photoKey: 'tao' },
           { name: 'Sherri (梁向绍)', photoKey: 'sherri' },
         ],
         wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
@@ -1827,7 +1829,7 @@ export const CONTENT = {
         spots: [
           {
             number: 1,
-            location: '0.5 迈，0.8 公里，左侧',
+            location: '0.5 迈，0.8 公里，左赛道，左侧',
             note: 'Columbus Bridge（William P. Fahey Bridge）\nWave 1 A-E 7:30；Wave 2 F-H 8:00',
             team: [
               { name: '风城网事', assistant: '郭萍' },
@@ -1880,7 +1882,7 @@ export const CONTENT = {
             team: [
               { name: '风城网事 - 你很美丽 - 右侧', assistant: '郭萍' },
               { name: '燕松 左侧', assistant: 'Helen' },
-              { name: '芝城帽姐', assistant: 'Jandy' },
+              { name: '芝城帽姐 - 你很美丽 - 左侧', assistant: 'Jandy' },
             ],
           },
           {
@@ -2074,6 +2076,7 @@ export const CONTENT = {
         photoSpotLinkLabel: '📍 比赛日摄影师在哪里？查看拍摄点 →',
         photographerWebsiteLabel: '个人网站',
         photographers: [
+          { name: '风城网事', photoKey: 'kenny-qin' },
           {
             name: '章运（运姐）',
             photoKey: 'yun-oldshue',
@@ -2084,6 +2087,7 @@ export const CONTENT = {
           { name: 'Linda and Bob', photoKey: 'linda-bob' },
           { name: '阮白', photoKey: 'bai-ruan' },
           { name: '言歌', photoKey: 'yange' },
+          { name: '涛', photoKey: 'tao' },
           { name: 'Sherri(梁向绍）', photoKey: 'sherri' },
         ],
         wechatGroupTitle: '📸 带上您的相机，加入我们！',

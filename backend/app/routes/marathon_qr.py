@@ -34,12 +34,14 @@ QR_SMUGMUG_PAGE_URLS = {
 }
 
 PHOTOGRAPHER_PHOTO_SMUGMUG_PAGE_URLS = {
+    "kenny-qin": "https://chirunners.smugmug.com/Website/Photographer/i-vLRNZQC/A",
     "yun-oldshue": "https://chirunners.smugmug.com/Website/Photographer/i-xjTnrCr/A",
     "yansong-lin": "https://chirunners.smugmug.com/Website/Photographer/i-LwwD52n/A",
     "tammy-yang": "https://chirunners.smugmug.com/Website/Photographer/i-Xf7M6Q6/A",
     "linda-bob": "https://chirunners.smugmug.com/Website/Photographer/i-r3ZsPrL/A",
     "bai-ruan": "https://chirunners.smugmug.com/Website/Photographer/i-snFbLs5/A",
     "yange": "https://chirunners.smugmug.com/Website/Photographer/i-n44JWrv/A",
+    "tao": "https://chirunners.smugmug.com/Website/Photographer/i-WFkTkXL/A",
     "sherri": "https://chirunners.smugmug.com/Website/Photographer/i-Dtz6b6r/A",
 }
 

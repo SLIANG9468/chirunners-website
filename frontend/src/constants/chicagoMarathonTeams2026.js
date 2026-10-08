@@ -185,7 +185,7 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     key: 'windRunner',
     flag: '🇺🇸',
     photoUrl:
-      'https://photos.smugmug.com/Website/Teams/2025/i-tmsCmqb/0/LKL9ZMfnPVJ6BC4KSqMDhwgkkkFgcVtphs4X96p7k/XL/team11%E8%BF%BD%E9%A3%8E-XL.jpg',
+      'https://photos.smugmug.com/Website/Teams/2026/i-GHGPgHF/0/KbnfBqZC56HQZ3GsHPnNtDzQVXLZW2pnNwRcrLWL3/XL/%E8%BF%BD%E9%A3%8E-XL.png',
     video: {
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2025/i-8HJqLxd/0/Mvktt9CtbJVxFC7zgsxqbKtTbGJWffcjVZSm4MFLP/SMIL/8HJqLxd.smil/master.m3u8',
