@@ -619,7 +619,7 @@ export const CONTENT = {
             location: 'Mile 1.4 (2.3 km), right',
             note: 'Dearborn Bridge',
             team: [
-              { name: 'Linda', assistant: 'Sharon' },
+              { name: 'Bob', assistant: '新哲' },
               { name: 'Tao' },
             ],
           },
@@ -628,7 +628,7 @@ export const CONTENT = {
             location: 'Mile 1.6 (2.6 km), left',
             note: 'Dearborn & Couch',
             team: [
-              { name: 'Bob', assistant: '新哲' },
+              { name: 'Linda', assistant: 'Sharon' },
             ],
           },
           {
@@ -644,7 +644,7 @@ export const CONTENT = {
             location: 'Mile 5.5 (8.9 km), right',
             note: 'Lincoln Park Conservatory entrance',
             team: [
-              { name: 'Yun & Bai Ruan', assistant: 'Cade' },
+              { name: 'Yun & Bai Ruan', assistant: 'Jandy' },
             ],
           },
           {
@@ -663,7 +663,7 @@ export const CONTENT = {
             team: [
               { name: '风城网事', assistant: '郭萍' },
               { name: 'Yansong', assistant: 'Helen' },
-              { name: 'Tammy', assistant: 'Jandy' },
+              { name: 'Tammy', assistant: 'Cade' },
             ],
           },
           {
@@ -672,6 +672,7 @@ export const CONTENT = {
             note: 'Aid station 17 (Michigan Ave & 26th St)\nMainly photographing volunteers',
             team: [
               { name: '沈中' },
+              { name: 'Ruishan Wu (伍瑞珊)' },
             ],
           },
           {
@@ -884,6 +885,7 @@ export const CONTENT = {
           { name: 'Yange (言歌)', photoKey: 'yange' },
           { name: 'Tao (涛)', photoKey: 'tao' },
           { name: 'Sherri (梁向绍)', photoKey: 'sherri' },
+          { name: 'Ruishan Wu (伍瑞珊)', photoKey: 'ruishan-wu' },
         ],
         wechatGroupTitle: 'Questions? Join our Chicago Marathon photography team WeChat group',
         wechatGroupBody:
@@ -1842,7 +1844,7 @@ export const CONTENT = {
             location: '1.4 迈，2.3 公里，右侧',
             note: 'Dearborn Bridge',
             team: [
-              { name: 'Linda', assistant: 'Sharon' },
+              { name: 'Bob', assistant: '新哲' },
               { name: '涛' },
             ],
           },
@@ -1851,7 +1853,7 @@ export const CONTENT = {
             location: '1.6 迈，2.6 公里，左侧',
             note: 'Dearborn & Couch',
             team: [
-              { name: 'Bob', assistant: '新哲' },
+              { name: 'Linda', assistant: 'Sharon' },
             ],
           },
           {
@@ -1867,7 +1869,7 @@ export const CONTENT = {
             location: '5.5 迈，8.9 公里，右侧',
             note: 'Lincoln Park Conservatory 门口',
             team: [
-              { name: '章运、阮白', assistant: 'Cade' },
+              { name: '章运、阮白', assistant: 'Jandy' },
             ],
           },
           {
@@ -1886,7 +1888,7 @@ export const CONTENT = {
             team: [
               { name: '风城网事 - 你很美丽 - 右侧', assistant: '郭萍' },
               { name: '燕松 左侧', assistant: 'Helen' },
-              { name: '芝城帽姐 - 你很美丽 - 左侧', assistant: 'Jandy' },
+              { name: '芝城帽姐 - 你很美丽 - 左侧', assistant: 'Cade' },
             ],
           },
           {
@@ -1895,6 +1897,7 @@ export const CONTENT = {
             note: '17 水站（Michigan Ave & 26th St）\n为义工照相为主',
             team: [
               { name: '沈中' },
+              { name: '伍瑞珊' },
             ],
           },
           {
@@ -2093,6 +2096,7 @@ export const CONTENT = {
           { name: '言歌', photoKey: 'yange' },
           { name: '涛', photoKey: 'tao' },
           { name: 'Sherri(梁向绍）', photoKey: 'sherri' },
+          { name: '伍瑞珊', photoKey: 'ruishan-wu' },
         ],
         wechatGroupTitle: '📸 带上您的相机，加入我们！',
         wechatGroupBody: '扫码加入摄影队微信群，和摄影师伙伴们一起交流、分享，了解拍摄安排、照片上传及相关信息。',

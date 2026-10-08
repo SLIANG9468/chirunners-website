@@ -43,6 +43,7 @@ PHOTOGRAPHER_PHOTO_SMUGMUG_PAGE_URLS = {
     "yange": "https://chirunners.smugmug.com/Website/Photographer/i-n44JWrv/A",
     "tao": "https://chirunners.smugmug.com/Website/Photographer/i-WFkTkXL/A",
     "sherri": "https://chirunners.smugmug.com/Website/Photographer/i-Dtz6b6r/A",
+    "ruishan-wu": "https://chirunners.smugmug.com/Website/Photographer/i-GHnqVDs/A",
 }
 
 CARB_LOADING_PHOTO_SMUGMUG_PAGE_URLS = {
