@@ -609,6 +609,24 @@ export const CONTENT = {
           },
         ],
         photoSpotHeading: '📍 Where are our photographers on race day?',
+        downloads: {
+          heading: '📥 Download the runner’s photo spot guide',
+          intro:
+            'Every spot on one easy page—distance, which side of the road, landmark, and photographer—plus the flag photos and spot map. Save it to your phone or print it out so you know where to look, and don’t forget to wave and smile as you pass!',
+          files: [
+            {
+              label: 'Miles version',
+              href: '/chicago-marathon/downloads/2026-photo-spots-miles.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
+            },
+            {
+              label: 'Kilometers version',
+              href: '/chicago-marathon/downloads/2026-photo-spots-km.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
+            },
+          ],
+          note: 'PDF files you can open or print on any phone or computer. Both versions have the same info—just pick the distance unit you prefer. (The guide is in Chinese.)',
+        },
         showPhotographers: true,
         photosAvailability: {
           heading: '🖼️ When will the photos be ready?',
@@ -681,7 +699,7 @@ export const CONTENT = {
           },
           {
             number: 5,
-            location: 'Mile 5.5 (8.9 km), right',
+            location: 'Mile 5.5 (8.9 km), left',
             note: 'Lincoln Park Conservatory entrance',
             team: [
               { name: 'Bai Ruan', assistant: 'Jandy' },
@@ -764,8 +782,10 @@ export const CONTENT = {
         benefitsSectionTitle: 'Race Ready · Together',
         benefits: [
           'Connect with Chinese runners from around the world—swap stories and make new friends.',
-          'Meet official pacers and photographers face-to-face.',
-          'Carb-rich dishes to fuel up before race day and support your endurance.',
+          'Meet official pacers face-to-face.',
+          'Meet our photography team and spot the big red CHI Running Club flag in person—so you’ll know exactly where to look for the cameras on race day.',
+          'Multiple rounds of lucky draws throughout the evening—great prizes up for grabs!',
+          'A carb-rich buffet to fuel up before race day and support your endurance.',
           'Celebrate together before the big day and capture memories in photos.',
         ],
         pacersSectionTitle: 'Meet Our 2026 Official Pacers',
@@ -822,6 +842,7 @@ export const CONTENT = {
             logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
           },
           { name: 'David Chen' },
+          { name: 'QINKUNG' },
         ],
         wechatGroupTitle: 'Questions? Join our carb-loading dinner WeChat group',
         wechatGroupBody:
@@ -1889,6 +1910,24 @@ export const CONTENT = {
           },
         ],
         photoSpotHeading: '📍 比赛日摄影师在哪里？',
+        downloads: {
+          heading: '📥 下载跑者版机位表',
+          intro:
+            '把所有机位、距离、跑者哪一侧、地点和摄影师整理成一份简明的跑者版，附旗帜照片和机位地图。下载到手机或打印出来，比赛时心里有数，经过机位时别忘了挥手微笑！',
+          files: [
+            {
+              label: '英里版（Miles）下载',
+              href: '/chicago-marathon/downloads/2026-photo-spots-miles.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
+            },
+            {
+              label: '公里版（km）下载',
+              href: '/chicago-marathon/downloads/2026-photo-spots-km.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
+            },
+          ],
+          note: 'PDF 文件，手机和电脑都可以直接打开或打印。两个版本内容相同，只是距离单位不同，选择你习惯的即可。',
+        },
         showPhotographers: true,
         photosAvailability: {
           heading: '🖼️ 什么时候可以看到照片？',
@@ -1961,7 +2000,7 @@ export const CONTENT = {
           },
           {
             number: 5,
-            location: '5.5 迈，8.9 公里，右侧',
+            location: '5.5 迈，8.9 公里，左侧',
             note: 'Lincoln Park Conservatory 门口',
             team: [
               { name: '阮白', assistant: 'Jandy' },
@@ -2044,8 +2083,10 @@ export const CONTENT = {
         benefitsSectionTitle: '赛前相聚 · 能量集结',
         benefits: [
           '全球华人跑者相聚，交流分享，结交友谊',
-          '和官方 Pacer、摄影师们面对面',
-          '高碳水美食加能量，赛前补给，提升耐力',
+          '和官方 Pacer 面对面',
+          '与摄影师团队见面，现场认准驰跑团红色大旗，比赛日一眼就能找到镜头',
+          '多轮幸运抽奖，惊喜好礼等你来拿',
+          '高碳水美食自助餐，赛前补给，提升耐力',
           '挑战前欢聚一堂，摄影留念，记录瞬间',
         ],
         pacersSectionTitle: '2026官方配速员见面会',
@@ -2098,6 +2139,7 @@ export const CONTENT = {
             logoSrc: '/marathon-welcome/sponsors/lerner-group.png',
           },
           { name: '陈德巧' },
+          { name: '轻功' },
         ],
         wechatGroupTitle: '🍝 加入加碳会，和跑友们一起吃、一起聊、一起期待芝马！',
         wechatGroupBody: '扫码加入加碳会微信群，与跑友交流，了解活动安排及最新消息。',

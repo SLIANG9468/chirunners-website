@@ -254,6 +254,32 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
 
         {p.rosterLayout ? <RosterLayout p={p} /> : <MapAndListLayout p={p} />}
 
+        {p.downloads ? (
+          <section className="section !pt-0">
+            <div className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40 sm:p-6">
+              <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
+                {p.downloads.heading}
+              </h2>
+              <p className="mt-2 leading-relaxed text-neutral-700 dark:text-neutral-300">{p.downloads.intro}</p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                {p.downloads.files.map((file) => (
+                  <a
+                    key={file.href}
+                    href={file.href}
+                    download={file.fileName}
+                    className="inline-flex items-center justify-center rounded-full bg-chi-red px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover"
+                  >
+                    {file.label}
+                  </a>
+                ))}
+              </div>
+              {p.downloads.note ? (
+                <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400">{p.downloads.note}</p>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
+
         {p.showPhotographers ? (
           <section className="section">
             <div className="text-center">
