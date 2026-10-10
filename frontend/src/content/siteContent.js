@@ -594,9 +594,6 @@ export const CONTENT = {
         },
         pageIntro:
           'Our team photographers will be shooting around the areas below; the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt, race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” means the runner’s left or right.)',
-        carbLoadingCallout:
-          'At the carb-loading dinner, our photographers will bring the team flag to meet and chat with everyone, and CHI Running Club team shirts will be on sale; official pacers will be there to meet you too.',
-        carbLoadingLinkLabel: '👉 Click here to join the carb-loading dinner!',
         flagGuide: {
           heading: '🚩 Spot the red flag, find our photographers!',
           intro:
@@ -1044,6 +1041,12 @@ export const CONTENT = {
           },
           bostonBen: {
             name: 'Boston · BEN (犇)',
+          },
+          stLouis: {
+            name: 'St. Louis · St. Louis Chinese Running Club (圣路易斯华人跑步俱乐部)',
+          },
+          dart: {
+            name: 'Washington, D.C. · DART (北维乐跑)',
           },
           ninetyOneCamp: {
             name: 'Toronto · 91 Running Camp (91Camp)',
@@ -1861,9 +1864,6 @@ export const CONTENT = {
         },
         pageIntro:
           '我们的团队摄影师会在以下区域为大家拍照，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服，比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"是指跑者的左侧或右侧。）',
-        carbLoadingCallout:
-          '加碳会当晚，摄影师将带旗子与大家见面交流，并有驰跑团队服出售；官方 Pacers 也将到场与大家见面。',
-        carbLoadingLinkLabel: '👉 请点击加碳会链接加入！',
         flagGuide: {
           heading: '🚩 看到红旗，就是我们的摄影师！',
           intro:
@@ -2295,6 +2295,12 @@ export const CONTENT = {
           },
           bostonBen: {
             name: '波士顿 犇（BEN）',
+          },
+          stLouis: {
+            name: '圣路易斯 圣路易斯华人跑步俱乐部（St. Louis Chinese Running Club）',
+          },
+          dart: {
+            name: '华盛顿 北维乐跑（DART）',
           },
           ninetyOneCamp: {
             name: '多伦多 91Camp（91 Running Camp）',

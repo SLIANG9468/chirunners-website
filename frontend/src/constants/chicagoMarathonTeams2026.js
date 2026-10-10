@@ -62,6 +62,28 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     linkUrl: 'https://www.windrunnergroup.org/',
   },
   {
+    // St. Louis Chinese Running Club — pinned fifth by request (after WindRunner), not alphabetical
+    key: 'stLouis',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-NgVHLjL/0/KzC2tGxbHS44wzVdZQpjJKJGP2GTxtcbvXQsbNk7k/XL/St%20Louis%20Chinese%20Running%20Club-XL.jpg',
+    video: {
+      type: 'hls',
+      src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-MH2mcXK/0/K4j29M2jhsBfbNCvZScfd7rMrgNNczXjBZk9rgMX5/SMIL/MH2mcXK.smil/master.m3u8',
+    },
+  },
+  {
+    // DART (北维乐跑) — pinned sixth by request (after St. Louis), not alphabetical
+    key: 'dart',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-hCkBnxH/0/NDLMMsmvqsDfLqncBHMSHvKZJS3cRQpGbb6fqvfB7/XL/Dart-XL.jpg',
+    video: {
+      type: 'hls',
+      src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-qzWw4P3/0/Lnr6tkHXsVmDWw9DqNZDCCSCjzdPXpfkS4QkD5Dwh/SMIL/qzWw4P3.smil/master.m3u8',
+    },
+  },
+  {
     // 91 Running Camp
     key: 'ninetyOneCamp',
     flag: '🇨🇦',
