@@ -522,7 +522,7 @@ export const CONTENT = {
         shuttleBadge: 'Race weekend',
         shuttleTitle: 'Race-morning express (club arrangement)',
         shuttleBullets: [
-          'Typical hotel departure about 5:30 AM, arriving Grant Park by about 6:00 AM; return pickup about 3:30 PM (adjusted for road closures).',
+          'Typical hotel departure about 5:30 AM, arriving about 6:00 AM at the drop-off on the southwest corner of Ida B. Wells Dr & State St; return pickup about 3:30 PM (adjusted for road closures).',
           'About $40 per person—confirm details, pickup location, and booking with the hotel front desk.',
         ],
         timingHighlightTitle: 'Why 5:30 AM? We did the math.',
@@ -535,6 +535,7 @@ export const CONTENT = {
         mapImageCaption:
           'Illustrative drive from the hotel to the downtown start around 5:30 AM Sunday—actual time varies with traffic and closures.',
         dropoffSectionTitle: 'Drop-off spot & check-in gate',
+        dropoffLocation: 'Drop-off: southwest corner of Ida B. Wells Dr & State St',
         dropoffSectionBody:
           'The official 2026 street closures are out, so we’ve marked our drop-off spot and the runner check-in gate on the map below. Closures can still change, so please verify against the official schedule before race day.',
         dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',
@@ -1788,11 +1789,11 @@ export const CONTENT = {
         docTitle: '直达大巴 · 驰跑团',
         pageTitle: '直达大巴（机场酒店到比赛起点往返）',
         pageIntro:
-          '比赛日清晨节奏很紧：驰跑团安排的直通车，赛前从机场Hyatt Place酒店直达 Grant Park，赛后再送回酒店，不用自己操心交通。比赛当天，驰跑团成员Sherri（梁向绍）和Helen将全程随车，协助现场协调。',
+          '比赛日清晨节奏很紧：驰跑团安排的直通车，赛前从机场Hyatt Place酒店直达 Grant Park，赛后再送回酒店，不用自己操心交通。比赛当天，驰跑团成员Sherri（梁向绍）将全程随车，协助现场协调。',
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$40）',
         shuttleBullets: [
-          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达比赛起点；赛后返程下午 3:30。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
+          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达，下车地点为Ida B. Wells Dr 与 State St 路口西南角；赛后返程下午 3:30。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
           '费用：$40/人。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
@@ -1805,6 +1806,7 @@ export const CONTENT = {
         mapImageCaption:
           '比赛日清晨约 5:30 从酒店出发驾车的路线示意（约 19.7 mi / 约 31.7 km，路况好时约 22–30 分钟级）。截图日期仅为示例，请以比赛当日封路与实时导航为准。',
         dropoffSectionTitle: '下车点与签到入口',
+        dropoffLocation: '下车地点：Ida B. Wells Dr 与 State St 路口西南角',
         dropoffSectionBody:
           '2026年官方封路信息已公布，我们已在下图标注了下车地点和跑者签到入口。封路安排仍可能调整，请在比赛前务必核实官方最新信息。',
         dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',

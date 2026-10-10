@@ -100,6 +100,9 @@ export default function ChicagoMarathonBusPage({ copy }) {
                 <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">
                   {b.dropoffSectionTitle}
                 </h3>
+                {b.dropoffLocation ? (
+                  <p className="mt-2 text-base font-bold text-chi-red sm:text-lg">📍 {b.dropoffLocation}</p>
+                ) : null}
                 <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
                   {b.dropoffSectionBody}
                 </p>
