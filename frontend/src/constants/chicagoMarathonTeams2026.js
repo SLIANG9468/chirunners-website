@@ -22,8 +22,11 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2025/i-JPwDgbq/0/LqKxBQ2tmBwGB4x33kpCZfzsp7dxcZN3xrJrrvzkv/SMIL/JPwDgbq.smil/master.m3u8',
     },
-    emails: ['sherri@chirunners.org'],
-    wechat: 'sherriliangzhou',
+    links: [
+      'https://www.rednote.com/user/profile/608372700000000001002df1',
+      'https://mp.weixin.qq.com/s/ofM_GvtjPsn8MXm6s8x7qA',
+      'https://www.instagram.com/chi_runners/',
+    ],
   },
   {
     // Boston BEN — pinned second by request, not alphabetical
@@ -83,6 +86,38 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-qzWw4P3/0/Lnr6tkHXsVmDWw9DqNZDCCSCjzdPXpfkS4QkD5Dwh/SMIL/qzWw4P3.smil/master.m3u8',
     },
     emails: ['dart-run@googlegroups.com'],
+  },
+  {
+    // MARC (蒙郡跑吧) — pinned seventh by request (after DART); uses the same group photo as DART
+    key: 'marc',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-hCkBnxH/0/NDLMMsmvqsDfLqncBHMSHvKZJS3cRQpGbb6fqvfB7/XL/Dart-XL.jpg',
+    // Uploaded to YouTube 2026-09-04
+    video: { type: 'youtube', id: 'RCQK98ufBX8', year: '2026' },
+    links: [
+      'https://www.facebook.com/share/g/199Tjm4pb5/',
+      'https://mp.weixin.qq.com/s/rsFndievgkI9Uto_qxIfpg',
+    ],
+  },
+  {
+    // 知足常跑 — pinned eighth by request (after MARC); uses the same group photo as DART
+    key: 'zhizuChangpao',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-hCkBnxH/0/NDLMMsmvqsDfLqncBHMSHvKZJS3cRQpGbb6fqvfB7/XL/Dart-XL.jpg',
+    video: {
+      type: 'hls',
+      src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-m2CSD5X/0/KHvxqD9VTzHQPvzX7TssB3LWsxjmmjnP3xjGWXPzL/SMIL/m2CSD5X.smil/master.m3u8',
+    },
+    emails: ['zhizuchangpao@gmail.com'],
+  },
+  {
+    // 密西根飞越跑团 — pinned ninth by request (after PAL); no video yet
+    key: 'nextLevel',
+    flag: '🇺🇸',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2026/i-FXmTjWQ/0/KJTWX7P4Cxn4xsrx8xHDZLrVsd4H2q2XQ7GWZcgVv/XL/%E5%AF%86%E8%A5%BF%E6%A0%B9%E9%A3%9E%E8%B6%8A%E8%B7%91%E5%9B%A2-XL.jpg',
   },
   {
     // 91 Running Camp

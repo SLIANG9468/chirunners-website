@@ -8,21 +8,25 @@ function assetYearFromUrl(url) {
 
 export default function TeamCard({ team, labels, copy, currentYear }) {
   const hasContactRow = Boolean(
-    labels.contactName || team.emails?.length || team.wechat || labels.locationLines?.length || team.linkUrl,
+    labels.contactName ||
+      team.emails?.length ||
+      team.wechat ||
+      labels.locationLines?.length ||
+      team.linkUrl ||
+      team.links?.length ||
+      labels.contactLines?.length,
   )
 
   const photoYear = assetYearFromUrl(team.photoUrl)
-  const videoYear = assetYearFromUrl(team.video?.src)
+  // `video.year` overrides URL detection — needed for YouTube, whose id carries no year.
+  const videoYear = team.video?.year || assetYearFromUrl(team.video?.src)
   const isPhotoLegacy = Boolean(currentYear && photoYear && photoYear !== currentYear)
-  // A YouTube video id carries no year, so there's no way to auto-detect its vintage —
-  // assume not yet refreshed for `currentYear` until a club says otherwise.
+  // Without a year, assume a YouTube video hasn't been refreshed for `currentYear` yet.
   const isVideoLegacy = Boolean(
-    currentYear && team.video && (team.video.type === 'youtube' || (videoYear && videoYear !== currentYear)),
+    currentYear && team.video && (videoYear ? videoYear !== currentYear : team.video.type === 'youtube'),
   )
   const isBothLegacy = isPhotoLegacy && isVideoLegacy
-  const isBothCurrent = Boolean(
-    currentYear && photoYear === currentYear && team.video?.type !== 'youtube' && videoYear === currentYear,
-  )
+  const isBothCurrent = Boolean(currentYear && photoYear === currentYear && videoYear === currentYear)
 
   return (
     <article className="overflow-hidden rounded-2xl border border-neutral-200/90 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900/60">
@@ -46,14 +50,16 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
         </p>
       ) : null}
 
-      <div className="p-4">
-        {!isBothLegacy && isVideoLegacy && copy.legacyVideoNote ? (
-          <p className="mb-2 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-            {copy.legacyVideoNote}
-          </p>
-        ) : null}
-        <TeamVideoPlayer video={team.video} title={labels.name} />
-      </div>
+      {team.video ? (
+        <div className="p-4">
+          {!isBothLegacy && isVideoLegacy && copy.legacyVideoNote ? (
+            <p className="mb-2 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+              {copy.legacyVideoNote}
+            </p>
+          ) : null}
+          <TeamVideoPlayer video={team.video} title={labels.name} />
+        </div>
+      ) : null}
 
       {hasContactRow ? (
         <div className="border-t border-neutral-200 p-5 text-sm leading-relaxed text-neutral-700 dark:border-neutral-700 dark:text-neutral-300">
@@ -75,8 +81,25 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
                 {copy.wechatLabel}: 🟢💬 {team.wechat}
               </li>
             ) : null}
-            {(labels.locationLines || []).map((line) => (
-              <li key={line}>📍 {line}</li>
+            {(labels.locationLines || []).map((line) =>
+              typeof line === 'string' ? (
+                <li key={line}>📍 {line}</li>
+              ) : (
+                <li key={line.text}>
+                  📍 {line.text}{' '}
+                  <a
+                    href={line.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whitespace-nowrap text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                  >
+                    {copy.mapLinkLabel || 'Map'}
+                  </a>
+                </li>
+              ),
+            )}
+            {(labels.contactLines || []).map((line) => (
+              <li key={line}>📱 {line}</li>
             ))}
             {team.linkUrl ? (
               <li>
@@ -91,6 +114,19 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
                 </a>
               </li>
             ) : null}
+            {(team.links || []).map((url, i) => (
+              <li key={url}>
+                👉 {copy.contactViaLabel}{' '}
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-chi-red underline decoration-1 underline-offset-2 hover:text-chi-red-hover"
+                >
+                  {labels.linkTexts?.[i] || url}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       ) : null}

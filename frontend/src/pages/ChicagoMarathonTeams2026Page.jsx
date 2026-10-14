@@ -59,6 +59,7 @@ export default function ChicagoMarathonTeams2026Page({ copy }) {
             </div>
             <div className="mt-5 rounded-xl border-l-4 border-chi-red bg-chi-red/5 p-4 text-sm leading-relaxed text-neutral-800 dark:bg-chi-red/10 dark:text-neutral-100 sm:text-base">
               <p>{p.updateCallout}</p>
+              {p.updateContactEmail ? (
               <p className="mt-3 font-medium">
                 {p.updateContactLabel}{' '}
                 <a
@@ -69,6 +70,7 @@ export default function ChicagoMarathonTeams2026Page({ copy }) {
                 </a>
                 {p.updateContactWechatSuffix}
               </p>
+              ) : null}
             </div>
             {p.viewPreviousYearLabel ? (
               <Link

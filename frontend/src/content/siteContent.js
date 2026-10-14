@@ -1068,10 +1068,7 @@ export const CONTENT = {
           'Through this page, we hope to connect Chinese running clubs and runners from around the world, so that wherever your travels take you, you can find a local club here, join their group runs, and experience the local culture. 🌍',
         ],
         updateCallout:
-          '📣 This page currently showcases the clubs that ran the 2025 Chicago Marathon. We warmly invite every club and organization to update it for 2026 — especially with photos/collages of your runners at the 2026 race! 📸 As for club intro videos, feel free to keep your 2025 video, and we’d also love to feature a brand-new one.',
-        updateContactLabel: 'To update your club’s info, contact:',
-        updateContactEmail: 'sherri@chirunners.org',
-        updateContactWechatSuffix: ' or WeChat: Sherri (梁向绍)',
+          '📣 In each club’s card, the photo on top is a group shot or photo collage of the club’s runners at the 2026 Chicago Marathon, and the video below is the club’s introduction video.',
         viewPreviousYearLabel: 'See the 2025 participating clubs →',
         legacyPhotoNote: '📸 This club hasn’t updated their photo for 2026 yet — shown above is their 2025 photo.',
         legacyVideoNote: '🎬 This club’s photo is the 2026 version; their video is the 2025 version.',
@@ -1082,11 +1079,25 @@ export const CONTENT = {
         emailLabel: 'Email',
         wechatLabel: 'WeChat',
         contactViaLabel: 'Contact via',
+        mapLinkLabel: 'Map',
         teams: {
           chirunners: {
             name: 'Chicago · CHI Running Club (ChiRunners)',
-            contactName: 'Sherri Liang-Zhou',
-            locationLines: ['Lincolnshire, IL — Sat & Sun 6:45 AM', 'Busse Woods, IL — Sat & Sun 7:30 AM'],
+            locationLines: [
+              {
+                text: 'North suburbs home run · Mettawa, IL — Sat & Sun',
+                mapUrl: 'https://www.google.com/maps?q=42.2191207,-87.9255718',
+              },
+              {
+                text: 'Brazil crew · Elk Grove Village, IL — Sat & Sun',
+                mapUrl: 'https://maps.app.goo.gl/qvDs6orBRBSvDthG7',
+              },
+              {
+                text: 'Woods run crew · Morton Grove, IL — Sat & Sun',
+                mapUrl: 'https://maps.app.goo.gl/9fM9FMiFwMdqzae4A',
+              },
+            ],
+            linkTexts: ['驰跑团 on RedNote (ID: Chirunners)', '驰跑团 WeChat official account', 'Instagram @chi_runners'],
           },
           bostonBen: {
             name: 'Boston · BEN (犇)',
@@ -1100,6 +1111,24 @@ export const CONTENT = {
               'W&OD group run — Sat 7:00 AM',
               'Start 1: Vienna Train Station, 231 Dominion Rd NE, Vienna, VA 22180',
               'Start 2: YMCA Reston parking lot, 12196 Sunset Hills Rd, Reston, VA 20190',
+            ],
+          },
+          marc: {
+            name: 'Maryland · MARC (蒙郡跑吧)',
+            locationLines: [
+              'Tue & Thu 5:30–7:30 PM — Wootton High School, Rockville, MD',
+              'Sat 7:00–10:00 AM — C&O Canal Lock 21, Potomac, MD',
+            ],
+            linkTexts: ['MARC Facebook group', 'MARC WeChat account'],
+          },
+          nextLevel: {
+            name: 'Michigan · Michigan AA Next Level Running Club (密西根飞越跑团)',
+          },
+          zhizuChangpao: {
+            name: 'Maryland · PAL (知足常跑)',
+            locationLines: [
+              'Sat 7:00 AM — Columbia Swim Center, 10401 Cross Fox Ln, Columbia, MD 21044',
+              'Sun — start any time; 9:00 AM meet-up at the fountain next to Whole Foods, 10269 Little Patuxent Pkwy, Columbia, MD 21044',
             ],
           },
           ninetyOneCamp: {
@@ -2374,10 +2403,7 @@ export const CONTENT = {
           '通过这个页面，我们希望把全世界的华人跑团/跑者联系在一起：当大家旅行的时候，可以在这里找到当地跑团，参加群跑，了解当地的风土人情🌍。',
         ],
         updateCallout:
-          '📣 本页目前展示的是 2025年芝加哥马拉松 参赛团队。我们诚邀各跑团/组织更新为 2026年版本，特别欢迎上传参加2026年芝马的跑者合影/照片拼贴！关于跑团视频介绍，可沿用2025年的跑团介绍视频，也欢迎大家提交新版视频。',
-        updateContactLabel: '👉 更新信息请联系：',
-        updateContactEmail: 'sherri@chirunners.org',
-        updateContactWechatSuffix: ' or 微信Sherri(梁向绍）',
+          '📣 每个跑团卡片上方是该跑团 2026 年芝加哥马拉松跑者的合影或照片拼贴，下方是跑团介绍视频。',
         viewPreviousYearLabel: '查看2025参赛团队 →',
         legacyPhotoNote: '📸 该跑团尚未更新2026年的照片——以上展示的是2025年的照片。',
         legacyVideoNote: '🎬 该跑团照片为2026版本，视频为2025年版本。',
@@ -2388,11 +2414,25 @@ export const CONTENT = {
         emailLabel: 'Email',
         wechatLabel: 'WeChat',
         contactViaLabel: '通过',
+        mapLinkLabel: '导航',
         teams: {
           chirunners: {
             name: '芝加哥 驰跑团（ChiRunners ｜ CHI Running Club）',
-            contactName: 'Sherri Liang-Zhou',
-            locationLines: ['Lincolnshire, IL — 每周六日 6:45AM', 'Busse woods, IL — 每周六日 7:30AM'],
+            locationLines: [
+              {
+                text: '北郊主场 · Mettawa, IL — 每周六日',
+                mapUrl: 'https://www.google.com/maps?q=42.2191207,-87.9255718',
+              },
+              {
+                text: '巴西小分队 · Elk Grove Village, IL — 每周六日',
+                mapUrl: 'https://maps.app.goo.gl/qvDs6orBRBSvDthG7',
+              },
+              {
+                text: '一起树林跑步吧小分队 · Morton Grove, IL — 每周六日',
+                mapUrl: 'https://maps.app.goo.gl/9fM9FMiFwMdqzae4A',
+              },
+            ],
+            linkTexts: ['驰跑团 小红书（ID：Chirunners）', '驰跑团 微信公众号', 'Instagram @chi_runners'],
           },
           bostonBen: {
             name: '波士顿 犇（BEN）',
@@ -2406,6 +2446,24 @@ export const CONTENT = {
               'W&OD 群跑 — 周六早 7:00AM',
               '起点1：Vienna Train Station，231 Dominion Rd NE, Vienna, VA 22180',
               '起点2：YMCA Reston 停车场，12196 Sunset Hills Rd, Reston, VA 20190',
+            ],
+          },
+          marc: {
+            name: '马里兰 蒙郡跑吧（MARC）',
+            locationLines: [
+              '周二、周四 5:30PM–7:30PM — Wootton High School, Rockville, MD',
+              '周六 7:00AM–10:00AM — C&O Canal Lock 21, Potomac, MD',
+            ],
+            linkTexts: ['MARC Facebook', 'MARC 微信公众号'],
+          },
+          nextLevel: {
+            name: '密西根 密西根飞越跑团（Michigan AA Next Level Running Club）',
+          },
+          zhizuChangpao: {
+            name: '马里兰 知足常跑（PAL）',
+            locationLines: [
+              '周六早上 7:00 — Columbia Swim Center，10401 Cross Fox Ln, Columbia, MD 21044',
+              '周日早上任何时间开始，9:00 集合 — Whole Foods 旁边喷泉，10269 Little Patuxent Pkwy, Columbia, MD 21044',
             ],
           },
           ninetyOneCamp: {
