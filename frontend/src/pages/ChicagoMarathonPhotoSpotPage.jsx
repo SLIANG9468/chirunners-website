@@ -159,11 +159,18 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
                 </h2>
               ) : null}
               <div className={section.heading ? 'mt-2 space-y-3' : 'space-y-3'}>
-                {section.paragraphs.map((paragraph, j) => (
+                {section.paragraphs?.map((paragraph, j) => (
                   <p key={j} className="leading-relaxed text-neutral-700 dark:text-neutral-300">
                     {withBoldRuns(paragraph)}
                   </p>
                 ))}
+                {section.bullets ? (
+                  <ul className="list-disc space-y-2 pl-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+                    {section.bullets.map((item, j) => (
+                      <li key={j}>{withBoldRuns(item)}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
           ))}
@@ -244,9 +251,12 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
                 href={p.photosButtonUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full bg-chi-red px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover"
+                className="inline-flex flex-col items-center rounded-3xl bg-chi-red px-7 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover sm:text-lg"
               >
-                {p.photosButtonLabel}
+                <span>{p.photosButtonLabel}</span>
+                {p.photosButtonSubLabel ? (
+                  <span className="mt-1 text-sm font-normal text-white/90">{p.photosButtonSubLabel}</span>
+                ) : null}
               </a>
             ) : (
               <Link

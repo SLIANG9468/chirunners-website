@@ -717,21 +717,27 @@ export const CONTENT = {
         ],
       },
       photographerTmpPage: {
-        docTitle: 'Photo Spot · CHI Running Club',
-        pageTitle: '📸 Where to Find Our Photographers | Review Version for Photographers & Assistants',
-        showPhotographyHero: true,
+        docTitle: 'Chicago Marathon Photos · CHI Running Club',
+        pageTitle: 'Congratulations on finishing the 2026 Chicago Marathon!',
         storySections: [
           {
             heading: null,
             paragraphs: [
-              'Since 2015, Chicago’s running community has organized a photography team for the Chicago Marathon every year, capturing along the course the fleeting moments worth a lifetime of memories.',
-              'Every photo captures not just a marathon, but the story runners and this city write together.',
+              'CHI Running Club’s volunteer photographers are delighted to share these moments with runners from around the world. All photos are free to download — keep them as a memento or share them with family and friends.',
             ],
           },
           {
-            heading: '📸 This year, we’re taking it a step further',
+            heading: 'Photo usage',
+            bullets: [
+              '**Personal use:** You’re welcome to download, save and print the photos, and to share them on WeChat Moments, RedNote, Instagram, Facebook and other social platforms.',
+              '**Please credit:** © CHI Running Club / Photo: [photographer’s name]. If a photo has no photographer credit, please credit © CHI Running Club.',
+              '**No commercial use:** To use photos commercially, please get written permission from CHI Running Club first.',
+            ],
+          },
+          {
+            heading: null,
             paragraphs: [
-              'Building on last year’s **facial recognition**, this year we’re adding **facial recognition + bib number recognition**, making it easier and more accurate for runners to find their own race photos.',
+              'We hope these photos help you hold on to your Chicago Marathon memories! Thank you to every runner, photographer and volunteer for capturing this unforgettable journey together.',
             ],
           },
         ],
@@ -760,7 +766,8 @@ export const CONTENT = {
           { name: 'Zhong Shen (沈中)', photoKey: 'shen-zhong' },
           { name: 'Fang Han (韩放)', photoKey: 'han-fang' },
         ],
-        photosButtonLabel: 'View photos: race · carb-loading dinner · volunteers →',
+        photosButtonLabel: 'View photos: face search · bib search · instant download →',
+        photosButtonSubLabel: 'Race, carb-loading dinner and volunteer photos',
         photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
         photosButtonNote: 'Face and bib-number photo search will end on November 5, 2026.',
       },
@@ -2068,21 +2075,27 @@ export const CONTENT = {
         ],
       },
       photographerTmpPage: {
-        docTitle: '拍摄机位推荐 · 驰跑团',
-        pageTitle: '📸 摄影师机位分布｜摄影师及助手 review 版',
-        showPhotographyHero: true,
+        docTitle: '芝马照片 · 驰跑团',
+        pageTitle: '恭喜您顺利完成 2026年芝加哥马拉松!',
         storySections: [
           {
             heading: null,
             paragraphs: [
-              '自2015年以来，芝加哥跑团每年都会组织芝加哥马拉松摄影队，沿着赛道为跑者捕捉那些稍纵即逝、却值得一生珍藏的瞬间。',
-              '一张张照片，记录的不只是一场马拉松，更是跑者与这座城市共同留下的故事。',
+              '驰跑团的志愿摄影师很高兴与来自世界各地的跑者分享这些珍贵瞬间。所有照片均可免费下载，留作纪念或与亲朋好友分享。',
             ],
           },
           {
-            heading: '📸 今年，我们又向前迈了一步',
+            heading: '照片使用说明',
+            bullets: [
+              '**个人使用：** 欢迎下载、保存、打印照片，也欢迎分享到微信朋友圈、小红书、Instagram、Facebook 等社交平台。',
+              '**请注明出处：** © 驰跑团 CHI Running Club / 摄影：[摄影师姓名]。如果照片上没有摄影师署名，请注明 © 驰跑团 CHI Running Club。',
+              '**禁止商业用途：** 如需将照片用于商业用途，请事先获得驰跑团的书面许可。',
+            ],
+          },
+          {
+            heading: null,
             paragraphs: [
-              '在去年的**人脸识别**基础上，今年我们进一步加入了**人脸识别 + Bib 号码识别**，帮助跑者更加方便、准确地找到属于自己的比赛照片。',
+              '希望这些照片能为您留住芝加哥马拉松的美好回忆！感谢每一位跑者、摄影师和志愿者，让我们共同记录这段难忘的旅程。',
             ],
           },
         ],
@@ -2111,7 +2124,8 @@ export const CONTENT = {
           { name: '沈中', photoKey: 'shen-zhong' },
           { name: '韩放', photoKey: 'han-fang' },
         ],
-        photosButtonLabel: '查看照片：比赛 · 加碳会 · 义工 →',
+        photosButtonLabel: '查看照片：人脸识别 · Bib 号码识别 · 即刻下载 →',
+        photosButtonSubLabel: '比赛、加碳会、义工照片',
         photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
         photosButtonNote: '人脸识别和 Bib 号码识别功能将于 2026 年 11 月 5 日结束。',
       },
