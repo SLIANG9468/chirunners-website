@@ -260,13 +260,6 @@ export default function ChicagoMarathonSharingSessionsPage({ copy }) {
           </div>
         </section>
 
-        <section className="section pb-2">
-          <div className="rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
-            <p className="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-              {p.closingNote}
-            </p>
-          </div>
-        </section>
       </div>
     </main>
   )

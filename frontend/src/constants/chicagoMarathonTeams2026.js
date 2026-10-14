@@ -82,6 +82,7 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-qzWw4P3/0/Lnr6tkHXsVmDWw9DqNZDCCSCjzdPXpfkS4QkD5Dwh/SMIL/qzWw4P3.smil/master.m3u8',
     },
+    emails: ['dart-run@googlegroups.com'],
   },
   {
     // 91 Running Camp

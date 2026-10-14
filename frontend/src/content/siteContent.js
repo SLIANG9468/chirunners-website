@@ -190,7 +190,7 @@ export const CONTENT = {
         id: 'marathon',
         title: 'Chicago Marathon',
         description:
-          'Chicago Marathon weekend—guides for carb-loading, lodging, transportation, and more to help you race with confidence.',
+          'Chicago Marathon weekend—guides to participating clubs, the carb-loading dinner, hotel, express bus, course photography, volunteering, and more to help you race with confidence.',
         cta: 'View Chicago Marathon guide',
         to: '/chicagomarathon',
       },
@@ -394,10 +394,10 @@ export const CONTENT = {
           cta: 'Open guide',
         },
         photography: {
-          title: 'Photography team',
+          title: 'Chicago Marathon photos',
           description:
-            'Join our race-day photography team and help capture runners’ most memorable moments.',
-          cta: 'Open guide',
+            'Race, carb-loading dinner and volunteer photos — find yours with face and bib search, plus news coverage and the photographers behind the lens.',
+          cta: 'View photos',
         },
         teams: {
           title: 'Participating running clubs',
@@ -715,6 +715,54 @@ export const CONTENT = {
             photoAlt: 'Photographer spot in Butler Field, near the post-race party',
           },
         ],
+      },
+      photographerTmpPage: {
+        docTitle: 'Photo Spot · CHI Running Club',
+        pageTitle: '📸 Where to Find Our Photographers | Review Version for Photographers & Assistants',
+        showPhotographyHero: true,
+        storySections: [
+          {
+            heading: null,
+            paragraphs: [
+              'Since 2015, Chicago’s running community has organized a photography team for the Chicago Marathon every year, capturing along the course the fleeting moments worth a lifetime of memories.',
+              'Every photo captures not just a marathon, but the story runners and this city write together.',
+            ],
+          },
+          {
+            heading: '📸 This year, we’re taking it a step further',
+            paragraphs: [
+              'Building on last year’s **facial recognition**, this year we’re adding **facial recognition + bib number recognition**, making it easier and more accurate for runners to find their own race photos.',
+            ],
+          },
+        ],
+        showPhotographers: true,
+        photographers: [
+          { name: 'Kenny Qin', photoKey: 'kenny-qin' },
+          {
+            name: 'Yun Oldshue',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
+          { name: 'Yansong Lin', photoKey: 'yansong-lin' },
+          { name: 'Tammy Yang', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
+          { name: 'Linda and Bob', photoKey: 'linda-bob' },
+          { name: 'Bai Ruan (阮白)', photoKey: 'bai-ruan' },
+          {
+            name: 'Yimei (毅梅)',
+            photoKey: 'yimei',
+            websiteUrl: 'https://yimeisunphoto.com/#/',
+          },
+          { name: 'Yange (言歌)', photoKey: 'yange' },
+          { name: 'Tao (涛)', photoKey: 'tao' },
+          { name: 'Sherri (梁向绍)', photoKey: 'sherri' },
+          { name: 'Ruishan Wu (伍瑞珊)', photoKey: 'ruishan-wu' },
+          { name: 'Jianhua Yan (颜建华)', photoKey: 'yan-jianhua' },
+          { name: 'Zhong Shen (沈中)', photoKey: 'shen-zhong' },
+          { name: 'Fang Han (韩放)', photoKey: 'han-fang' },
+        ],
+        photosButtonLabel: 'View photos: race · carb-loading dinner · volunteers →',
+        photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
+        photosButtonNote: 'Face and bib-number photo search will end on November 5, 2026.',
       },
       photosPage: {
         pageTitle: '📸 2026 Chicago Marathon Race Photos',
@@ -1047,7 +1095,12 @@ export const CONTENT = {
             name: 'St. Louis · St. Louis Chinese Running Club (圣路易斯华人跑步俱乐部)',
           },
           dart: {
-            name: 'Washington, D.C. · DART (北维乐跑)',
+            name: 'Virginia · DART (北维乐跑)',
+            locationLines: [
+              'W&OD group run — Sat 7:00 AM',
+              'Start 1: Vienna Train Station, 231 Dominion Rd NE, Vienna, VA 22180',
+              'Start 2: YMCA Reston parking lot, 12196 Sunset Hills Rd, Reston, VA 20190',
+            ],
           },
           ninetyOneCamp: {
             name: 'Toronto · 91 Running Camp (91Camp)',
@@ -1187,8 +1240,6 @@ export const CONTENT = {
             youtubeUrl: 'https://youtu.be/fXyl0U3d6LU',
           },
         ],
-        closingNote:
-          'No matter where you’re from — whether this is your first Chicago Marathon or you’ve run the course many times before — we’d love to have you join us!',
       },
       ticketsPage: {
         docTitle: 'Chicago Marathon Tickets · ChiRunners',
@@ -1475,7 +1526,7 @@ export const CONTENT = {
       marathon: {
         id: 'marathon',
         title: '芝加哥马拉松',
-        description: '芝加哥马拉松周末——加碳会、住宿、交通等指南，助您从容参赛。',
+        description: '芝加哥马拉松周末——参赛团队，加碳会、酒店、直通大巴，赛道摄影以及义工等指南，助您从容参赛。',
         cta: '查看芝马指南',
         to: '/chicagomarathon',
       },
@@ -1671,9 +1722,9 @@ export const CONTENT = {
           cta: '查看详情',
         },
         photography: {
-          title: '摄影队',
-          description: '加入芝加哥马拉松摄影队，用镜头记录跑者一生难忘的瞬间。',
-          cta: '查看详情',
+          title: '芝马照片',
+          description: '比赛、加碳会和义工照片，人脸 + Bib 号码识别快速找到你的照片；还有媒体报道和摄影团队介绍。',
+          cta: '查看照片',
         },
         teams: {
           title: '参赛跑团',
@@ -1986,6 +2037,54 @@ export const CONTENT = {
             photoAlt: 'Butler Field 机位实景，赛后派对附近',
           },
         ],
+      },
+      photographerTmpPage: {
+        docTitle: '拍摄机位推荐 · 驰跑团',
+        pageTitle: '📸 摄影师机位分布｜摄影师及助手 review 版',
+        showPhotographyHero: true,
+        storySections: [
+          {
+            heading: null,
+            paragraphs: [
+              '自2015年以来，芝加哥跑团每年都会组织芝加哥马拉松摄影队，沿着赛道为跑者捕捉那些稍纵即逝、却值得一生珍藏的瞬间。',
+              '一张张照片，记录的不只是一场马拉松，更是跑者与这座城市共同留下的故事。',
+            ],
+          },
+          {
+            heading: '📸 今年，我们又向前迈了一步',
+            paragraphs: [
+              '在去年的**人脸识别**基础上，今年我们进一步加入了**人脸识别 + Bib 号码识别**，帮助跑者更加方便、准确地找到属于自己的比赛照片。',
+            ],
+          },
+        ],
+        showPhotographers: true,
+        photographers: [
+          { name: '风城网事', photoKey: 'kenny-qin' },
+          {
+            name: '章运（运姐）',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
+          { name: '林燕松', photoKey: 'yansong-lin' },
+          { name: 'Tammy(芝城帽姐)', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
+          { name: 'Linda and Bob', photoKey: 'linda-bob' },
+          { name: '阮白', photoKey: 'bai-ruan' },
+          {
+            name: '毅梅',
+            photoKey: 'yimei',
+            websiteUrl: 'https://yimeisunphoto.com/#/',
+          },
+          { name: '言歌', photoKey: 'yange' },
+          { name: '涛', photoKey: 'tao' },
+          { name: 'Sherri(梁向绍）', photoKey: 'sherri' },
+          { name: '伍瑞珊', photoKey: 'ruishan-wu' },
+          { name: '颜建华', photoKey: 'yan-jianhua' },
+          { name: '沈中', photoKey: 'shen-zhong' },
+          { name: '韩放', photoKey: 'han-fang' },
+        ],
+        photosButtonLabel: '查看照片：比赛 · 加碳会 · 义工 →',
+        photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
+        photosButtonNote: '人脸识别和 Bib 号码识别功能将于 2026 年 11 月 5 日结束。',
       },
       photosPage: {
         pageTitle: '📸 2026 芝加哥马拉松比赛照片',
@@ -2302,7 +2401,12 @@ export const CONTENT = {
             name: '圣路易斯 圣路易斯华人跑步俱乐部（St. Louis Chinese Running Club）',
           },
           dart: {
-            name: '华盛顿 北维乐跑（DART）',
+            name: '维吉尼亚 北维乐跑（DART）',
+            locationLines: [
+              'W&OD 群跑 — 周六早 7:00AM',
+              '起点1：Vienna Train Station，231 Dominion Rd NE, Vienna, VA 22180',
+              '起点2：YMCA Reston 停车场，12196 Sunset Hills Rd, Reston, VA 20190',
+            ],
           },
           ninetyOneCamp: {
             name: '多伦多 91Camp（91 Running Camp）',
@@ -2441,8 +2545,6 @@ export const CONTENT = {
             youtubeUrl: 'https://youtu.be/fXyl0U3d6LU',
           },
         ],
-        closingNote:
-          '无论你来自哪里，无论这是你的第一次芝马，还是你已经多次踏上芝马赛道，都欢迎加入我们！',
       },
       ticketsPage: {
         docTitle: '芝马购票 · 驰跑团',

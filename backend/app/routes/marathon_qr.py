@@ -44,6 +44,10 @@ PHOTOGRAPHER_PHOTO_SMUGMUG_PAGE_URLS = {
     "tao": "https://chirunners.smugmug.com/Website/Photographer/i-WFkTkXL/A",
     "sherri": "https://chirunners.smugmug.com/Website/Photographer/i-Dtz6b6r/A",
     "ruishan-wu": "https://chirunners.smugmug.com/Website/Photographer/i-GHnqVDs/A",
+    "shen-zhong": "https://chirunners.smugmug.com/Website/Photographer/i-m8Z93QP/A",
+    "han-fang": "https://chirunners.smugmug.com/Website/Photographer/i-X3w4jRT/A",
+    "yan-jianhua": "https://chirunners.smugmug.com/Website/Photographer/i-ZWh8cqj/A",
+    "yimei": "https://chirunners.smugmug.com/Website/Photographer/i-kDr37mq/A",
 }
 
 CARB_LOADING_PHOTO_SMUGMUG_PAGE_URLS = {

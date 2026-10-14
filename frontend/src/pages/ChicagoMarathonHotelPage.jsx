@@ -2,7 +2,6 @@ import { createElement } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
-import { apiUrl } from '../apiBase'
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 const runnerIconClass = 'h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400'
@@ -343,22 +342,6 @@ export default function ChicagoMarathonHotelPage({ copy }) {
 
             <div className="mt-10">
               <MarathonBookingButtons ctas={mw.bookingCtas} />
-            </div>
-
-            <div className="mt-8 rounded-2xl border border-neutral-200/70 bg-white/70 p-5 shadow-sm dark:border-neutral-700/60 dark:bg-neutral-900/40 sm:p-6">
-              <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">{h.wechatGroupTitle}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">{h.wechatGroupBody}</p>
-              <div className="mt-5 flex justify-center sm:justify-start">
-                <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm dark:border-neutral-700 dark:bg-neutral-950">
-                  <img
-                    src={apiUrl(h.wechatGroupQrSrc)}
-                    alt={h.wechatGroupQrAlt}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-auto w-[220px] max-w-full sm:w-[240px]"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>

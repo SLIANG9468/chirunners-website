@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { apiUrl } from '../apiBase'
 import PhotographerGrid from '../components/chicagoMarathon/PhotographerGrid'
@@ -117,9 +118,18 @@ function RosterLayout({ p }) {
  * with photographer assignments, maps, photographers, and photo availability.
  * Content lives in `marathonWelcome.photoSpotTempPage` (the name is left over from the review draft).
  */
-export default function ChicagoMarathonPhotoSpotPage({ copy }) {
+export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photoSpotTempPage', noIndex = false }) {
   const mw = copy.marathonWelcome
-  const p = mw.photoSpotTempPage
+  const p = mw[contentKey]
+
+  useEffect(() => {
+    if (!noIndex) return undefined
+    const meta = document.createElement('meta')
+    meta.name = 'robots'
+    meta.content = 'noindex, nofollow'
+    document.head.appendChild(meta)
+    return () => meta.remove()
+  }, [noIndex])
 
   return (
     <main className="siteMain siteMain--marathonWelcome">
@@ -199,7 +209,7 @@ export default function ChicagoMarathonPhotoSpotPage({ copy }) {
           ) : null}
         </section>
 
-        <RosterLayout p={p} />
+        {p.spots ? <RosterLayout p={p} /> : null}
 
         {p.downloads ? (
           <section className="section !pt-0">
@@ -227,6 +237,31 @@ export default function ChicagoMarathonPhotoSpotPage({ copy }) {
           </section>
         ) : null}
 
+        {p.photosButtonLabel ? (
+          <section className="section text-center">
+            {p.photosButtonUrl ? (
+              <a
+                href={p.photosButtonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full bg-chi-red px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover"
+              >
+                {p.photosButtonLabel}
+              </a>
+            ) : (
+              <Link
+                to={CHICAGO_MARATHON_ROUTES.photos}
+                className="inline-flex rounded-full bg-chi-red px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-chi-red-hover"
+              >
+                {p.photosButtonLabel}
+              </Link>
+            )}
+            {p.photosButtonNote ? (
+              <p className="!mt-3 !text-center text-sm text-neutral-500 dark:text-neutral-400">{p.photosButtonNote}</p>
+            ) : null}
+          </section>
+        ) : null}
+
         {p.showPhotographers ? (
           <section className="section">
             <div className="text-center">
@@ -238,7 +273,7 @@ export default function ChicagoMarathonPhotoSpotPage({ copy }) {
               </div>
             </div>
             <PhotographerGrid
-              photographers={mw.photographyPage.photographers}
+              photographers={p.photographers || mw.photographyPage.photographers}
               websiteLabel={mw.photographyPage.photographerWebsiteLabel}
             />
           </section>
