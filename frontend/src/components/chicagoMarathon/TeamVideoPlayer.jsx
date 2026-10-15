@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-/** Plays a team's video: smugmug HLS stream, a YouTube embed, or a plain mp4 file. */
-export default function TeamVideoPlayer({ video, title }) {
+/**
+ * Plays a team's video: smugmug HLS stream, a YouTube embed, or a plain mp4 file.
+ * `autoPlayMuted` starts an HLS video muted (browsers only allow muted autoplay); viewers can unmute from the controls.
+ */
+export default function TeamVideoPlayer({ video, title, autoPlayMuted = false }) {
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -9,15 +12,23 @@ export default function TeamVideoPlayer({ video, title }) {
     const el = videoRef.current
     if (!el) return undefined
 
+    // React doesn't reliably reflect `muted` to the DOM, and autoplay needs it set before playback.
+    if (autoPlayMuted) el.muted = true
+    const tryPlay = () => {
+      if (autoPlayMuted) el.play().catch(() => {})
+    }
+
     let hls
     if (el.canPlayType('application/vnd.apple.mpegurl')) {
       el.src = video.src
+      tryPlay()
     } else {
       import('hls.js').then(({ default: Hls }) => {
         if (Hls.isSupported()) {
           hls = new Hls()
           hls.loadSource(video.src)
           hls.attachMedia(el)
+          hls.on(Hls.Events.MANIFEST_PARSED, tryPlay)
         }
       })
     }
@@ -25,7 +36,7 @@ export default function TeamVideoPlayer({ video, title }) {
     return () => {
       if (hls) hls.destroy()
     }
-  }, [video])
+  }, [video, autoPlayMuted])
 
   if (video.type === 'youtube') {
     return (
@@ -50,5 +61,13 @@ export default function TeamVideoPlayer({ video, title }) {
     )
   }
 
-  return <video ref={videoRef} className="w-full rounded-xl bg-black" controls />
+  return (
+    <video
+      ref={videoRef}
+      className="w-full rounded-xl bg-black"
+      controls
+      autoPlay={autoPlayMuted}
+      playsInline={autoPlayMuted}
+    />
+  )
 }

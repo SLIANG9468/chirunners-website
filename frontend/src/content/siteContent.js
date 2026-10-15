@@ -250,12 +250,12 @@ export const CONTENT = {
       socialLinks: [
         {
           label: 'WeChat Official Account',
-          url: null,
+          url: 'https://mp.weixin.qq.com/s/ofM_GvtjPsn8MXm6s8x7qA',
           hint: 'Search “芝加哥驰跑团 ChiRunners” in WeChat to find our official account.',
         },
         {
           label: 'RedNote',
-          url: null,
+          url: 'https://www.rednote.com/user/profile/608372700000000001002df1',
           hint: 'Open the RedNote app and search for 驰跑团.',
         },
         {
@@ -770,6 +770,11 @@ export const CONTENT = {
         photosButtonSubLabel: 'Race, carb-loading dinner and volunteer photos',
         photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
         photosButtonNote: 'Face and bib-number photo search will end on November 5, 2026.',
+        downloadHelp: {
+          heading: 'Watch this video to learn how to download full-resolution photos.',
+          body: 'If every photo you download is under 1 MB, you’re probably not using the right download option — please follow the steps in the video and download again.',
+          video: { type: 'hls', src: 'https://videos.smugmug.com/photos/i-4J6SBCZ/0/MRFmdGKLrqhsMCTfqGDxZsMZk4r2rDLzBb4pnstbW/SMIL/4J6SBCZ.smil/master.m3u8' },
+        },
       },
       photosPage: {
         pageTitle: '📸 2026 Chicago Marathon Race Photos',
@@ -1619,12 +1624,12 @@ export const CONTENT = {
       socialLinks: [
         {
           label: '微信公众号',
-          url: null,
+          url: 'https://mp.weixin.qq.com/s/ofM_GvtjPsn8MXm6s8x7qA',
           hint: '请在微信中搜索「芝加哥驰跑团」或「ChiRunners」关注公众号。',
         },
         {
           label: '小红书',
-          url: null,
+          url: 'https://www.rednote.com/user/profile/608372700000000001002df1',
           hint: '打开小红书 App，搜索「芝加哥驰跑团」或「ChiRunners」关注。',
         },
         {
@@ -2128,6 +2133,11 @@ export const CONTENT = {
         photosButtonSubLabel: '比赛、加碳会、义工照片',
         photosButtonUrl: 'https://chirunners.photohawk.com/galleries/2026chicagomarathon',
         photosButtonNote: '人脸识别和 Bib 号码识别功能将于 2026 年 11 月 5 日结束。',
+        downloadHelp: {
+          heading: '请观看以下视频，了解如何下载高清原图。',
+          body: '如果您下载的照片文件大小都在 1 MB 以下，说明您可能没有使用正确的下载方式，请参考视频中的操作步骤重新下载。',
+          video: { type: 'hls', src: 'https://videos.smugmug.com/photos/i-4J6SBCZ/0/MRFmdGKLrqhsMCTfqGDxZsMZk4r2rDLzBb4pnstbW/SMIL/4J6SBCZ.smil/master.m3u8' },
+        },
       },
       photosPage: {
         pageTitle: '📸 2026 芝加哥马拉松比赛照片',

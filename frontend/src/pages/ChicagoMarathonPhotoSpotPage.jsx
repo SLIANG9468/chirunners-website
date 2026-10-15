@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { apiUrl } from '../apiBase'
 import PhotographerGrid from '../components/chicagoMarathon/PhotographerGrid'
 import PhotographyHero from '../components/chicagoMarathon/PhotographyHero'
+import TeamVideoPlayer from '../components/chicagoMarathon/TeamVideoPlayer'
 import withBoldRuns from '../components/chicagoMarathon/withBoldRuns'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 
@@ -269,6 +270,20 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
             {p.photosButtonNote ? (
               <p className="!mt-3 !text-center text-sm text-neutral-500 dark:text-neutral-400">{p.photosButtonNote}</p>
             ) : null}
+          </section>
+        ) : null}
+
+        {p.downloadHelp ? (
+          <section className="section">
+            <div className="rounded-2xl border border-neutral-200/80 bg-white/70 p-5 shadow-card dark:border-neutral-700/80 dark:bg-neutral-900/40 sm:p-6">
+              <h2 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-xl">
+                {p.downloadHelp.heading}
+              </h2>
+              <p className="!mt-2 leading-relaxed text-neutral-700 dark:text-neutral-300">{p.downloadHelp.body}</p>
+              <div className="mx-auto mt-4 w-full max-w-xs">
+                <TeamVideoPlayer video={p.downloadHelp.video} title={p.downloadHelp.heading} autoPlayMuted />
+              </div>
+            </div>
           </section>
         ) : null}
 
