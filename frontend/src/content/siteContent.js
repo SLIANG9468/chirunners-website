@@ -396,7 +396,7 @@ export const CONTENT = {
         photography: {
           title: 'Chicago Marathon photos',
           description:
-            'Race, carb-loading dinner and volunteer photos — find yours with face and bib search, plus news coverage and the photographers behind the lens.',
+            'Race, carb-loading dinner and volunteer photos — find yours with face and bib search.',
           cta: 'View photos',
         },
         teams: {
@@ -1759,7 +1759,7 @@ export const CONTENT = {
         },
         photography: {
           title: '芝马照片',
-          description: '比赛、加碳会和义工照片，人脸 + Bib 号码识别快速找到你的照片；还有媒体报道和摄影团队介绍。',
+          description: '比赛、加碳会和义工照片，人脸 + Bib 号码识别快速找到你的照片。',
           cta: '查看照片',
         },
         teams: {
@@ -2088,7 +2088,7 @@ export const CONTENT = {
             heading: '照片使用说明',
             bullets: [
               '**个人使用：** 欢迎下载、保存、打印照片，也欢迎分享到微信朋友圈、小红书、Instagram、Facebook 等社交平台。',
-              '**请注明出处：** © 驰跑团 CHI Running Club / 摄影：[摄影师姓名]。如果照片上没有摄影师署名，请注明 © 驰跑团 CHI Running Club。',
+              '**请注明出处：** © 驰跑团 / 摄影：[摄影师姓名]。如果照片上没有摄影师署名，请注明 © 驰跑团。',
               '**禁止商业用途：** 如需将照片用于商业用途，请事先获得驰跑团的书面许可。',
             ],
           },
