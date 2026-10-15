@@ -76,16 +76,14 @@ export default function App() {
           element={<ChicagoMarathonVolunteerPage copy={copy} />}
         />
         {/* Combined photography page (story, spots, photographers, photo availability); content lives in photoSpotTempPage. */}
+        {/* Post-race photography page: congratulations, photo usage, PhotoHawk gallery button, photographers.
+            Race-week version (spots, maps, downloads) is kept in content as photoSpotTempPage. */}
         <Route
           path="/chicagomarathon/photography"
-          element={<ChicagoMarathonPhotoSpotPage copy={copy} />}
-        />
-        {/* Unlinked, noindex draft of the photography page for planning the post-race / news layout. */}
-        <Route
-          path="/chicagomarathon/photographer_tmp"
-          element={<ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photographerTmpPage" noIndex />}
+          element={<ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photographerTmpPage" />}
         />
         {/* Old photo-spot and draft URLs, kept so links already shared still land on the photography page. */}
+        <Route path="/chicagomarathon/photographer_tmp" element={<Navigate to="/chicagomarathon/photography" replace />} />
         <Route path="/chicagomarathon/photo-spot" element={<Navigate to="/chicagomarathon/photography" replace />} />
         <Route path="/chicagomarathon/photo_spot_temp" element={<Navigate to="/chicagomarathon/photography" replace />} />
         <Route path="/chicagomarathon/photos" element={<ChicagoMarathonPhotosPage copy={copy} />} />
