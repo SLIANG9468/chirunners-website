@@ -127,7 +127,7 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
       'https://photos.smugmug.com/Website/Teams/2025/i-WwnKm8S/0/KsnRBNbJs4z5KZN6xcksF4kD9N64z266LnfqdgN9h/XL/team0291-XL.jpg',
     video: {
       type: 'hls',
-      src: 'https://videos.smugmug.com/Website/Videos/2025/i-Vzfztxx/0/KgZfmWvmv2rFXgCBs2MM2ctFZP42BJCMFtTHqthN9/SMIL/Vzfztxx.smil/master.m3u8',
+      src: 'https://videos.smugmug.com/Website/Videos/2026-Video/i-c287HZ6/0/LQWKq9mzzDm97V8KV5bXdsTMdZHz8zK29M5gRS6BK/SMIL/c287HZ6.smil/master.m3u8',
     },
     emails: ['toronto91camp@gmail.com'],
     wechat: 'toronto91',
@@ -161,7 +161,8 @@ export const CHICAGO_MARATHON_TEAMS_2026 = [
     // Joy Runners
     key: 'joyRunners',
     flag: '🇦🇺',
-    photoUrl: '/chicago-marathon/teams/joy-runners.jpg',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2025/i-6dv6fDL/0/LzHCxCbrxDpv3ftRScN78JWLSG4M39snK6Xq5D7sR/XL/joy-runners-XL.jpg',
     video: {
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2025/i-SR9MNzs/0/Mwh3jgMZQhFmR38RZjRSzvv72WTPFgf2g962tLNC2/SMIL/SR9MNzs.smil/master.m3u8',

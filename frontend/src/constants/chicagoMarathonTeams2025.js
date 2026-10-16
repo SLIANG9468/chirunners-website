@@ -80,7 +80,8 @@ export const CHICAGO_MARATHON_TEAMS_2025 = [
   {
     key: 'joyRunners',
     flag: '🇦🇺',
-    photoUrl: '/chicago-marathon/teams/joy-runners.jpg',
+    photoUrl:
+      'https://photos.smugmug.com/Website/Teams/2025/i-6dv6fDL/0/LzHCxCbrxDpv3ftRScN78JWLSG4M39snK6Xq5D7sR/XL/joy-runners-XL.jpg',
     video: {
       type: 'hls',
       src: 'https://videos.smugmug.com/Website/Videos/2025/i-SR9MNzs/0/Mwh3jgMZQhFmR38RZjRSzvv72WTPFgf2g962tLNC2/SMIL/SR9MNzs.smil/master.m3u8',

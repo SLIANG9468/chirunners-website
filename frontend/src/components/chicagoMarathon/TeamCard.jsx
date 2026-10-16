@@ -17,7 +17,8 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
       labels.contactLines?.length,
   )
 
-  const photoYear = assetYearFromUrl(team.photoUrl)
+  // `photoYear` overrides URL detection — needed for photos hosted on the site (no year in the path).
+  const photoYear = team.photoYear || assetYearFromUrl(team.photoUrl)
   // `video.year` overrides URL detection — needed for YouTube, whose id carries no year.
   const videoYear = team.video?.year || assetYearFromUrl(team.video?.src)
   const isPhotoLegacy = Boolean(currentYear && photoYear && photoYear !== currentYear)
@@ -39,6 +40,10 @@ export default function TeamCard({ team, labels, copy, currentYear }) {
       {isBothLegacy && copy.legacyBothNote ? (
         <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
           {copy.legacyBothNote}
+        </p>
+      ) : isPhotoLegacy && videoYear === currentYear && copy.legacyPhotoCurrentVideoNote ? (
+        <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
+          {copy.legacyPhotoCurrentVideoNote}
         </p>
       ) : isPhotoLegacy && copy.legacyPhotoNote ? (
         <p className="bg-neutral-50 px-4 py-1.5 text-xs leading-relaxed text-neutral-500 dark:bg-neutral-800/60 dark:text-neutral-400">
