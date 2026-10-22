@@ -2307,13 +2307,13 @@ export const CONTENT = {
         photographers: [
           { name: '风城网事', photoKey: 'kenny-qin' },
           {
-            name: '章运（运姐）',
+            name: '章运',
             photoKey: 'yun-oldshue',
             websiteUrl: 'https://yunoldshue-photos.pages.dev/',
           },
           { name: '林燕松', photoKey: 'yansong-lin' },
           { name: 'Tammy(芝城帽姐)', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
-          { name: 'Linda and Bob', photoKey: 'linda-bob' },
+          { name: 'Linda（赵凌清）and Bob（陈子英）', photoKey: 'linda-bob' },
           { name: '阮白', photoKey: 'bai-ruan' },
           { name: '言歌', photoKey: 'yange' },
           { name: '涛', photoKey: 'tao' },
@@ -2477,13 +2477,13 @@ export const CONTENT = {
         photographers: [
           { name: '风城网事', photoKey: 'kenny-qin' },
           {
-            name: '章运（运姐）',
+            name: '章运',
             photoKey: 'yun-oldshue',
             websiteUrl: 'https://yunoldshue-photos.pages.dev/',
           },
           { name: '林燕松', photoKey: 'yansong-lin' },
           { name: 'Tammy(芝城帽姐)', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
-          { name: 'Linda Zhao and 陈子英', photoKey: 'linda-bob' },
+          { name: 'Linda（赵凌清）and Bob（陈子英）', photoKey: 'linda-bob' },
           { name: '阮白', photoKey: 'bai-ruan' },
           {
             name: '毅梅',
