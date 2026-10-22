@@ -576,18 +576,202 @@ export const CONTENT = {
           files: [
             {
               label: 'Miles version',
-              href: '/chicago-marathon/downloads/2026-photo-spots-miles.pdf',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-miles.pdf',
               fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
             },
             {
               label: 'Kilometers version',
-              href: '/chicago-marathon/downloads/2026-photo-spots-km.pdf',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-km.pdf',
               fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
             },
           ],
           note: 'PDF files you can open or print on any phone or computer. Both versions have the same info—just pick the distance unit you prefer. (The guide is in Chinese.)',
         },
         showPhotographers: true,
+        photosAvailability: {
+          heading: '🖼️ When will the photos be ready?',
+          body: 'Final photos will be available by **Wednesday night after the race**—and we’ll do our best to get them to you even sooner! As soon as they’re ready, we’ll announce it on **RedNote (search 芝加哥驰跑团)** and in the **2026 Chicago Marathon WeChat group**. Stay tuned!',
+          linkLabel: '📸 View race photos →',
+        },
+        pageIntro:
+          'Our team photographers will be shooting around the areas below; the mile markers are only a rough guide. With about 55,000 runners on the course and everyone passing by in a flash, spotting any one person in the crowd is genuinely hard. We’ll do our very best to catch you, but we can’t promise a shot of everyone. If you already have a CHI Running Club team shirt, race day is a great day to wear it—it helps our photographers spot you. When you see us, give a wave and smile! (“Left”/“right” means the runner’s left or right.)',
+        flagGuide: {
+          heading: '🚩 Spot the red flag, find our photographers!',
+          intro:
+            'On race day, our photographers will carry bright red CHI Running Club flags. When you see one along the course, a photographer is just ahead—get ready to wave and smile for the camera!',
+          items: [
+            {
+              src: 'https://photos.smugmug.com/Website/Photographer/i-MjTw6rB/0/Kvqqb7VCWQJ5ZMh5g4PDCK5BQbwsZFPVKjbSN6XDV/XL/161-XL.jpg',
+              alt: 'A photographer wearing a red CHI Runners backpack flag, kneeling at the curb to take photos',
+              title: 'Backpack flag (most spots)',
+            },
+            {
+              src: 'https://photos.smugmug.com/Website/Photographer/i-8Dzwg8C/0/KDzkSC5xQLmT5krFv4bfZwrNXDN6w7s33B7xFWsKr/O/flag%203.jpg',
+              alt: 'Large red CHI Running Club flag with the 驰 character, “CHI Running Club,” and a Chicago skyline outline',
+              title: 'Big flag (some spots)',
+            },
+          ],
+        },
+        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
+        zoomMapAlt: 'Close-up map of the course from Lincoln Park to the South Side showing photographer spots 1 through 11 along the marathon course',
+        zoomMapCaption: 'Photographer spots, zoomed in (tap to enlarge)',
+        spotsSectionTitle: 'Spots & Photographers',
+        mapsSectionTitle: 'Maps',
+        assistantLabel: 'Assistant: ',
+        assistantTbd: 'TBD',
+        spots: [
+          {
+            number: 1,
+            location: 'Mile 0.5 (0.8 km), left lane, left side',
+            note: 'Columbus Bridge (William P. Fahey Bridge)\nWave 1 A-E 7:30; Wave 2 F-H 8:00',
+            team: [
+              { name: '风城网事', assistant: '郭萍' },
+            ],
+          },
+          {
+            number: 2,
+            location: 'Mile 1.4 (2.3 km), right',
+            note: 'Dearborn Bridge',
+            team: [
+              { name: 'Bob', assistant: '新哲' },
+              { name: 'Tao' },
+            ],
+          },
+          {
+            number: 3,
+            location: 'Mile 1.6 (2.6 km), left',
+            note: 'Dearborn & Couch',
+            team: [
+              { name: 'Linda', assistant: 'Sharon' },
+            ],
+          },
+          {
+            number: 4,
+            location: 'Mile 2.9 (4.7 km), right',
+            note: 'LaSalle Bridge',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 5,
+            location: 'Mile 5.5 (8.9 km), left',
+            note: 'Lincoln Park Conservatory entrance',
+            team: [
+              { name: 'Bai Ruan', assistant: 'Jandy' },
+            ],
+          },
+          {
+            number: 6,
+            location: 'Mile 10 (16.1 km), left',
+            team: [
+              { name: 'Yun', assistant: 'Emma (姚晓焱)' },
+            ],
+          },
+          {
+            number: 7,
+            location: 'Mile 12.8 (20.6 km), direct facing the runners',
+            note: 'Wells Bridge',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+              { name: 'Tao' },
+            ],
+          },
+          {
+            number: 8,
+            location: 'Mile 21.5 (34.6 km)',
+            note: 'Chinatown (Wentworth Ave)',
+            team: [
+              { name: '风城网事', assistant: '郭萍' },
+              { name: 'Yansong', assistant: 'Helen' },
+              { name: 'Tammy', assistant: 'Cade' },
+            ],
+          },
+          {
+            number: 9,
+            location: 'Mile 22.3 (35.8 km), both sides',
+            note: 'Aid station 17 (Michigan Ave & 26th St)\nMainly photographing volunteers',
+            team: [
+              { name: '沈中' },
+              { name: 'Ruishan Wu (伍瑞珊)' },
+            ],
+          },
+          {
+            number: 10,
+            location: 'Mile 26.1 (42.0 km), right',
+            note: 'Finish Line, in the VIP grandstand',
+            team: [
+              { name: 'Yansong', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 11,
+            location: 'Mile 27 (43.5 km)',
+            team: [
+              { name: 'Sherri' },
+              { name: 'Yange' },
+            ],
+            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
+            photoAlt: 'Photographer spot in Butler Field, near the post-race party',
+          },
+        ],
+      },
+      photography2027Page: {
+        docTitle: 'Photo Spot · CHI Running Club',
+        pageTitle: '📸 Where to Find Our Photographers | Review Version for Photographers & Assistants',
+        showPhotographyHero: true,
+        storySections: [
+          {
+            heading: null,
+            paragraphs: [
+              'Since 2015, Chicago’s running community has organized a photography team for the Chicago Marathon every year, capturing along the course the fleeting moments worth a lifetime of memories.',
+              'Every photo captures not just a marathon, but the story runners and this city write together.',
+            ],
+          },
+          {
+            heading: '📸 This year, we’re taking it a step further',
+            paragraphs: [
+              'Building on last year’s **facial recognition**, this year we’re adding **facial recognition + bib number recognition**, making it easier and more accurate for runners to find their own race photos.',
+            ],
+          },
+        ],
+        photoSpotHeading: '📍 Where are our photographers on race day?',
+        downloads: {
+          heading: '📥 Download the runner’s photo spot guide',
+          intro:
+            'Every spot on one easy page—distance, which side of the road, landmark, and photographer—plus the flag photos and spot map. Save it to your phone or print it out so you know where to look, and don’t forget to wave and smile as you pass!',
+          files: [
+            {
+              label: 'Miles version',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-miles.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
+            },
+            {
+              label: 'Kilometers version',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-km.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
+            },
+          ],
+          note: 'PDF files you can open or print on any phone or computer. Both versions have the same info—just pick the distance unit you prefer. (The guide is in Chinese.)',
+        },
+        showPhotographers: true,
+        photographersSectionTitle: '2027 芝加哥马拉松 · 镜头下的故事',
+        photographers: [
+          { name: 'Kenny Qin', photoKey: 'kenny-qin' },
+          {
+            name: 'Yun Oldshue',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
+          { name: 'Yansong Lin', photoKey: 'yansong-lin' },
+          { name: 'Tammy Yang', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
+          { name: 'Linda and Bob', photoKey: 'linda-bob' },
+          { name: 'Bai Ruan (阮白)', photoKey: 'bai-ruan' },
+          { name: 'Yange (言歌)', photoKey: 'yange' },
+          { name: 'Tao (涛)', photoKey: 'tao' },
+          { name: 'Sherri (梁向绍)', photoKey: 'sherri' },
+          { name: 'Ruishan Wu (伍瑞珊)', photoKey: 'ruishan-wu' },
+        ],
         photosAvailability: {
           heading: '🖼️ When will the photos be ready?',
           body: 'Final photos will be available by **Wednesday night after the race**—and we’ll do our best to get them to you even sooner! As soon as they’re ready, we’ll announce it on **RedNote (search 芝加哥驰跑团)** and in the **2026 Chicago Marathon WeChat group**. Stay tuned!',
@@ -1940,18 +2124,202 @@ export const CONTENT = {
           files: [
             {
               label: '英里版（Miles）下载',
-              href: '/chicago-marathon/downloads/2026-photo-spots-miles.pdf',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-miles.pdf',
               fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
             },
             {
               label: '公里版（km）下载',
-              href: '/chicago-marathon/downloads/2026-photo-spots-km.pdf',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-km.pdf',
               fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
             },
           ],
           note: 'PDF 文件，手机和电脑都可以直接打开或打印。两个版本内容相同，只是距离单位不同，选择你习惯的即可。',
         },
         showPhotographers: true,
+        photosAvailability: {
+          heading: '🖼️ 什么时候可以看到照片？',
+          body: '最终照片将于**比赛后的周三晚上**之前上线，我们会尽最大努力让大家更快看到！照片上线后，我们会在**小红书（搜索「芝加哥驰跑团」）**和 **2026 芝加哥马拉松微信群**第一时间通知大家，敬请期待！',
+          linkLabel: '📸 查看比赛照片 →',
+        },
+        pageIntro:
+          '我们的团队摄影师会在以下区域为大家拍照，里程数仅供参考。芝加哥马拉松约有 5.5 万名跑者，大家往往一跑而过，要在人群中认出某一位跑者真的不容易。我们会尽最大努力捕捉到你，但无法保证拍到每一位。如果你已经有驰跑团队服，比赛当天不妨穿上，摄影师会更容易认出你。路过时记得挥手、对镜头微笑！（"左侧""右侧"是指跑者的左侧或右侧。）',
+        flagGuide: {
+          heading: '🚩 看到红旗，就是我们的摄影师！',
+          intro:
+            '比赛当天，驰跑团摄影师会带着醒目的红色驰跑团旗帜。在赛道上看到这面红旗，说明我们的摄影师就在前方——准备好挥手、对镜头微笑吧！',
+          items: [
+            {
+              src: 'https://photos.smugmug.com/Website/Photographer/i-MjTw6rB/0/Kvqqb7VCWQJ5ZMh5g4PDCK5BQbwsZFPVKjbSN6XDV/XL/161-XL.jpg',
+              alt: '摄影师背着红色驰跑团背包旗，蹲在赛道边拍照',
+              title: '背包旗（大多数机位）',
+            },
+            {
+              src: 'https://photos.smugmug.com/Website/Photographer/i-8Dzwg8C/0/KDzkSC5xQLmT5krFv4bfZwrNXDN6w7s33B7xFWsKr/O/flag%203.jpg',
+              alt: '红色驰跑团大旗，印有「驰」字、CHI Running Club 字样和芝加哥天际线图案',
+              title: '大旗（部分机位）',
+            },
+          ],
+        },
+        zoomMapSrc: '/chicago-marathon/photography-spots-map-zoom.jpg',
+        zoomMapAlt: '林肯公园至南区赛道局部放大地图，标注了1到11号摄影机位',
+        zoomMapCaption: '机位局部放大图（点击查看大图）',
+        spotsSectionTitle: '拍摄点与摄影师',
+        mapsSectionTitle: '地图',
+        assistantLabel: '助手：',
+        assistantTbd: '待定',
+        spots: [
+          {
+            number: 1,
+            location: '0.5 迈，0.8 公里，左赛道，左侧',
+            note: 'Columbus Bridge（William P. Fahey Bridge）\nWave 1 A-E 7:30；Wave 2 F-H 8:00',
+            team: [
+              { name: '风城网事', assistant: '郭萍' },
+            ],
+          },
+          {
+            number: 2,
+            location: '1.4 迈，2.3 公里，右侧',
+            note: 'Dearborn Bridge',
+            team: [
+              { name: 'Bob', assistant: '新哲' },
+              { name: '涛' },
+            ],
+          },
+          {
+            number: 3,
+            location: '1.6 迈，2.6 公里，左侧',
+            note: 'Dearborn & Couch',
+            team: [
+              { name: 'Linda', assistant: 'Sharon' },
+            ],
+          },
+          {
+            number: 4,
+            location: '2.9 迈，4.7 公里，右侧',
+            note: 'LaSalle Bridge',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 5,
+            location: '5.5 迈，8.9 公里，左侧',
+            note: 'Lincoln Park Conservatory 门口',
+            team: [
+              { name: '阮白', assistant: 'Jandy' },
+            ],
+          },
+          {
+            number: 6,
+            location: '10 迈，16.1 公里，左侧',
+            team: [
+              { name: '章运', assistant: '姚晓焱（Emma）' },
+            ],
+          },
+          {
+            number: 7,
+            location: '12.8 迈，20.6 公里，Direct Facing 面对跑者',
+            note: 'Wells Bridge',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+              { name: '涛' },
+            ],
+          },
+          {
+            number: 8,
+            location: '21.5 迈，34.6 公里',
+            note: '中国城（Wentworth Ave）',
+            team: [
+              { name: '风城网事 - 你很美丽 - 右侧', assistant: '郭萍' },
+              { name: '燕松 左侧', assistant: 'Helen' },
+              { name: '芝城帽姐 - 你很美丽 - 左侧', assistant: 'Cade' },
+            ],
+          },
+          {
+            number: 9,
+            location: '22.3 迈，35.8 公里，两侧',
+            note: '17 水站（Michigan Ave & 26th St）\n为义工照相为主',
+            team: [
+              { name: '沈中' },
+              { name: '伍瑞珊' },
+            ],
+          },
+          {
+            number: 10,
+            location: '26.1 迈，42.0 公里，右侧',
+            note: 'Finish Line，在VIP的看台上',
+            team: [
+              { name: '燕松', assistant: 'Helen' },
+            ],
+          },
+          {
+            number: 11,
+            location: '27 迈，赛后派对/跑者团聚点',
+            team: [
+              { name: 'Sherri' },
+              { name: '言歌' },
+            ],
+            photoSrc: '/api/marathon-welcome/photo-spot-photo/spot-6',
+            photoAlt: 'Butler Field 机位实景，赛后派对附近',
+          },
+        ],
+      },
+      photography2027Page: {
+        docTitle: '拍摄机位推荐 · 驰跑团',
+        pageTitle: '📸 摄影师机位分布｜摄影师及助手 review 版',
+        showPhotographyHero: true,
+        storySections: [
+          {
+            heading: null,
+            paragraphs: [
+              '自2015年以来，芝加哥跑团每年都会组织芝加哥马拉松摄影队，沿着赛道为跑者捕捉那些稍纵即逝、却值得一生珍藏的瞬间。',
+              '一张张照片，记录的不只是一场马拉松，更是跑者与这座城市共同留下的故事。',
+            ],
+          },
+          {
+            heading: '📸 今年，我们又向前迈了一步',
+            paragraphs: [
+              '在去年的**人脸识别**基础上，今年我们进一步加入了**人脸识别 + Bib 号码识别**，帮助跑者更加方便、准确地找到属于自己的比赛照片。',
+            ],
+          },
+        ],
+        photoSpotHeading: '📍 比赛日摄影师在哪里？',
+        downloads: {
+          heading: '📥 下载跑者版机位表',
+          intro:
+            '把所有机位、距离、跑者哪一侧、地点和摄影师整理成一份简明的跑者版，附旗帜照片和机位地图。下载到手机或打印出来，比赛时心里有数，经过机位时别忘了挥手微笑！',
+          files: [
+            {
+              label: '英里版（Miles）下载',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-miles.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_英里版.pdf',
+            },
+            {
+              label: '公里版（km）下载',
+              href: '/backup-files/photography-2026-10-12/2026-photo-spots-km.pdf',
+              fileName: '2026芝马_驰跑团摄影机位_公里版.pdf',
+            },
+          ],
+          note: 'PDF 文件，手机和电脑都可以直接打开或打印。两个版本内容相同，只是距离单位不同，选择你习惯的即可。',
+        },
+        showPhotographers: true,
+        photographersSectionTitle: '2027 芝加哥马拉松 · 镜头下的故事',
+        photographers: [
+          { name: '风城网事', photoKey: 'kenny-qin' },
+          {
+            name: '章运（运姐）',
+            photoKey: 'yun-oldshue',
+            websiteUrl: 'https://yunoldshue-photos.pages.dev/',
+          },
+          { name: '林燕松', photoKey: 'yansong-lin' },
+          { name: 'Tammy(芝城帽姐)', photoKey: 'tammy-yang', instagramUrl: 'https://www.instagram.com/chi_hatlady_photography/' },
+          { name: 'Linda and Bob', photoKey: 'linda-bob' },
+          { name: '阮白', photoKey: 'bai-ruan' },
+          { name: '言歌', photoKey: 'yange' },
+          { name: '涛', photoKey: 'tao' },
+          { name: 'Sherri(梁向绍）', photoKey: 'sherri' },
+          { name: '伍瑞珊', photoKey: 'ruishan-wu' },
+        ],
         photosAvailability: {
           heading: '🖼️ 什么时候可以看到照片？',
           body: '最终照片将于**比赛后的周三晚上**之前上线，我们会尽最大努力让大家更快看到！照片上线后，我们会在**小红书（搜索「芝加哥驰跑团」）**和 **2026 芝加哥马拉松微信群**第一时间通知大家，敬请期待！',

@@ -18,6 +18,8 @@ import ChicagoMarathonTransportationPage from './pages/ChicagoMarathonTransporta
 import ChicagoMarathonVolunteerPage from './pages/ChicagoMarathonVolunteerPage'
 import ChicagoMarathonPhotoSpotPage from './pages/ChicagoMarathonPhotoSpotPage'
 import ChicagoMarathonPhotosPage from './pages/ChicagoMarathonPhotosPage'
+import BackupPage from './pages/BackupPage'
+import BackupReviewBanner from './components/BackupReviewBanner'
 import ChicagoMarathonTeams2025Page from './pages/ChicagoMarathonTeams2025Page'
 import ChicagoMarathonTeams2026Page from './pages/ChicagoMarathonTeams2026Page'
 import ChicagoMarathonTicketsPage from './pages/ChicagoMarathonTicketsPage'
@@ -119,6 +121,26 @@ export default function App() {
         <Route path="/5K" element={<Founders5KPage language={language} />} />
         <Route path="/5k" element={<Founders5KPage language={language} />} />
         <Route path="/kenny" element={<KennyTributePage copy={copy} />} />
+        {/* Unlisted, noindex backups / drafts for internal review (see constants/backupPages.js). */}
+        <Route path="/backup" element={<BackupPage />} />
+        <Route
+          path="/backup/photography-2026-10-12"
+          element={
+            <>
+              <BackupReviewBanner />
+              <ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photoSpotTempPage" noIndex />
+            </>
+          }
+        />
+        <Route
+          path="/backup/photography-2027"
+          element={
+            <>
+              <BackupReviewBanner />
+              <ChicagoMarathonPhotoSpotPage copy={copy} contentKey="photography2027Page" noIndex />
+            </>
+          }
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {!isChiStore ? <SiteFooter copy={copy} /> : null}

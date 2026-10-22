@@ -291,7 +291,7 @@ export default function ChicagoMarathonPhotoSpotPage({ copy, contentKey = 'photo
           <section className="section">
             <div className="text-center">
               <h2 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl">
-                {mw.photographyPage.photographersSectionTitle}
+                {p.photographersSectionTitle || mw.photographyPage.photographersSectionTitle}
               </h2>
               <div className="mt-1 text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
                 {mw.photographyPage.photographersSectionSubtitle}
