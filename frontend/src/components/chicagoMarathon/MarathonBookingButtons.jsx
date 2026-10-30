@@ -13,12 +13,15 @@ const disabledClassName =
 export default function MarathonBookingButtons({ ctas }) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-      <Link
-        to={`${CHICAGO_MARATHON_ROUTES.tickets}#carb-loading`}
-        className={secondaryClassName}
-      >
-        {ctas.carbLoading}
-      </Link>
+      {ctas.carbLoadingClosed ? (
+        <span aria-disabled="true" className={disabledClassName}>
+          {ctas.carbLoading}
+        </span>
+      ) : (
+        <Link to={`${CHICAGO_MARATHON_ROUTES.tickets}#carb-loading`} className={secondaryClassName}>
+          {ctas.carbLoading}
+        </Link>
+      )}
       {ctas.hotelClosed ? (
         <span aria-disabled="true" className={disabledClassName}>
           {ctas.hotel}
@@ -33,12 +36,15 @@ export default function MarathonBookingButtons({ ctas }) {
           {ctas.hotel}
         </a>
       )}
-      <Link
-        to={`${CHICAGO_MARATHON_ROUTES.tickets}#bus-shuttle`}
-        className={secondaryClassName}
-      >
-        {ctas.busShuttle}
-      </Link>
+      {ctas.busShuttleClosed ? (
+        <span aria-disabled="true" className={disabledClassName}>
+          {ctas.busShuttle}
+        </span>
+      ) : (
+        <Link to={`${CHICAGO_MARATHON_ROUTES.tickets}#bus-shuttle`} className={secondaryClassName}>
+          {ctas.busShuttle}
+        </Link>
+      )}
     </div>
   )
 }

@@ -270,10 +270,6 @@ export default function ChicagoMarathonHotelPage({ copy }) {
             <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{h.hotelPerksIntro}</p>
             <ul className="mt-4 space-y-3">
               <AmenityRow icon={IconBreakfast} text={h.amenityBreakfast} />
-              <AmenityRow icon={IconWifi} text={h.amenityWifi} />
-              <AmenityRow icon={IconGym} text={h.amenityGym} />
-              <AmenityRow icon={IconPool} text={h.amenityPool} />
-              <AmenityRow icon={IconLanguage} text={h.amenityMandarin} />
               <li className="flex gap-3 text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
                 <IconShuttle />
                 <Link
@@ -283,8 +279,12 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                   {h.amenityAirportShuttle}
                 </Link>
               </li>
-              <AmenityRow icon={IconParking} text={h.amenityOvernightParking} />
               <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
+              <AmenityRow icon={IconParking} text={h.amenityOvernightParking} />
+              <AmenityRow icon={IconWifi} text={h.amenityWifi} />
+              <AmenityRow icon={IconGym} text={h.amenityGym} />
+              <AmenityRow icon={IconPool} text={h.amenityPool} />
+              <AmenityRow icon={IconLanguage} text={h.amenityMandarin} />
             </ul>
 
             <div className="mt-8 rounded-2xl border border-amber-300/70 bg-gradient-to-br from-amber-50/95 via-amber-50/40 to-transparent p-5 shadow-sm dark:border-amber-600/40 dark:from-amber-950/35 dark:via-amber-950/20 dark:to-transparent sm:p-6">

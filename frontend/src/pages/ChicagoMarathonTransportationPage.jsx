@@ -108,14 +108,23 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
             >
               {t.ctaHotel}
             </Link>
-            <a
-              href={hotel.hotelBookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-md transition-colors hover:bg-chi-red-hover"
-            >
-              {hotel.ctaBook}
-            </a>
+            {mw.bookingCtas.hotelClosed ? (
+              <span
+                aria-disabled="true"
+                className="inline-flex min-h-[44px] cursor-not-allowed items-center justify-center rounded-xl bg-neutral-200 px-4 py-2 text-sm font-semibold text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500"
+              >
+                {hotel.ctaBook}
+              </span>
+            ) : (
+              <a
+                href={hotel.hotelBookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-chi-red px-4 py-2 text-sm font-semibold text-white shadow-md transition-colors hover:bg-chi-red-hover"
+              >
+                {hotel.ctaBook}
+              </a>
+            )}
           </div>
         </section>
 
