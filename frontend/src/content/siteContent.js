@@ -372,7 +372,7 @@ export const CONTENT = {
         hotel: {
           title: 'Hotels & lodging',
           description:
-            'CHI Running Club’s recommended hotel near O’Hare, $159: free breakfast | free airport shuttle | free cancellation up to 72 hours before check-in | race-day breakfast from 4:40 AM | 30-minute race-day bus to the start',
+            'Hotel near O’Hare, $159: free breakfast | race-day bus to the start',
           cta: 'Open guide',
         },
         bus: {
@@ -1929,8 +1929,7 @@ export const CONTENT = {
         },
         hotel: {
           title: '住宿',
-          description:
-            '驰跑团推荐酒店，机场附近 $159：免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点',
+          description: '机场附近酒店 $159：免费早餐｜比赛日直达大巴',
           cta: '查看详情',
         },
         bus: {
@@ -1941,7 +1940,7 @@ export const CONTENT = {
         transportation: {
           title: '芝加哥马拉松交通',
           description:
-            '芝加哥交通一页看懂：CTA 地铁公交与 Ventra 购票、机场蓝线直达市中心、去 Expo 领物路线、Uber/Lyft 打车。',
+            '芝加哥交通一页看懂：CTA 地铁公交与 Ventra 购票',
           cta: '查看指南',
         },
         volunteer: {
