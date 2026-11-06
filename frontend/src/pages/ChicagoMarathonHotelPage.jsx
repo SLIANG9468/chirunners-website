@@ -309,10 +309,32 @@ export default function ChicagoMarathonHotelPage({ copy }) {
               {h.hotelRates.map((r) => (
                 <li
                   key={r.label}
-                  className="flex items-center justify-between gap-4 rounded-xl border border-neutral-200/70 bg-white/60 px-4 py-3 dark:border-neutral-600/60 dark:bg-neutral-900/40"
+                  className="rounded-xl border border-neutral-200/70 bg-white/60 px-4 py-3 dark:border-neutral-600/60 dark:bg-neutral-900/40"
                 >
-                  <span className="text-neutral-800 dark:text-neutral-200">{r.label}</span>
-                  <span className="font-semibold text-chi-red dark:text-chi-red-light">{r.value}</span>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-neutral-800 dark:text-neutral-200">{r.label}</span>
+                    <span className="shrink-0 font-semibold text-chi-red dark:text-chi-red-light">{r.value}</span>
+                  </div>
+                  {r.photos?.length ? (
+                    <div className="mt-3 flex snap-x gap-2 overflow-x-auto pb-1">
+                      {r.photos.map((src, i) => (
+                        <a
+                          key={src}
+                          href={src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 snap-start overflow-hidden rounded-lg"
+                        >
+                          <img
+                            src={src}
+                            alt={`${r.label} ${i + 1}`}
+                            loading="lazy"
+                            className="h-40 w-auto max-w-none object-cover sm:h-48"
+                          />
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
                 </li>
               ))}
             </ul>
@@ -335,7 +357,7 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                   >
                     {h.bookingExtendEmail}
                   </a>
-                  . {h.bookingExtendFollowUp}
+                  {h.bookingExtendFollowUp}
                 </p>
               </div>
             ) : null}

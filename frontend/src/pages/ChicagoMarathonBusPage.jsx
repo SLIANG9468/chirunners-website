@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
@@ -28,6 +29,42 @@ function BulletList({ items }) {
         <li key={line}>{line}</li>
       ))}
     </ul>
+  )
+}
+
+// Muted autoplay is allowed by browsers, so play while the video is mostly on
+// screen and pause when it scrolls away; controls stay available to unmute.
+function AutoPlayOnScrollVideo({ src, label }) {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return undefined
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.5 },
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={videoRef}
+      aria-label={label}
+      src={src}
+      className="mx-auto block h-auto w-full max-h-[min(80vh,720px)]"
+      controls
+      muted
+      playsInline
+      preload="metadata"
+    />
   )
 }
 
@@ -138,6 +175,17 @@ export default function ChicagoMarathonBusPage({ copy }) {
                       {b.officialClosuresLabel}
                     </a>
                   ) : null}
+                </div>
+              </>
+            ) : null}
+
+            {b.videoSrc ? (
+              <>
+                <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">
+                  {b.videoSectionTitle}
+                </h3>
+                <div className="my-6 overflow-hidden rounded-2xl border-2 border-chi-red/60 bg-neutral-900 shadow-lg ring-4 ring-chi-red/10 dark:border-chi-red/50 dark:ring-chi-red/20">
+                  <AutoPlayOnScrollVideo src={apiUrl(b.videoSrc)} label={b.videoSectionTitle} />
                 </div>
               </>
             ) : null}

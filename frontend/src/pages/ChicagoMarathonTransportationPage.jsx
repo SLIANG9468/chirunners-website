@@ -1,6 +1,93 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
+import withBoldRuns from '../components/chicagoMarathon/withBoldRuns'
+
+/** Phrases in body text that link automatically: `to` is an in-site route, `href` opens in a new tab. */
+const AUTO_LINKS = [
+  {
+    href: 'https://www.transitchicago.com/assets/1/6/rail-tt_blue.pdf',
+    phrases: ['CTA 蓝线（Blue Line）', 'CTA 蓝线', '蓝线（Blue Line）', '蓝线', 'CTA Blue Line', 'Blue Line'],
+  },
+  {
+    href: 'https://www.ventrachicago.com/',
+    phrases: ['Ventra App', 'Ventra app'],
+  },
+  {
+    href: 'https://www.transitchicago.com/',
+    phrases: ['CTA 官网', 'CTA website'],
+  },
+  {
+    href: 'https://www.uber.com/us/en/rider-home/',
+    phrases: ['Uber 车费估算网站'],
+  },
+  {
+    to: CHICAGO_MARATHON_ROUTES.hotelShuttle,
+    phrases: [
+      '免费机场Shuttle',
+      '酒店免费班车（Shuttle）',
+      '免费机场班车（Shuttle）',
+      '免费班车（Shuttle）',
+      '酒店免费班车',
+      '免费酒店班车',
+      '免费机场班车',
+      '免费班车',
+      'Shuttle',
+      'shuttle',
+    ],
+  },
+  {
+    to: CHICAGO_MARATHON_ROUTES.hotel,
+    phrases: [
+      'Hyatt Place Chicago O’Hare Airport（凯悦嘉轩奥黑尔）',
+      'Hyatt Place Chicago O’Hare Airport',
+      'Hyatt Place O’Hare',
+    ],
+  },
+]
+const AUTO_LINK_BY_PHRASE = new Map(AUTO_LINKS.flatMap((link) => link.phrases.map((phrase) => [phrase, link])))
+// Longest phrases first so e.g. "CTA 蓝线（Blue Line）" becomes one link, not two.
+const AUTO_LINK_PATTERN = new RegExp(
+  `(${[...AUTO_LINK_BY_PHRASE.keys()]
+    .sort((a, b) => b.length - a.length)
+    .map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|')})`,
+)
+const AUTO_LINK_CLASS =
+  'font-medium text-sky-700 underline underline-offset-2 hover:text-sky-900 dark:text-sky-300 dark:hover:text-sky-200'
+
+/**
+ * Body text: `**bold**` runs plus the AUTO_LINKS phrases turned into links.
+ * Each link target is linked only at its first mention, so a paragraph doesn't repeat a link;
+ * pass a shared `linked` set to extend that across several paragraphs.
+ */
+function richText(text, linked = new Set()) {
+  return withBoldRuns(text).map((run) => {
+    // Leave bold runs alone so an emphasized note keeps its own styling.
+    if (run.type === 'strong') return run
+    const parts = run.props.children.split(AUTO_LINK_PATTERN)
+    if (parts.length === 1) return run
+    const Tag = run.type
+    return (
+      <Tag key={run.key}>
+        {parts.map((part, i) => {
+          const link = i % 2 === 1 && AUTO_LINK_BY_PHRASE.get(part)
+          if (!link || linked.has(link)) return part
+          linked.add(link)
+          return link.to ? (
+            <Link key={i} to={link.to} className={AUTO_LINK_CLASS}>
+              {part}
+            </Link>
+          ) : (
+            <a key={i} href={link.href} target="_blank" rel="noopener noreferrer" className={AUTO_LINK_CLASS}>
+              {part}
+            </a>
+          )
+        })}
+      </Tag>
+    )
+  })
+}
 
 const TRANSPORT_IMAGES = {
   airportTransit: '/marathon-transport/ord-airport-transit-sign.png',
@@ -46,7 +133,7 @@ function FigureImg({ src, alt, caption, priority = false, featured = false }) {
       />
       {caption ? (
         <figcaption className="border-t border-neutral-200/80 px-3 py-3 text-left text-xs leading-relaxed text-neutral-600 dark:border-neutral-700/80 dark:text-neutral-400 sm:px-4 sm:text-sm">
-          {caption}
+          {richText(caption)}
         </figcaption>
       ) : null}
     </figure>
@@ -55,9 +142,9 @@ function FigureImg({ src, alt, caption, priority = false, featured = false }) {
 
 function BulletList({ items }) {
   return (
-    <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+    <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base [&_strong]:font-bold [&_strong]:text-chi-red dark:[&_strong]:text-chi-red-light">
       {items.map((line) => (
-        <li key={line}>{line}</li>
+        <li key={line}>{richText(line)}</li>
       ))}
     </ul>
   )
@@ -66,7 +153,7 @@ function BulletList({ items }) {
 function AddressBlock({ label, lines }) {
   return (
     <div className="rounded-xl border border-neutral-200/70 bg-white/60 px-4 py-3 dark:border-neutral-600/60 dark:bg-neutral-900/40">
-      <p className="text-xs font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-chi-red dark:text-chi-red-light">{richText(label)}</p>
       {lines.map((line) => (
         <p key={line} className="mt-1 font-mono text-xs text-neutral-800 dark:text-neutral-200 sm:text-sm">
           {line}
@@ -79,6 +166,8 @@ function AddressBlock({ label, lines }) {
 export default function ChicagoMarathonTransportationPage({ copy }) {
   const mw = copy.marathonWelcome
   const t = mw.transportationPage
+  // Shared across the intro paragraphs so e.g. the Blue Line is linked once, in the first.
+  const introLinked = new Set()
   const hotel = mw.hotelPage
 
   useEffect(() => {
@@ -100,14 +189,12 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
             {mw.backToHub}
           </Link>
           <h1 className="mt-6 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-3xl">{t.pageTitle}</h1>
-          <p className="mt-4 leading-relaxed text-neutral-600 dark:text-neutral-400">{t.pageIntro}</p>
+          {[].concat(t.pageIntro).map((paragraph) => (
+            <p key={paragraph} className="mt-4 leading-relaxed text-neutral-600 dark:text-neutral-400">
+              {richText(paragraph, introLinked)}
+            </p>
+          ))}
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link
-              to={CHICAGO_MARATHON_ROUTES.hotel}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-xl border border-chi-red/40 bg-white px-4 py-2 text-sm font-semibold text-chi-red shadow-sm transition-colors hover:bg-chi-red/5 dark:border-chi-red/50 dark:bg-neutral-900 dark:hover:bg-chi-red/10"
-            >
-              {t.ctaHotel}
-            </Link>
             {mw.bookingCtas.hotelClosed ? (
               <span
                 aria-disabled="true"
@@ -150,75 +237,84 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
 
         <section className="section !pt-0">
           <div className="grid gap-3 sm:grid-cols-2">
-            <AddressBlock label={t.addresses.startFinish.label} lines={t.addresses.startFinish.lines} />
-            <AddressBlock label={t.addresses.expo.label} lines={t.addresses.expo.lines} />
             <AddressBlock label={t.addresses.hotel.label} lines={t.addresses.hotel.lines} />
             <AddressBlock label={t.addresses.ctaBlue.label} lines={t.addresses.ctaBlue.lines} />
+            <AddressBlock label={t.addresses.ctaJackson.label} lines={t.addresses.ctaJackson.lines} />
+            <AddressBlock label={t.addresses.expo.label} lines={t.addresses.expo.lines} />
+            <AddressBlock label={t.addresses.startFinish.label} lines={t.addresses.startFinish.lines} />
           </div>
+        </section>
+
+        <section id="hotel-downtown" className="section scroll-mt-28">
+          <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.hotelDowntown.title}</h2>
+          <BulletList items={t.sections.hotelDowntown.steps.slice(0, 1)} />
+          <p className="mt-4 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
+            {richText(t.sections.airportHotel.signCtaBody)}
+          </p>
+          <FigureImg src={TRANSPORT_IMAGES.ctaSign} alt={t.images.ctaSign.alt} caption={t.images.ctaSign.caption} />
+          <BulletList items={t.sections.hotelDowntown.steps.slice(1)} />
         </section>
 
         <section id="airport-hotel" className="section scroll-mt-28">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.airportHotel.title}</h2>
           <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.airportHotel.lead}
+            {richText(t.sections.airportHotel.lead)}
           </p>
 
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.airportHotel.signAirportTransitTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.airportHotel.signAirportTransitBody}
-          </p>
-          <FigureImg
-            src={TRANSPORT_IMAGES.airportTransit}
-            alt={t.images.airportTransit.alt}
-            caption={t.images.airportTransit.caption}
-          />
+          {/* Same card style as the collapsible below, but always shown — the shuttle is the main option. */}
+          <div className="mt-6 rounded-xl border border-neutral-200/80 bg-white/70 px-4 py-3 text-base font-semibold text-neutral-900 dark:border-neutral-600/60 dark:bg-neutral-900/50 dark:text-neutral-100">
+            {richText(t.sections.airportHotel.shuttleOptionTitle)}
+          </div>
 
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.airportHotel.signCtaTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.airportHotel.signCtaBody}
-          </p>
-          <FigureImg src={TRANSPORT_IMAGES.ctaSign} alt={t.images.ctaSign.alt} caption={t.images.ctaSign.caption} />
-
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.airportHotel.shuttleTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.airportHotel.shuttleBody}
-          </p>
-          <TipBox title={t.sections.airportHotel.shuttleTipTitle}>
-            <p>{t.sections.airportHotel.shuttleTipBody}</p>
-          </TipBox>
-
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.airportHotel.walkTitle}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.airportHotel.walkIntro}
-          </p>
-          <TipBox title={t.sections.airportHotel.walkHighlightTitle} variant="amber">
-            <p className="font-medium">{t.sections.airportHotel.walkHighlight}</p>
-            <p>{t.sections.airportHotel.walkStats}</p>
-          </TipBox>
-          <FigureImg
-            src={TRANSPORT_IMAGES.walkRentalToHyatt}
-            alt={t.images.walkRental.alt}
-            caption={t.images.walkRental.caption}
-          />
-          <BulletList items={t.sections.airportHotel.walkBullets} />
+          {/* Few people walk back to the hotel, so the Airport Transit + walking guide stays collapsed by default. */}
+          <details className="group mt-3 rounded-xl border border-neutral-200/80 bg-white/70 px-4 py-3 dark:border-neutral-600/60 dark:bg-neutral-900/50">
+            <summary className="cursor-pointer list-none text-base font-semibold text-neutral-900 marker:content-none dark:text-neutral-100 [&::-webkit-details-marker]:hidden">
+              <span className="inline-flex w-full items-center justify-between gap-2">
+                <span>{t.sections.airportHotel.walkTitle}</span>
+                <span className="text-neutral-400 transition-transform group-open:rotate-180">▾</span>
+              </span>
+            </summary>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
+              {richText(t.sections.airportHotel.walkIntro)}
+            </p>
+            <h3 className="mt-6 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.airportHotel.signAirportTransitTitle}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
+              {richText(t.sections.airportHotel.signAirportTransitBody)}
+            </p>
+            <FigureImg
+              src={TRANSPORT_IMAGES.airportTransit}
+              alt={t.images.airportTransit.alt}
+              caption={t.images.airportTransit.caption}
+            />
+            <TipBox title={t.sections.airportHotel.walkHighlightTitle} variant="amber">
+              <p className="font-medium">{richText(t.sections.airportHotel.walkHighlight)}</p>
+              <p>{richText(t.sections.airportHotel.walkStats)}</p>
+            </TipBox>
+            <FigureImg
+              src={TRANSPORT_IMAGES.walkRentalToHyatt}
+              alt={t.images.walkRental.alt}
+              caption={t.images.walkRental.caption}
+            />
+            <BulletList items={t.sections.airportHotel.walkBullets} />
+          </details>
         </section>
 
         <section id="hotel-expo" className="section scroll-mt-28">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.hotelExpo.title}</h2>
           <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">
-            {t.sections.hotelExpo.lead}
+            {richText(t.sections.hotelExpo.lead)}
           </p>
           <TipBox title={t.sections.hotelExpo.tipTitle}>
-            <p>{t.sections.hotelExpo.tipBody}</p>
+            <p>{richText(t.sections.hotelExpo.tipBody)}</p>
           </TipBox>
           <h3 className="mt-6 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.hotelExpo.ctaRouteTitle}</h3>
           <BulletList items={t.sections.hotelExpo.ctaRouteSteps} />
-          <p className="mt-3 text-sm font-medium text-neutral-800 dark:text-neutral-200">{t.sections.hotelExpo.ctaRouteTime}</p>
+          <p className="mt-3 text-sm font-medium text-neutral-800 dark:text-neutral-200">{richText(t.sections.hotelExpo.ctaRouteTime)}</p>
         </section>
 
         <section id="cta-guide" className="section scroll-mt-28">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.cta.title}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">{t.sections.cta.lead}</p>
+          <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-base">{richText(t.sections.cta.lead)}</p>
 
           <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.cta.faresTitle}</h3>
           <BulletList items={t.sections.cta.fares} />
@@ -226,24 +322,32 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
           <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.cta.buyTitle}</h3>
           <BulletList items={t.sections.cta.buySteps} />
 
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.cta.toStartTitle}</h3>
-          <BulletList items={t.sections.cta.toStartSteps} />
-          <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">{t.sections.cta.toStartNote}</p>
-
-          <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.cta.otherLinesTitle}</h3>
-          <BulletList items={t.sections.cta.otherLines} />
+          <TipBox title={t.sections.cta.googleMapsTitle}>
+            <p>{richText(t.sections.cta.googleMapsBody)}</p>
+          </TipBox>
 
           <h3 className="mt-8 text-base font-semibold text-neutral-900 dark:text-neutral-100">{t.sections.cta.toExpoTitle}</h3>
           <BulletList items={t.sections.cta.toExpoSteps} />
-          <p className="mt-3 text-sm font-medium text-neutral-800 dark:text-neutral-200">{t.sections.cta.toExpoTime}</p>
+          <p className="mt-3 text-sm font-medium text-neutral-800 dark:text-neutral-200">{richText(t.sections.cta.toExpoTime)}</p>
 
           <TipBox title={t.sections.cta.beginnerTitle}>
-            <p>{t.sections.cta.beginnerBody}</p>
+            <p>{richText(t.sections.cta.beginnerBody)}</p>
           </TipBox>
         </section>
 
         <section id="race-day" className="section scroll-mt-28">
           <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 sm:text-2xl">{t.sections.raceDay.title}</h2>
+          <TipBox title={t.sections.raceDay.busTitle} variant="amber">
+            <p className="font-medium">{richText(t.sections.raceDay.busBody)}</p>
+            <p>
+              <Link
+                to={CHICAGO_MARATHON_ROUTES.bus}
+                className="font-semibold text-chi-red hover:text-chi-red-hover hover:underline"
+              >
+                {t.sections.raceDay.busLinkLabel}
+              </Link>
+            </p>
+          </TipBox>
           <BulletList items={t.sections.raceDay.tips} />
         </section>
 
@@ -262,7 +366,7 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
                   </span>
                 </summary>
                 <p className="mt-3 border-t border-neutral-200/80 pt-3 text-sm leading-relaxed text-neutral-600 dark:border-neutral-700/80 dark:text-neutral-400">
-                  {item.a}
+                  {richText(item.a)}
                 </p>
               </details>
             ))}
@@ -278,7 +382,7 @@ export default function ChicagoMarathonTransportationPage({ copy }) {
                 className="rounded-xl border border-neutral-200/70 bg-neutral-50/80 p-4 dark:border-neutral-600/50 dark:bg-neutral-900/40 sm:p-5"
               >
                 <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">{block.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{block.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{richText(block.body)}</p>
               </div>
             ))}
           </div>

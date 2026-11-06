@@ -49,24 +49,6 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <MarathonPreviewCard
-              title={mw.cards.photography.title}
-              description={mw.cards.photography.description}
-              cta={mw.cards.photography.cta}
-              to={CHICAGO_MARATHON_ROUTES.photography}
-            />
-            <MarathonPreviewCard
-              title={mw.cards.teams.title}
-              description={mw.cards.teams.description}
-              cta={mw.cards.teams.cta}
-              to={CHICAGO_MARATHON_ROUTES.teams2026}
-            />
-            <MarathonPreviewCard
-              title={mw.cards.carbLoading.title}
-              description={mw.cards.carbLoading.description}
-              cta={mw.cards.carbLoading.cta}
-              to={CHICAGO_MARATHON_ROUTES.carbLoading}
-            />
-            <MarathonPreviewCard
               title={mw.cards.hotel.title}
               description={mw.cards.hotel.description}
               cta={mw.cards.hotel.cta}
@@ -83,6 +65,24 @@ export default function ChicagoMarathonWelcomePage({ copy }) {
               description={mw.cards.transportation.description}
               cta={mw.cards.transportation.cta}
               to={CHICAGO_MARATHON_ROUTES.transportation}
+            />
+            <MarathonPreviewCard
+              title={mw.cards.photography.title}
+              description={mw.cards.photography.description}
+              cta={mw.cards.photography.cta}
+              to={CHICAGO_MARATHON_ROUTES.photography}
+            />
+            <MarathonPreviewCard
+              title={mw.cards.teams.title}
+              description={mw.cards.teams.description}
+              cta={mw.cards.teams.cta}
+              to={CHICAGO_MARATHON_ROUTES.teams2026}
+            />
+            <MarathonPreviewCard
+              title={mw.cards.carbLoading.title}
+              description={mw.cards.carbLoading.description}
+              cta={mw.cards.carbLoading.cta}
+              to={CHICAGO_MARATHON_ROUTES.carbLoading}
             />
             <MarathonPreviewCard
               title={mw.cards.volunteer.title}

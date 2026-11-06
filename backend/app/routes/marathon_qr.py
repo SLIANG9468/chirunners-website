@@ -77,10 +77,18 @@ PACER_PHOTO_SMUGMUG_PAGE_URLS = {
 
 HERO_VIDEO_SMUGMUG_PAGE_URLS = {
     "carb-loading": "https://chirunners.smugmug.com/Website/Videos/2026-Video/i-VqKSJnh/A",
+    "bus-2026": "https://chirunners.smugmug.com/Website/Videos/Instructionvideo/n-jx7kzz/i-cPrPhcB/A",
 }
 
 HOTEL_SHUTTLE_PHOTO_SMUGMUG_PAGE_URLS = {
     "shuttle-bus": "https://chirunners.smugmug.com/Website/Website-photo/i-ckCh8Qm/A",
+}
+
+HOTEL_ROOM_PHOTO_SMUGMUG_PAGE_URLS = {
+    "king": "https://chirunners.smugmug.com/Website/Website-photo/i-LxsmVnL/A",
+    "two-queen": "https://chirunners.smugmug.com/Website/Website-photo/i-5B6Wnsn/A",
+    "two-queen-sofa-1": "https://chirunners.smugmug.com/Website/Website-photo/i-k6t2VBZ/A",
+    "two-queen-sofa-4": "https://chirunners.smugmug.com/Website/Website-photo/i-zZhCLzQ/A",
 }
 
 BUS_DROPOFF_PHOTO_SMUGMUG_PAGE_URLS = {
@@ -185,6 +193,14 @@ def get_speaker_photo(key: str):
 @marathon_qr_bp.route("/api/marathon-welcome/hotel-shuttle-photo/<key>", methods=["GET"])
 def get_hotel_shuttle_photo(key: str):
     page_url = HOTEL_SHUTTLE_PHOTO_SMUGMUG_PAGE_URLS.get(key)
+    if not page_url:
+        abort(404)
+    return _resolve_and_redirect(page_url, ttl_override_seconds=None)
+
+
+@marathon_qr_bp.route("/api/marathon-welcome/hotel-room-photo/<key>", methods=["GET"])
+def get_hotel_room_photo(key: str):
+    page_url = HOTEL_ROOM_PHOTO_SMUGMUG_PAGE_URLS.get(key)
     if not page_url:
         abort(404)
     return _resolve_and_redirect(page_url, ttl_override_seconds=None)

@@ -372,7 +372,7 @@ export const CONTENT = {
         hotel: {
           title: 'Hotels & lodging',
           description:
-            'Ideas for staying near the start, the Loop, transit, and budget-friendly options.',
+            'CHI Running Club’s recommended hotel near O’Hare, $159: free breakfast | free airport shuttle | free cancellation up to 72 hours before check-in | race-day breakfast from 4:40 AM | 30-minute race-day bus to the start',
           cta: 'Open guide',
         },
         bus: {
@@ -447,8 +447,16 @@ export const CONTENT = {
         runnerPerkLounge: 'Runners’ lounge to relax, connect, and recharge',
         hotelRatesTitle: 'CHI Running Club group rates',
         hotelRates: [
-          { label: 'King bed', value: '$159 / night' },
-          { label: 'Two queen beds', value: '$169 / night' },
+          {
+            label: 'King bed',
+            value: '$159 / night',
+            photos: ['/api/marathon-welcome/hotel-room-photo/king'],
+          },
+          {
+            label: 'Two queen beds',
+            value: '$169 / night',
+            photos: ['/api/marathon-welcome/hotel-room-photo/two-queen'],
+          },
         ],
         amenityBreakfast: 'Complimentary breakfast included',
         amenityAirportShuttle: 'Complimentary airport shuttle (tap for live shuttle tracking)',
@@ -484,8 +492,8 @@ export const CONTENT = {
         ],
         pickupSectionTitle: 'Airport pickup locations',
         pickupBullets: [
-          'Domestic flights (Terminal 2): Lower Level, Door C, middle lane (limo/shuttle lane)',
-          'International flights (Terminal 5): Lower Level, Door E',
+          'Domestic flights (Terminal 2): **Lower Level/Arrivals**, Door C, middle lane (limo/shuttle lane)',
+          'International flights (Terminal 5): **Lower Level/Arrivals**, Door E',
         ],
         scheduleSectionTitle: 'Shuttle departure times (from the hotel front gate)',
         scheduleNote: 'Monday through Sunday',
@@ -1480,10 +1488,10 @@ export const CONTENT = {
         docTitle: 'Chicago Marathon transportation · ChiRunners',
         pageTitle: 'Chicago Marathon transportation',
         pageIntro:
-          'This guide helps runners visiting Chicago for Chicago Marathon weekend get around with confidence. Hyatt Place Chicago O’Hare Airport is a practical base: complimentary airport shuttle, Mandarin-friendly front desk, and an optional race-morning express to Grant Park. Public transit is dependable—below are beginner-friendly CTA steps.',
-        ctaHotel: 'Hotel page (rates & perks)',
+          'Hyatt Place Chicago O’Hare Airport is CHI Running Club’s recommended Chicago Marathon hotel: from $159/night with breakfast, a free airport shuttle you can track live, a race-day bus straight to the start, free cancellation up to 72 hours before check-in, and a Mandarin-speaking front desk. Getting downtown is easy too: take the free shuttle (or walk about 1.3 km) to the airport, then the CTA Blue Line straight into the city. We recommend Google Maps: enter any of the key addresses below for real-time transit info and arrival times.',
         jumpNavLabel: 'On this page',
         jumpNav: [
+          { href: '#hotel-downtown', label: 'Hotel → downtown' },
           { href: '#airport-hotel', label: 'Airport ↔ hotel' },
           { href: '#hotel-expo', label: 'Hotel ↔ Expo' },
           { href: '#cta-guide', label: 'Taking the CTA' },
@@ -1508,6 +1516,10 @@ export const CONTENT = {
             label: 'CTA Blue Line (O’Hare station)',
             lines: ['1000 O’Hare Dr, Chicago, IL 60666'],
           },
+          ctaJackson: {
+            label: 'CTA Blue Line (Jackson station, downtown)',
+            lines: ['230 S Dearborn St, Chicago, IL 60604'],
+          },
         },
         images: {
           airportTransit: {
@@ -1526,25 +1538,26 @@ export const CONTENT = {
           },
         },
         sections: {
+          hotelDowntown: {
+            title: '1. Hotel to downtown (shuttle + Blue Line to Jackson)',
+            steps: [
+              'Take the free hotel shuttle to O’Hare Airport (**get your shuttle ticket from the front desk in advance**).',
+              'Board the Blue Line at O’Hare (the first stop, no transfers). Ride 19 stops, about 45 minutes, and get off at Jackson (230 S Dearborn St), in the Loop downtown.',
+            ],
+          },
           airportHotel: {
-            title: '1. Airport to the hotel (O’Hare ↔ Hyatt Place O’Hare)',
+            title: '2. Airport to the hotel (O’Hare ↔ Hyatt Place O’Hare)',
             lead:
-              'Most international visitors arrive at O’Hare (ORD). The hotel is in Rosemont, a short hop from the airport. You can take the free hotel shuttle or, if you end up at the rental car center, walk as we did.',
+              'From O’Hare (ORD) to the hotel, there are two ways:',
+            shuttleOptionTitle: 'Take the free hotel shuttle',
             signAirportTransitTitle: 'Find “Airport Transit” inside the terminal',
             signAirportTransitBody:
               'Chicago’s airport people mover to terminals and the rental car center is labeled Airport Transit on overhead signs. It connects you toward the Multi-Modal Facility where rental counters are located.',
-            signCtaTitle: 'Taking trains downtown instead?',
             signCtaBody:
               'If you plan to ride the Blue Line into the city first, look for “Trains to City - CTA” on overhead signage.',
-            shuttleTitle: 'Complimentary hotel shuttle',
-            shuttleBody:
-              'Hyatt Place O’Hare runs a free shuttle between the airport and the hotel. Confirm pickup zones with the front desk when you land—hotel shuttles typically use the designated hotel shuttle island.',
-            shuttleTipTitle: 'Shuttle schedule (reference)',
-            shuttleTipBody:
-              'About every 40 minutes, 5:00 AM–10:30 PM. Times can change—ask the hotel for the current timetable.',
-            walkTitle: 'Walking from the rental car center (optional)',
+            walkTitle: 'Airport Transit + walk to the hotel (optional)',
             walkIntro:
-              'There are two practical ways from the airport area to the hotel: the free shuttle, or walking from the rental car center if that fits your plans.',
+              'Ride Airport Transit to the Rental Car Center, then walk about 1.1 km to the hotel.',
             walkHighlightTitle: 'We walked it ourselves',
             walkHighlight:
               'We personally walked from the rental car center down to the hotel so you can picture the route.',
@@ -1555,7 +1568,7 @@ export const CONTENT = {
             ],
           },
           hotelExpo: {
-            title: '2. Hyatt Place O’Hare ↔ Expo (McCormick Place)',
+            title: '3. Hyatt Place O’Hare ↔ Expo (McCormick Place)',
             lead:
               'Packet pickup is at McCormick Place North Building. From the O’Hare area, the CTA is cost-effective; allow extra time Thursday–Saturday when the Expo is busy.',
             tipTitle: 'Tip',
@@ -1570,9 +1583,9 @@ export const CONTENT = {
             ctaRouteTime: 'Typical ride about 1 hour 20 minutes—add buffer for waits.',
           },
           cta: {
-            title: '3. How to ride the CTA (beginner-friendly)',
+            title: '4. How to ride the CTA (beginner-friendly)',
             lead:
-              'Chicago’s trains and buses are branded CTA. Stations are well signed; on marathon weekend you will see plenty of other runners on the Blue Line early Sunday.',
+              'Chicago’s trains and buses are branded CTA. Stations are well signed, and on marathon weekend you will see plenty of other runners on the trains.',
             faresTitle: 'Typical fares (verify at ventra.com)',
             fares: [
               'Blue Line from O’Hare: higher airport fare (about $5 for a single ride).',
@@ -1585,19 +1598,9 @@ export const CONTENT = {
               'Ventra app: buy mobile tickets and tap your phone at the turnstile.',
               'Contactless: Apple Pay, Google Pay, or tap-to-pay cards at readers for pay-as-you-go.',
             ],
-            toStartTitle: 'Blue Line toward the start (Sunday morning)',
-            toStartSteps: [
-              'Take the Blue Line toward Forest Park (or Loop direction per signage).',
-              'Exit at Jackson—about half a mile (~800 m) walk to Grant Park.',
-              'Early Sunday service is roughly every 15 minutes; budget about 45 minutes in transit plus walking.',
-            ],
-            toStartNote:
-              'Many riders that morning are marathoners—follow the crowd and station announcements. Jackson is also served by the Red Line if you are coming from another part of town.',
-            otherLinesTitle: 'Other “L” lines near the start',
-            otherLines: [
-              'Blue and Red Lines: Jackson.',
-              'Brown, Orange, Pink, Purple Express: Adams (walk toward Grant Park).',
-            ],
+            googleMapsTitle: 'We recommend Google Maps',
+            googleMapsBody:
+              'Plan each trip in Google Maps with the transit option: it shows real-time arrival times, transfers, and walking directions. To get downtown from O’Hare, ride the Blue Line and get off at Jackson.',
             toExpoTitle: 'From O’Hare to the Expo by train',
             toExpoSteps: [
               'Blue Line toward Forest Park → transfer at Clark/Lake to Green Line toward Ashland/63rd.',
@@ -1610,11 +1613,14 @@ export const CONTENT = {
           },
           raceDay: {
             title: '5. Race morning checklist',
+            busTitle: 'Getting to the start: we strongly recommend the bus',
+            busBody:
+              'On race morning, ride the CHI Running Club bus straight from the hotel to the Grant Park start—no early trains, transfers, or finding your way on foot.',
+            busLinkLabel: 'See bus details →',
             tips: [
               'Leave buffer time: security, bathrooms, and corrals take longer than you expect.',
               'Carry a light throwaway layer—pre-dawn can be chilly even if the afternoon warms up.',
-              'If you ride the shuttle, confirm the meeting spot the night before.',
-              'If you ride the CTA, check the latest alerts in the Ventra or CTA app.',
+              'If you ride the bus, confirm the meeting spot the night before.',
               'Screenshot your bib QR and emergency contacts offline.',
             ],
           },
@@ -1623,7 +1629,7 @@ export const CONTENT = {
         faq: [
           {
             q: 'Is public transit reliable on marathon weekend?',
-            a: 'Yes—CTA runs on race weekend and is the backbone for locals and visitors. Allow extra time for crowded trains near the Loop.',
+            a: 'Yes, but trains near the Loop get crowded—allow extra time and check real-time arrivals in Google Maps. To get to the start on race morning, we strongly recommend the bus.',
           },
           {
             q: 'How do I get from Midway Airport to the Expo or start?',
@@ -1923,18 +1929,19 @@ export const CONTENT = {
         },
         hotel: {
           title: '住宿',
-          description: '机场附近，比赛日直通车到达芝马起点，优惠价 $159',
+          description:
+            '驰跑团推荐酒店，机场附近 $159：免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点',
           cta: '查看详情',
         },
         bus: {
           title: '直达大巴',
-          description: '比赛日直通车，从机场酒店直达 Grant Park 起点。',
+          description: '比赛日直通车，半个小时从机场酒店直达起点。',
           cta: '查看详情',
         },
         transportation: {
           title: '芝加哥马拉松交通',
           description:
-            '奥黑尔机场怎么找酒店班车与蓝线、凯悦嘉轩到起点/Expo、比赛日直通车与 CTA 入门——手机阅读友好。',
+            '芝加哥交通一页看懂：CTA 地铁公交与 Ventra 购票、机场蓝线直达市中心、去 Expo 领物路线、Uber/Lyft 打车。',
           cta: '查看指南',
         },
         volunteer: {
@@ -1977,7 +1984,8 @@ export const CONTENT = {
       hotelPage: {
         pageTitle: '芝马酒店超值价 $159',
         closedNotice: '预订链接正在准备中，请耐心等待',
-        pageIntro: '驰跑团专属优惠｜机场10分钟｜比赛日轻松30分钟直达起点 🚐',
+        pageIntro:
+          '免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5',
         hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $159起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '机场附近',
@@ -1992,11 +2000,34 @@ export const CONTENT = {
         runnerPerkLounge: '跑者休息厅',
         hotelRatesTitle: '驰跑团专属优惠价',
         hotelRates: [
-          { label: 'King Bed（大床房）', value: '$159 / 晚' },
-          { label: '2 Queen Beds（双大床房）', value: '$169 / 晚' },
+          {
+            label: 'King Bed + Sofa Bed（一张特大床 + 沙发床）',
+            value: '$159 / 晚',
+            photos: ['/api/marathon-welcome/hotel-room-photo/king'],
+          },
+          {
+            label: '2 Queen Beds（两张大床，无沙发床）',
+            value: '$169 / 晚',
+            photos: ['/api/marathon-welcome/hotel-room-photo/two-queen'],
+          },
+          {
+            label: '2 Queen Beds + Sofa Bed（两张大床 + 沙发床，可住6人）',
+            value: '$219 / 晚',
+            photos: [
+              '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-1',
+              '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-4',
+            ],
+          },
         ],
+        bookingDeadline: '团队价预订截止日期：2027年9月17日',
+        bookingExtendTitle: '预订日期说明',
+        bookingExtendBody:
+          '目前预订链接开放的入住日期为 10月8日（周五）至 10月11日（周一），可预订一晚或三晚。如需在此日期之外延长住宿，请先通过预订链接在可选日期内完成预订，然后将 Confirmation Number（确认号）和您实际需要的入住、退房日期发送至',
+        bookingExtendEmail: 'chizo-dos.dynamic@hyatt.com',
+        bookingExtendFollowUp:
+          '。Hyatt Place 会为您更新预订，并通过邮件确认新的预订信息。工作日 24 小时内回复。',
         amenityBreakfast: '含免费早餐',
-        amenityAirportShuttle: '机场免费班车（Shuttle）（点击查看实时跟踪班车）',
+        amenityAirportShuttle: '免费机场Shuttle（点击查看实时跟踪班车）',
         amenityOvernightParking: '夜间停车：$10/晚 + 税',
         amenityWifi: '免费高速Wi-Fi',
         amenityGym: '免费24小时健身中心',
@@ -2017,9 +2048,9 @@ export const CONTENT = {
       hotelShuttlePage: {
         docTitle: '免费机场班车 · 驰跑团',
         pageTitle: '免费机场班车',
-        pageIntro: 'Hyatt Place 芝加哥奥黑尔机场酒店提供往返机场的免费班车服务，可容纳14人，每周七天运营。',
+        pageIntro: 'Hyatt Place 芝加哥奥黑尔机场酒店提供往返机场的免费机场Shuttle，可容纳14人，每周七天运营。',
         photoSrc: '/api/marathon-welcome/hotel-shuttle-photo/shuttle-bus',
-        photoAlt: 'Hyatt Place 奥黑尔机场免费班车',
+        photoAlt: 'Hyatt Place 奥黑尔免费机场Shuttle',
         quickFactsTitle: '基本信息',
         quickFacts: [
           '可容纳14名乘客',
@@ -2028,8 +2059,8 @@ export const CONTENT = {
         ],
         pickupSectionTitle: '机场接送地点',
         pickupBullets: [
-          '美国国内航班（Terminal 2）：Lower Level/Arrival，Door# 2C，中间车道（Limo/Shuttle 车道）',
-          '国际航班（Terminal 5）：Lower Level，Door# 5E',
+          '美国国内航班（Terminal 2）：**Lower Level/Arrival**，Door# 2C，中间车道（Limo/Shuttle 车道）',
+          '国际航班（Terminal 5）：**Lower Level/Arrival**，Door# 5E',
         ],
         scheduleSectionTitle: '班车发车时间表（从酒店大门出发）',
         scheduleNote: '周一至周日',
@@ -2057,16 +2088,19 @@ export const CONTENT = {
         docTitle: '直达大巴 · 驰跑团',
         pageTitle: '直达大巴（机场酒店直达比赛起点）',
         pageIntro:
-          '比赛日清晨节奏很紧：驰跑团安排的直通车，赛前从机场Hyatt Place酒店直达 Grant Park，不用自己操心交通。赛后返程按需安排：报名返程超过 35 人，我们就安排返程大巴。比赛当天，驰跑团成员Sherri（梁向绍）将全程随车，协助现场协调。',
+          '比赛日清晨节奏很紧：驰跑团安排的直通车，赛前从机场Hyatt Place酒店直达 Grant Park，不用自己操心交通。去程大巴确定发车，加开车次和返程大巴根据报名人数按需安排。比赛当天，驰跑团董事Sherri（梁向绍）将全程随车，协助现场协调。',
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$25 单程）',
         shuttleBullets: [
-          '发车：周日早晨5:20大巴达到酒店，5:30准时从酒店(Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达，下车地点为Ida B. Wells Dr 与 State St 路口西南角；赛后返程按需安排：报名超过 35 人即安排返程大巴（预计下午 3:30 发车）。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
+          '去程发车：周日早晨5:20大巴到达酒店，5:30准时从酒店（Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达，下车地点为Ida B. Wells Dr 与 State St 路口西南角。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
+          '加开去程大巴：每辆大巴可坐 52 人。如果报名超过 52 人，我们会加开第二辆大巴，并根据跑者的出发 Wave 安排稍晚发车。早到的跑者可以先到起点附近的咖啡馆休息等候。',
+          '赛后返程（按需安排）：需要返程大巴的跑者请在微信群里接龙。接龙超过 30 人，我们就安排返程大巴，下午 3:30 发车；超过 52 人可安排两辆，第二辆可另选发车时间。',
+          '去程第一辆大巴确定发车；加开的第二辆去程大巴和返程大巴，将在 9月17日 前根据报名人数确定并安排。',
           '费用：$25/人（单程）。',
         ],
         timingHighlightTitle: '为什么是 5:30 出发？',
         timingHighlightBody:
-          'Wave 1(Corrals A to E）起跑区 7:20 关闭，Wave 2(Corrals F, G, H & J)起跑区 7:45 关闭，建议在关闭时间前 1.5 小时到达安检口。5:30 从酒店出发，约 6:00 到 Grant Park。',
+          'Wave 1（Corrals A, B, C, D, E）起跑区 7:20 关闭，Wave 2（Corrals F, G, H, J）起跑区 7:45 关闭，Wave 3（Corrals K, L, M, N）起跑区 8:10 关闭。建议在关闭时间前 1.5 小时到达安检口。5:30 从酒店出发，约 6:00 到 Grant Park。',
         mapSectionTitle: '比赛日清晨：车程示意（参考）',
         mapSectionBody:
           '下图是清晨约 5:30 从酒店驱车前往起点附近的谷歌地图示意。',
@@ -2076,13 +2110,15 @@ export const CONTENT = {
         dropoffSectionTitle: '下车点与签到入口',
         dropoffLocation: '下车地点：Ida B. Wells Dr 与 State St 路口西南角',
         dropoffSectionBody:
-          '2026年官方封路信息已公布，我们已在下图标注了下车地点和跑者签到入口。封路安排仍可能调整，请在比赛前务必核实官方最新信息。',
+          '下图为2026年下车地点和跑者签到入口。',
         dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',
         dropoffPhotoAlt: '2026芝加哥马拉松直通车下车点与跑者签到入口标注地图',
         googleMapUrl: 'https://www.google.com/maps/d/u/0/edit?mid=1k2nQJJSKKc0J34XocRm-aCTTqNLjcdQ&usp=sharing',
         googleMapLabel: '查看互动谷歌地图',
         officialClosuresUrl: 'https://www.chicagomarathon.com/event-info/participant-information/course/street-closures/',
         officialClosuresLabel: '官方2026封路信息',
+        videoSectionTitle: '2026年直达大巴实拍视频',
+        videoSrc: '/api/marathon-welcome/hero-video/bus-2026',
         wechatGroupTitle: '有问题？加入大巴微信群',
         wechatGroupBody: '扫码进群，直通车发车时间、上车点、购票等问题都可以在群里问。',
         wechatGroupQrAlt: '芝加哥马拉松微信群二维码',
@@ -3004,11 +3040,13 @@ export const CONTENT = {
       transportationPage: {
         docTitle: '芝加哥马拉松交通 · 驰跑团',
         pageTitle: '芝加哥马拉松交通',
-        pageIntro:
-          '写给来参加芝加哥马拉松的跑者：周末怎么移动最省心。Hyatt Place Chicago O’Hare Airport（凯悦嘉轩奥黑尔）是机场旁很省心的住宿选择——含免费机场班车、前台中文服务，并可选购比赛日前往 Grant Park 的直通车。芝加哥的公共交通（CTA）在赛事周末同样可靠，下文用「看图 + 分步」的方式，尽量让第一次来的朋友也不迷路。',
-        ctaHotel: '住宿专页（协议价与礼遇）',
+        pageIntro: [
+          '芝加哥的地铁和公交统称 CTA，可以用 Ventra 卡、Ventra App 或 Apple Pay／信用卡直接刷卡乘车，线路和实时到站信息可查看 CTA 官网。从奥黑尔机场坐 CTA 蓝线（Blue Line）可直达市中心（Loop），无需换乘。打车可以用 Uber 或 Lyft，出发前可以用 Uber 车费估算网站预估费用。',
+          'Hyatt Place Chicago O’Hare Airport（凯悦嘉轩奥黑尔）是驰跑团推荐的芝加哥马拉松酒店，$159/晚起：免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5。平时进城也很方便：坐免费机场Shuttle（或步行约 1.1 公里）到机场，再坐 CTA 蓝线直达市中心。推荐使用 Google 地图（Google Maps）：输入下面的地址，即可查看实时交通信息和到站时间。',
+        ],
         jumpNavLabel: '本页导航',
         jumpNav: [
+          { href: '#hotel-downtown', label: '酒店 → 市中心' },
           { href: '#airport-hotel', label: '机场 ↔ 酒店' },
           { href: '#hotel-expo', label: '酒店 ↔ Expo' },
           { href: '#cta-guide', label: '如何乘坐 CTA' },
@@ -3033,6 +3071,10 @@ export const CONTENT = {
             label: 'CTA 蓝线 O’Hare 站',
             lines: ['1000 O’Hare Dr, Chicago, IL 60666'],
           },
+          ctaJackson: {
+            label: 'CTA 蓝线 Jackson 站（进市中心 Downtown）',
+            lines: ['230 S Dearborn St, Chicago, IL 60604'],
+          },
         },
         images: {
           airportTransit: {
@@ -3051,24 +3093,26 @@ export const CONTENT = {
           },
         },
         sections: {
+          hotelDowntown: {
+            title: '1. 从酒店到市中心（免费机场Shuttle + 蓝线到 Jackson 站）',
+            steps: [
+              '在酒店门口乘坐免费机场Shuttle到奥黑尔机场（**请提前向前台取票**）。',
+              '在 O’Hare 站坐蓝线（起点站，无需换乘），坐 19 站、约 45 分钟，到 Jackson 站下车（230 S Dearborn St），即到市中心 Loop。',
+            ],
+          },
           airportHotel: {
-            title: '1. 从机场到酒店（奥黑尔 ↔ Hyatt Place O’Hare）',
+            title: '2. 从机场到酒店（奥黑尔 ↔ Hyatt Place O’Hare）',
             lead:
-              '多数朋友从奥黑尔机场（ORD）入境。酒店位于罗斯蒙特（Rosemont），离机场很近。您可以乘坐酒店免费班车；若人在租车中心附近，也可以像我们一样步行回酒店。',
+              '从奥黑尔机场（ORD）到酒店，有两种方式：',
+            shuttleOptionTitle: '乘坐免费机场Shuttle',
             signAirportTransitTitle: '先认识标识：Airport Transit',
             signAirportTransitBody:
               '奥黑尔航站楼内的机场捷运在指示牌上写作 Airport Transit，用于连接各航站楼与租车中心等区域。跟着标识走，就不容易绕远路。',
-            signCtaTitle: '如果打算直接坐地铁进城？',
             signCtaBody:
-              '请寻找 “Trains to City - CTA” 标识，前往 CTA 蓝线（Blue Line）车站。下文「如何乘坐 CTA」有更细的购票与换乘说明。',
-            shuttleTitle: '酒店免费班车（推荐带行李）',
-            shuttleBody:
-              'Hyatt Place O’Hare 提供机场与酒店之间的免费接驳。具体上车点可能因航站楼施工而调整，落地后建议先电话或询问酒店前台，在奥黑尔通常前往「Hotel Shuttle」候车区等候。',
-            shuttleTipTitle: '班车班次（参考，以酒店当日公布为准）',
-            shuttleTipBody: '约每 40 分钟一班；运营时间约 5:00–22:30。',
-            walkTitle: '从租车中心步行到酒店（可选）',
+              '请寻找 “Trains to City - CTA” 标识，前往 CTA 蓝线（Blue Line）车站。',
+            walkTitle: '坐机场捷运 + 步行到酒店（可选）',
             walkIntro:
-              '从机场区域到酒店，常见有两种方式：① 免费酒店班车；② 从 Rental Car Center（租车中心）一带步行回酒店。',
+              '坐机场捷运（Airport Transit）到租车中心（Rental Car Center），再步行约 1.1 公里到酒店。',
             walkHighlightTitle: '实地走过，放心参考',
             walkHighlight:
               '我们专门实地走了一次：从 Rental Car Center 下来，沿人行道步行到酒店，一路以平地为主。',
@@ -3079,7 +3123,7 @@ export const CONTENT = {
             ],
           },
           hotelExpo: {
-            title: '2. Hyatt Place O’Hare ↔ Expo（领物）',
+            title: '3. Hyatt Place O’Hare ↔ Expo（领物）',
             lead:
               '领物在 McCormick Place 北馆。周四到周六人流大，建议预留排队与安检时间。从奥黑尔一侧出发，坐地铁通常比开车找车位更省心。',
             tipTitle: '小贴士',
@@ -3087,17 +3131,16 @@ export const CONTENT = {
               '尽量提前一两天买好交通卡或电子票；Expo 现场常有 CTA 展位可咨询购票。',
             ctaRouteTitle: '地铁路线（参考）',
             ctaRouteSteps: [
-              '乘坐蓝线（Blue Line）Forest Park 方向。',
-              '在 Clark/Lake 站换乘绿线（Green Line）Ashland/63rd 或 Cottage Grove 方向（以站内电子屏为准）。',
+              '乘坐蓝线（Blue Line），在 Clark/Lake 站换乘绿线（Green Line）Ashland/63rd 或 Cottage Grove 方向（以站内电子屏为准）。',
               '在 Cermak–McCormick Place 站下车，按指示牌进入 McCormick Place。',
             ],
             ctaRouteTime: '全程约 1 小时 20 分钟，建议多留 15–30 分钟缓冲。',
           },
           cta: {
-            title: '3. 如何乘坐 CTA（写给第一次来的朋友）',
+            title: '4. 如何乘坐 CTA',
             lead:
               '芝加哥的地铁与公交系统统称 CTA。周末赛事期间车厢里会遇到很多去跑马的人，跟着大流也不容易坐错方向。',
-            faresTitle: '常见票价（请以 Ventra/CTA 官网当日信息为准）',
+            faresTitle: '常见票价',
             fares: [
               '从奥黑尔搭乘蓝线：机场段单程票价较高（约 $5）。',
               '其他地铁线路单程约 $3；公交车单程约 $2.25。',
@@ -3108,23 +3151,14 @@ export const CONTENT = {
               '车站自助机可购买纸质 Ventra 票。',
               '下载 Ventra App 购买电子票，进站时刷手机。',
               '闸机支持 Apple Pay、Google Pay 或非接触式信用卡按次扣费。',
+              '常用链接：Ventra App（购票、充值）｜CTA 官网（线路与实时到站）｜蓝线（Blue Line）时刻表',
             ],
-            toStartTitle: '从奥黑尔（蓝线沿线）到比赛起点',
-            toStartSteps: [
-              '搭乘蓝线 Forest Park 方向（或按站内标识前往市中心方向）。',
-              '在 Jackson 站下车，步行至 Grant Park 约半英里（约 800 m）。',
-              '周日清晨蓝线约每 15 分钟一班，车程约 45 分钟，再加步行时间。',
-            ],
-            toStartNote:
-              '那个时间坐车、走路的很多都是去芝马的跑友，不用太担心「只有自己不认识路」。仍建议提前查好出口与街面方向。',
-            otherLinesTitle: '从城里其他位置到起点',
-            otherLines: [
-              '蓝线、红线：Jackson 站下车。',
-              '棕线、橙线、粉线、紫线：Adams 站下车，再步行前往 Grant Park。',
-            ],
+            googleMapsTitle: '推荐使用 Google 地图（Google Maps）',
+            googleMapsBody:
+              '出发前用 Google 地图查路线，选择「公共交通」，即可看到实时到站时间、换乘站和步行路线。从奥黑尔坐蓝线进市中心（Downtown），在 Jackson 站下车即可。',
             toExpoTitle: '从奥黑尔机场到 Expo',
             toExpoSteps: [
-              '蓝线至 Clark/Lake 换乘绿线，到 Cermak–McCormick Place 下车即到展区附近。',
+              '乘坐蓝线（Blue Line），在 Clark/Lake 站换乘绿线（Green Line）Ashland/63rd 或 Cottage Grove 方向（以站内电子屏为准），到 Cermak–McCormick Place 站下车即到展区附近。',
             ],
             toExpoTime: '约 1 小时 20 分钟（含换乘等待）。',
             beginnerTitle: '第一次用 CTA 的小提示',
@@ -3133,11 +3167,14 @@ export const CONTENT = {
           },
           raceDay: {
             title: '5. Race Day 注意事项',
+            busTitle: '比赛日去起点：强烈建议乘坐直通大巴',
+            busBody:
+              '比赛日清晨请乘坐驰跑团安排的直通大巴，从酒店直达 Grant Park 起点，不用赶早班地铁、换乘和步行找路。',
+            busLinkLabel: '查看直通大巴详情 →',
             tips: [
               '比计划再早 20–30 分钟出门：安检、厕所、存包与进入分区都可能排队。',
               '清晨气温偏低，可穿一件便宜外套，起跑前丢掉（赛道边常有慈善捐衣）。',
-              '若乘酒店直通车，前一晚确认集合地点与发车时间（封路可能导致调整）。',
-              '若乘 CTA，出发前在 Ventra 或 CTA App 看是否有改线通知。',
+              '乘坐直通车的跑友，前一晚确认集合地点与发车时间（封路可能导致调整）。',
               '将号码布二维码、紧急联系人等信息保存在手机相册并尽量离线可阅。',
             ],
           },
@@ -3146,7 +3183,7 @@ export const CONTENT = {
         faq: [
           {
             q: '马拉松周末坐地铁靠谱吗？',
-            a: '整体靠谱。周日清晨往市区的蓝线会有不少跑友同路。仍建议预留等车与步行时间，并关注临时改线。',
+            a: '整体靠谱，但赛事周末人多，请预留等车与步行时间，并用 Google 地图查看实时到站时间。比赛日去起点，强烈建议乘坐直通大巴。',
           },
           {
             q: '从 Midway 机场怎么去 Expo 或起点？',

@@ -45,7 +45,7 @@ function withBoldRuns(text) {
 
 function BulletList({ items }) {
   return (
-    <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base">
+    <ul className="mt-3 list-inside list-disc space-y-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base [&_strong]:font-bold [&_strong]:text-chi-red dark:[&_strong]:text-chi-red-light">
       {items.map((line) => (
         <li key={line}>{withBoldRuns(line)}</li>
       ))}
