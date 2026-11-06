@@ -19,12 +19,13 @@ const AUTO_LINKS = [
   },
   {
     href: 'https://www.uber.com/us/en/rider-home/',
-    phrases: ['Uber 车费估算网站'],
+    phrases: ['Uber 车费估算网站', 'Uber fare estimate site'],
   },
   {
     to: CHICAGO_MARATHON_ROUTES.hotelShuttle,
     phrases: [
       '免费机场Shuttle',
+      'free airport shuttle',
       '酒店免费班车（Shuttle）',
       '免费机场班车（Shuttle）',
       '免费班车（Shuttle）',

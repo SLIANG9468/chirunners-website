@@ -370,7 +370,7 @@ export const CONTENT = {
           cta: 'Open guide',
         },
         hotel: {
-          title: 'Hotels & lodging',
+          title: 'Hotel',
           description:
             'Hotel near O’Hare, $159: free breakfast | race-day bus to the start',
           cta: 'Open guide',
@@ -384,7 +384,7 @@ export const CONTENT = {
         transportation: {
           title: 'Chicago Marathon transportation',
           description:
-            'Hyatt Place O’Hare, airport wayfinding, race-morning shuttle, CTA/Ventra, and Expo routes—mobile friendly.',
+            'Chicago transit at a glance: CTA trains & buses and Ventra tickets',
           cta: 'Open guide',
         },
         volunteer: {
@@ -431,7 +431,8 @@ export const CONTENT = {
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $159',
         closedNotice: 'The booking link is being prepared — please check back soon.',
-        pageIntro: '10 min from O’Hare｜30 min race-day shuttle to the start 🚐',
+        pageIntro:
+          'Free breakfast | Free airport shuttle | Free cancellation up to 72 hours before check-in | Race-day breakfast from 4:40 AM | race-day bus to the start in about 30 minutes | Blue Line from the airport straight downtown (the Loop), no transfers—pay with Apple Pay or buy a 1-Day Pass: $5',
         hotelSectionTitle: '',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '',
@@ -448,16 +449,31 @@ export const CONTENT = {
         hotelRatesTitle: 'CHI Running Club group rates',
         hotelRates: [
           {
-            label: 'King bed',
+            label: 'King Bed + Sofa Bed',
             value: '$159 / night',
             photos: ['/api/marathon-welcome/hotel-room-photo/king'],
           },
           {
-            label: 'Two queen beds',
+            label: '2 Queen Beds (no sofa bed)',
             value: '$169 / night',
             photos: ['/api/marathon-welcome/hotel-room-photo/two-queen'],
           },
+          {
+            label: '2 Queen Beds + Sofa Bed (sleeps 6)',
+            value: '$219 / night',
+            photos: [
+              '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-1',
+              '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-4',
+            ],
+          },
         ],
+        bookingDeadline: 'Group-rate booking deadline: September 17, 2027',
+        bookingExtendTitle: 'About booking dates',
+        bookingExtendBody:
+          'The booking link currently covers Friday, Oct 8 to Monday, Oct 11, and you can book one night or three nights. To stay beyond those dates, first book within the available dates through the link, then email your Confirmation Number and the check-in and check-out dates you actually need to',
+        bookingExtendEmail: 'chizo-dos.dynamic@hyatt.com',
+        bookingExtendFollowUp:
+          '. Hyatt Place will update your reservation and confirm the new details by email, usually within 24 hours on business days.',
         amenityBreakfast: 'Complimentary breakfast included',
         amenityAirportShuttle: 'Complimentary airport shuttle (tap for live shuttle tracking)',
         amenityOvernightParking: 'Overnight parking: $10/night + tax',
@@ -469,7 +485,7 @@ export const CONTENT = {
         amenityRaceShuttle: 'Race-morning express shuttle to the marathon start: $25 per person, one way',
         runnerPerkLateCheckout: 'Post-race wind-down: late checkout until 5:00 PM for just $75 + tax',
         ctaBook: 'Book hotel',
-        hotelBookUrl: 'https://www./events/en-US/group-booking/CHIZO/G-MARA',
+        hotelBookUrl: 'https://www.hyatt.com/events/en-US/group-booking/CHIZO/G-MARA',
         ctaBusTicket: 'Buy shuttle ticket',
         busTicketUrl: 'https://www.zeffy.com/en-US/ticketing/2026-chicago-marathon-bus-copy',
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
@@ -521,16 +537,19 @@ export const CONTENT = {
         docTitle: 'Express Bus Shuttle · CHI Running Club',
         pageTitle: 'Express Bus Shuttle (Hotel → Marathon Start)',
         pageIntro:
-          'Race morning is easier with a plan. This paid express, arranged with Hyatt Place O’Hare, runs from the hotel to Grant Park before the race—no need to navigate transit or road closures on your own. A return bus after the race is arranged on demand: if more than 35 people sign up for it, we’ll schedule one.',
+          'Race morning is easier with a plan. This paid express, arranged with Hyatt Place O’Hare, runs from the hotel to Grant Park before the race—no need to navigate transit or road closures on your own. The race-morning bus is guaranteed; extra buses and the return bus are arranged based on sign-ups. On race day, CHI Running Club board member Sherri (梁向绍) rides along to help coordinate.',
         shuttleBadge: 'Race weekend',
-        shuttleTitle: 'Race-morning express (club arrangement)',
+        shuttleTitle: 'Race-morning express from the hotel ($25 one way)',
         shuttleBullets: [
-          'Typical hotel departure about 5:30 AM, arriving about 6:00 AM at the drop-off on the southwest corner of Ida B. Wells Dr & State St. Return bus: arranged on demand — scheduled if more than 35 people sign up (planned pickup about 3:30 PM, adjusted for road closures).',
-          '$25 per person, one way—confirm details, pickup location, and booking with the hotel front desk.',
+          'Departure: the bus arrives at the hotel at 5:20 AM Sunday and leaves on time at 5:30 AM from Hyatt Place O’Hare Airport (6810 Mannheim Rd, Rosemont, IL), arriving about 6:00 AM (in 2026 the bus arrived at 6:02 AM, a 32-minute ride; actual times depend on traffic and road closures) at the drop-off on the southwest corner of Ida B. Wells Dr & State St. ‼️ The bus leaves on time—it won’t wait ‼️',
+          'Extra race-morning bus: each bus seats 52. If more than 52 people sign up, we’ll add a second bus that leaves a little later, based on runners’ start waves. Early arrivals can wait at a coffee shop near the start.',
+          'Return bus (on demand): if you’d like a ride back after the race, add your name to the sign-up list in the WeChat group. Once more than 30 people sign up, we’ll schedule a return bus at 3:30 PM; with more than 52, we can run two buses, and the second can leave at a different time.',
+          'The first race-morning bus is guaranteed; the second race-morning bus and the return bus will be confirmed and arranged by September 17 based on sign-ups.',
+          'Fare: $25 per person, one way.',
         ],
         timingHighlightTitle: 'Why 5:30 AM? We did the math.',
         timingHighlightBody:
-          'Corrals close at 7:20 AM for Wave 1 (Corrals A to E) and 7:45 AM for Wave 2 (Corrals F, G, H & J), and race organizers recommend reaching security about 1.5 hours before your corral closes. Leaving the hotel at 5:30 AM gets you to Grant Park by about 6:00 AM.',
+          'Corrals close at 7:20 AM for Wave 1 (Corrals A, B, C, D, E), 7:45 AM for Wave 2 (Corrals F, G, H, J), and 8:10 AM for Wave 3 (Corrals K, L, M, N), and race organizers recommend reaching security about 1.5 hours before your corral closes. Leaving the hotel at 5:30 AM gets you to Grant Park by about 6:00 AM.',
         mapSectionTitle: 'What the drive looks like early Sunday',
         mapSectionBody:
           'At 5:30 AM, the expressways are usually light; the screenshot is a reference only—your arrival time will depend on closures and weather.',
@@ -540,13 +559,15 @@ export const CONTENT = {
         dropoffSectionTitle: 'Drop-off spot & check-in gate',
         dropoffLocation: 'Drop-off: southwest corner of Ida B. Wells Dr & State St',
         dropoffSectionBody:
-          'The official 2026 street closures are out, so we’ve marked our drop-off spot and the runner check-in gate on the map below. Closures can still change, so please verify against the official schedule before race day.',
+          'Below are the 2026 drop-off spot and runner check-in gate.',
         dropoffPhotoSrc: '/api/marathon-welcome/bus-dropoff-photo/dropoff-map',
         dropoffPhotoAlt: 'Map marking the express shuttle drop-off spot and runner check-in gate for the 2026 Chicago Marathon',
         googleMapUrl: 'https://www.google.com/maps/d/u/0/edit?mid=1k2nQJJSKKc0J34XocRm-aCTTqNLjcdQ&usp=sharing',
         googleMapLabel: 'Open interactive map',
         officialClosuresUrl: 'https://www.chicagomarathon.com/event-info/participant-information/course/street-closures/',
         officialClosuresLabel: 'Official 2026 street closures',
+        videoSectionTitle: 'The 2026 express bus on video',
+        videoSrc: '/api/marathon-welcome/hero-video/bus-2026',
         wechatGroupTitle: 'Questions? Join our Chicago Marathon WeChat group',
         wechatGroupBody: 'Scan to join—ask anything about the express shuttle, pickup details, and booking.',
         wechatGroupQrAlt: 'Chicago Marathon WeChat group QR code',
@@ -1487,8 +1508,10 @@ export const CONTENT = {
       transportationPage: {
         docTitle: 'Chicago Marathon transportation · ChiRunners',
         pageTitle: 'Chicago Marathon transportation',
-        pageIntro:
-          'Hyatt Place Chicago O’Hare Airport is CHI Running Club’s recommended Chicago Marathon hotel: from $159/night with breakfast, a free airport shuttle you can track live, a race-day bus straight to the start, free cancellation up to 72 hours before check-in, and a Mandarin-speaking front desk. Getting downtown is easy too: take the free shuttle (or walk about 1.3 km) to the airport, then the CTA Blue Line straight into the city. We recommend Google Maps: enter any of the key addresses below for real-time transit info and arrival times.',
+        pageIntro: [
+          'Chicago’s trains and buses are run by the CTA. Pay with a Ventra card, the Ventra app, or tap Apple Pay or a contactless card; routes and real-time arrivals are on the CTA website. From O’Hare, the CTA Blue Line runs straight downtown (the Loop) with no transfers. For rides, use Uber or Lyft—check the Uber fare estimate site before you go.',
+          'Hyatt Place Chicago O’Hare Airport is CHI Running Club’s recommended Chicago Marathon hotel, from $159/night: free breakfast | free airport shuttle | free cancellation up to 72 hours before check-in | race-day breakfast from 4:40 AM | race-day bus to the start in about 30 minutes | Blue Line from the airport straight downtown (the Loop), no transfers—pay with Apple Pay or buy a 1-Day Pass: $5. Getting downtown is easy too: take the free airport shuttle (or walk about 1.1 km) to the airport, then the CTA Blue Line into the city. We recommend Google Maps: enter any of the addresses below for real-time transit info and arrival times.',
+        ],
         jumpNavLabel: 'On this page',
         jumpNav: [
           { href: '#hotel-downtown', label: 'Hotel → downtown' },
@@ -1539,9 +1562,9 @@ export const CONTENT = {
         },
         sections: {
           hotelDowntown: {
-            title: '1. Hotel to downtown (shuttle + Blue Line to Jackson)',
+            title: '1. Hotel to downtown (free airport shuttle + Blue Line to Jackson)',
             steps: [
-              'Take the free hotel shuttle to O’Hare Airport (**get your shuttle ticket from the front desk in advance**).',
+              'Take the free airport shuttle to O’Hare Airport (**get your shuttle ticket from the front desk in advance**).',
               'Board the Blue Line at O’Hare (the first stop, no transfers). Ride 19 stops, about 45 minutes, and get off at Jackson (230 S Dearborn St), in the Loop downtown.',
             ],
           },
@@ -1549,7 +1572,7 @@ export const CONTENT = {
             title: '2. Airport to the hotel (O’Hare ↔ Hyatt Place O’Hare)',
             lead:
               'From O’Hare (ORD) to the hotel, there are two ways:',
-            shuttleOptionTitle: 'Take the free hotel shuttle',
+            shuttleOptionTitle: 'Take the free airport shuttle',
             signAirportTransitTitle: 'Find “Airport Transit” inside the terminal',
             signAirportTransitBody:
               'Chicago’s airport people mover to terminals and the rental car center is labeled Airport Transit on overhead signs. It connects you toward the Multi-Modal Facility where rental counters are located.',
@@ -1576,17 +1599,16 @@ export const CONTENT = {
               'Buy transit passes a day early if you can. The Expo often hosts a CTA booth where you can pick up Ventra products.',
             ctaRouteTitle: 'CTA route (reference)',
             ctaRouteSteps: [
-              'Take the Blue Line toward Forest Park.',
-              'Transfer at Clark/Lake to the Green Line toward Ashland/63rd (or Cottage Grove, depending on signage).',
+              'Take the Blue Line and transfer at Clark/Lake to the Green Line toward Ashland/63rd or Cottage Grove (check the station displays).',
               'Exit at Cermak–McCormick Place and follow signs into McCormick Place.',
             ],
             ctaRouteTime: 'Typical ride about 1 hour 20 minutes—add buffer for waits.',
           },
           cta: {
-            title: '4. How to ride the CTA (beginner-friendly)',
+            title: '4. How to ride the CTA',
             lead:
               'Chicago’s trains and buses are branded CTA. Stations are well signed, and on marathon weekend you will see plenty of other runners on the trains.',
-            faresTitle: 'Typical fares (verify at ventra.com)',
+            faresTitle: 'Typical fares',
             fares: [
               'Blue Line from O’Hare: higher airport fare (about $5 for a single ride).',
               'Other “L” trains: about $3 per ride; buses about $2.25.',
@@ -1597,14 +1619,14 @@ export const CONTENT = {
               'Ticket machines at stations sell paper Ventra tickets.',
               'Ventra app: buy mobile tickets and tap your phone at the turnstile.',
               'Contactless: Apple Pay, Google Pay, or tap-to-pay cards at readers for pay-as-you-go.',
+              'Useful links: Ventra app (buy and reload tickets) | CTA website (routes and real-time arrivals) | Blue Line timetable',
             ],
             googleMapsTitle: 'We recommend Google Maps',
             googleMapsBody:
               'Plan each trip in Google Maps with the transit option: it shows real-time arrival times, transfers, and walking directions. To get downtown from O’Hare, ride the Blue Line and get off at Jackson.',
             toExpoTitle: 'From O’Hare to the Expo by train',
             toExpoSteps: [
-              'Blue Line toward Forest Park → transfer at Clark/Lake to Green Line toward Ashland/63rd.',
-              'Exit Cermak–McCormick Place.',
+              'Take the Blue Line, transfer at Clark/Lake to the Green Line toward Ashland/63rd or Cottage Grove (check the station displays), and get off at Cermak–McCormick Place, right by the Expo.',
             ],
             toExpoTime: 'Plan about 1 hour 20 minutes including transfers.',
             beginnerTitle: 'First time in Chicago?',
@@ -1934,7 +1956,7 @@ export const CONTENT = {
         },
         bus: {
           title: '直达大巴',
-          description: '比赛日直通车，半个小时从机场酒店直达起点。',
+          description: '比赛日直通车，约半小时从机场酒店直达起点。',
           cta: '查看详情',
         },
         transportation: {
@@ -1984,7 +2006,7 @@ export const CONTENT = {
         pageTitle: '芝马酒店超值价 $159',
         closedNotice: '预订链接正在准备中，请耐心等待',
         pageIntro:
-          '免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5',
+          '免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴约30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5',
         hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $159起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '机场附近',
@@ -2091,7 +2113,7 @@ export const CONTENT = {
         shuttleBadge: '比赛日',
         shuttleTitle: '驰跑团安排的酒店直通车（$25 单程）',
         shuttleBullets: [
-          '去程发车：周日早晨5:20大巴到达酒店，5:30准时从酒店（Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达，下车地点为Ida B. Wells Dr 与 State St 路口西南角。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
+          '去程发车：周日早晨5:20大巴到达酒店，5:30准时从酒店（Hyatt Place O’Hare Airport - 6810 Mannheim Rd, Rosemont, IL）出发，约 6:00 抵达（2026年实际 6:02 到达，车程 32 分钟；实际时间受当天路况和封路影响），下车地点为Ida B. Wells Dr 与 State St 路口西南角。‼️准时发车，准时发车，准时发车， 人等车，车不等人‼️',
           '加开去程大巴：每辆大巴可坐 52 人。如果报名超过 52 人，我们会加开第二辆大巴，并根据跑者的出发 Wave 安排稍晚发车。早到的跑者可以先到起点附近的咖啡馆休息等候。',
           '赛后返程（按需安排）：需要返程大巴的跑者请在微信群里接龙。接龙超过 30 人，我们就安排返程大巴，下午 3:30 发车；超过 52 人可安排两辆，第二辆可另选发车时间。',
           '去程第一辆大巴确定发车；加开的第二辆去程大巴和返程大巴，将在 9月17日 前根据报名人数确定并安排。',
@@ -3041,7 +3063,7 @@ export const CONTENT = {
         pageTitle: '芝加哥马拉松交通',
         pageIntro: [
           '芝加哥的地铁和公交统称 CTA，可以用 Ventra 卡、Ventra App 或 Apple Pay／信用卡直接刷卡乘车，线路和实时到站信息可查看 CTA 官网。从奥黑尔机场坐 CTA 蓝线（Blue Line）可直达市中心（Loop），无需换乘。打车可以用 Uber 或 Lyft，出发前可以用 Uber 车费估算网站预估费用。',
-          'Hyatt Place Chicago O’Hare Airport（凯悦嘉轩奥黑尔）是驰跑团推荐的芝加哥马拉松酒店，$159/晚起：免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5。平时进城也很方便：坐免费机场Shuttle（或步行约 1.1 公里）到机场，再坐 CTA 蓝线直达市中心。推荐使用 Google 地图（Google Maps）：输入下面的地址，即可查看实时交通信息和到站时间。',
+          'Hyatt Place Chicago O’Hare Airport（凯悦嘉轩奥黑尔）是驰跑团推荐的芝加哥马拉松酒店，$159/晚起：免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴约30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5。平时进城也很方便：坐免费机场Shuttle（或步行约 1.1 公里）到机场，再坐 CTA 蓝线直达市中心。推荐使用 Google 地图（Google Maps）：输入下面的地址，即可查看实时交通信息和到站时间。',
         ],
         jumpNavLabel: '本页导航',
         jumpNav: [
