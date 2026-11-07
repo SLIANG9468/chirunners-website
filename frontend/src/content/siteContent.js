@@ -449,17 +449,17 @@ export const CONTENT = {
         hotelRates: [
           {
             label: 'King Bed + Sofa Bed',
-            value: '$159 / night',
+            value: ['$159.00 / night before tax', '$181.26 / night after tax'],
             photos: ['/api/marathon-welcome/hotel-room-photo/king'],
           },
           {
             label: '2 Queen Beds (no sofa bed)',
-            value: '$169 / night',
+            value: ['$169.00 / night before tax', '$192.66 / night after tax'],
             photos: ['/api/marathon-welcome/hotel-room-photo/two-queen'],
           },
           {
             label: '2 Queen Beds + Sofa Bed (sleeps 6)',
-            value: '$219 / night',
+            value: ['$219.00 / night before tax', '$249.66 / night after tax'],
             photos: [
               '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-1',
               '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-4',
@@ -2021,17 +2021,17 @@ export const CONTENT = {
         hotelRates: [
           {
             label: 'King Bed + Sofa Bed（一张特大床 + 沙发床）',
-            value: '$159 / 晚',
+            value: ['税前 $159.00 / 晚', '税后 $181.26 / 晚'],
             photos: ['/api/marathon-welcome/hotel-room-photo/king'],
           },
           {
             label: '2 Queen Beds（两张大床，无沙发床）',
-            value: '$169 / 晚',
+            value: ['税前 $169.00 / 晚', '税后 $192.66 / 晚'],
             photos: ['/api/marathon-welcome/hotel-room-photo/two-queen'],
           },
           {
             label: '2 Queen Beds + Sofa Bed（两张大床 + 沙发床，可住6人）',
-            value: '$219 / 晚',
+            value: ['税前 $219.00 / 晚', '税后 $249.66 / 晚'],
             photos: [
               '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-1',
               '/api/marathon-welcome/hotel-room-photo/two-queen-sofa-4',

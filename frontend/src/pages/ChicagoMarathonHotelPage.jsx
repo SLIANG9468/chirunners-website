@@ -314,7 +314,13 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                 >
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-neutral-800 dark:text-neutral-200">{r.label}</span>
-                    <span className="shrink-0 font-semibold text-chi-red dark:text-chi-red-light">{r.value}</span>
+                    <span className="shrink-0 text-left font-semibold text-chi-red dark:text-chi-red-light">
+                      {[].concat(r.value).map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </div>
                   {r.photos?.length ? (
                     <div className="mt-3 flex snap-x gap-2 overflow-x-auto pb-1">
