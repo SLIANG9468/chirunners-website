@@ -2,6 +2,7 @@ import { createElement } from 'react'
 import { Link } from 'react-router-dom'
 import { CHICAGO_MARATHON_ROUTES } from '../constants/chicagoMarathonRoutes'
 import MarathonBookingButtons from '../components/chicagoMarathon/MarathonBookingButtons'
+import { apiUrl } from '../apiBase'
 
 const iconClass = 'h-5 w-5 shrink-0 text-chi-red'
 const runnerIconClass = 'h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400'
@@ -320,13 +321,13 @@ export default function ChicagoMarathonHotelPage({ copy }) {
                       {r.photos.map((src, i) => (
                         <a
                           key={src}
-                          href={src}
+                          href={apiUrl(src)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="shrink-0 snap-start overflow-hidden rounded-lg"
                         >
                           <img
-                            src={src}
+                            src={apiUrl(src)}
                             alt={`${r.label} ${i + 1}`}
                             loading="lazy"
                             className="h-40 w-auto max-w-none object-cover sm:h-48"
