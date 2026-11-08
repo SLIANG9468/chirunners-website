@@ -431,7 +431,7 @@ export const CONTENT = {
       hotelPage: {
         pageTitle: 'Exclusive Hotel Deals for Chicago Marathon Weekend $159',
         pageIntro:
-          'Free breakfast | Free airport shuttle | Free cancellation up to 72 hours before check-in | Race-day breakfast from 4:40 AM | race-day bus to the start in about 30 minutes | Blue Line from the airport straight downtown (the Loop), no transfers—pay with Apple Pay or buy a 1-Day Pass: $5',
+          'Free breakfast | Free airport shuttle | Free cancellation up to 72 hours before check-in | Race-day breakfast from 4:40 AM | race-day bus to the start in about 30 minutes | Blue Line from the airport straight downtown (the Loop), no transfers',
         hotelSectionTitle: '',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '',
@@ -476,6 +476,7 @@ export const CONTENT = {
         amenityBreakfast: 'Complimentary breakfast included',
         amenityAirportShuttle: 'Complimentary airport shuttle (tap for live shuttle tracking)',
         amenityOvernightParking: 'Overnight parking: $10/night + tax',
+        amenityBlueLine: 'Blue Line from the airport straight downtown (the Loop), no transfers—pay with Apple Pay or buy a 1-Day Pass: $5',
         amenityWifi: 'Complimentary high-speed Wi-Fi',
         amenityGym: 'Complimentary 24-hour fitness center',
         amenityPool: 'Complimentary indoor heated pool',
@@ -2004,7 +2005,7 @@ export const CONTENT = {
       hotelPage: {
         pageTitle: '芝马酒店超值价 $159',
         pageIntro:
-          '免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴约30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5',
+          '免费早餐｜免费机场Shuttle｜入住前72小时免费取消｜比赛日早餐4:40am｜比赛日大巴约30分钟直达起点｜机场Blueline直达市中心（Loop）无需换乘',
         hotelSectionTitle: '芝加哥奥黑尔机场凯悦嘉轩酒店 $159起',
         hotelName: 'Hyatt Place Chicago O’Hare Airport',
         hotelAddressLine1: '机场附近',
@@ -2048,6 +2049,7 @@ export const CONTENT = {
         amenityBreakfast: '含免费早餐',
         amenityAirportShuttle: '免费机场Shuttle（点击查看实时跟踪班车）',
         amenityOvernightParking: '夜间停车：$10/晚 + 税',
+        amenityBlueLine: '机场Blueline直达市中心（Loop）无需换乘，可使用Apple Pay，或购买单日通票Day Pass：$5',
         amenityWifi: '免费高速Wi-Fi',
         amenityGym: '免费24小时健身中心',
         amenityPool: '免费室内恒温游泳池',

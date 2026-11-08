@@ -64,6 +64,20 @@ function IconShuttle({ className = iconClass }) {
   )
 }
 
+function IconTrain({ className = iconClass }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M8 3h8a3 3 0 013 3v8a3 3 0 01-3 3H8a3 3 0 01-3-3V6a3 3 0 013-3zM5 10h14M9 14h.01M15 14h.01M8 21l2-4M16 21l-2-4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 function IconParking({ className = iconClass }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -282,6 +296,7 @@ export default function ChicagoMarathonHotelPage({ copy }) {
               </li>
               <AmenityRow icon={IconUndo} text={h.amenityCancellation} />
               <AmenityRow icon={IconParking} text={h.amenityOvernightParking} />
+              {h.amenityBlueLine ? <AmenityRow icon={IconTrain} text={h.amenityBlueLine} /> : null}
               <AmenityRow icon={IconWifi} text={h.amenityWifi} />
               <AmenityRow icon={IconGym} text={h.amenityGym} />
               <AmenityRow icon={IconPool} text={h.amenityPool} />
